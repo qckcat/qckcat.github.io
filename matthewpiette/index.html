@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matthew Piette | Architectural Designer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --charcoal: #2C2C2C;
+            --slate: #4A4A4A;
+            --warm-gray: #8B8B8B;
+            --off-white: #F5F5F0;
+            --pure-white: #FFFFFF;
+            --accent-terra: #D4A574;
+            --accent-sage: #A8B8A0;
+            --accent-blue: #6B8CAE;
+            --line-sketch: rgba(44, 44, 44, 0.15);
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--charcoal);
+            background: var(--off-white);
+            overflow-x: hidden;
+        }
+
+        /* Custom Cursor for Architecture Feel */
+        body {
+            cursor: crosshair;
+        }
+
+        a, button {
+            cursor: pointer;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 2rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: transparent;
+            transition: all 0.4s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(245, 245, 240, 0.95);
+            padding: 1.5rem 4rem;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            color: var(--charcoal);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--charcoal);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--accent-terra);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section - Dramatic Introduction */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--pure-white);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(90deg, var(--line-sketch) 1px, transparent 1px),
+                linear-gradient(0deg, var(--line-sketch) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.3;
+            animation: gridMove 60s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 1000px;
+            padding: 2rem;
+        }
+
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 7rem;
+            font-weight: 300;
+            letter-spacing: -2px;
+            margin-bottom: 1rem;
+            line-height: 1;
+            color: var(--charcoal);
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        .hero-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--slate);
+            margin-bottom: 2rem;
+            animation: fadeInUp 1.4s ease-out;
+        }
+
+        .hero-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 400;
+            font-style: italic;
+            color: var(--warm-gray);
+            margin-bottom: 3rem;
+            animation: fadeInUp 1.6s ease-out;
+        }
+
+        .sketch-line {
+            width: 200px;
+            height: 1px;
+            background: var(--accent-terra);
+            margin: 2rem auto;
+            position: relative;
+            animation: drawLine 2s ease-out;
+        }
+
+        @keyframes drawLine {
+            from { width: 0; }
+            to { width: 200px; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--warm-gray);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        /* Section Base Styles */
+        section {
+            position: relative;
+        }
+
+        .section-header {
+            padding: 8rem 4rem 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            letter-spacing: 3px;
+            color: var(--accent-terra);
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 300;
+            letter-spacing: -1px;
+            color: var(--charcoal);
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+
+        /* About Section - Full Width Image + Text Overlay */
+        .about {
+            background: var(--charcoal);
+            color: var(--off-white);
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .about-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .about-image-container {
+            position: relative;
+            height: 600px;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(20%);
+        }
+
+        .sketch-border {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: 20px;
+            bottom: 20px;
+            border: 2px solid var(--accent-terra);
+            pointer-events: none;
+        }
+
+        .about-text h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            line-height: 1.3;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            color: var(--off-white);
+        }
+
+        .philosophy-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            padding: 2rem 0;
+            border-left: 3px solid var(--accent-terra);
+            padding-left: 2rem;
+            margin: 2rem 0;
+            color: var(--accent-terra);
+        }
+
+        /* Projects Section - Gallery Style */
+        .projects {
+            background: var(--pure-white);
+            padding: 8rem 0;
+        }
+
+        .projects-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 4rem;
+        }
+
+        .project-grid {
+            display: grid;
+            gap: 0;
+            margin-top: 4rem;
+        }
+
+        .project-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            background: var(--off-white);
+        }
+
+        /* Featured Projects - Large */
+        .project-item.featured {
+            grid-column: span 2;
+            height: 600px;
+        }
+
+        /* Regular Projects */
+        .project-item.regular {
+            height: 400px;
+        }
+
+        .project-layout-1 {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .project-layout-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 2fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .project-layout-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .project-image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .project-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+            filter: grayscale(10%);
+        }
+
+        .project-item:hover .project-image-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(44,44,44,0.95) 0%, transparent 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 3rem;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .project-item:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            color: var(--accent-terra);
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+        }
+
+        .project-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--pure-white);
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+
+        .project-meta {
+            font-size: 0.9rem;
+            color: var(--off-white);
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .project-description {
+            font-size: 0.95rem;
+            color: var(--off-white);
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        /* Process Section - Hand Drawn Aesthetic */
+        .process {
+            background: var(--off-white);
+            padding: 8rem 4rem;
+            position: relative;
+        }
+
+        .process::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--line-sketch), transparent);
+        }
+
+        .process-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4rem;
+            margin-top: 4rem;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .step-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 5rem;
+            color: var(--accent-terra);
+            opacity: 0.3;
+            font-weight: 300;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .step-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--charcoal);
+            font-weight: 400;
+        }
+
+        .step-description {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--slate);
+            font-weight: 300;
+        }
+
+        /* Skills Section - Minimalist */
+        .skills {
+            background: var(--pure-white);
+            padding: 8rem 4rem;
+        }
+
+        .skills-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6rem;
+            margin-top: 4rem;
+        }
+
+        .skill-category h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--charcoal);
+            font-weight: 400;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--line-sketch);
+            font-size: 1.1rem;
+            color: var(--slate);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+
+        .skill-level {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.9rem;
+            color: var(--accent-terra);
+        }
+
+        /* Timeline Section */
+        .timeline {
+            background: var(--charcoal);
+            color: var(--off-white);
+            padding: 8rem 4rem;
+        }
+
+        .timeline-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline-items {
+            margin-top: 4rem;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline-items::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent-terra), transparent);
+        }
+
+        .timeline-item {
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.35rem;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent-terra);
+            border: 3px solid var(--charcoal);
+        }
+
+        .timeline-date {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            color: var(--accent-terra);
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+        }
+
+        .timeline-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+
+        .timeline-description {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--off-white);
+            font-weight: 300;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--pure-white);
+            padding: 10rem 4rem;
+            text-align: center;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            color: var(--charcoal);
+        }
+
+        .contact-subtitle {
+            font-size: 1.2rem;
+            color: var(--slate);
+            margin-bottom: 4rem;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--warm-gray);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-link {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--charcoal);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-link:hover {
+            color: var(--accent-terra);
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 3rem;
+            padding: 1.2rem 3rem;
+            border: 2px solid var(--charcoal);
+            color: var(--charcoal);
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--charcoal);
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
+
+        .cta-button:hover::before {
+            left: 0;
+        }
+
+        .cta-button:hover {
+            color: var(--pure-white);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            color: var(--off-white);
+            padding: 3rem 4rem;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+        }
+
+        .footer-text {
+            font-size: 0.85rem;
+            color: var(--warm-gray);
+            font-weight: 300;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+
+            .project-layout-1,
+            .project-layout-2 {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .project-item.featured {
+                grid-column: span 1;
+                height: 500px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1.5rem 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-tagline {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .project-layout-1,
+            .project-layout-2,
+            .project-layout-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .project-item.regular {
+                height: 350px;
+            }
+
+            .process-grid,
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="nav">
+        <div class="logo">MP</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Work</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">Matthew Piette</h1>
+            <div class="sketch-line"></div>
+            <p class="hero-subtitle">Architectural Designer</p>
+            <p class="hero-tagline">Visions and Foundations</p>
+        </div>
+        <div class="scroll-indicator">Scroll to Explore</div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-content">
+            <div class="about-image-container">
+                <!-- In actual implementation, use Matthew's hand-drawn sketch or rendered image -->
+                <img src="data:image/svg+xml,%3Csvg width='600' height='600' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='600' height='600' fill='%234A4A4A'/%3E%3Ctext x='50%25' y='50%25' font-family='Georgia' font-size='24' fill='%23F5F5F0' text-anchor='middle' dominant-baseline='middle'%3ERetreat by the Creek%3C/text%3E%3C/svg%3E" alt="Architectural sketch" class="about-image">
+                <div class="sketch-border"></div>
+            </div>
+            <div class="about-text">
+                <h3>Architecture as a Bridge Between Nature and Humanity</h3>
+                <p>
+                    I have been passionate about art since I was young, and architecture naturally became 
+                    the perfect blend of creativity and problem-solving. Throughout my education, my love 
+                    for architecture has grown as I've discovered its profound impact—not only on individuals 
+                    but on the world.
+                </p>
+                <p>
+                    I've explored various architectural styles and realized that architects have the power 
+                    to shape the future and address environmental challenges.
+                </p>
+                <div class="philosophy-quote">
+                    "I believe that sustainability and artistic freedom can coexist—I'm excited to explore 
+                    innovative solutions that don't limit creative expression in my future projects."
+                </div>
+                <p>
+                    With a degree in architecture, I want to contribute to designing sustainable spaces 
+                    that reconnect humanity with nature, where creativity shines through in every detail.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="projects-container">
+            <div class="section-header">
+                <div class="section-number">— PORTFOLIO</div>
+                <h2 class="section-title">Selected Works</h2>
+            </div>
+
+            <!-- Project Layout 1 -->
+            <div class="project-layout-1">
+                <div class="project-item featured">
+                    <div class="project-image-wrapper">
+                        <!-- Use actual image: Retreat by the Creek rendering -->
+                        <img src="data:image/svg+xml,%3Csvg width='800' height='600' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='grad1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23667eea;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23764ba2;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='600' fill='url(%23grad1)'/%3E%3Ccircle cx='400' cy='300' r='150' fill='none' stroke='%23ffffff' stroke-width='2' opacity='0.3'/%3E%3Ctext x='50%25' y='50%25' font-family='Georgia' font-size='32' fill='%23ffffff' text-anchor='middle' dominant-baseline='middle'%3ERetreat by the Creek%3C/text%3E%3C/svg%3E" alt="Retreat by the Creek">
+                    </div>
+                    <div class="project-overlay">
+                        <div class="project-number">01</div>
+                        <h3 class="project-title">Retreat by the Creek</h3>
+                        <p class="project-meta">4 weeks | San Antonio College | Prof. Isabel Garcia</p>
+                        <p class="project-description">
+                            A retreat designed to take a break from reality. Design inspired by Studio Gang, 
+                            focusing on actionable idealism—connecting people with each other, community, and 
+                            environment through naturalistic approaches.
+                        </p>
+                    </div>
+                </div>
+                <div class="project-item regular">
+                    <div class="project-image-wrapper">
+                        <!-- Use actual image: Hippo meditation station -->
+                        <img src="data:image/svg+xml,%3Csvg width='400' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='400' height='400' fill='%23A8B8A0'/%3E%3Cellipse cx='200' cy='250' rx='120' ry='80' fill='%23F5F5F0' opacity='0.5'/%3E%3Ctext x='50%25' y='50%25' font-family='Georgia' font-size='18' fill='%232C2C2C' text-anchor='middle' dominant-baseline='middle'%3ERhythms of the Hippo%3C/text%3E%3C/svg%3E" alt="Rhythms of the Hippo">
+                    </div>
+                    <div class="project-overlay">
+                        <div class="project-number">02</div>
+                        <h3 class="project-title">Rhythms of the Hippo</h3>
+                        <p class="project-meta">3 weeks | Meditation Station</p>
+                        <p class="project-description">
+                            A meditation station inspired by a hippo's jaw movement, featuring versatile 
+                            seating and movable shading components with magnetic connection.
+                        </p>
+                    </div>
+                </div>
+                <div class="project-item regular">
+                    <div class="project-image-wrapper">
+                        <!-- Use actual image: Tower perspective drawing -->
+                        <img src="data:image/svg+xml,%3Csvg width='400' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='400' height='400' fill='%236B8CAE'/%3E%3Cpath d='M200 50 L250 150 L200 250 L150 150 Z' fill='none' stroke='%23ffffff' stroke-width='2'/%3E%3Ctext x='50%25' y='80%25' font-family='Georgia' font-size='18' fill='%23ffffff' text-anchor='middle'%3ETower in Transition%3C/text%3E%3C/svg%3E" alt="Tower in Transition">
+                    </div>
+                    <div class="project-overlay">
+                        <div class="project-number">03</div>
+                        <h3 class="project-title">Tower in Transition</h3>
+                        <p class="project-meta">16 weeks | Spring Semester</p>
+                        <p class="project-description">
+                            Exploring spatial dynamics through hand-drawn perspectives—one point, two point, 
+                            and oblique drawings of a tower designed from a kit of parts.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Layout 2 -->
+            <div class="project-layout-2">
+                <div class="project-item regular">
+                    <div class="project-image-wrapper">
+                        <!-- Use actual image: ADU exterior -->
+                        <img src="data:image/svg+xml,%3Csvg width='400' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='400' height='400' fill='%23D4A574'/%3E%3Crect x='100' y='100' width='200' height='150' fill='%23ffffff' opacity='0.3'/%3E%3Crect x='100' y='260' width='200' height='40' fill='%23ffffff' opacity='0.5'/%3E%3Ctext x='50%25' y='90%25' font-family='Georgia' font-size='18' fill='%232C2C2C' text-anchor='middle'%3EAccessory Dwelling Unit%3C/text%3E%3C/svg%3E" alt="Accessory Dwelling Unit">
+                    </div>
+                    <div class="project-overlay">
+                        <div class="project-number">04</div>
+                        <h3 class="project-title">Accessory Dwelling Unit</h3>
+                        <p class="project-meta">4 weeks | Lavaca Neighborhood</p>
+                        <p class="project-description">
+                            An ADU designed to house two adults while maximizing natural light through 
+                            large windows, skylights, and passive design principles.
+                        </p>
+                    </div>
+                </div>
+                <div class="project-item regular">
+                    <div class="project-image-wrapper">
+                        <!-- Use actual image: Demonstration kitchen bio-dome -->
+                        <img src="data:image/svg+xml,%3Csvg width='400' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='400' height='400' fill='%234A4A4A'/%3E%3Ccircle cx='200' cy='200' r='120' fill='none' stroke='%23A8B8A0' stroke-width='3' opacity='0.5'/%3E%3Ctext x='50%25' y='85%25' font-family='Georgia' font-size='16' fill='%23F5F5F0' text-anchor='middle'%3EDemonstration Kitchen%3C/text%3E%3C/svg%3E" alt="Demonstration Kitchen">
+                    </div>
+                    <div class="project-overlay">
+                        <div class="project-number">05</div>
+                        <h3 class="project-title">Demonstration Kitchen</h3>
+                        <p class="project-meta">2 weeks | Wellness Center | CCCAP</p>
+                        <p class="project-description">
+                            A demonstration kitchen housed within a bio-dome crafted from ETFE, connecting 
+                            interior space to nature with sustainable materials.
+                        </p>
+                    </div>
+                </div>
+                <div class="project-item featured">
+                    <div class="project-image-wrapper">
+                        <!-- Use actual image: Casa Batllo hand drawing -->
+                        <img src="data:image/svg+xml,%3Csvg width='800' height='600' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='800' height='600' fill='%23F5F5F0'/%3E%3Cpath d='M200,500 Q200,300 300,200 T400,100' fill='none' stroke='%232C2C2C' stroke-width='2'/%3E%3Cpath d='M250,500 Q250,320 350,220 T450,120' fill='none' stroke='%232C2C2C' stroke-width='2' opacity='0.7'/%3E%3Ctext x='50%25' y='85%25' font-family='Georgia' font-size='28' fill='%232C2C2C' text-anchor='middle'%3ECasa Batlló Study%3C/text%3E%3C/svg%3E" alt="Casa Batllo architectural drawing">
+                    </div>
+                    <div class="project-overlay">
+                        <div class="project-number">06</div>
+                        <h3 class="project-title">Visual & Technical Skills</h3>
+                        <p class="project-meta">Hand Drawing | Barcelona, Spain</p>
+                        <p class="project-description">
+                            Detailed hand-drawn study of Casa Batlló, demonstrating technical drawing skills 
+                            and appreciation for architectural heritage.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Layout 3 -->
+            <div class="project-layout-3">
+                <div class="project-item regular">
+                    <div class="project-image-wrapper">
+                        <!-- Use actual image: TOD plan view -->
+                        <img src="data:image/svg+xml,%3Csvg width='500' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='500' height='400' fill='%236B8CAE'/%3E%3Crect x='50' y='50' width='100' height='80' fill='%23ffffff' opacity='0.3'/%3E%3Crect x='170' y='50' width='100' height='80' fill='%23ffffff' opacity='0.3'/%3E%3Crect x='290' y='50' width='100' height='80' fill='%23ffffff' opacity='0.3'/%3E%3Ctext x='50%25' y='85%25' font-family='Georgia' font-size='20' fill='%23ffffff' text-anchor='middle'%3ESaint Mary%27s St. TOD%3C/text%3E%3C/svg%3E" alt="Saint Mary's St TOD">
+                    </div>
+                    <div class="project-overlay">
+                        <div class="project-number">07</div>
+                        <h3 class="project-title">Saint Mary's St. TOD</h3>
+                        <p class="project-meta">4 weeks | Downtown San Antonio</p>
+                        <p class="project-description">
+                            Transit-oriented development exploring interactions between work, commercial, 
+                            social, and living spaces in the heart of downtown.
+                        </p>
+                    </div>
+                </div>
+                <div class="project-item regular">
+                    <div class="project-image-wrapper">
+                        <!-- Use actual image: Roller derby ring -->
+                        <img src="data:image/svg+xml,%3Csvg width='500' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='500' height='400' fill='%23A8B8A0'/%3E%3Cellipse cx='250' cy='200' rx='180' ry='120' fill='none' stroke='%232C2C2C' stroke-width='3'/%3E%3Ctext x='50%25' y='85%25' font-family='Georgia' font-size='18' fill='%232C2C2C' text-anchor='middle'%3EWoodlawn Park%3C/text%3E%3C/svg%3E" alt="Woodlawn Park Roller Derby">
+                    </div>
+                    <div class="project-overlay">
+                        <div class="project-number">08</div>
+                        <h3 class="project-title">Woodlawn Park Roller Derby</h3>
+                        <p class="project-meta">4 weeks | Woodlawn Park</p>
+                        <p class="project-description">
+                            A multipurpose space designed for roller derby sport, balancing functionality 
+                            and flexibility for various community activities.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process" id="process">
+        <div class="process-container">
+            <div class="section-header">
+                <div class="section-number">— METHODOLOGY</div>
+                <h2 class="section-title">Design Process</h2>
+            </div>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <h3 class="step-title">Research & Analysis</h3>
+                    <p class="step-description">
+                        Deep dive into site context, user needs, and environmental factors. 
+                        Understanding the relationship between space and human experience.
+                    </p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <h3 class="step-title">Conceptual Development</h3>
+                    <p class="step-description">
+                        Exploring ideas through sketching and modeling. Finding inspiration in 
+                        nature, movement, and the built environment.
+                    </p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <h3 class="step-title">Design Refinement</h3>
+                    <p class="step-description">
+                        Iterating on concepts using both traditional and digital tools. Balancing 
+                        sustainability, functionality, and artistic expression.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills">
+        <div class="skills-container">
+            <div class="section-header">
+                <div class="section-number">— CAPABILITIES</div>
+                <h2 class="section-title">Technical Skills</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Design Software</h3>
+                    <ul class="skill-list">
+                        <li>SketchUp <span class="skill-level">●●●●○</span></li>
+                        <li>Adobe Photoshop <span class="skill-level">●●●●○</span></li>
+                        <li>Lumion <span class="skill-level">●●●●○</span></li>
+                        <li>Rhino <span class="skill-level">●●●○○</span></li>
+                        <li>Adobe Illustrator <span class="skill-level">●●●○○</span></li>
+                        <li>InDesign <span class="skill-level">●●●○○</span></li>
+                        <li>D5 Render <span class="skill-level">●●○○○</span></li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Core Competencies</h3>
+                    <ul class="skill-list">
+                        <li>Hand Drafting <span class="skill-level">●●●●○</span></li>
+                        <li>Architectural Graphics <span class="skill-level">●●●●○</span></li>
+                        <li>3D Modeling <span class="skill-level">●●●●○</span></li>
+                        <li>Sustainable Design <span class="skill-level">●●●○○</span></li>
+                        <li>Landscape Architecture <span class="skill-level">●●●○○</span></li>
+                        <li>Residential Design <span class="skill-level">●●●○○</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline">
+        <div class="timeline-container">
+            <div class="section-header">
+                <div class="section-number" style="color: var(--accent-terra);">— JOURNEY</div>
+                <h2 class="section-title" style="color: var(--off-white);">Experience & Education</h2>
+            </div>
+            <div class="timeline-items">
+                <div class="timeline-item">
+                    <div class="timeline-date">2023 - Present</div>
+                    <h3 class="timeline-title">San Antonio College</h3>
+                    <p class="timeline-description">
+                        Department of Architecture | Developing foundational skills in architectural design, 
+                        technical drawing, and sustainable design principles. Working towards transfer to 
+                        UTSA's Architecture program.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Current</div>
+                    <h3 class="timeline-title">Independent Design Consultant</h3>
+                    <p class="timeline-description">
+                        Elbow Room ADU Builder | Providing independent designing consultancy for accessory 
+                        dwelling units, applying academic knowledge to real-world construction projects in 
+                        San Antonio, TX.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2024</div>
+                    <h3 class="timeline-title">RVK Architecture</h3>
+                    <p class="timeline-description">
+                        Job Shadow Experience | Gained practical insight into professional architectural 
+                        practice, observing project development and client interaction.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2019 - 2023</div>
+                    <h3 class="timeline-title">Sandra Day O'Connor High School</h3>
+                    <p class="timeline-description">
+                        Developed initial interest in architecture and design, building foundational 
+                        artistic and technical skills.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <h2 class="contact-title">Let's Create Together</h2>
+            <p class="contact-subtitle">
+                I'm currently seeking opportunities for internships, collaborative projects, and entry-level 
+                positions in architectural firms. If you're interested in my work or would like to discuss 
+                potential opportunities, I'd love to hear from you.
+            </p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-label">Email</div>
+                    <a href="mailto:matt.r.p0423@gmail.com" class="contact-link">matt.r.p0423@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">Phone</div>
+                    <a href="tel:+12104736934" class="contact-link">(210) 473-6934</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">Location</div>
+                    <span class="contact-link">San Antonio, Texas</span>
+                </div>
+            </div>
+            <a href="mailto:matt.r.p0423@gmail.com" class="cta-button">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">MATTHEW PIETTE</div>
+            <div class="footer-text">© 2025 All Rights Reserved</div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navigation background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements
+        document.querySelectorAll('.project-item, .process-step, .timeline-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.8s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
