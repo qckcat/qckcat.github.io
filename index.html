@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlamoSites - Modern Web Design for San Antonio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            /* Jewel Tone + Cream Palette */
+            --sandstone: #FAF7F2;
+            --warm-sand: #EDE8E0;
+            --light-sand: #F5F1ED;
+            
+            --terracotta: #9B1B30;
+            --burnt-terra: #7A1625;
+            --coral: #C12544;
+            --salmon: #D4AF37;
+            
+            --warm-magenta: #9B1B30;
+            --fuchsia: #7A1625;
+            
+            --warm-turquoise: #D4AF37;
+            --deep-turquoise: #C4A037;
+            
+            --plum: #7A1625;
+            --wine: #6D1622;
+            
+            --ochre: #D4AF37;
+            --mustard: #E8C863;
+            
+            --charcoal: #2D2D2D;
+            --slate: #4A4A4A;
+            
+            --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-display: Georgia, 'Palatino', serif;
+        }
+        
+        body {
+            font-family: var(--font-primary);
+            background: var(--sandstone);
+            color: var(--charcoal);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Tile Pattern Utility */
+        .tile-pattern {
+            position: relative;
+        }
+        
+        .tile-pattern::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+        }
+        
+        /* Navigation */
+        nav {
+            background: var(--charcoal);
+            padding: 1.5rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--sandstone);
+            font-family: var(--font-display);
+        }
+        
+        .logo-accent {
+            color: var(--coral);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--sandstone);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--coral);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--coral);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero with Mosaic Background */
+        .hero {
+            background: linear-gradient(135deg, var(--wine) 0%, var(--plum) 50%, var(--burnt-terra) 100%);
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Decorative Tile Mosaic */
+        .mosaic-grid {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: repeat(8, 1fr);
+            opacity: 0.15;
+            transform: rotate(5deg) scale(1.2);
+        }
+        
+        .mosaic-tile {
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .mosaic-tile:nth-child(4n+1) { background: var(--terracotta); }
+        .mosaic-tile:nth-child(4n+2) { background: var(--warm-turquoise); }
+        .mosaic-tile:nth-child(4n+3) { background: var(--warm-magenta); }
+        .mosaic-tile:nth-child(4n+4) { background: var(--ochre); }
+        
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 5%;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero-content h1 {
+            font-size: 6rem;
+            font-weight: 900;
+            color: white;
+            line-height: 1;
+            margin-bottom: 2rem;
+            letter-spacing: -2px;
+        }
+        
+        .hero-content h1 .highlight {
+            color: var(--coral);
+            display: block;
+            font-style: italic;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 3rem;
+            line-height: 1.7;
+        }
+        
+        .hero-ctas {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .btn {
+            padding: 1.3rem 3rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-primary {
+            background: var(--coral);
+            color: white;
+            box-shadow: 0 8px 25px rgba(250, 114, 104, 0.4);
+        }
+        
+        .btn-primary:hover {
+            background: var(--salmon);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(250, 114, 104, 0.5);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 3px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: var(--plum);
+        }
+        
+        /* Stats with Tile Accents */
+        .stats {
+            background: var(--light-sand);
+            padding: 5rem 5%;
+            position: relative;
+        }
+        
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, 
+                var(--terracotta) 0%, 
+                var(--coral) 25%, 
+                var(--warm-turquoise) 50%, 
+                var(--warm-magenta) 75%, 
+                var(--ochre) 100%);
+        }
+        
+        .stats-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+        }
+        
+        .stat-card:nth-child(1)::before { background: var(--terracotta); }
+        .stat-card:nth-child(2)::before { background: var(--warm-turquoise); }
+        .stat-card:nth-child(3)::before { background: var(--warm-magenta); }
+        .stat-card:nth-child(4)::before { background: var(--ochre); }
+        
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--charcoal);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-card:nth-child(1) .stat-number { color: var(--terracotta); }
+        .stat-card:nth-child(2) .stat-number { color: var(--warm-turquoise); }
+        .stat-card:nth-child(3) .stat-number { color: var(--warm-magenta); }
+        .stat-card:nth-child(4) .stat-number { color: var(--ochre); }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: var(--slate);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        
+        /* Section Base */
+        section {
+            padding: 7rem 5%;
+        }
+        
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+        
+        .section-tag {
+            display: inline-block;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            padding: 0.6rem 1.8rem;
+            background: var(--warm-sand);
+            color: var(--burnt-terra);
+            border-radius: 30px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-title {
+            font-size: 4.5rem;
+            font-weight: 900;
+            color: var(--charcoal);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.4rem;
+            color: var(--slate);
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        
+        /* Why Choose - Tile Pattern Background */
+        .why-choose {
+            background: white;
+            position: relative;
+        }
+        
+        .why-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+        
+        /* Mosaic Feature */
+        .mosaic-feature {
+            position: relative;
+            height: 600px;
+            background: var(--warm-sand);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        
+        .mosaic-feature-grid {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+            padding: 2rem;
+            gap: 1rem;
+        }
+        
+        .feature-tile {
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .feature-tile:hover {
+            transform: scale(1.1) rotate(5deg);
+            z-index: 10;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+        
+        .feature-tile:nth-child(6n+1) { background: linear-gradient(135deg, var(--terracotta), var(--burnt-terra)); }
+        .feature-tile:nth-child(6n+2) { background: linear-gradient(135deg, var(--warm-turquoise), var(--deep-turquoise)); }
+        .feature-tile:nth-child(6n+3) { background: linear-gradient(135deg, var(--warm-magenta), var(--fuchsia)); }
+        .feature-tile:nth-child(6n+4) { background: linear-gradient(135deg, var(--coral), var(--salmon)); }
+        .feature-tile:nth-child(6n+5) { background: linear-gradient(135deg, var(--ochre), var(--mustard)); }
+        .feature-tile:nth-child(6n+6) { background: linear-gradient(135deg, var(--plum), var(--wine)); }
+        
+        .why-content h3 {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--charcoal);
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+        
+        .why-content p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: var(--slate);
+            margin-bottom: 3rem;
+        }
+        
+        .why-points {
+            list-style: none;
+        }
+        
+        .why-points li {
+            padding: 1.8rem 0;
+            padding-left: 3.5rem;
+            position: relative;
+            font-size: 1.15rem;
+            color: var(--charcoal);
+            border-bottom: 2px solid var(--warm-sand);
+        }
+        
+        .why-points li::before {
+            content: '■';
+            position: absolute;
+            left: 0;
+            font-size: 2rem;
+        }
+        
+        .why-points li:nth-child(1)::before { color: var(--terracotta); }
+        .why-points li:nth-child(2)::before { color: var(--warm-turquoise); }
+        .why-points li:nth-child(3)::before { color: var(--warm-magenta); }
+        .why-points li:nth-child(4)::before { color: var(--ochre); }
+        
+        /* Services - Colorful Cards */
+        .services {
+            background: var(--sandstone);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 16px;
+            padding: 3.5rem 2.5rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+        }
+        
+        .service-card:nth-child(1)::before { background: linear-gradient(90deg, var(--terracotta), var(--coral)); }
+        .service-card:nth-child(2)::before { background: linear-gradient(90deg, var(--warm-turquoise), var(--deep-turquoise)); }
+        .service-card:nth-child(3)::before { background: linear-gradient(90deg, var(--warm-magenta), var(--fuchsia)); }
+        .service-card:nth-child(4)::before { background: linear-gradient(90deg, var(--ochre), var(--mustard)); }
+        .service-card:nth-child(5)::before { background: linear-gradient(90deg, var(--plum), var(--wine)); }
+        .service-card:nth-child(6)::before { background: linear-gradient(90deg, var(--coral), var(--terracotta)); }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .service-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        
+        .service-card h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+        }
+        
+        .service-card p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--slate);
+        }
+        
+        /* Pricing - Warm Background */
+        .pricing {
+            background: linear-gradient(135deg, var(--burnt-terra) 0%, var(--terracotta) 50%, var(--coral) 100%);
+            color: white;
+            position: relative;
+        }
+        
+        .pricing::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 6rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .pricing-header .section-title {
+            color: white;
+        }
+        
+        .pricing-header .section-subtitle {
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .pricing-header .value-prop {
+            font-size: 1.8rem;
+            color: var(--light-sand);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .price-card {
+            background: white;
+            color: var(--charcoal);
+            border-radius: 16px;
+            padding: 3.5rem 3rem;
+            position: relative;
+            transition: all 0.3s;
+        }
+        
+        .price-card.featured {
+            transform: scale(1.05);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border: 4px solid var(--warm-magenta);
+        }
+        
+        .price-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.2);
+        }
+        
+        .price-card.featured:hover {
+            transform: translateY(-10px) scale(1.05);
+        }
+        
+        .price-badge {
+            position: absolute;
+            top: -15px;
+            right: 30px;
+            background: var(--warm-magenta);
+            color: white;
+            padding: 0.7rem 1.8rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .price-tier {
+            font-size: 1rem;
+            color: var(--burnt-terra);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .price-amount {
+            font-size: 6rem;
+            font-weight: 900;
+            color: var(--charcoal);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+        
+        .price-value {
+            background: var(--light-sand);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-left: 5px solid var(--terracotta);
+        }
+        
+        .price-monthly {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            margin-bottom: 0.5rem;
+        }
+        
+        .price-monthly .highlight {
+            color: var(--coral);
+            font-size: 1.5rem;
+        }
+        
+        .price-compare {
+            font-size: 1rem;
+            color: var(--slate);
+            margin-bottom: 0.5rem;
+        }
+        
+        .price-compare s {
+            opacity: 0.7;
+        }
+        
+        .price-savings {
+            font-size: 1.2rem;
+            color: var(--burnt-terra);
+            font-weight: 700;
+        }
+        
+        .price-features {
+            list-style: none;
+            margin: 2.5rem 0;
+        }
+        
+        .price-features li {
+            padding: 1.2rem 0;
+            padding-left: 2.5rem;
+            position: relative;
+            font-size: 1.1rem;
+            border-bottom: 1px solid var(--warm-sand);
+        }
+        
+        .price-features li::before {
+            content: '■';
+            position: absolute;
+            left: 0;
+            color: var(--terracotta);
+            font-size: 1.5rem;
+        }
+        
+        .price-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .price-card .btn {
+            width: 100%;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        /* Context */
+        .price-context {
+            margin-top: 6rem;
+            padding: 4rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 16px;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+        
+        .price-context h3 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 3rem;
+        }
+        
+        .context-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+        
+        .context-item {
+            text-align: center;
+            background: rgba(255,255,255,0.05);
+            padding: 2.5rem;
+            border-radius: 12px;
+        }
+        
+        .context-amount {
+            font-size: 4.5rem;
+            font-weight: 900;
+            color: white;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+        
+        .context-label {
+            font-size: 1.2rem;
+            color: white;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .context-note {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        /* Portfolio */
+        .portfolio {
+            background: white;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+        
+        .portfolio-item {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        .portfolio-item:nth-child(1) {
+            grid-row: span 2;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+        
+        .portfolio-image {
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            position: relative;
+        }
+        
+        .portfolio-item:nth-child(1) .portfolio-image {
+            height: 100%;
+        }
+        
+        .portfolio-item:nth-child(1) .portfolio-image { background: linear-gradient(135deg, var(--terracotta), var(--coral)); }
+        .portfolio-item:nth-child(2) .portfolio-image { background: linear-gradient(135deg, var(--warm-turquoise), var(--deep-turquoise)); }
+        .portfolio-item:nth-child(3) .portfolio-image { background: linear-gradient(135deg, var(--warm-magenta), var(--fuchsia)); }
+        .portfolio-item:nth-child(4) .portfolio-image { background: linear-gradient(135deg, var(--ochre), var(--mustard)); }
+        .portfolio-item:nth-child(5) .portfolio-image { background: linear-gradient(135deg, var(--plum), var(--wine)); }
+        .portfolio-item:nth-child(6) .portfolio-image { background: linear-gradient(135deg, var(--coral), var(--terracotta)); }
+        
+        .portfolio-content {
+            padding: 2.5rem;
+            background: white;
+        }
+        
+        .portfolio-tags {
+            display: flex;
+            gap: 0.6rem;
+            margin-bottom: 1.2rem;
+            flex-wrap: wrap;
+        }
+        
+        .portfolio-tag {
+            background: var(--warm-sand);
+            color: var(--burnt-terra);
+            padding: 0.4rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .portfolio-content h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+        }
+        
+        .portfolio-content p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--slate);
+        }
+        
+        .portfolio-result {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid var(--warm-sand);
+            font-weight: 700;
+            color: var(--coral);
+            font-size: 1.1rem;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background: var(--sandstone);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 3.5rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            position: relative;
+            transition: all 0.3s;
+        }
+        
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+        }
+        
+        .testimonial-card:nth-child(1)::before { background: linear-gradient(90deg, var(--terracotta), var(--coral)); }
+        .testimonial-card:nth-child(2)::before { background: linear-gradient(90deg, var(--warm-turquoise), var(--deep-turquoise)); }
+        .testimonial-card:nth-child(3)::before { background: linear-gradient(90deg, var(--warm-magenta), var(--fuchsia)); }
+        
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 45px rgba(0,0,0,0.12);
+        }
+        
+        .testimonial-stars {
+            color: var(--ochre);
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonial-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--slate);
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--charcoal);
+            margin-bottom: 0.3rem;
+        }
+        
+        .testimonial-role {
+            font-size: 1rem;
+            color: var(--slate);
+        }
+        
+        /* CTA */
+        .cta {
+            background: linear-gradient(135deg, var(--warm-magenta) 0%, var(--fuchsia) 100%);
+            color: white;
+            text-align: center;
+            padding: 7rem 5%;
+            position: relative;
+        }
+        
+        .cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+        
+        .cta h2 {
+            font-size: 5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta p {
+            font-size: 1.6rem;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .btn-white {
+            background: white;
+            color: var(--warm-magenta);
+        }
+        
+        .btn-white:hover {
+            background: var(--light-sand);
+        }
+        
+        .btn-outline-white {
+            background: transparent;
+            border: 3px solid white;
+            color: white;
+        }
+        
+        .btn-outline-white:hover {
+            background: white;
+            color: var(--warm-magenta);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            color: var(--sandstone);
+            padding: 5rem 5% 3rem;
+        }
+        
+        .footer-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-brand h3 {
+            font-size: 2.5rem;
+            font-family: var(--font-display);
+            margin-bottom: 1.2rem;
+        }
+        
+        .footer-brand .accent {
+            color: var(--coral);
+        }
+        
+        .footer-brand p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: rgba(232, 212, 192, 0.7);
+        }
+        
+        .footer-column h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--coral);
+            font-weight: 700;
+        }
+        
+        .footer-column a {
+            display: block;
+            color: rgba(232, 212, 192, 0.7);
+            text-decoration: none;
+            margin-bottom: 0.8rem;
+            transition: color 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: var(--coral);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(232, 212, 192, 0.2);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(232, 212, 192, 0.5);
+        }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .stats-grid,
+            .pricing-grid,
+            .portfolio-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .why-split {
+                grid-template-columns: 1fr;
+            }
+            
+            .mosaic-feature {
+                order: -1;
+            }
+            
+            .price-card.featured {
+                transform: scale(1);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 3.5rem;
+            }
+            
+            .section-title {
+                font-size: 3rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .context-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .mosaic-grid {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Alamo<span class="logo-accent">Sites</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="home" class="hero">
+        <!-- Decorative Mosaic Grid -->
+        <div class="mosaic-grid">
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+            <div class="mosaic-tile"></div>
+        </div>
+        
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>
+                    Professional Websites
+                    <span class="highlight">That Deliver</span>
+                </h1>
+                <p class="hero-subtitle">Construction-grade web design for San Antonio businesses. Modern, vibrant, and built to perform. No agency pricing. No empty promises.</p>
+                <div class="hero-ctas">
+                    <a href="#pricing" class="btn btn-primary">See Pricing</a>
+                    <a href="#contact" class="btn btn-secondary">Free Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">$800</div>
+                <div class="stat-label">Starting At</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">2-3wk</div>
+                <div class="stat-label">Delivery</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Satisfaction</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Support</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose -->
+    <section class="why-choose">
+        <div class="section-container">
+            <div class="why-split">
+                <!-- Interactive Mosaic Feature -->
+                <div class="mosaic-feature">
+                    <div class="mosaic-feature-grid">
+                        <div class="feature-tile">🎨</div>
+                        <div class="feature-tile">💼</div>
+                        <div class="feature-tile">⚡</div>
+                        <div class="feature-tile">🏗️</div>
+                        <div class="feature-tile">📱</div>
+                        <div class="feature-tile">🔧</div>
+                        <div class="feature-tile">✓</div>
+                        <div class="feature-tile">🚀</div>
+                        <div class="feature-tile">💰</div>
+                        <div class="feature-tile">⭐</div>
+                        <div class="feature-tile">🎯</div>
+                        <div class="feature-tile">📊</div>
+                        <div class="feature-tile">🏘️</div>
+                        <div class="feature-tile">💡</div>
+                        <div class="feature-tile">🌐</div>
+                        <div class="feature-tile">📈</div>
+                        <div class="feature-tile">🛠️</div>
+                        <div class="feature-tile">✨</div>
+                        <div class="feature-tile">🎨</div>
+                        <div class="feature-tile">💼</div>
+                        <div class="feature-tile">⚡</div>
+                        <div class="feature-tile">🏗️</div>
+                        <div class="feature-tile">📱</div>
+                        <div class="feature-tile">🔧</div>
+                        <div class="feature-tile">✓</div>
+                        <div class="feature-tile">🚀</div>
+                        <div class="feature-tile">💰</div>
+                        <div class="feature-tile">⭐</div>
+                        <div class="feature-tile">🎯</div>
+                        <div class="feature-tile">📊</div>
+                        <div class="feature-tile">🏘️</div>
+                        <div class="feature-tile">💡</div>
+                        <div class="feature-tile">🌐</div>
+                        <div class="feature-tile">📈</div>
+                        <div class="feature-tile">🛠️</div>
+                        <div class="feature-tile">✨</div>
+                    </div>
+                </div>
+                
+                <div class="why-content">
+                    <span class="section-tag">Why Choose Us</span>
+                    <h3>Not Your Typical Agency</h3>
+                    <p>I'm Bailey, Director of Operations at a construction company. I manage projects, budgets, and teams every day. That same discipline goes into every website I build.</p>
+                    
+                    <ul class="why-points">
+                        <li>Construction-grade project management (real timelines, honest communication)</li>
+                        <li>Fair pricing for San Antonio's business community</li>
+                        <li>No ghosting after payment—I'm building a reputation, not running a scam</li>
+                        <li>Industry expertise in construction, property management, and service businesses</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="services">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">What We Offer</span>
+                <h2 class="section-title">Services That Deliver</h2>
+                <p class="section-subtitle">Professional websites designed to attract customers and drive sales. Every feature you need, nothing you don't.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-icon">🎨</span>
+                    <h3>Custom Web Design</h3>
+                    <p>Modern, mobile-responsive websites built on Wix Studio. Includes hosting, SEO, contact forms, Google integration, and everything you need.</p>
+                </div>
+                
+                <div class="service-card">
+                    <span class="service-icon">🏗️</span>
+                    <h3>Construction & Property Sites</h3>
+                    <p>Specialized sites for contractors, builders, property managers. Portfolio showcases, project galleries, certifications, testimonials.</p>
+                </div>
+                
+                <div class="service-card">
+                    <span class="service-icon">🔧</span>
+                    <h3>Maintenance & Support</h3>
+                    <p>Monthly plans from $99. Security updates, content changes, backups, analytics, priority support. Keep your site fast and secure.</p>
+                </div>
+                
+                <div class="service-card">
+                    <span class="service-icon">🛒</span>
+                    <h3>E-Commerce Solutions</h3>
+                    <p>Online stores with inventory management, payment processing, shipping integration. Sell 24/7 with professional storefronts.</p>
+                </div>
+                
+                <div class="service-card">
+                    <span class="service-icon">📱</span>
+                    <h3>Local SEO</h3>
+                    <p>Get found by San Antonio customers. Google My Business optimization, local keywords, citations, local search ranking.</p>
+                </div>
+                
+                <div class="service-card">
+                    <span class="service-icon">📊</span>
+                    <h3>Analytics & Reporting</h3>
+                    <p>Monthly performance reports with visitor stats, conversion rates, ROI tracking. Know exactly how your site performs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="pricing">
+        <div class="section-container">
+            <div class="pricing-header">
+                <span class="section-tag">Transparent Pricing</span>
+                <h2 class="section-title">Honest Pricing, Real Value</h2>
+                <p class="value-prop">Save $1,700-$5,000 compared to typical agencies</p>
+                <p class="section-subtitle">Most agencies charge $3,000-$15,000 for what we deliver. We believe in fair pricing for quality work.</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <div class="price-tier">Foundation</div>
+                    <div class="price-amount">$800</div>
+                    
+                    <div class="price-value">
+                        <p class="price-monthly">Just <span class="highlight">$67/month</span> over 12 months</p>
+                        <p class="price-compare"><s>Typical agencies: $2,500-$3,500</s></p>
+                        <p class="price-savings">You save: $1,700+</p>
+                    </div>
+                    
+                    <ul class="price-features">
+                        <li>Single-page professional website</li>
+                        <li>Mobile-responsive design</li>
+                        <li>Contact form & Google Maps</li>
+                        <li>Basic SEO optimization</li>
+                        <li>Social media integration</li>
+                        <li>2-week delivery</li>
+                        <li>30 days support</li>
+                    </ul>
+                    
+                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                </div>
+                
+                <div class="price-card featured">
+                    <div class="price-badge">Most Popular</div>
+                    <div class="price-tier">Professional</div>
+                    <div class="price-amount">$1,800</div>
+                    
+                    <div class="price-value">
+                        <p class="price-monthly">Only <span class="highlight">$150/month</span> over 12 months</p>
+                        <p class="price-compare"><s>Typical agencies: $5,000-$7,000</s></p>
+                        <p class="price-savings">You save: $3,200+</p>
+                    </div>
+                    
+                    <ul class="price-features">
+                        <li>5-page custom website</li>
+                        <li>Premium responsive design</li>
+                        <li>Photo gallery / portfolio</li>
+                        <li>Advanced contact forms</li>
+                        <li>Enhanced SEO & local search</li>
+                        <li>Blog setup (optional)</li>
+                        <li>Google My Business optimization</li>
+                        <li>3-week delivery</li>
+                        <li>60 days support</li>
+                        <li><strong>FREE first month maintenance</strong></li>
+                    </ul>
+                    
+                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                </div>
+                
+                <div class="price-card">
+                    <div class="price-tier">Premium</div>
+                    <div class="price-amount">$5,000</div>
+                    
+                    <div class="price-value">
+                        <p class="price-monthly">About <span class="highlight">$417/month</span> over 12 months</p>
+                        <p class="price-compare"><s>Typical agencies: $10,000-$15,000</s></p>
+                        <p class="price-savings">You save: $5,000+</p>
+                    </div>
+                    
+                    <ul class="price-features">
+                        <li>10+ page custom website</li>
+                        <li>E-commerce (up to 50 products)</li>
+                        <li>Custom booking/scheduling</li>
+                        <li>Video integration</li>
+                        <li>Advanced SEO & analytics</li>
+                        <li>Blog with CMS training</li>
+                        <li>Client portal options</li>
+                        <li>Unlimited revisions (in scope)</li>
+                        <li>4-6 week delivery</li>
+                        <li>90 days priority support</li>
+                        <li><strong>3 months FREE maintenance</strong></li>
+                    </ul>
+                    
+                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                </div>
+            </div>
+            
+            <div class="price-context">
+                <h3>Put It In Perspective</h3>
+                <div class="context-grid">
+                    <div class="context-item">
+                        <div class="context-amount">$67</div>
+                        <div class="context-label">Foundation Package</div>
+                        <div class="context-note">= 2 coffees per week</div>
+                    </div>
+                    <div class="context-item">
+                        <div class="context-amount">$150</div>
+                        <div class="context-label">Professional Package</div>
+                        <div class="context-note">= 1 family dinner per month</div>
+                    </div>
+                    <div class="context-item">
+                        <div class="context-amount">$417</div>
+                        <div class="context-label">Premium Package</div>
+                        <div class="context-note">= Less than a billboard per month</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="portfolio">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">Our Work</span>
+                <h2 class="section-title">Real Projects, Real Results</h2>
+                <p class="section-subtitle">Professional websites for San Antonio businesses across every industry.</p>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">🏗️</div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Construction</span>
+                            <span class="portfolio-tag">San Antonio</span>
+                        </div>
+                        <h3>Alamo ADU Builders</h3>
+                        <p>Complete redesign for ADU construction company. Modern portfolio with project galleries, service pages, and lead capture.</p>
+                        <p class="portfolio-result">↑ 150% increase in qualified leads in 3 months</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-image">🏘️</div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Property</span>
+                        </div>
+                        <h3>Sunday Best Group</h3>
+                        <p>Property showcase for rental portfolio with booking integration.</p>
+                        <p class="portfolio-result">↑ 200% more inquiries</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-image">💇</div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Beauty</span>
+                        </div>
+                        <h3>River Walk Salon</h3>
+                        <p>Modern salon website with online booking and service menu.</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-image">🍽️</div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Restaurant</span>
+                        </div>
+                        <h3>Mi Tierra Cantina</h3>
+                        <p>Full restaurant site with online ordering and event booking.</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-image">🔧</div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Services</span>
+                        </div>
+                        <h3>Texas HVAC Pro</h3>
+                        <p>Service website with emergency contact and service area mapping.</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-image">⚖️</div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Legal</span>
+                        </div>
+                        <h3>Ramirez Law Firm</h3>
+                        <p>Professional law firm site with practice areas and attorney profiles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">Client Feedback</span>
+                <h2 class="section-title">What Our Clients Say</h2>
+                <p class="section-subtitle">Real testimonials from San Antonio business owners</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Bailey understood our construction business immediately. The site generates real leads—something our last designer never delivered. Professional and on time."</p>
+                    <p class="testimonial-author">Miguel Rodriguez</p>
+                    <p class="testimonial-role">Owner, Rodriguez Roofing</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Finally, a designer who speaks our language. Bailey knows construction, understands deadlines, and delivers. Our new site has already brought in new business."</p>
+                    <p class="testimonial-author">James Patterson</p>
+                    <p class="testimonial-role">Alamo Custom Builders</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"We needed a site that showcased our properties without looking generic. AlamoSites delivered exactly what we wanted, and support has been excellent."</p>
+                    <p class="testimonial-author">Sarah Chen</p>
+                    <p class="testimonial-role">Sunday Best Group</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="section-container">
+            <h2>Ready To Get Started?</h2>
+            <p>Free consultation. No pressure. Just honest conversation about your business.</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-white">Let's Talk</a>
+                <a href="#pricing" class="btn btn-outline-white">See All Pricing</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>Alamo<span class="accent">Sites</span></h3>
+                <p>Construction-grade web design for San Antonio businesses. Professional websites that work as hard as you do.</p>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Services</h4>
+                <a href="#services">Web Design</a>
+                <a href="#services">Construction Sites</a>
+                <a href="#services">E-Commerce</a>
+                <a href="#services">SEO Services</a>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Company</h4>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+            
+            <div class="footer-column">
+                <h4>San Antonio</h4>
+                <a href="#">Stone Oak</a>
+                <a href="#">Alamo Ranch</a>
+                <a href="#">Downtown</a>
+                <a href="#">All Areas</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 AlamoSites | Proudly serving San Antonio, Texas | (210) 555-SITE</p>
+        </div>
+    </footer>
+
+</body>
+</html>
