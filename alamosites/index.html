@@ -7,19 +7,20 @@
     <meta name="description" content="{{BusinessName}} delivers modern, professional websites built in Wix Studio for San Antonio small businesses. Transparent pricing, local expertise, fast turnaround.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #1e3a8a;
-            --secondary: #047857;
-            --accent: #7c3aed;
-            --highlight: #d97706;
-            --neutral-100: #faf8f5;
-            --neutral-200: #f3f4f6;
-            --neutral-700: #374151;
-            --neutral-900: #1f2937;
-            --font-heading: 'Montserrat', sans-serif;
-            --font-body: 'Open Sans', sans-serif;
+            --primary: #9f1239;
+            --secondary: #0f766e;
+            --accent: #4338ca;
+            --highlight: #ca8a04;
+            --neutral-100: #fefce8;
+            --neutral-200: #fef3c7;
+            --neutral-300: #f5f5f4;
+            --neutral-700: #44403c;
+            --neutral-900: #18181b;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
         }
         
         * {
@@ -31,38 +32,39 @@
         body {
             font-family: var(--font-body);
             color: var(--neutral-900);
-            line-height: 1.6;
-            background: var(--neutral-100);
+            line-height: 1.7;
+            background: white;
         }
         
         h1, h2, h3, h4, h5, h6 {
             font-family: var(--font-heading);
-            font-weight: 700;
+            font-weight: 800;
             line-height: 1.2;
         }
         
-        h1 { font-size: 2.5rem; }
-        h2 { font-size: 2rem; }
-        h3 { font-size: 1.5rem; }
+        h1 { font-size: 3.5rem; }
+        h2 { font-size: 2.75rem; }
+        h3 { font-size: 1.875rem; }
+        h4 { font-size: 1.5rem; }
         
         p { margin-bottom: 1rem; }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 2rem;
         }
         
         .container-wide {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 2rem;
         }
         
         /* Header */
         header {
             background: white;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -72,15 +74,16 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 0;
+            padding: 1.25rem 0;
         }
         
         .logo {
             font-family: var(--font-heading);
-            font-size: 1.5rem;
-            font-weight: 800;
+            font-size: 1.75rem;
+            font-weight: 900;
             color: var(--primary);
             text-decoration: none;
+            letter-spacing: -0.02em;
         }
         
         .logo span {
@@ -89,7 +92,7 @@
         
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             list-style: none;
         }
         
@@ -97,7 +100,9 @@
             color: var(--neutral-700);
             text-decoration: none;
             font-weight: 600;
+            font-size: 0.95rem;
             transition: color 0.3s;
+            letter-spacing: 0.01em;
         }
         
         .nav-links a:hover {
@@ -107,18 +112,20 @@
         .cta-button {
             background: var(--highlight);
             color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 6px;
+            padding: 0.875rem 2rem;
+            border-radius: 4px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 0.95rem;
             transition: all 0.3s;
             display: inline-block;
+            letter-spacing: 0.02em;
         }
         
         .cta-button:hover {
-            background: #b45309;
+            background: #a16207;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(217,119,6,0.3);
+            box-shadow: 0 6px 20px rgba(202,138,4,0.3);
         }
         
         .cta-button-primary {
@@ -126,52 +133,88 @@
         }
         
         .cta-button-primary:hover {
-            background: #1e40af;
+            background: #881337;
+            box-shadow: 0 6px 20px rgba(159,18,57,0.3);
         }
         
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
             color: white;
-            padding: 6rem 0;
+            padding: 8rem 0 6rem;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
         }
         
         .hero h1 {
-            font-size: 3rem;
+            font-size: 4rem;
             margin-bottom: 1.5rem;
             line-height: 1.1;
+            letter-spacing: -0.02em;
         }
         
         .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-            max-width: 700px;
+            font-size: 1.375rem;
+            margin-bottom: 3rem;
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
             opacity: 0.95;
-        }
-        
-        .hero-cta-group {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
+            font-weight: 500;
         }
         
         /* Section Styles */
         section {
-            padding: 5rem 0;
+            padding: 6rem 0;
         }
         
         .section-header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
+        }
+        
+        .section-label {
+            color: var(--secondary);
+            font-size: 0.875rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
         }
         
         .section-header h2 {
-            color: var(--primary);
-            margin-bottom: 1rem;
+            color: var(--neutral-900);
+            margin-bottom: 1.25rem;
         }
         
         .section-header p {
@@ -179,297 +222,185 @@
             max-width: 700px;
             margin: 0 auto;
             font-size: 1.125rem;
+            line-height: 1.8;
         }
         
-        /* Why AlamoSites */
-        .why-grid {
+        /* Services Section */
+        .services {
+            background: var(--neutral-300);
+        }
+        
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
             margin-top: 3rem;
         }
         
-        .why-card {
+        .service-card {
             background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            transition: all 0.3s;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            transition: all 0.4s;
         }
         
-        .why-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
         }
         
-        .why-card h3 {
+        .service-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+        }
+        
+        .service-content {
+            padding: 2.5rem;
+        }
+        
+        .service-tag {
             color: var(--secondary);
-            margin-bottom: 1rem;
-        }
-        
-        .icon {
-            font-size: 2.5rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
             margin-bottom: 1rem;
             display: block;
         }
         
+        .service-content h3 {
+            color: var(--neutral-900);
+            margin-bottom: 1rem;
+        }
+        
+        .service-content p {
+            color: var(--neutral-700);
+            line-height: 1.8;
+        }
+        
         /* Pricing Section */
         .pricing {
-            background: var(--neutral-200);
+            background: white;
+        }
+        
+        .pricing-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            font-size: 1.125rem;
+            color: var(--neutral-700);
         }
         
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2.5rem;
             margin-top: 3rem;
         }
         
         .pricing-card {
             background: white;
+            border: 2px solid var(--neutral-300);
             border-radius: 12px;
-            padding: 2.5rem;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            padding: 3rem 2.5rem;
             position: relative;
-            border: 3px solid transparent;
             transition: all 0.3s;
         }
         
         .pricing-card:hover {
-            border-color: var(--accent);
-            transform: scale(1.02);
+            border-color: var(--primary);
+            box-shadow: 0 16px 48px rgba(159,18,57,0.12);
+            transform: translateY(-4px);
         }
         
         .pricing-card.featured {
-            border-color: var(--accent);
-            box-shadow: 0 8px 32px rgba(124,58,237,0.2);
+            border-color: var(--primary);
+            border-width: 3px;
+            background: linear-gradient(180deg, white 0%, var(--neutral-100) 100%);
         }
         
         .pricing-badge {
             position: absolute;
-            top: -12px;
-            right: 20px;
-            background: var(--accent);
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
             color: white;
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 1.5rem;
             border-radius: 20px;
-            font-size: 0.875rem;
-            font-weight: 700;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
         }
         
         .pricing-card h3 {
-            color: var(--primary);
-            font-size: 1.75rem;
-            margin-bottom: 0.5rem;
+            color: var(--neutral-900);
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+            text-align: center;
         }
         
         .pricing-card .price {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--neutral-900);
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--primary);
             margin-bottom: 0.5rem;
+            text-align: center;
+            font-family: var(--font-heading);
         }
         
         .pricing-card .price-range {
             color: var(--neutral-700);
             font-size: 1rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 600;
         }
         
         .pricing-card ul {
             list-style: none;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
         
         .pricing-card li {
-            padding: 0.75rem 0;
-            border-bottom: 1px solid var(--neutral-200);
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--neutral-300);
             display: flex;
             align-items: flex-start;
+            font-size: 0.95rem;
+        }
+        
+        .pricing-card li:last-child {
+            border-bottom: none;
         }
         
         .pricing-card li:before {
             content: "✓";
             color: var(--secondary);
             font-weight: 700;
-            margin-right: 0.75rem;
+            margin-right: 1rem;
             font-size: 1.25rem;
+            flex-shrink: 0;
         }
         
-        /* Add-ons Section */
-        .addons-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-        
-        .addon-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid var(--highlight);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-        }
-        
-        .addon-card h4 {
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-        
-        .addon-price {
-            font-weight: 700;
-            color: var(--highlight);
-            font-size: 1.125rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        /* Maintenance Plans */
-        .maintenance {
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
-            color: white;
-        }
-        
-        .maintenance .section-header h2,
-        .maintenance .section-header p {
-            color: white;
-        }
-        
-        .maintenance-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .maintenance-card {
-            background: rgba(255,255,255,0.95);
-            color: var(--neutral-900);
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-        }
-        
-        .maintenance-card h3 {
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-        
-        .maintenance-card .plan-price {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--secondary);
-            margin-bottom: 1.5rem;
-        }
-        
-        .maintenance-card .plan-price span {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--neutral-700);
-        }
-        
-        .maintenance-card ul {
-            list-style: none;
-        }
-        
-        .maintenance-card li {
-            padding: 0.5rem 0;
-            display: flex;
-            align-items: flex-start;
-        }
-        
-        .maintenance-card li:before {
-            content: "✓";
-            color: var(--secondary);
-            font-weight: 700;
-            margin-right: 0.75rem;
-        }
-        
-        /* Industries Section */
-        .industries-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-        
-        .industry-card {
-            background: white;
-            padding: 2rem 1.5rem;
-            border-radius: 8px;
+        .pricing-cta {
+            width: 100%;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-            transition: all 0.3s;
-        }
-        
-        .industry-card:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-4px);
-        }
-        
-        .industry-card .icon {
-            font-size: 3rem;
-        }
-        
-        .industry-card h4 {
-            margin-top: 0.5rem;
-        }
-        
-        /* Process Section */
-        .process {
-            background: var(--neutral-200);
-        }
-        
-        .process-timeline {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .process-step {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            position: relative;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-        
-        .step-number {
-            position: absolute;
-            top: -15px;
-            left: 20px;
-            background: var(--accent);
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 1.25rem;
-        }
-        
-        .process-step h4 {
-            color: var(--primary);
-            margin-top: 1rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .process-step .timeline {
-            color: var(--highlight);
-            font-weight: 600;
-            font-size: 0.875rem;
-            margin-bottom: 0.5rem;
         }
         
         /* Portfolio Section */
+        .portfolio {
+            background: var(--neutral-300);
+        }
+        
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
             margin-top: 3rem;
         }
         
@@ -477,255 +408,309 @@
             background: white;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-            transition: all 0.3s;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            transition: all 0.4s;
         }
         
         .portfolio-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+            transform: translateY(-12px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
         }
         
-        .portfolio-item img {
+        .portfolio-image {
             width: 100%;
-            height: 240px;
+            height: 320px;
             object-fit: cover;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
         }
         
         .portfolio-info {
-            padding: 1.5rem;
+            padding: 2.5rem;
         }
         
         .portfolio-info h4 {
-            color: var(--primary);
-            margin-bottom: 0.5rem;
+            color: var(--neutral-900);
+            margin-bottom: 0.75rem;
+            font-size: 1.75rem;
         }
         
-        .portfolio-tag {
-            display: inline-block;
-            background: var(--neutral-200);
-            color: var(--neutral-700);
-            padding: 0.25rem 0.75rem;
-            border-radius: 4px;
+        .portfolio-category {
+            color: var(--secondary);
             font-size: 0.875rem;
-            margin-top: 0.5rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
         }
         
-        /* Testimonials */
+        .portfolio-info p {
+            color: var(--neutral-700);
+            line-height: 1.7;
+        }
+        
+        /* Testimonials Section */
         .testimonials {
-            background: var(--neutral-200);
+            background: white;
         }
         
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
             margin-top: 3rem;
         }
         
         .testimonial-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            background: var(--neutral-300);
+            padding: 2.5rem;
+            border-radius: 8px;
             position: relative;
         }
         
-        .testimonial-card:before {
-            content: """;
-            font-size: 4rem;
-            color: var(--accent);
-            opacity: 0.2;
-            position: absolute;
-            top: 10px;
-            left: 20px;
-            font-family: Georgia, serif;
+        .stars {
+            color: var(--highlight);
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
         }
         
         .testimonial-text {
+            color: var(--neutral-700);
+            margin-bottom: 2rem;
+            line-height: 1.8;
             font-style: italic;
-            margin-bottom: 1.5rem;
-            position: relative;
-            z-index: 1;
         }
         
         .testimonial-author {
-            font-weight: 600;
-            color: var(--primary);
-        }
-        
-        .testimonial-company {
-            color: var(--neutral-700);
-            font-size: 0.875rem;
-        }
-        
-        /* San Antonio Focus */
-        .sa-focus {
-            background: white;
-        }
-        
-        .sa-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-top: 3rem;
-            align-items: center;
-        }
-        
-        .sa-neighborhoods {
-            list-style: none;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.75rem;
-        }
-        
-        .sa-neighborhoods li {
-            padding: 0.75rem;
-            background: var(--neutral-200);
-            border-radius: 6px;
-            font-weight: 600;
-            color: var(--neutral-700);
-        }
-        
-        .sa-neighborhoods li:before {
-            content: "📍 ";
-            margin-right: 0.5rem;
-        }
-        
-        .sa-content h3 {
-            color: var(--secondary);
-            margin-bottom: 1rem;
-        }
-        
-        /* Contact Section */
-        .contact {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-        }
-        
-        .contact .section-header h2,
-        .contact .section-header p {
-            color: white;
-        }
-        
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-        
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-        
-        .contact-method {
-            display: flex;
-            gap: 1rem;
-            align-items: flex-start;
-        }
-        
-        .contact-method .icon {
-            font-size: 2rem;
-            margin-bottom: 0;
-        }
-        
-        .contact-method h4 {
-            margin-bottom: 0.5rem;
-        }
-        
-        .contact-method a {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        
-        .contact-method a:hover {
-            text-decoration: underline;
-        }
-        
-        .contact-form {
-            background: rgba(255,255,255,0.95);
-            padding: 2rem;
-            border-radius: 12px;
-            color: var(--neutral-900);
-        }
-        
-        .contact-form h3 {
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--neutral-700);
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 2px solid var(--neutral-200);
-            border-radius: 6px;
-            font-family: var(--font-body);
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-        
-        .form-group textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-        
-        .submit-button {
-            background: var(--highlight);
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 6px;
-            font-size: 1rem;
             font-weight: 700;
-            cursor: pointer;
-            width: 100%;
+            color: var(--neutral-900);
+            font-size: 1rem;
+        }
+        
+        /* Why Us Section */
+        .why-us {
+            background: var(--neutral-900);
+            color: white;
+        }
+        
+        .why-us .section-header h2,
+        .why-us .section-label {
+            color: white;
+        }
+        
+        .why-us .section-header p {
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .why-card {
+            text-align: center;
+        }
+        
+        .why-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+        }
+        
+        .why-card h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .why-card p {
+            color: rgba(255,255,255,0.8);
+            line-height: 1.8;
+        }
+        
+        /* Maintenance Section */
+        .maintenance {
+            background: var(--neutral-100);
+        }
+        
+        .maintenance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        .maintenance-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 2px solid var(--neutral-300);
             transition: all 0.3s;
         }
         
-        .submit-button:hover {
-            background: #b45309;
-            transform: translateY(-2px);
+        .maintenance-card:hover {
+            border-color: var(--secondary);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(15,118,110,0.15);
+        }
+        
+        .maintenance-card h3 {
+            color: var(--neutral-900);
+            margin-bottom: 1rem;
+            font-size: 1.875rem;
+        }
+        
+        .maintenance-card .plan-price {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--secondary);
+            margin-bottom: 2rem;
+            font-family: var(--font-heading);
+        }
+        
+        .maintenance-card .plan-price span {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--neutral-700);
+            font-family: var(--font-body);
+        }
+        
+        .maintenance-card ul {
+            list-style: none;
+        }
+        
+        .maintenance-card li {
+            padding: 0.75rem 0;
+            display: flex;
+            align-items: flex-start;
+            color: var(--neutral-700);
+        }
+        
+        .maintenance-card li:before {
+            content: "✓";
+            color: var(--secondary);
+            font-weight: 700;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        /* Blog Section */
+        .blog {
+            background: white;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .blog-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+        }
+        
+        .blog-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
+        }
+        
+        .blog-content {
+            padding: 2rem;
+        }
+        
+        .blog-date {
+            color: var(--neutral-700);
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        .blog-content h4 {
+            color: var(--neutral-900);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+        
+        .blog-content p {
+            color: var(--neutral-700);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        .read-more {
+            color: var(--primary);
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+        
+        .read-more:hover {
+            color: var(--accent);
+        }
+        
+        /* Contact CTA */
+        .contact-cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            text-align: center;
+            padding: 6rem 0;
+        }
+        
+        .contact-cta h2 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 3rem;
+        }
+        
+        .contact-cta p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
         }
         
         /* Footer */
         footer {
             background: var(--neutral-900);
             color: white;
-            padding: 3rem 0 1.5rem;
+            padding: 4rem 0 2rem;
         }
         
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
         }
         
         .footer-section h4 {
-            color: var(--accent);
-            margin-bottom: 1rem;
+            color: var(--highlight);
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+        }
+        
+        .footer-brand p {
+            color: rgba(255,255,255,0.7);
+            line-height: 1.8;
+            margin-top: 1rem;
         }
         
         .footer-section ul {
@@ -733,49 +718,61 @@
         }
         
         .footer-section li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
         }
         
         .footer-section a {
-            color: white;
+            color: rgba(255,255,255,0.7);
             text-decoration: none;
             transition: color 0.3s;
         }
         
         .footer-section a:hover {
-            color: var(--accent);
+            color: white;
         }
         
         .footer-bottom {
             border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 1.5rem;
+            padding-top: 2rem;
             text-align: center;
-            color: rgba(255,255,255,0.6);
+            color: rgba(255,255,255,0.5);
+            font-size: 0.875rem;
         }
         
         /* Style Sampler */
         .style-sampler {
-            background: var(--neutral-200);
-            padding: 3rem 0;
+            background: var(--neutral-300);
+            padding: 4rem 0;
         }
         
         .palette-swatches {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
-            margin: 2rem 0;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin: 2.5rem 0;
         }
         
         .swatch {
-            height: 100px;
-            border-radius: 8px;
+            height: 140px;
+            border-radius: 12px;
             display: flex;
-            align-items: flex-end;
-            padding: 1rem;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.5rem;
             color: white;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 0.875rem;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+        
+        .swatch-label {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .swatch-hex {
+            font-size: 0.75rem;
+            opacity: 0.9;
         }
         
         .swatch.primary { background: var(--primary); }
@@ -786,61 +783,85 @@
         .swatch.neutral-dark { background: var(--neutral-900); }
         
         .type-sample {
-            margin-top: 2rem;
+            margin-top: 3rem;
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
         }
         
         .type-sample h1 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: var(--primary);
+            margin-bottom: 1rem;
         }
         
         .type-sample p {
-            font-size: 1rem;
+            font-size: 1.125rem;
             color: var(--neutral-700);
+            line-height: 1.8;
         }
         
         /* Responsive */
+        @media (max-width: 1024px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
             }
             
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
             
             .hero p {
-                font-size: 1rem;
+                font-size: 1.125rem;
             }
             
             h2 {
-                font-size: 1.5rem;
+                font-size: 2rem;
             }
             
+            .services-grid,
             .pricing-grid,
             .maintenance-grid,
-            .contact-container,
-            .sa-grid {
+            .blog-grid {
                 grid-template-columns: 1fr;
             }
             
-            .sa-neighborhoods {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
                 grid-template-columns: 1fr;
             }
             
             section {
-                padding: 3rem 0;
+                padding: 4rem 0;
             }
         }
         
         @media (max-width: 480px) {
             .hero h1 {
-                font-size: 1.75rem;
+                font-size: 2rem;
             }
             
             .pricing-card,
             .maintenance-card {
-                padding: 1.5rem;
+                padding: 2rem 1.5rem;
+            }
+            
+            .container,
+            .container-wide {
+                padding: 0 1.25rem;
             }
         }
     </style>
@@ -852,10 +873,10 @@
             <nav>
                 <a href="#" class="logo">Alamo<span>Sites</span></a>
                 <ul class="nav-links">
-                    <li><a href="#why">Why Us</a></li>
+                    <li><a href="#services">Services</a></li>
                     <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="#portfolio">Work</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
                 </ul>
                 <a href="#contact" class="cta-button">Get Started</a>
             </nav>
@@ -865,52 +886,47 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Modern Websites for San Antonio Businesses</h1>
-            <p>Professional web design built in Wix Studio. Transparent pricing, fast turnaround, local expertise. From construction contractors to salons, we deliver websites that work as hard as you do.</p>
-            <div class="hero-cta-group">
-                <a href="#pricing" class="cta-button cta-button-primary">View Pricing</a>
-                <a href="#contact" class="cta-button">Schedule Consultation</a>
+            <div class="hero-content">
+                <div class="hero-badge">Wix Studio Specialists | San Antonio, TX</div>
+                <h1>Stunning Websites<br>That Drive Profit</h1>
+                <p>In today's digital landscape, having a website that captures attention and drives results is essential. We specialize in creating visually stunning, high-performance websites that help your San Antonio business stand out.</p>
+                <a href="#pricing" class="cta-button cta-button-primary">View Our Pricing</a>
             </div>
         </div>
     </section>
 
-    <!-- Why AlamoSites -->
-    <section id="why">
-        <div class="container">
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container-wide">
             <div class="section-header">
-                <h2>Why Choose AlamoSites</h2>
-                <p>We're not another cookie-cutter web agency. We're your local San Antonio partner with real industry experience and a commitment to clarity.</p>
+                <div class="section-label">Our Services</div>
+                <h2>Unleash Your Brand's Potential</h2>
+                <p>We specialize in crafting digital experiences that captivate and convert. Whether you're launching a new brand, revamping your online presence, or need a website that works as hard as you do, we're here to bring your ideas to life.</p>
             </div>
-            <div class="why-grid">
-                <div class="why-card">
-                    <span class="icon">🏗️</span>
-                    <h3>Construction Industry Expertise</h3>
-                    <p>As Director of Operations for an ADU construction company, we understand contractor workflows, compliance needs, and how to showcase your work to win bids.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image"></div>
+                    <div class="service-content">
+                        <span class="service-tag">Wix Studio Web Design</span>
+                        <h3>Custom Website Design</h3>
+                        <p>Your website is more than just a digital storefront—it's the heart of your brand online. We create responsive, visually appealing websites on Wix Studio, tailored to reflect your unique identity and engage your audience. From service businesses to contractor portfolios, we design with purpose, ensuring your site not only looks great but also performs seamlessly.</p>
+                    </div>
                 </div>
-                <div class="why-card">
-                    <span class="icon">🎯</span>
-                    <h3>Wix Studio Specialists</h3>
-                    <p>Every site is built in Wix Studio—modern, powerful, and easy for you to update yourself. No confusing WordPress plugins or hidden monthly fees.</p>
+                <div class="service-card">
+                    <div class="service-image"></div>
+                    <div class="service-content">
+                        <span class="service-tag">Crafting & Defining Brands</span>
+                        <h3>Logo Design + Branding</h3>
+                        <p>Your brand is your story, and we help you tell it with a powerful logo and cohesive branding. Our design process is rooted in understanding your vision and values, resulting in a brand identity that's memorable, impactful, and true to who you are. Whether you're starting fresh or looking to rebrand, we deliver logos and branding packages that leave a lasting impression.</p>
+                    </div>
                 </div>
-                <div class="why-card">
-                    <span class="icon">📍</span>
-                    <h3>San Antonio Local</h3>
-                    <p>We know Stone Oak, Alamo Ranch, Southtown, and every neighborhood in between. Your website speaks to local customers because we are local customers.</p>
-                </div>
-                <div class="why-card">
-                    <span class="icon">💰</span>
-                    <h3>Transparent Pricing</h3>
-                    <p>No surprise fees. No "call for quote" runaround. You see exactly what you're getting and what it costs—before you commit.</p>
-                </div>
-                <div class="why-card">
-                    <span class="icon">⚡</span>
-                    <h3>Fast Turnaround</h3>
-                    <p>Starter sites in 1–2 weeks. Professional builds in 2–3 weeks. Premium projects in 3–5 weeks. We respect your time and deadlines.</p>
-                </div>
-                <div class="why-card">
-                    <span class="icon">🤝</span>
-                    <h3>Personal Service</h3>
-                    <p>You work directly with the owner—no account managers, no outsourced support. Just clear communication and results.</p>
+                <div class="service-card">
+                    <div class="service-image"></div>
+                    <div class="service-content">
+                        <span class="service-tag">Designs That Captivate</span>
+                        <h3>Graphic Design</h3>
+                        <p>Your visuals should do more than just look good—they should communicate your message and resonate with your audience. Our graphic design services combine creativity with strategy to capture attention and align with your brand's goals. From marketing materials to social media graphics and beyond, we create impactful designs that make your brand stand out in the marketplace.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -920,8 +936,9 @@
     <section id="pricing" class="pricing">
         <div class="container-wide">
             <div class="section-header">
+                <div class="section-label">Transparent Pricing</div>
                 <h2>Website Design Packages</h2>
-                <p>Choose the package that fits your business size and goals. Every package includes mobile design, SEO basics, and post-launch support.</p>
+                <p>Choose the package that fits your business size and goals. Every package includes mobile design, SEO basics, and post-launch support. No hidden fees, no surprises—just clear pricing and exceptional results.</p>
             </div>
             <div class="pricing-grid">
                 <!-- Starter Package -->
@@ -930,16 +947,16 @@
                     <div class="price">$800</div>
                     <div class="price-range">$800 – $1,200</div>
                     <ul>
-                        <li>3-page website (Home, About/Services, Contact)</li>
+                        <li>3-page website</li>
                         <li>Mobile-responsive design</li>
                         <li>Basic SEO setup</li>
                         <li>Contact form integration</li>
                         <li>Social media links</li>
-                        <li>Google My Business optimization guidance</li>
+                        <li>Google Business guidance</li>
                         <li>1 round of revisions</li>
                         <li>30 days post-launch support</li>
                     </ul>
-                    <a href="#contact" class="cta-button cta-button-primary">Get Started</a>
+                    <a href="#contact" class="cta-button cta-button-primary pricing-cta">Get Started</a>
                 </div>
                 
                 <!-- Professional Package -->
@@ -949,17 +966,17 @@
                     <div class="price">$1,500</div>
                     <div class="price-range">$1,500 – $2,500</div>
                     <ul>
-                        <li>5-page website (Home, About, Services, Gallery/Portfolio, Contact)</li>
-                        <li>Advanced mobile-responsive design</li>
-                        <li>Enhanced SEO with keyword research</li>
-                        <li>Contact form + email automation</li>
+                        <li>5-page website</li>
+                        <li>Advanced responsive design</li>
+                        <li>Enhanced SEO with keywords</li>
+                        <li>Contact form + automation</li>
                         <li>Social media integration</li>
-                        <li>Photo gallery or portfolio showcase</li>
+                        <li>Photo gallery showcase</li>
                         <li>Testimonials section</li>
                         <li>2 rounds of revisions</li>
                         <li>60 days post-launch support</li>
                     </ul>
-                    <a href="#contact" class="cta-button">Get Started</a>
+                    <a href="#contact" class="cta-button pricing-cta">Get Started</a>
                 </div>
                 
                 <!-- Premium Package -->
@@ -968,71 +985,135 @@
                     <div class="price">$3,000</div>
                     <div class="price-range">$3,000 – $5,000</div>
                     <ul>
-                        <li>10+ page website with full site architecture</li>
+                        <li>10+ page website</li>
                         <li>Multiple service subpages</li>
-                        <li>Blog setup with initial posts</li>
+                        <li>Blog setup with posts</li>
                         <li>FAQ and resources pages</li>
-                        <li>Portfolio case studies with detailed layouts</li>
+                        <li>Portfolio case studies</li>
                         <li>Advanced SEO strategy</li>
-                        <li>Newsletter signup integration</li>
-                        <li>Advanced contact forms with automation</li>
+                        <li>Newsletter integration</li>
+                        <li>Advanced automation</li>
                         <li>3 rounds of revisions</li>
                         <li>90 days post-launch support</li>
                     </ul>
-                    <a href="#contact" class="cta-button cta-button-primary">Get Started</a>
+                    <a href="#contact" class="cta-button cta-button-primary pricing-cta">Get Started</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Add-Ons -->
-    <section id="addons">
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
         <div class="container">
             <div class="section-header">
-                <h2>Add-On Services</h2>
-                <p>Enhance your website with specialized features tailored to your business needs.</p>
+                <div class="section-label">Featured Projects</div>
+                <h2>Our Portfolio</h2>
+                <p>Recent projects showcasing our range across San Antonio industries and package tiers.</p>
             </div>
-            <div class="addons-grid">
-                <div class="addon-card">
-                    <h4>Additional Pages</h4>
-                    <div class="addon-price">$150 – $300/page</div>
-                    <p>Expand your site with custom landing pages, service details, or location pages.</p>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image"></div>
+                    <div class="portfolio-info">
+                        <div class="portfolio-category">Construction</div>
+                        <h4>Hill Country Builders</h4>
+                        <p>Full-service general contractor serving Boerne and surrounding areas. Professional package with project portfolio, service pages, and lead generation forms that increased inquiries by 150%.</p>
+                    </div>
                 </div>
-                <div class="addon-card">
-                    <h4>E-Commerce Setup</h4>
-                    <div class="addon-price">$500 – $1,000</div>
-                    <p>Online store with payment processing, product catalogs, and inventory management.</p>
+                <div class="portfolio-item">
+                    <div class="portfolio-image"></div>
+                    <div class="portfolio-info">
+                        <div class="portfolio-category">Property Management</div>
+                        <h4>Sunday Best Group</h4>
+                        <p>Property owner showcasing long-term and short-term rental properties across San Antonio neighborhoods. Custom gallery layouts with neighborhood-specific landing pages.</p>
+                    </div>
                 </div>
-                <div class="addon-card">
-                    <h4>Online Booking Integration</h4>
-                    <div class="addon-price">$200 – $400</div>
-                    <p>Appointment scheduling, calendar sync, automated reminders for service businesses.</p>
+                <div class="portfolio-item">
+                    <div class="portfolio-image"></div>
+                    <div class="portfolio-info">
+                        <div class="portfolio-category">Salon & Beauty</div>
+                        <h4>Luna Beauty Lounge</h4>
+                        <p>Upscale salon in Stone Oak with online booking integration, service menu, stylist profiles, and Instagram feed. Mobile bookings increased 200% in the first month.</p>
+                    </div>
                 </div>
-                <div class="addon-card">
-                    <h4>Logo Design/Refresh</h4>
-                    <div class="addon-price">$300 – $800</div>
-                    <p>Professional logo design or modernization with brand guideline basics.</p>
-                </div>
-                <div class="addon-card">
-                    <h4>Professional Copywriting</h4>
-                    <div class="addon-price">$100 – $200/page</div>
-                    <p>SEO-optimized content written specifically for your industry and audience.</p>
-                </div>
-                <div class="addon-card">
-                    <h4>Photography Coordination</h4>
-                    <div class="addon-price">$200 – $400</div>
-                    <p>Professional photoshoot setup or sourcing/licensing of high-quality stock images.</p>
+                <div class="portfolio-item">
+                    <div class="portfolio-image"></div>
+                    <div class="portfolio-info">
+                        <div class="portfolio-category">Restaurant</div>
+                        <h4>River Walk Tacos</h4>
+                        <p>Tourist-friendly taco spot near the Alamo with bilingual menu, catering inquiry forms, hours, and location map. SEO optimization for "best tacos San Antonio" brought in 400+ monthly visitors.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Hosting & Maintenance Plans -->
-    <section id="maintenance" class="maintenance">
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
         <div class="container">
             <div class="section-header">
-                <h2>Hosting & Maintenance Plans</h2>
-                <p>Keep your website secure, fast, and up-to-date with ongoing support. All plans include Wix hosting, SSL certificate, and regular backups.</p>
+                <div class="section-label">Client Reviews</div>
+                <h2>What People Are Saying About Us</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">Working with AlamoSites was a breath of fresh air. No confusing tech talk, just clear communication and a website that actually brings in leads. The construction background made a huge difference—they understood our workflow from day one.</p>
+                    <div class="testimonial-author">Mike Rodriguez</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">I'd been putting off a new website for years because every quote I got was either ridiculously expensive or looked like a template from 2010. AlamoSites gave me transparent pricing and a design that actually reflects my business.</p>
+                    <div class="testimonial-author">Sarah Chen</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">As a property owner, I needed a site that showcased my rentals without looking like every other property management company. They took the time to understand my actual business model and delivered exactly what I needed.</p>
+                    <div class="testimonial-author">James Martinez</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Work With Us Section -->
+    <section class="why-us">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Why Work With Us</div>
+                <h2>Your Local Partner for Digital Excellence</h2>
+                <p>We're not another faceless agency. We're your San Antonio neighbor with real industry experience and a commitment to your success.</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">⚡</div>
+                    <h4>Rapid Delivery</h4>
+                    <p>We understand the importance of timing. That's why we deliver sleek, fully-functional websites quickly, without sacrificing quality.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🎨</div>
+                    <h4>Personalized Branding</h4>
+                    <p>Your brand is unique, and your online presence should reflect that. We work closely with you to create a distinctive identity that resonates.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🚀</div>
+                    <h4>Cutting-Edge Design</h4>
+                    <p>We stay at the forefront of design trends and technology, ensuring your website is both modern and built to last.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🎯</div>
+                    <h4>Tailored Solutions</h4>
+                    <p>Whether you're in construction, hospitality, or any other industry, we create websites that meet your specific needs and objectives.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Maintenance Plans -->
+    <section class="maintenance">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Hosting & Maintenance</div>
+                <h2>Keep Your Website Running Smoothly</h2>
+                <p>All plans include Wix hosting, SSL certificate, daily backups, and ongoing support to keep your site secure and performing at its best.</p>
             </div>
             <div class="maintenance-grid">
                 <div class="maintenance-card">
@@ -1044,7 +1125,7 @@
                         <li>Daily automated backups</li>
                         <li>Monthly performance check</li>
                         <li>Email support (48hr response)</li>
-                        <li>Up to 2 hours/month minor updates</li>
+                        <li>Up to 2 hours/month updates</li>
                     </ul>
                 </div>
                 <div class="maintenance-card">
@@ -1054,10 +1135,10 @@
                         <li>Everything in Essential, plus:</li>
                         <li>Weekly performance monitoring</li>
                         <li>SEO performance tracking</li>
-                        <li>Priority email support (24hr response)</li>
-                        <li>Up to 4 hours/month content updates</li>
+                        <li>Priority support (24hr response)</li>
+                        <li>Up to 4 hours/month updates</li>
                         <li>Monthly analytics report</li>
-                        <li>Quarterly SEO optimization review</li>
+                        <li>Quarterly SEO optimization</li>
                     </ul>
                 </div>
                 <div class="maintenance-card">
@@ -1066,291 +1147,64 @@
                     <ul>
                         <li>Everything in Professional, plus:</li>
                         <li>Daily uptime monitoring</li>
-                        <li>Advanced SEO strategy & implementation</li>
-                        <li>Phone + email support (same-day response)</li>
-                        <li>Up to 8 hours/month updates & changes</li>
-                        <li>Bi-weekly detailed analytics reports</li>
-                        <li>Monthly strategy consultation call</li>
-                        <li>Conversion optimization recommendations</li>
+                        <li>Advanced SEO strategy</li>
+                        <li>Phone + email (same-day response)</li>
+                        <li>Up to 8 hours/month updates</li>
+                        <li>Bi-weekly analytics reports</li>
+                        <li>Monthly strategy consultation</li>
+                        <li>Conversion optimization</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Industries We Serve -->
-    <section id="industries">
+    <!-- Blog Section -->
+    <section class="blog">
         <div class="container">
             <div class="section-header">
-                <h2>Industries We Serve</h2>
-                <p>We specialize in building websites for San Antonio's most common small business sectors.</p>
+                <div class="section-label">Latest Posts</div>
+                <h2>From the Blog</h2>
+                <p>Insights, tips, and strategies for building a better online presence for your San Antonio business.</p>
             </div>
-            <div class="industries-grid">
-                <div class="industry-card">
-                    <span class="icon">🔨</span>
-                    <h4>Construction & Trades</h4>
-                </div>
-                <div class="industry-card">
-                    <span class="icon">🏢</span>
-                    <h4>Property Management</h4>
-                </div>
-                <div class="industry-card">
-                    <span class="icon">💇</span>
-                    <h4>Salons & Beauty</h4>
-                </div>
-                <div class="industry-card">
-                    <span class="icon">🍽️</span>
-                    <h4>Restaurants & Food</h4>
-                </div>
-                <div class="industry-card">
-                    <span class="icon">🏡</span>
-                    <h4>Home Services</h4>
-                </div>
-                <div class="industry-card">
-                    <span class="icon">💼</span>
-                    <h4>Professional Services</h4>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Our Process -->
-    <section id="process" class="process">
-        <div class="container">
-            <div class="section-header">
-                <h2>Simple, Transparent Process</h2>
-                <p>From first meeting to launch, here's exactly what to expect.</p>
-            </div>
-            <div class="process-timeline">
-                <div class="process-step">
-                    <span class="step-number">1</span>
-                    <h4>Discovery Call</h4>
-                    <p class="timeline">Day 1 – 30 minutes</p>
-                    <p>We discuss your business, goals, target customers, and what success looks like for your website.</p>
-                </div>
-                <div class="process-step">
-                    <span class="step-number">2</span>
-                    <h4>Proposal & Agreement</h4>
-                    <p class="timeline">Day 2–3</p>
-                    <p>Receive a detailed proposal with package tier, timeline, deliverables, and pricing. Sign and pay deposit (50%).</p>
-                </div>
-                <div class="process-step">
-                    <span class="step-number">3</span>
-                    <h4>Content Gathering</h4>
-                    <p class="timeline">Days 4–7</p>
-                    <p>You provide logo, photos, copy, contact details. We guide you through what's needed with a simple checklist.</p>
-                </div>
-                <div class="process-step">
-                    <span class="step-number">4</span>
-                    <h4>Design & Build</h4>
-                    <p class="timeline">Week 1–3 (varies by package)</p>
-                    <p>We build your site in Wix Studio. You'll see a preview link midway through for feedback.</p>
-                </div>
-                <div class="process-step">
-                    <span class="step-number">5</span>
-                    <h4>Revisions</h4>
-                    <p class="timeline">Included in timeline</p>
-                    <p>Make changes based on your feedback (1–3 revision rounds depending on package).</p>
-                </div>
-                <div class="process-step">
-                    <span class="step-number">6</span>
-                    <h4>Launch & Training</h4>
-                    <p class="timeline">Final week</p>
-                    <p>Site goes live. We provide a 30-minute walkthrough showing you how to update content yourself.</p>
-                </div>
-                <div class="process-step">
-                    <span class="step-number">7</span>
-                    <h4>Post-Launch Support</h4>
-                    <p class="timeline">30–90 days (package-dependent)</p>
-                    <p>We're available for questions, minor tweaks, and troubleshooting during your support window.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio -->
-    <section id="portfolio">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our Work</h2>
-                <p>Recent projects showcasing our range across industries and package tiers.</p>
-            </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <img src="/img/portfolio-construction.jpg" alt="Modern construction company website with project gallery and service pages">
-                    <div class="portfolio-info">
-                        <h4>Hill Country Builders</h4>
-                        <p>Full-service general contractor serving Boerne and surrounding areas. Professional package with project portfolio.</p>
-                        <span class="portfolio-tag">Construction</span>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-image"></div>
+                    <div class="blog-content">
+                        <div class="blog-date">November 5, 2025</div>
+                        <h4>Why San Antonio Contractors Need Professional Websites</h4>
+                        <p>The construction boom in Stone Oak and Alamo Ranch means more competition. Learn how a professional website sets you apart and wins more bids.</p>
+                        <a href="#" class="read-more">Read More →</a>
                     </div>
                 </div>
-                <div class="portfolio-item">
-                    <img src="/img/portfolio-property.jpg" alt="Property management website with rental listings and tenant portal">
-                    <div class="portfolio-info">
-                        <h4>Sunday Best Group</h4>
-                        <p>Property owner showcasing long-term and short-term rental properties across San Antonio.</p>
-                        <span class="portfolio-tag">Property Management</span>
+                <div class="blog-card">
+                    <div class="blog-image"></div>
+                    <div class="blog-content">
+                        <div class="blog-date">November 1, 2025</div>
+                        <h4>5 Must-Have Features for Service Business Websites</h4>
+                        <p>From online booking to mobile optimization, discover the essential features that turn website visitors into paying customers.</p>
+                        <a href="#" class="read-more">Read More →</a>
                     </div>
                 </div>
-                <div class="portfolio-item">
-                    <img src="/img/portfolio-salon.jpg" alt="Modern salon website with online booking and service menu">
-                    <div class="portfolio-info">
-                        <h4>Luna Beauty Lounge</h4>
-                        <p>Upscale salon in Stone Oak with online booking, service menu, and stylist profiles.</p>
-                        <span class="portfolio-tag">Salon & Beauty</span>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="/img/portfolio-restaurant.jpg" alt="Restaurant website with menu and online ordering">
-                    <div class="portfolio-info">
-                        <h4>River Walk Tacos</h4>
-                        <p>Tourist-friendly taco spot near the Alamo with menu, hours, and catering info.</p>
-                        <span class="portfolio-tag">Restaurant</span>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="/img/portfolio-hvac.jpg" alt="HVAC company website with service areas and emergency contact">
-                    <div class="portfolio-info">
-                        <h4>Alamo HVAC Services</h4>
-                        <p>Emergency HVAC repair and installation serving all San Antonio metro areas.</p>
-                        <span class="portfolio-tag">Home Services</span>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="/img/portfolio-law.jpg" alt="Professional law firm website with attorney bios and practice areas">
-                    <div class="portfolio-info">
-                        <h4>Martinez Law Group</h4>
-                        <p>Bilingual family law practice in Southtown with case intake forms and consultation booking.</p>
-                        <span class="portfolio-tag">Professional Services</span>
+                <div class="blog-card">
+                    <div class="blog-image"></div>
+                    <div class="blog-content">
+                        <div class="blog-date">October 28, 2025</div>
+                        <h4>Wix Studio vs WordPress: Which is Right for You?</h4>
+                        <p>A transparent comparison of platforms for small business owners. Learn why we chose Wix Studio for faster builds and easier maintenance.</p>
+                        <a href="#" class="read-more">Read More →</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section id="testimonials" class="testimonials">
+    <!-- Contact CTA -->
+    <section id="contact" class="contact-cta">
         <div class="container">
-            <div class="section-header">
-                <h2>What Clients Say</h2>
-                <p>Real feedback from San Antonio business owners who've worked with us.</p>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-text">Working with AlamoSites was a breath of fresh air. No confusing tech talk, just clear communication and a website that actually brings in leads. The construction background made a huge difference—they understood our workflow from day one.</p>
-                    <div class="testimonial-author">Mike Rodriguez</div>
-                    <div class="testimonial-company">Hill Country Builders, Boerne TX</div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-text">I'd been putting off a new website for years because every quote I got was either ridiculously expensive or looked like a template from 2010. AlamoSites gave me transparent pricing and a design that actually reflects my business. Highly recommend.</p>
-                    <div class="testimonial-author">Sarah Chen</div>
-                    <div class="testimonial-company">Luna Beauty Lounge, Stone Oak</div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-text">As a property owner, I needed a site that showcased my rentals without looking like every other property management company. They took the time to understand my actual business model and delivered exactly what I needed. Fast turnaround, zero hassle.</p>
-                    <div class="testimonial-author">James Martinez</div>
-                    <div class="testimonial-company">Sunday Best Group, San Antonio</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- San Antonio Focus -->
-    <section id="san-antonio" class="sa-focus">
-        <div class="container">
-            <div class="section-header">
-                <h2>Proudly Serving San Antonio & Hill Country</h2>
-                <p>We know the local market because we live here, work here, and do business here.</p>
-            </div>
-            <div class="sa-grid">
-                <div class="sa-content">
-                    <h3>Why Local Matters</h3>
-                    <p>San Antonio isn't just another city on our client list—it's our home. We understand the construction boom in Stone Oak, the tourism economy around the River Walk, the bilingual market opportunities, and the tight-knit business communities in every neighborhood from Alamo Ranch to Southtown.</p>
-                    <p>When you work with AlamoSites, you're working with someone who knows the difference between marketing to Medical Center professionals versus Southtown creatives. Someone who understands why a contractor in Boerne needs different messaging than a salon in The Dominion.</p>
-                    <p>We're not a faceless agency. We're your neighbor, and we're invested in your success because your success strengthens our shared community.</p>
-                </div>
-                <div>
-                    <h3>Neighborhoods We Serve</h3>
-                    <ul class="sa-neighborhoods">
-                        <li>Stone Oak</li>
-                        <li>Alamo Ranch</li>
-                        <li>Downtown/River Walk</li>
-                        <li>Southtown</li>
-                        <li>Medical Center</li>
-                        <li>The Dominion</li>
-                        <li>Helotes</li>
-                        <li>Boerne</li>
-                        <li>New Braunfels</li>
-                        <li>Schertz/Cibolo</li>
-                        <li>Leon Valley</li>
-                        <li>Terrell Hills</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2>Let's Build Your Website</h2>
-                <p>Ready to get started? Reach out today for a free consultation and transparent quote.</p>
-            </div>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-method">
-                        <span class="icon">📞</span>
-                        <div>
-                            <h4>Call or Text</h4>
-                            <a href="tel:{{PhoneNumber}}">{{PhoneNumber}}</a>
-                            <p>M–F 8am–6pm CST</p>
-                        </div>
-                    </div>
-                    <div class="contact-method">
-                        <span class="icon">✉️</span>
-                        <div>
-                            <h4>Email</h4>
-                            <a href="mailto:{{EmailAddress}}">{{EmailAddress}}</a>
-                            <p>Response within 24 hours</p>
-                        </div>
-                    </div>
-                    <div class="contact-method">
-                        <span class="icon">📍</span>
-                        <div>
-                            <h4>Service Area</h4>
-                            <p>San Antonio, TX<br>& surrounding Hill Country</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <h3>Send a Message</h3>
-                    <!-- Replace with Wix Forms in IMPLEMENT mode -->
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Your Name *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-                        <div class="form-group">
-                            <label for="business">Business Name</label>
-                            <input type="text" id="business" name="business">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Tell Us About Your Project *</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-button">Send Message</button>
-                    </form>
-                </div>
-            </div>
+            <h2>Partner With Us for Design Excellence</h2>
+            <p>We're passionate about design, and it shows in every project we take on. Let's partner up to bring your brand to the next level.</p>
+            <a href="tel:{{PhoneNumber}}" class="cta-button">Call {{PhoneNumber}}</a>
         </div>
     </section>
 
@@ -1358,20 +1212,38 @@
     <section class="style-sampler">
         <div class="container">
             <div class="section-header">
-                <h2>Design Theme Preview</h2>
-                <p>Jewel-toned palette with modern typography for confident, professional presentation.</p>
+                <h2>Design Theme: Jewel Tones</h2>
+                <p>Rich ruby, teal, indigo, and golden topaz create a sophisticated palette that conveys confidence, creativity, and premium service.</p>
             </div>
             <div class="palette-swatches">
-                <div class="swatch primary">Primary<br>#1e3a8a</div>
-                <div class="swatch secondary">Secondary<br>#047857</div>
-                <div class="swatch accent">Accent<br>#7c3aed</div>
-                <div class="swatch highlight">Highlight<br>#d97706</div>
-                <div class="swatch neutral-light">Light<br>#faf8f5</div>
-                <div class="swatch neutral-dark">Dark<br>#1f2937</div>
+                <div class="swatch primary">
+                    <div class="swatch-label">Ruby Primary</div>
+                    <div class="swatch-hex">#9f1239</div>
+                </div>
+                <div class="swatch secondary">
+                    <div class="swatch-label">Teal Secondary</div>
+                    <div class="swatch-hex">#0f766e</div>
+                </div>
+                <div class="swatch accent">
+                    <div class="swatch-label">Indigo Accent</div>
+                    <div class="swatch-hex">#4338ca</div>
+                </div>
+                <div class="swatch highlight">
+                    <div class="swatch-label">Topaz Highlight</div>
+                    <div class="swatch-hex">#ca8a04</div>
+                </div>
+                <div class="swatch neutral-light">
+                    <div class="swatch-label">Pearl Light</div>
+                    <div class="swatch-hex">#fefce8</div>
+                </div>
+                <div class="swatch neutral-dark">
+                    <div class="swatch-label">Onyx Dark</div>
+                    <div class="swatch-hex">#18181b</div>
+                </div>
             </div>
             <div class="type-sample">
-                <h1>Montserrat Bold Headings</h1>
-                <p>Open Sans body text for readability and professional tone across all content sections.</p>
+                <h1>Playfair Display Headings</h1>
+                <p>Inter body text provides excellent readability and modern sophistication for all content sections. The combination creates a refined, professional aesthetic that positions AlamoSites as a premium service while remaining approachable for local San Antonio businesses.</p>
             </div>
         </div>
     </section>
@@ -1380,16 +1252,16 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
+                <div class="footer-section footer-brand">
                     <h4>AlamoSites</h4>
-                    <p>Modern web design for San Antonio businesses. Built in Wix Studio with transparent pricing and local expertise.</p>
+                    <p>Modern web design for San Antonio businesses. Built in Wix Studio with transparent pricing, local expertise, and a commitment to your success.</p>
                 </div>
                 <div class="footer-section">
                     <h4>Services</h4>
                     <ul>
-                        <li><a href="#pricing">Website Design</a></li>
-                        <li><a href="#addons">E-Commerce</a></li>
-                        <li><a href="#addons">Online Booking</a></li>
+                        <li><a href="#services">Website Design</a></li>
+                        <li><a href="#services">Logo & Branding</a></li>
+                        <li><a href="#services">Graphic Design</a></li>
                         <li><a href="#maintenance">Hosting & Maintenance</a></li>
                     </ul>
                 </div>
@@ -1397,7 +1269,7 @@
                     <h4>Company</h4>
                     <ul>
                         <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#process">Our Process</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
                         <li><a href="#testimonials">Testimonials</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
@@ -1407,7 +1279,7 @@
                     <ul>
                         <li><a href="tel:{{PhoneNumber}}">{{PhoneNumber}}</a></li>
                         <li><a href="mailto:{{EmailAddress}}">{{EmailAddress}}</a></li>
-                        <li>San Antonio, TX</li>
+                        <li>San Antonio, TX & Hill Country</li>
                     </ul>
                 </div>
             </div>
