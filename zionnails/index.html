@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zion Nails & Waxing | Luxury Nail Salon in Live Oak, TX</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #0A0A0A;
+            color: #E8E8E8;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(197, 162, 91, 0.2);
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #C5A25B;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #E8E8E8;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #C5A25B;
+        }
+
+        .book-now-nav {
+            background: linear-gradient(135deg, #C5A25B 0%, #8B7037 100%);
+            padding: 12px 30px;
+            border-radius: 30px;
+            color: #0A0A0A !important;
+            font-weight: 600;
+        }
+
+        .book-now-nav:hover {
+            background: linear-gradient(135deg, #D4B36A 0%, #9A7F42 100%);
+            color: #0A0A0A !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(10, 10, 10, 0.5), rgba(10, 10, 10, 0.7)), 
+                        url('https://images.unsplash.com/photo-1604654894610-df63bc536371?w=1600') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 72px;
+            font-weight: 700;
+            color: #C5A25B;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            color: #E8E8E8;
+            margin-bottom: 40px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #C5A25B 0%, #8B7037 100%);
+            color: #0A0A0A;
+            padding: 18px 45px;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(197, 162, 91, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #C5A25B;
+            padding: 18px 45px;
+            border: 2px solid #C5A25B;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(197, 162, 91, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* About Section */
+        .about {
+            padding: 120px 50px;
+            background: #121212;
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 52px;
+            font-weight: 700;
+            color: #C5A25B;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 16px;
+            color: #B8B8B8;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            line-height: 1.8;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .feature {
+            padding: 40px;
+            background: #1A1A1A;
+            border: 1px solid rgba(197, 162, 91, 0.2);
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .feature:hover {
+            border-color: #C5A25B;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(197, 162, 91, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            color: #C5A25B;
+            margin-bottom: 20px;
+        }
+
+        .feature h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            color: #C5A25B;
+            margin-bottom: 15px;
+        }
+
+        .feature p {
+            color: #B8B8B8;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Signature Service */
+        .signature-service {
+            padding: 120px 50px;
+            background: linear-gradient(rgba(197, 162, 91, 0.05), rgba(197, 162, 91, 0.05)),
+                        url('https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=1600') center/cover;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        .signature-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .signature-text h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 52px;
+            color: #C5A25B;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .signature-text p {
+            font-size: 16px;
+            color: #E8E8E8;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .price-tag {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            color: #C5A25B;
+            margin: 30px 0;
+            font-weight: 700;
+        }
+
+        .signature-features {
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        .signature-features li {
+            padding: 15px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #E8E8E8;
+            border-bottom: 1px solid rgba(197, 162, 91, 0.1);
+        }
+
+        .signature-features li:before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: #C5A25B;
+            font-size: 20px;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 120px 50px;
+            background: #0A0A0A;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: #1A1A1A;
+            border: 1px solid rgba(197, 162, 91, 0.2);
+            padding: 40px;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: #C5A25B;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(197, 162, 91, 0.2);
+        }
+
+        .service-category {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            color: #C5A25B;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .service-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(197, 162, 91, 0.1);
+        }
+
+        .service-name {
+            color: #E8E8E8;
+            font-size: 14px;
+        }
+
+        .service-price {
+            color: #C5A25B;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 120px 50px;
+            background: #121212;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1400px;
+            margin: 60px auto 0;
+        }
+
+        .gallery-item {
+            aspect-ratio: 1;
+            overflow: hidden;
+            border-radius: 10px;
+            border: 1px solid rgba(197, 162, 91, 0.2);
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Booking Section */
+        .booking {
+            padding: 120px 50px;
+            background: linear-gradient(135deg, #1A1A1A 0%, #0A0A0A 100%);
+            text-align: center;
+        }
+
+        .booking-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .booking h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 52px;
+            color: #C5A25B;
+            margin-bottom: 30px;
+        }
+
+        .booking p {
+            font-size: 16px;
+            color: #B8B8B8;
+            margin-bottom: 50px;
+            line-height: 1.8;
+        }
+
+        .booking-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .booking-card {
+            background: #1A1A1A;
+            border: 1px solid rgba(197, 162, 91, 0.2);
+            padding: 50px 40px;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .booking-card:hover {
+            border-color: #C5A25B;
+            box-shadow: 0 10px 30px rgba(197, 162, 91, 0.2);
+        }
+
+        .booking-icon {
+            font-size: 56px;
+            margin-bottom: 20px;
+        }
+
+        .booking-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            color: #C5A25B;
+            margin-bottom: 15px;
+        }
+
+        .booking-card p {
+            color: #B8B8B8;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 120px 50px;
+            background: #0A0A0A;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+        }
+
+        .contact-info {
+            background: #1A1A1A;
+            padding: 50px;
+            border: 1px solid rgba(197, 162, 91, 0.2);
+            border-radius: 10px;
+        }
+
+        .contact-item {
+            margin-bottom: 40px;
+        }
+
+        .contact-item h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            color: #C5A25B;
+            margin-bottom: 10px;
+        }
+
+        .contact-item p {
+            color: #B8B8B8;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .contact-item a {
+            color: #C5A25B;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: #D4B36A;
+        }
+
+        .hours-list {
+            list-style: none;
+        }
+
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(197, 162, 91, 0.1);
+            color: #B8B8B8;
+        }
+
+        .hours-list li span:first-child {
+            color: #E8E8E8;
+        }
+
+        .map-container {
+            background: #1A1A1A;
+            height: 100%;
+            min-height: 400px;
+            border: 1px solid rgba(197, 162, 91, 0.2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #B8B8B8;
+        }
+
+        /* Footer */
+        footer {
+            background: #0A0A0A;
+            border-top: 1px solid rgba(197, 162, 91, 0.2);
+            padding: 60px 50px 30px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            color: #C5A25B;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        .social-links a {
+            color: #C5A25B;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #D4B36A;
+        }
+
+        .copyright {
+            color: #666;
+            font-size: 14px;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(197, 162, 91, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 42px;
+            }
+
+            .signature-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .services-grid,
+            .booking-options,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">ZION</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#booking" class="book-now-nav">Book Now</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>ZION NAILS & WAXING</h1>
+            <p>Experience Luxury. Embrace Elegance.</p>
+            <div class="cta-buttons">
+                <a href="#booking" class="btn-primary">Book Appointment</a>
+                <a href="#services" class="btn-secondary">View Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2 class="section-title">The Art of Luxury</h2>
+        <p class="section-subtitle">
+            Welcome to Zion Nails & Waxing, where opulence meets artistry. Our Live Oak sanctuary 
+            offers an unparalleled experience in nail care and beauty services, crafted for those 
+            who appreciate the finest details.
+        </p>
+        <div class="about-features">
+            <div class="feature">
+                <div class="feature-icon">✦</div>
+                <h3>Exceptional Artistry</h3>
+                <p>Master technicians with over 10 years of experience bring your vision to life with precision and creativity.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">✦</div>
+                <h3>Premium Products</h3>
+                <p>We use only the finest luxury products including 24K gold treatments and organic botanicals.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">✦</div>
+                <h3>Pristine Environment</h3>
+                <p>Impeccable sanitation standards with single-use implements and liner protection for your peace of mind.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">✦</div>
+                <h3>Personalized Service</h3>
+                <p>Every client receives individualized attention in our elegant, relaxing atmosphere.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Signature Service -->
+    <section class="signature-service">
+        <div class="signature-content">
+            <div class="signature-text">
+                <h2>The Ultimate Zion Pedicure</h2>
+                <p>
+                    Indulge in the pinnacle of luxury with our signature treatment. This lavish 
+                    experience features a 24K edible gold mask, hot stone massage, facial steamer, 
+                    and golden paraffin wax treatment.
+                </p>
+                <ul class="signature-features">
+                    <li>Warm plush neck wrap for ultimate relaxation</li>
+                    <li>Gold-infused soak with rare minerals and essential oils</li>
+                    <li>Decadent gold sugar scrub</li>
+                    <li>24K edible gold mask with warm facial steamer</li>
+                    <li>Hot stone foot and calf massage</li>
+                    <li>Golden paraffin wax treatment</li>
+                </ul>
+                <div class="price-tag">$135</div>
+                <a href="#booking" class="btn-primary">Reserve Your Experience</a>
+            </div>
+            <div class="signature-image">
+                <!-- Placeholder for signature service imagery -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">
+            From classic elegance to contemporary trends, we offer a complete menu of 
+            luxury beauty services tailored to your preferences.
+        </p>
+        <div class="services-grid">
+            <!-- Pedicures -->
+            <div class="service-card">
+                <h3 class="service-category">Pedicures</h3>
+                <div class="service-item">
+                    <span class="service-name">Express Pedicure</span>
+                    <span class="service-price">$40</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">Spa Pedicure</span>
+                    <span class="service-price">$48</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">Matcha Green Tea</span>
+                    <span class="service-price">$60</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">Fresh Cucumber</span>
+                    <span class="service-price">$65</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">Milk & Honey</span>
+                    <span class="service-price">$70</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">Gentlemen's Pedicure</span>
+                    <span class="service-price">$70</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">Hawaiian Tropical</span>
+                    <span class="service-price">$85</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">Luxury Collagen</span>
+                    <span class="service-price">$90</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">Cannabis Jelly</span>
+                    <span class="service-price">$90</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">Organic Herbal</span>
+                    <span class="service-price">$100</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">Ultimate Zion Pedicure</span>
+                    <span class="service-price">$135</span>
+                </div>
+            </div>
+
+            <!-- Manicures & Nails -->
+            <div class="service-card">
+                <h3 class="service-category">Manicures & Nails</h3>
+                <div class="service-item">
+                    <span class="service-name">Classic Manicure</span>
+                    <span class="service-price">$25</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">Deluxe Manicure</span>
+                    <span class="service-price">$45</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">Shellac Gel Manicure</span>
+                    <span class="service-price">$45+</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">Shellac Full Set</span>
+                    <span class="service-price">$60+</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">Dipping Overlay</span>
+                    <span class="service-price">$55+</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">Gel Builder Full Set</span>
+                    <span class="service-price">$65+</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">Ombré Full Set</span>
+                    <span class="service-price">$70+</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">Classic French Tip</span>
+                    <span class="service-price">$70+</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">Custom French Tip</span>
+                    <span class="service-price">$80+</span>
+                </div>
+            </div>
+
+            <!-- Eyelash Services -->
+            <div class="service-card">
+                <h3 class="service-category">Eyelash Services</h3>
+                <div class="service-item">
+                    <span class="service-name">Classic Full Set</span>
+                    <span class="service-price">$120</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">Classic Refill</span>
+                    <span class="service-price">$80</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">Hybrid Full Set</span>
+                    <span class="service-price">$130</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">Hybrid Refill</span>
+                    <span class="service-price">$90</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">Volume Full Set</span>
+                    <span class="service-price">$145</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">Volume Refill</span>
+                    <span class="service-price">$100</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">Mega Full Set</span>
+                    <span class="service-price">$155</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">Lash Lift & Tint</span>
+                    <span class="service-price">$120</span>
+                </div>
+            </div>
+
+            <!-- Waxing Services -->
+            <div class="service-card">
+                <h3 class="service-category">Waxing</h3>
+                <div class="service-item">
+                    <span class="service-name">Lip</span>
+                    <span class="service-price">$10</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">Chin</span>
+                    <span class="service-price">$12+</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">Eyebrows</span>
+                    <span class="service-price">$15</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">Sideburns</span>
+                    <span class="service-price">$15+</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">Forehead</span>
+                    <span class="service-price">$15+</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">Full Face</span>
+                    <span class="service-price">$60+</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">Eyebrow Tinting</span>
+                    <span class="service-price">$35</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">Lash Tinting</span>
+                    <span class="service-price">$30</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <h2 class="section-title">Our Artistry</h2>
+        <p class="section-subtitle">
+            Discover the exquisite results of our master technicians' work
+        </p>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=500" alt="Luxury nail art">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=500" alt="Pedicure spa">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=500" alt="Nail designs">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=500" alt="Salon interior">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1599948128020-9a44ce1e34a4?w=500" alt="French manicure">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=500" alt="Nail care">
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="booking">
+        <div class="booking-content">
+            <h2>Reserve Your Experience</h2>
+            <p>
+                Book your appointment today and discover why Zion Nails & Waxing is 
+                Live Oak's premier destination for luxury nail care and beauty services.
+            </p>
+            <div class="booking-options">
+                <div class="booking-card">
+                    <div class="booking-icon">📅</div>
+                    <h3>Book Online</h3>
+                    <p>Schedule your appointment instantly through our online booking system</p>
+                    <a href="#" class="btn-primary">Book Now</a>
+                </div>
+                <div class="booking-card">
+                    <div class="booking-icon">🎁</div>
+                    <h3>Gift Cards</h3>
+                    <p>Give the gift of luxury with our elegant gift cards</p>
+                    <a href="#" class="btn-secondary">Purchase Gift Card</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2 class="section-title">Visit Us</h2>
+        <p class="section-subtitle">
+            Experience the art of luxury at our Live Oak sanctuary
+        </p>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>Location</h3>
+                    <p>
+                        3000 IKEA-RBFCU Pkwy<br>
+                        Suite 103<br>
+                        Live Oak, TX 78233
+                    </p>
+                </div>
+                <div class="contact-item">
+                    <h3>Contact</h3>
+                    <p>
+                        Phone: <a href="tel:2107273206">(210) 727-3206</a><br>
+                        Instagram: <a href="https://instagram.com/zion_nails_and_waxing" target="_blank">@zion_nails_and_waxing</a>
+                    </p>
+                </div>
+                <div class="contact-item">
+                    <h3>Hours</h3>
+                    <ul class="hours-list">
+                        <li><span>Monday</span><span>9:00 AM - 7:00 PM</span></li>
+                        <li><span>Tuesday</span><span>9:00 AM - 7:00 PM</span></li>
+                        <li><span>Wednesday</span><span>9:00 AM - 7:00 PM</span></li>
+                        <li><span>Thursday</span><span>9:00 AM - 7:00 PM</span></li>
+                        <li><span>Friday</span><span>9:00 AM - 7:00 PM</span></li>
+                        <li><span>Saturday</span><span>9:00 AM - 7:00 PM</span></li>
+                        <li><span>Sunday</span><span>Closed</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="map-container">
+                <p>Map Integration Area<br>(Google Maps embed would go here)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">ZION</div>
+            <p style="color: #B8B8B8; margin: 20px 0;">Experience Luxury. Embrace Elegance.</p>
+            <div class="social-links">
+                <a href="https://instagram.com/zion_nails_and_waxing" target="_blank">Instagram</a>
+                <a href="https://facebook.com" target="_blank">Facebook</a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Zion Nails & Waxing. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
