@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COOKLANDIA | Chef Grazia Hughes - Personal Chef San Antonio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lora', 'Georgia', serif;
+            color: #2d2d2d;
+            line-height: 1.7;
+            background: #ffffff;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            padding: 20px 80px;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            border-bottom: 1px solid #e8e4df;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', 'Georgia', serif;
+            font-size: 32px;
+            color: #a05344;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 45px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2d2d2d;
+            font-size: 14px;
+            font-family: 'Montserrat', 'Arial', sans-serif;
+            transition: color 0.3s;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: #a05344;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            height: 700px;
+            background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), 
+                        url('https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 60px;
+            color: white;
+        }
+
+        .hero-tag {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #e8d5c4;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .hero h1 {
+            font-size: 68px;
+            color: white;
+            margin-bottom: 25px;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            line-height: 1.2;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 300;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            padding: 18px 50px;
+            background: #a05344;
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            transition: all 0.3s;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border: 2px solid transparent;
+        }
+
+        .hero-cta:hover {
+            background: transparent;
+            border-color: white;
+        }
+
+        /* About Section */
+        .about {
+            padding: 120px 80px;
+            background: white;
+        }
+
+        .about-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 600px;
+            background: url('https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .about-image::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid #a05344;
+            z-index: -1;
+        }
+
+        .about-content {
+            padding: 40px 0;
+        }
+
+        .section-tag {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: #a05344;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .about-content h2 {
+            font-size: 52px;
+            color: #2d2d2d;
+            margin-bottom: 25px;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .about-content p {
+            font-size: 17px;
+            margin-bottom: 25px;
+            color: #5d5d5d;
+            line-height: 1.9;
+        }
+
+        .about-signature {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #e8e4df;
+        }
+
+        .about-signature p {
+            font-style: italic;
+            color: #7d7d7d;
+            font-size: 15px;
+        }
+
+        .about-signature .name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            color: #a05344;
+            font-style: normal;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 120px 80px;
+            background: #faf8f5;
+        }
+
+        .services-header {
+            text-align: center;
+            margin-bottom: 80px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services-header h2 {
+            font-size: 52px;
+            color: #2d2d2d;
+            margin-bottom: 20px;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+        }
+
+        .services-header p {
+            font-size: 18px;
+            color: #7d7d7d;
+            line-height: 1.8;
+        }
+
+        .services-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 0;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 280px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .service-content {
+            padding: 40px 35px;
+        }
+
+        .service-content h3 {
+            font-size: 28px;
+            color: #2d2d2d;
+            margin-bottom: 15px;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+        }
+
+        .service-content p {
+            font-size: 16px;
+            color: #5d5d5d;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .service-features {
+            list-style: none;
+            margin: 25px 0;
+            padding: 0;
+        }
+
+        .service-features li {
+            padding: 10px 0;
+            color: #5d5d5d;
+            font-size: 15px;
+            border-bottom: 1px solid #f0ede8;
+        }
+
+        .service-features li:last-child {
+            border-bottom: none;
+        }
+
+        .service-cta {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 14px 35px;
+            background: transparent;
+            color: #a05344;
+            text-decoration: none;
+            font-size: 12px;
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.3s;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border: 2px solid #a05344;
+        }
+
+        .service-cta:hover {
+            background: #a05344;
+            color: white;
+        }
+
+        /* Philosophy Section */
+        .philosophy {
+            padding: 100px 80px;
+            background: #2d2d2d;
+            color: white;
+            text-align: center;
+        }
+
+        .philosophy-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .philosophy h2 {
+            font-size: 48px;
+            margin-bottom: 30px;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            color: #e8d5c4;
+        }
+
+        .philosophy p {
+            font-size: 20px;
+            line-height: 1.9;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+        }
+
+        /* Featured Dishes */
+        .featured-dishes {
+            padding: 120px 80px;
+            background: white;
+        }
+
+        .featured-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .featured-header h2 {
+            font-size: 52px;
+            color: #2d2d2d;
+            margin-bottom: 20px;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+        }
+
+        .featured-header p {
+            font-size: 18px;
+            color: #7d7d7d;
+        }
+
+        .dishes-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .dish-card {
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .dish-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .dish-image {
+            width: 100%;
+            height: 320px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .dish-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 30px 25px;
+            color: white;
+        }
+
+        .dish-overlay h3 {
+            font-size: 26px;
+            margin-bottom: 5px;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+        }
+
+        .dish-overlay .origin {
+            font-size: 13px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #e8d5c4;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 120px 80px;
+            background: #faf8f5;
+        }
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .testimonials-header h2 {
+            font-size: 52px;
+            color: #2d2d2d;
+            margin-bottom: 20px;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+        }
+
+        .testimonials-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 50px 45px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+            position: relative;
+        }
+
+        .testimonial-card:before {
+            content: '"';
+            font-size: 120px;
+            color: #a05344;
+            opacity: 0.1;
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-family: Georgia;
+            line-height: 1;
+        }
+
+        .testimonial-card p {
+            font-size: 17px;
+            color: #2d2d2d;
+            line-height: 1.9;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            font-size: 14px;
+            color: #a05344;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .stars {
+            color: #d4a574;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 120px 80px;
+            background: linear-gradient(135deg, #a05344 0%, #8b4638 100%);
+            color: white;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .contact-info h2 {
+            font-size: 56px;
+            margin-bottom: 30px;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .contact-info p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+
+        .contact-details {
+            margin-top: 40px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .contact-icon {
+            font-size: 20px;
+            width: 24px;
+        }
+
+        .contact-text {
+            flex: 1;
+        }
+
+        .contact-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #e8d5c4;
+            margin-bottom: 5px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+
+        .contact-value {
+            font-size: 16px;
+            color: white;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 25px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
+            width: 100%;
+            padding: 18px 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+            font-size: 15px;
+            font-family: 'Lora', serif;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus,
+        .contact-form select:focus {
+            outline: none;
+            background: rgba(255,255,255,0.15);
+            border-color: rgba(255,255,255,0.4);
+        }
+
+        .contact-form select {
+            cursor: pointer;
+        }
+
+        .contact-form option {
+            background: #a05344;
+            color: white;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 160px;
+        }
+
+        .submit-btn {
+            padding: 18px 50px;
+            background: white;
+            color: #a05344;
+            border: none;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            justify-self: start;
+        }
+
+        .submit-btn:hover {
+            background: #2d2d2d;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 80px 80px 40px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 50px;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            color: #e8d5c4;
+            margin-bottom: 20px;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        .footer-brand p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .footer-column h4 {
+            font-size: 13px;
+            margin-bottom: 25px;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 15px;
+        }
+
+        .footer-column a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: #e8d5c4;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #a05344;
+            border-color: #a05344;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 13px;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 30px;
+            }
+
+            nav ul {
+                gap: 25px;
+                font-size: 12px;
+            }
+
+            .hero {
+                height: 500px;
+                padding: 40px 30px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .about-container,
+            .services-grid,
+            .dishes-grid,
+            .testimonials-grid,
+            .contact-container,
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 80px 30px !important;
+            }
+
+            .about-image::after {
+                bottom: -10px;
+                right: -10px;
+            }
+
+            .services-grid,
+            .dishes-grid {
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">COOKLANDIA</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#dishes">Cuisine</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Inquire</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-tag">Sardinian-Born · San Antonio-Based</div>
+            <h1>Authentic Italian Cuisine<br>in Your Home</h1>
+            <p>Experience the art of Italian cooking with Chef Grazia Hughes—personalized meal preparation, intimate dinner parties, and hands-on culinary instruction.</p>
+            <a href="#contact" class="hero-cta">Book Your Experience</a>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-image"></div>
+            <div class="about-content">
+                <div class="section-tag">The Chef</div>
+                <h2>From Sardinia to San Antonio</h2>
+                <p>Born and raised on the island of Sardinia, Chef Grazia Hughes grew up immersed in the traditions of Mediterranean cooking. Her earliest memories are of her grandmother's kitchen—the warmth of fresh-baked bread, the fragrance of wild herbs, and generations gathered around the table.</p>
+                <p>After moving to America with her husband, a United States Air Force veteran, Chef Grazia brought these cherished culinary traditions to San Antonio. Here, she discovered a community that shares the Italian values of family, hospitality, and the joy of sharing exceptional food.</p>
+                <p>At COOKLANDIA, Chef Grazia creates bespoke culinary experiences that honor her Sardinian heritage while embracing the finest local ingredients. Whether preparing your family's weekly meals, orchestrating an elegant dinner party, or teaching the art of traditional pasta-making, her approach is rooted in authenticity, technique, and genuine care.</p>
+                <div class="about-signature">
+                    <p>"Every dish I prepare carries the soul of my homeland and is crafted with the same devotion I would give my own family."</p>
+                    <div class="name">— Chef Grazia Hughes</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="services-header">
+            <div class="section-tag">Services</div>
+            <h2>Curated Culinary Experiences</h2>
+            <p>Each service is thoughtfully tailored to your preferences, dietary needs, and occasion—bringing restaurant-quality Italian cuisine into the comfort of your home.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&q=80');"></div>
+                <div class="service-content">
+                    <h3>Personal Meal Preparation</h3>
+                    <p>Enjoy chef-prepared Italian meals throughout the week. Customized menus using seasonal, high-quality ingredients—prepared fresh in your kitchen.</p>
+                    <ul class="service-features">
+                        <li>Tailored weekly menus</li>
+                        <li>Premium seasonal ingredients</li>
+                        <li>Dietary accommodations</li>
+                        <li>Prepared in your home</li>
+                    </ul>
+                    <a href="#contact" class="service-cta">Learn More</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80');"></div>
+                <div class="service-content">
+                    <h3>Private Dinner Parties</h3>
+                    <p>Host unforgettable evenings without the stress. From intimate dinners for two to celebrations with family and friends—full service from planning to presentation.</p>
+                    <ul class="service-features">
+                        <li>Multi-course Italian menus</li>
+                        <li>Professional table service</li>
+                        <li>Custom wine pairings</li>
+                        <li>Romantic to corporate events</li>
+                    </ul>
+                    <a href="#contact" class="service-cta">Learn More</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=800&q=80');"></div>
+                <div class="service-content">
+                    <h3>Culinary Instruction</h3>
+                    <p>Master authentic Italian techniques in hands-on cooking classes. Perfect for individuals, couples, or small groups seeking to elevate their culinary skills.</p>
+                    <ul class="service-features">
+                        <li>Fresh pasta from scratch</li>
+                        <li>Traditional Sardinian recipes</li>
+                        <li>Advanced Italian techniques</li>
+                        <li>Small group intimate settings</li>
+                    </ul>
+                    <a href="#contact" class="service-cta">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="philosophy">
+        <div class="philosophy-content">
+            <h2>The Philosophy</h2>
+            <p>Italian cooking is more than technique—it's an expression of love, respect for ingredients, and the joy of bringing people together. Each dish is an invitation to slow down, savor, and connect over food that nourishes both body and spirit.</p>
+        </div>
+    </section>
+
+    <section class="featured-dishes" id="dishes">
+        <div class="featured-header">
+            <div class="section-tag">Signature Cuisine</div>
+            <h2>From Sardinia to Your Table</h2>
+            <p>A selection of signature dishes showcasing authentic Italian and Sardinian specialties</p>
+        </div>
+        <div class="dishes-grid">
+            <div class="dish-card">
+                <div class="dish-image" style="background-image: url('https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800&q=80');">
+                    <div class="dish-overlay">
+                        <h3>Fresh Pasta</h3>
+                        <div class="origin">Traditional Italian</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-image" style="background-image: url('https://images.unsplash.com/photo-1611599539913-37177d374c04?w=800&q=80');">
+                    <div class="dish-overlay">
+                        <h3>Culurgiones</h3>
+                        <div class="origin">Sardinian Specialty</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-image" style="background-image: url('https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80');">
+                    <div class="dish-overlay">
+                        <h3>Osso Buco</h3>
+                        <div class="origin">Milanese Classic</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-image" style="background-image: url('https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=800&q=80');">
+                    <div class="dish-overlay">
+                        <h3>Tiramisu</h3>
+                        <div class="origin">Italian Dessert</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-image" style="background-image: url('https://images.unsplash.com/photo-1559737558-2f5a2f203c3f?w=800&q=80');">
+                    <div class="dish-overlay">
+                        <h3>Fregola con Arselle</h3>
+                        <div class="origin">Sardinian Coastal</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-image" style="background-image: url('https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&q=80');">
+                    <div class="dish-overlay">
+                        <h3>Pane Carasau</h3>
+                        <div class="origin">Sardinian Bread</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <div class="testimonials-header">
+            <div class="section-tag">Client Experiences</div>
+            <h2>What Our Clients Say</h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"Chef Grazia's culinary expertise is unmatched. Her meals surpass any restaurant in San Antonio, and having her prepare food in our home adds an intimate, luxurious touch to our busy lives. Every dish is a masterpiece."</p>
+                <div class="testimonial-author">Laura S. · Alamo Heights</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"We hired Chef Grazia for our anniversary and it exceeded all expectations. The five-course menu was exquisitely executed—authentic, refined, and utterly delicious. She elevated our special evening into something truly memorable."</p>
+                <div class="testimonial-author">Michael & Jennifer R. · Stone Oak</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"The pasta-making class was exceptional. Chef Grazia's knowledge of traditional techniques and her patient instruction made the experience both educational and enjoyable. We learned skills we'll treasure for years."</p>
+                <div class="testimonial-author">The Martinez Family</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"As a busy executive, Chef Grazia's meal preparation service has transformed my evenings. Coming home to restaurant-quality Italian cuisine, prepared with obvious care and expertise, is an incredible luxury."</p>
+                <div class="testimonial-author">David C. · Downtown</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Begin Your<br>Culinary Journey</h2>
+                <p>Interested in bringing authentic Italian cuisine into your home? Reach out to discuss your vision, dietary preferences, and how we can create an exceptional experience for you.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-text">
+                            <div class="contact-label">Service Area</div>
+                            <div class="contact-value">San Antonio & Surrounding Areas</div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-text">
+                            <div class="contact-label">Email</div>
+                            <div class="contact-value">info@cooklandia.com</div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-text">
+                            <div class="contact-label">Phone</div>
+                            <div class="contact-value">(210) 555-0123</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form">
+                <div class="form-row">
+                    <input type="text" placeholder="First Name" required>
+                    <input type="text" placeholder="Last Name" required>
+                </div>
+                <div class="form-row">
+                    <input type="email" placeholder="Email Address" required>
+                    <input type="tel" placeholder="Phone Number" required>
+                </div>
+                <select required>
+                    <option value="">Select Service of Interest</option>
+                    <option value="meal-prep">Personal Meal Preparation</option>
+                    <option value="dinner-party">Private Dinner Party</option>
+                    <option value="cooking-class">Culinary Instruction</option>
+                    <option value="consultation">General Inquiry</option>
+                </select>
+                <textarea placeholder="Share details about your event, dietary preferences, or any questions..." required></textarea>
+                <button type="submit" class="submit-btn">Send Inquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>COOKLANDIA</h3>
+                <p>Bringing authentic Sardinian and Italian culinary traditions to San Antonio since 2018. Chef Grazia Hughes creates personalized dining experiences that celebrate heritage, technique, and the art of gathering around exceptional food.</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook">f</a>
+                    <a href="#" title="Instagram">📷</a>
+                    <a href="#" title="Email">✉</a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">Meal Preparation</a></li>
+                    <li><a href="#services">Dinner Parties</a></li>
+                    <li><a href="#services">Cooking Classes</a></li>
+                    <li><a href="#contact">Consultations</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Information</h4>
+                <ul>
+                    <li><a href="#about">About Chef Grazia</a></li>
+                    <li><a href="#dishes">Signature Dishes</a></li>
+                    <li><a href="#testimonials">Client Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Areas Served</h4>
+                <ul>
+                    <li>Downtown San Antonio</li>
+                    <li>Alamo Heights</li>
+                    <li>Stone Oak</li>
+                    <li>Terrell Hills</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2024 COOKLANDIA. All rights reserved. · Proudly serving San Antonio with Italian tradition.</p>
+        </div>
+    </footer>
+</body>
+</html>
