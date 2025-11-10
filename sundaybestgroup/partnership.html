@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborate - Sunday Best Group</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #F7F4EF;
+            --sage: #8B9D83;
+            --dusty-blue: #A4B3C0;
+            --mint: #B5D4C6;
+            --charcoal: #3A3A3A;
+            --soft-gold: #C9B99B;
+            --white: #FFFFFF;
+            --stripe-mint: rgba(181, 212, 198, 0.15);
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--charcoal);
+            background: repeating-linear-gradient(
+                90deg,
+                var(--cream),
+                var(--cream) 35px,
+                var(--stripe-mint) 35px,
+                var(--stripe-mint) 70px
+            );
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        /* Header / Navigation */
+        header {
+            background-color: var(--white);
+            padding: 30px 60px;
+            border-bottom: 1px solid rgba(139, 157, 131, 0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: var(--charcoal);
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        .logo-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 9px;
+            letter-spacing: 3px;
+            color: var(--sage);
+            display: block;
+            margin-top: 2px;
+            font-weight: 400;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 50px;
+            list-style: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--sage);
+        }
+
+        /* Page Hero */
+        .page-hero {
+            padding: 100px 60px 60px;
+            text-align: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .page-label {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--mint);
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .page-title {
+            font-size: 62px;
+            color: var(--charcoal);
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 30px;
+        }
+
+        .page-description {
+            font-size: 17px;
+            line-height: 2;
+            color: var(--charcoal);
+            max-width: 700px;
+            margin: 0 auto 60px;
+            font-weight: 300;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Partnership Boxes */
+        .partnership-boxes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .partnership-box {
+            padding: 60px 40px;
+            border: 1.5px solid var(--mint);
+            background-color: var(--white);
+            text-align: center;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .partnership-box:hover {
+            transform: translateY(-5px);
+            background-color: var(--cream);
+        }
+
+        .partnership-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 30px;
+            border: 2px solid var(--mint);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .partnership-icon::before {
+            content: '';
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--mint);
+            border-radius: 50%;
+        }
+
+        .partnership-icon.square::before {
+            border-radius: 4px;
+        }
+
+        .partnership-icon.diamond::before {
+            transform: rotate(45deg);
+        }
+
+        .partnership-box h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--charcoal);
+        }
+
+        .partnership-box p {
+            font-size: 15px;
+            line-height: 1.9;
+            font-weight: 300;
+            color: var(--charcoal);
+        }
+
+        /* Process Section */
+        .process-section {
+            background-color: var(--white);
+            padding: 100px 60px;
+            margin: 60px 0;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .process-step::after {
+            content: '→';
+            position: absolute;
+            right: -30px;
+            top: 40px;
+            font-size: 24px;
+            color: var(--mint);
+        }
+
+        .process-step:last-child::after {
+            display: none;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            border: 2px solid var(--mint);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 24px;
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--mint);
+        }
+
+        .process-step h4 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: var(--charcoal);
+        }
+
+        .process-step p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--charcoal);
+            font-weight: 300;
+        }
+
+        /* Testimonial Section */
+        .testimonial-section {
+            text-align: center;
+            padding: 100px 60px;
+        }
+
+        .testimonial-card {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px;
+            background-color: var(--white);
+            border: 1px solid rgba(139, 157, 131, 0.15);
+        }
+
+        .quote-mark {
+            font-size: 72px;
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--mint);
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-text {
+            font-size: 19px;
+            line-height: 2;
+            font-style: italic;
+            color: var(--charcoal);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .testimonial-author {
+            font-size: 15px;
+            color: var(--charcoal);
+            font-weight: 500;
+        }
+
+        .testimonial-title {
+            font-size: 13px;
+            color: var(--mint);
+            letter-spacing: 1px;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            padding: 18px 50px;
+            background-color: transparent;
+            color: var(--mint);
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: 1.5px solid var(--mint);
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .cta-button:hover {
+            background-color: var(--mint);
+            color: var(--white);
+        }
+
+        .cta-button.filled {
+            background-color: var(--mint);
+            color: var(--white);
+        }
+
+        .cta-button.filled:hover {
+            background-color: var(--sage);
+            border-color: var(--sage);
+        }
+
+        /* Divider */
+        .divider {
+            width: 100px;
+            height: 1px;
+            background-color: var(--mint);
+            margin: 80px auto;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--charcoal);
+            color: var(--cream);
+            padding: 80px 60px 40px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .footer-tagline {
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: var(--sage);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .footer-description {
+            font-size: 14px;
+            line-height: 1.9;
+            color: var(--cream);
+            opacity: 0.8;
+            font-weight: 300;
+        }
+
+        .footer-column h4 {
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            color: var(--sage);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 15px;
+        }
+
+        .footer-column a {
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 14px;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+            font-weight: 300;
+        }
+
+        .footer-column a:hover {
+            opacity: 1;
+            color: var(--sage);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(139, 157, 131, 0.2);
+            font-size: 12px;
+            opacity: 0.6;
+        }
+
+        @media (max-width: 968px) {
+            nav ul {
+                gap: 25px;
+            }
+
+            .page-title {
+                font-size: 42px;
+            }
+
+            .partnership-boxes,
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .process-step::after {
+                display: none;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+
+            section {
+                padding: 60px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div>
+                <a href="sunday_best_group.html" class="logo">
+                    Sunday Best Group
+                    <span class="logo-subtitle">Curated Properties</span>
+                </a>
+            </div>
+            <ul>
+                <li><a href="sunday_best_group.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="about.html">Our Story</a></li>
+                <li><a href="partnership.html" class="active">Collaborate</a></li>
+                <li><a href="contact.html">Connect</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Hero -->
+    <div class="page-hero">
+        <p class="page-label">Partnership Opportunities</p>
+        <h1 class="page-title">Let's Build Something<br>Beautiful Together</h1>
+        <p class="page-description">Sunday Best Group is always seeking exceptional properties and strategic partnerships. If you have a property with potential or an investment opportunity that aligns with our values, we'd love to explore it together.</p>
+    </div>
+
+    <!-- Partnership Types -->
+    <section>
+        <div style="text-align: center; margin-bottom: 60px;">
+            <p class="page-label">Ways to Partner</p>
+            <h2 class="page-title" style="font-size: 48px;">Who We Work With</h2>
+        </div>
+
+        <div class="partnership-boxes">
+            <div class="partnership-box">
+                <div class="partnership-icon"></div>
+                <h3>Property Owners</h3>
+                <p>Have a property that deserves thoughtful restoration and expert management? We partner with owners to transform underperforming assets into exceptional residences.</p>
+            </div>
+            <div class="partnership-box">
+                <div class="partnership-icon square"></div>
+                <h3>Investors</h3>
+                <p>Interested in co-investing on acquisition and development opportunities? We seek partners who share our commitment to quality and long-term value creation.</p>
+            </div>
+            <div class="partnership-box">
+                <div class="partnership-icon diamond"></div>
+                <h3>Developers</h3>
+                <p>Looking for a partner who values quality craftsmanship and enduring design? We collaborate with developers on projects that prioritize excellence over expedience.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div style="text-align: center; margin-bottom: 80px;">
+            <p class="page-label">Our Process</p>
+            <h2 class="page-title" style="font-size: 48px;">How We Partner</h2>
+        </div>
+
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <h4>Initial Conversation</h4>
+                <p>We begin with a candid discussion about your property, goals, and vision.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <h4>Property Evaluation</h4>
+                <p>We conduct a thorough assessment of the opportunity and its potential.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h4>Partnership Structure</h4>
+                <p>We develop a collaboration framework that aligns with all parties' interests.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <h4>Execute Together</h4>
+                <p>We bring our expertise to transform the property into something exceptional.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- What We Look For -->
+    <section>
+        <div style="text-align: center; margin-bottom: 60px;">
+            <p class="page-label">Ideal Partnerships</p>
+            <h2 class="page-title" style="font-size: 48px;">What We're Seeking</h2>
+        </div>
+
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div style="padding: 50px; background-color: var(--white); border: 1px solid rgba(139, 157, 131, 0.15); margin-bottom: 30px;">
+                <h3 style="font-size: 24px; margin-bottom: 20px; color: var(--charcoal);">Historic Properties</h3>
+                <p style="font-size: 15px; line-height: 2; color: var(--charcoal); font-weight: 300;">Buildings with architectural character and bones worth preserving. We specialize in breathing new life into structures that tell a story.</p>
+            </div>
+
+            <div style="padding: 50px; background-color: var(--white); border: 1px solid rgba(139, 157, 131, 0.15); margin-bottom: 30px;">
+                <h3 style="font-size: 24px; margin-bottom: 20px; color: var(--charcoal);">Multi-Unit Opportunities</h3>
+                <p style="font-size: 15px; line-height: 2; color: var(--charcoal); font-weight: 300;">Properties that can accommodate multiple residences or mixed-use configurations. We excel at creating diverse revenue streams within a single asset.</p>
+            </div>
+
+            <div style="padding: 50px; background-color: var(--white); border: 1px solid rgba(139, 157, 131, 0.15);">
+                <h3 style="font-size: 24px; margin-bottom: 20px; color: var(--charcoal);">Underperforming Assets</h3>
+                <p style="font-size: 15px; line-height: 2; color: var(--charcoal); font-weight: 300;">Properties with unrealized potential due to deferred maintenance, outdated design, or ineffective management. We see possibility where others see problems.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Testimonial -->
+    <section class="testimonial-section">
+        <div class="testimonial-card">
+            <div class="quote-mark">"</div>
+            <p class="testimonial-text">Working with Sunday Best Group transformed not just my property, but my entire approach to real estate investment. Their attention to detail, commitment to quality, and transparent communication made the entire process remarkably smooth.</p>
+            <p class="testimonial-author">Previous Partnership Client</p>
+            <p class="testimonial-title">San Antonio, Texas</p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="text-align: center; padding: 100px 60px; background-color: var(--cream);">
+        <h2 class="page-title" style="font-size: 48px; margin-bottom: 30px;">Ready to Explore<br>a Partnership?</h2>
+        <p class="page-description" style="margin-bottom: 50px;">Whether you have a specific property in mind or want to discuss potential opportunities, Amy Moody and the Sunday Best Group team are here to explore how we can work together.</p>
+        <a href="contact.html" class="cta-button filled">Schedule a Conversation</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <div class="footer-logo">Sunday Best Group</div>
+                <div class="footer-tagline">Curated Properties</div>
+                <p class="footer-description">Independent real estate investment and property management specializing in historic restorations and thoughtfully designed residential spaces.</p>
+            </div>
+
+            <div class="footer-column">
+                <h4>Properties</h4>
+                <ul>
+                    <li><a href="portfolio.html">Current Portfolio</a></li>
+                    <li><a href="portfolio.html">Walters Street</a></li>
+                    <li><a href="contact.html">Leasing Information</a></li>
+                    <li><a href="contact.html">Short-Term Bookings</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="about.html">Philosophy</a></li>
+                    <li><a href="partnership.html">Investment Opportunities</a></li>
+                    <li><a href="partnership.html">Partner With Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Sunday Best Group. All rights reserved. | San Antonio, Texas</p>
+        </div>
+    </footer>
+</body>
+</html>

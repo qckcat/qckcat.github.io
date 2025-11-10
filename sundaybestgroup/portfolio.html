@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Sunday Best Group</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #F7F4EF;
+            --sage: #8B9D83;
+            --dusty-blue: #A4B3C0;
+            --lavender: #B8A9C9;
+            --charcoal: #3A3A3A;
+            --soft-gold: #C9B99B;
+            --white: #FFFFFF;
+            --stripe-lavender: rgba(184, 169, 201, 0.12);
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--charcoal);
+            background: repeating-linear-gradient(
+                90deg,
+                var(--cream),
+                var(--cream) 35px,
+                var(--stripe-lavender) 35px,
+                var(--stripe-lavender) 70px
+            );
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        /* Header / Navigation */
+        header {
+            background-color: var(--white);
+            padding: 30px 60px;
+            border-bottom: 1px solid rgba(139, 157, 131, 0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: var(--charcoal);
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        .logo-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 9px;
+            letter-spacing: 3px;
+            color: var(--sage);
+            display: block;
+            margin-top: 2px;
+            font-weight: 400;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 50px;
+            list-style: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--sage);
+        }
+
+        /* Page Hero */
+        .page-hero {
+            padding: 100px 60px 60px;
+            text-align: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .page-label {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--lavender);
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .page-title {
+            font-size: 62px;
+            color: var(--charcoal);
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 30px;
+        }
+
+        .page-description {
+            font-size: 17px;
+            line-height: 2;
+            color: var(--charcoal);
+            max-width: 700px;
+            margin: 0 auto 60px;
+            font-weight: 300;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Featured Property Section */
+        .featured-property {
+            background-color: var(--white);
+            padding: 100px 60px;
+            margin: 60px 0;
+        }
+
+        .property-showcase {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .property-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .property-image {
+            aspect-ratio: 3/4;
+            background-color: var(--cream);
+            border: 1px solid rgba(139, 157, 131, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--sage);
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+        .property-image.large {
+            grid-column: 1 / -1;
+            aspect-ratio: 16/9;
+        }
+
+        .property-details {
+            padding: 40px;
+            background-color: var(--cream);
+            border: 1px solid rgba(139, 157, 131, 0.15);
+        }
+
+        .property-address {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--lavender);
+            margin-bottom: 15px;
+        }
+
+        .property-name {
+            font-size: 48px;
+            font-family: 'Cormorant Garamond', serif;
+            margin-bottom: 30px;
+            color: var(--charcoal);
+            font-weight: 300;
+        }
+
+        .property-description {
+            font-size: 15px;
+            line-height: 1.9;
+            margin-bottom: 40px;
+            color: var(--charcoal);
+            font-weight: 300;
+        }
+
+        .property-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .feature-item {
+            border-left: 2px solid var(--lavender);
+            padding-left: 20px;
+        }
+
+        .feature-label {
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--lavender);
+            margin-bottom: 5px;
+        }
+
+        .feature-value {
+            font-size: 15px;
+            color: var(--charcoal);
+            font-weight: 500;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 50px;
+            background-color: transparent;
+            color: var(--lavender);
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: 1.5px solid var(--lavender);
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .cta-button:hover {
+            background-color: var(--lavender);
+            color: var(--white);
+        }
+
+        /* Property Grid */
+        .property-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+            margin-top: 60px;
+        }
+
+        .property-card {
+            background-color: var(--white);
+            border: 1px solid rgba(139, 157, 131, 0.15);
+            transition: transform 0.3s;
+        }
+
+        .property-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .property-card-image {
+            aspect-ratio: 16/10;
+            background-color: var(--cream);
+            border-bottom: 1px solid rgba(139, 157, 131, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--sage);
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+        .property-card-content {
+            padding: 40px;
+        }
+
+        .property-card-address {
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--lavender);
+            margin-bottom: 10px;
+        }
+
+        .property-card-title {
+            font-size: 32px;
+            font-family: 'Cormorant Garamond', serif;
+            margin-bottom: 20px;
+            color: var(--charcoal);
+            font-weight: 400;
+        }
+
+        .property-card-description {
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--charcoal);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .property-card-meta {
+            display: flex;
+            gap: 30px;
+            font-size: 13px;
+            color: var(--charcoal);
+            margin-bottom: 25px;
+        }
+
+        .property-card-link {
+            color: var(--lavender);
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .property-card-link:hover {
+            color: var(--sage);
+        }
+
+        /* Divider */
+        .divider {
+            width: 100px;
+            height: 1px;
+            background-color: var(--lavender);
+            margin: 80px auto;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--charcoal);
+            color: var(--cream);
+            padding: 80px 60px 40px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .footer-tagline {
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: var(--sage);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .footer-description {
+            font-size: 14px;
+            line-height: 1.9;
+            color: var(--cream);
+            opacity: 0.8;
+            font-weight: 300;
+        }
+
+        .footer-column h4 {
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            color: var(--sage);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 15px;
+        }
+
+        .footer-column a {
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 14px;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+            font-weight: 300;
+        }
+
+        .footer-column a:hover {
+            opacity: 1;
+            color: var(--sage);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(139, 157, 131, 0.2);
+            font-size: 12px;
+            opacity: 0.6;
+        }
+
+        @media (max-width: 968px) {
+            nav ul {
+                gap: 25px;
+            }
+
+            .page-title {
+                font-size: 42px;
+            }
+
+            .property-showcase,
+            .property-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+
+            section {
+                padding: 60px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div>
+                <a href="sunday_best_group.html" class="logo">
+                    Sunday Best Group
+                    <span class="logo-subtitle">Curated Properties</span>
+                </a>
+            </div>
+            <ul>
+                <li><a href="sunday_best_group.html">Home</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="about.html">Our Story</a></li>
+                <li><a href="partnership.html">Collaborate</a></li>
+                <li><a href="contact.html">Connect</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Hero -->
+    <div class="page-hero">
+        <p class="page-label">Our Properties</p>
+        <h1 class="page-title">A Portfolio of<br>Distinction</h1>
+        <p class="page-description">Each property in our collection represents a commitment to quality, character, and timeless design. From historic restorations to modern retreats, we curate spaces that elevate everyday living.</p>
+    </div>
+
+    <!-- Featured Property Section -->
+    <section class="featured-property">
+        <div style="text-align: center; margin-bottom: 60px;">
+            <p class="page-label">Featured Property</p>
+            <h2 class="page-title" style="font-size: 52px; margin-bottom: 0;">The Walters Street Collection</h2>
+        </div>
+
+        <div class="property-showcase">
+            <div class="property-images">
+                <div class="property-image large">HERO IMAGE</div>
+                <div class="property-image">DETAIL 1</div>
+                <div class="property-image">DETAIL 2</div>
+            </div>
+
+            <div class="property-details">
+                <p class="property-address">1323 North Walters Street</p>
+                <h3 class="property-name">A Quadruplex<br>Reimagined</h3>
+                <p class="property-description">A meticulously restored property featuring four distinct residences. Two long-term units offer sophisticated urban living with thoughtfully appointed interiors, while two boutique short-term rentals provide travelers with an authentic, elevated experience.</p>
+                
+                <div class="property-features">
+                    <div class="feature-item">
+                        <p class="feature-label">Long-Term Units</p>
+                        <p class="feature-value">1 Bed / 1 Bath<br>Spacious Loft</p>
+                    </div>
+                    <div class="feature-item">
+                        <p class="feature-label">Short-Term Units</p>
+                        <p class="feature-value">2 Studio Suites<br>Fully Appointed</p>
+                    </div>
+                    <div class="feature-item">
+                        <p class="feature-label">Features</p>
+                        <p class="feature-value">Historic Details<br>Modern Systems</p>
+                    </div>
+                    <div class="feature-item">
+                        <p class="feature-label">Status</p>
+                        <p class="feature-value">Now Leasing<br>& Booking</p>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="cta-button">Inquire About This Property</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Additional Properties -->
+    <section>
+        <div style="text-align: center; margin-bottom: 60px;">
+            <p class="page-label">Coming Soon</p>
+            <h2 class="page-title" style="font-size: 48px;">Future Properties</h2>
+        </div>
+
+        <div class="property-grid">
+            <div class="property-card">
+                <div class="property-card-image">COMING SOON</div>
+                <div class="property-card-content">
+                    <p class="property-card-address">San Antonio, Texas</p>
+                    <h3 class="property-card-title">Historic Renovation</h3>
+                    <p class="property-card-description">A turn-of-the-century gem awaiting its transformation. Details to be announced.</p>
+                    <p class="property-card-meta">
+                        <span>Multi-Unit</span>
+                        <span>•</span>
+                        <span>2025</span>
+                    </p>
+                    <a href="partnership.html" class="property-card-link">Express Interest →</a>
+                </div>
+            </div>
+
+            <div class="property-card">
+                <div class="property-card-image">COMING SOON</div>
+                <div class="property-card-content">
+                    <p class="property-card-address">San Antonio, Texas</p>
+                    <h3 class="property-card-title">Boutique Development</h3>
+                    <p class="property-card-description">A new construction project designed for discerning residents seeking modern elegance.</p>
+                    <p class="property-card-meta">
+                        <span>Residential</span>
+                        <span>•</span>
+                        <span>2026</span>
+                    </p>
+                    <a href="partnership.html" class="property-card-link">Express Interest →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- CTA Section -->
+    <section style="text-align: center; padding: 100px 60px;">
+        <h2 class="page-title" style="font-size: 48px; margin-bottom: 30px;">Interested in Leasing<br>or Partnership?</h2>
+        <p class="page-description" style="margin-bottom: 50px;">Whether you're looking for your next home or exploring investment opportunities, we'd love to connect.</p>
+        <div style="display: flex; gap: 20px; justify-content: center;">
+            <a href="contact.html" class="cta-button">Contact Us</a>
+            <a href="partnership.html" class="cta-button">Partnership Opportunities</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <div class="footer-logo">Sunday Best Group</div>
+                <div class="footer-tagline">Curated Properties</div>
+                <p class="footer-description">Independent real estate investment and property management specializing in historic restorations and thoughtfully designed residential spaces.</p>
+            </div>
+
+            <div class="footer-column">
+                <h4>Properties</h4>
+                <ul>
+                    <li><a href="portfolio.html">Current Portfolio</a></li>
+                    <li><a href="portfolio.html">Walters Street</a></li>
+                    <li><a href="contact.html">Leasing Information</a></li>
+                    <li><a href="contact.html">Short-Term Bookings</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="about.html">Philosophy</a></li>
+                    <li><a href="partnership.html">Investment Opportunities</a></li>
+                    <li><a href="partnership.html">Partner With Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Sunday Best Group. All rights reserved. | San Antonio, Texas</p>
+        </div>
+    </footer>
+</body>
+</html>

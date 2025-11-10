@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunday Best Group - Curated Properties & Investment Opportunities</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #F7F4EF;
+            --sage: #8B9D83;
+            --dusty-blue: #A4B3C0;
+            --charcoal: #3A3A3A;
+            --soft-gold: #C9B99B;
+            --white: #FFFFFF;
+            --stripe-sage: rgba(139, 157, 131, 0.15);
+            --stripe-blue: rgba(164, 179, 192, 0.12);
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--charcoal);
+            background-color: var(--cream);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        /* Striped Background Pattern */
+        .striped-bg {
+            background: repeating-linear-gradient(
+                90deg,
+                var(--cream),
+                var(--cream) 30px,
+                var(--stripe-sage) 30px,
+                var(--stripe-sage) 60px
+            );
+        }
+
+        /* Header / Navigation */
+        header {
+            background-color: var(--white);
+            padding: 30px 60px;
+            border-bottom: 1px solid rgba(139, 157, 131, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: var(--charcoal);
+            text-transform: uppercase;
+        }
+
+        .logo-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 9px;
+            letter-spacing: 3px;
+            color: var(--sage);
+            display: block;
+            margin-top: 2px;
+            font-weight: 400;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 50px;
+            list-style: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--sage);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            padding: 60px 30px;
+            background-color: var(--cream);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-ornament {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 10px;
+            margin-bottom: -20px;
+            position: relative;
+        }
+
+        .hero-ornament img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .hero h1 {
+            font-size: 72px;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            color: var(--charcoal);
+            font-weight: 300;
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--sage);
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .hero p {
+            font-size: 17px;
+            line-height: 1.9;
+            color: var(--charcoal);
+            margin-bottom: 50px;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 50px;
+            background-color: transparent;
+            color: var(--sage);
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: 1.5px solid var(--sage);
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .cta-button:hover {
+            background-color: var(--sage);
+            color: var(--white);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 120px 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-label {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--sage);
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-size: 52px;
+            color: var(--charcoal);
+            font-weight: 300;
+            line-height: 1.3;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-image-container {
+            position: relative;
+            height: 600px;
+            background-color: var(--white);
+            border: 1px solid rgba(139, 157, 131, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .door-illustration {
+            width: 180px;
+            height: 380px;
+            border: 2px solid var(--dusty-blue);
+            border-radius: 8px 8px 0 0;
+            position: relative;
+            background-color: var(--cream);
+        }
+
+        .door-arch {
+            width: 180px;
+            height: 90px;
+            border: 2px solid var(--dusty-blue);
+            border-bottom: none;
+            border-radius: 90px 90px 0 0;
+            position: absolute;
+            top: -90px;
+            left: -2px;
+            background-color: var(--cream);
+        }
+
+        .door-panels {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            padding: 30px 20px;
+            height: 100%;
+        }
+
+        .door-panel {
+            border: 2px solid var(--dusty-blue);
+            border-radius: 4px;
+        }
+
+        .door-knob {
+            width: 10px;
+            height: 10px;
+            background-color: var(--sage);
+            border-radius: 50%;
+            position: absolute;
+            right: 30px;
+            top: 50%;
+        }
+
+        .about-text {
+            padding: 40px;
+        }
+
+        .about-text p {
+            font-size: 17px;
+            line-height: 2;
+            margin-bottom: 30px;
+            color: var(--charcoal);
+            font-weight: 300;
+        }
+
+        .signature {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            font-style: italic;
+            color: var(--sage);
+            margin-top: 40px;
+        }
+
+        /* Featured Property Section */
+        .featured-property {
+            background: repeating-linear-gradient(
+                90deg,
+                var(--white),
+                var(--white) 35px,
+                var(--stripe-blue) 35px,
+                var(--stripe-blue) 70px
+            );
+            padding: 120px 60px;
+        }
+
+        .property-showcase {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .property-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .property-image {
+            aspect-ratio: 3/4;
+            background-color: var(--cream);
+            border: 1px solid rgba(139, 157, 131, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--sage);
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+        .property-image.large {
+            grid-column: 1 / -1;
+            aspect-ratio: 16/9;
+        }
+
+        .property-details {
+            padding: 40px;
+            background-color: var(--white);
+            border: 1px solid rgba(139, 157, 131, 0.15);
+        }
+
+        .property-address {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--sage);
+            margin-bottom: 15px;
+        }
+
+        .property-name {
+            font-size: 48px;
+            font-family: 'Cormorant Garamond', serif;
+            margin-bottom: 30px;
+            color: var(--charcoal);
+            font-weight: 300;
+        }
+
+        .property-description {
+            font-size: 15px;
+            line-height: 1.9;
+            margin-bottom: 40px;
+            color: var(--charcoal);
+            font-weight: 300;
+        }
+
+        .property-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .feature-item {
+            border-left: 2px solid var(--sage);
+            padding-left: 20px;
+        }
+
+        .feature-label {
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--sage);
+            margin-bottom: 5px;
+        }
+
+        .feature-value {
+            font-size: 15px;
+            color: var(--charcoal);
+            font-weight: 500;
+        }
+
+        /* Portfolio Grid */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .portfolio-item {
+            background-color: var(--white);
+            border: 1px solid rgba(139, 157, 131, 0.15);
+            padding: 40px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .portfolio-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            border: 2px solid var(--sage);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .portfolio-icon::before {
+            content: '';
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--sage);
+            border-radius: 50%;
+        }
+
+        .portfolio-icon.square::before {
+            border-radius: 4px;
+        }
+
+        .portfolio-icon.diamond::before {
+            transform: rotate(45deg);
+        }
+
+        .portfolio-item h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--charcoal);
+        }
+
+        .portfolio-item p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--charcoal);
+            font-weight: 300;
+        }
+
+        /* Partnership Section */
+        .partnership-section {
+            background-color: var(--white);
+            text-align: center;
+        }
+
+        .partnership-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .partnership-content p {
+            font-size: 17px;
+            line-height: 2;
+            margin-bottom: 30px;
+            color: var(--charcoal);
+            font-weight: 300;
+        }
+
+        .partnership-boxes {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .partnership-box {
+            padding: 50px 30px;
+            border: 1.5px solid var(--sage);
+            background-color: var(--cream);
+        }
+
+        .partnership-box h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: var(--charcoal);
+        }
+
+        .partnership-box p {
+            font-size: 14px;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--charcoal);
+            color: var(--cream);
+            padding: 80px 60px 40px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .footer-tagline {
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: var(--sage);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .footer-description {
+            font-size: 14px;
+            line-height: 1.9;
+            color: var(--cream);
+            opacity: 0.8;
+            font-weight: 300;
+        }
+
+        .footer-column h4 {
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            color: var(--sage);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 15px;
+        }
+
+        .footer-column a {
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 14px;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+            font-weight: 300;
+        }
+
+        .footer-column a:hover {
+            opacity: 1;
+            color: var(--sage);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(139, 157, 131, 0.2);
+            font-size: 12px;
+            opacity: 0.6;
+        }
+
+        /* Decorative Elements */
+        .divider {
+            width: 100px;
+            height: 1px;
+            background-color: var(--sage);
+            margin: 60px auto;
+        }
+
+        .ornamental-line {
+            text-align: center;
+            margin: 80px 0;
+            position: relative;
+        }
+
+        .ornamental-line::before,
+        .ornamental-line::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 200px;
+            height: 1px;
+            background-color: var(--sage);
+        }
+
+        .ornamental-line::before {
+            right: 55%;
+        }
+
+        .ornamental-line::after {
+            left: 55%;
+        }
+
+        .ornamental-circle {
+            width: 12px;
+            height: 12px;
+            background-color: var(--sage);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        @media (max-width: 1200px) {
+            section {
+                padding: 80px 40px;
+            }
+
+            .property-showcase {
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 968px) {
+            header {
+                padding: 20px 30px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .hero {
+                height: auto;
+                padding: 80px 30px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero-subtitle {
+                font-size: 14px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .about-content,
+            .property-showcase {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .portfolio-grid,
+            .partnership-boxes {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+
+            section {
+                padding: 60px 30px;
+            }
+
+            .section-title {
+                font-size: 38px;
+            }
+
+            .property-name {
+                font-size: 36px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .logo {
+                font-size: 22px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .property-features {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .partnership-boxes {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div>
+                <div class="logo">
+                    Sunday Best Group
+                    <span class="logo-subtitle">Curated Properties</span>
+                </div>
+            </div>
+            <ul>
+                <li><a href="sunday_best_group.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="about.html">Our Story</a></li>
+                <li><a href="partnership.html">Collaborate</a></li>
+                <li><a href="contact.html">Connect</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-ornament">
+                <img src="file:///C:/Users/chris/Downloads/files-3/arch.png" alt="Architectural ornament">
+            </div>
+            <p class="hero-subtitle">Est. 2018</p>
+            <h1>Where Refined Living<br>Meets Investment</h1>
+            <p>Thoughtfully curated properties that balance timeless elegance with modern sensibility. Each space is designed to elevate everyday living while delivering exceptional returns.</p>
+            <a href="portfolio.html" class="cta-button">View Portfolio</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="section-header">
+            <p class="section-label">Our Philosophy</p>
+            <h2 class="section-title">Investing in Spaces<br>Worth Living In</h2>
+        </div>
+        
+        <div class="about-content">
+            <div class="about-image-container">
+                <div class="door-illustration">
+                    <div class="door-arch"></div>
+                    <div class="door-panels">
+                        <div class="door-panel"></div>
+                        <div class="door-panel"></div>
+                        <div class="door-panel"></div>
+                        <div class="door-panel"></div>
+                    </div>
+                    <div class="door-knob"></div>
+                </div>
+            </div>
+            
+            <div class="about-text">
+                <p>Sunday Best Group was founded on a simple belief: exceptional properties aren't just built—they're carefully cultivated. We seek out opportunities where historic charm meets contemporary comfort, where architectural integrity is preserved and enhanced.</p>
+                
+                <p>Each property in our portfolio reflects a commitment to quality materials, thoughtful design, and enduring value. We're not in the business of quick flips or cookie-cutter developments. We create homes and spaces that stand the test of time.</p>
+                
+                <p>Whether you're seeking a long-term residence or a perfectly appointed short-term retreat, every Sunday Best property is designed with the same exacting standards: warmth, elegance, and an unmistakable sense of arrival.</p>
+                
+                <div class="signature">Amy Moody</div>
+                <p style="font-size: 13px; margin-top: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--sage);">Founder & Principal</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Property Section -->
+    <section class="featured-property" id="properties">
+        <div class="section-header">
+            <p class="section-label">Featured Property</p>
+            <h2 class="section-title">The Walters Street Collection</h2>
+        </div>
+
+        <div class="property-showcase">
+            <div class="property-images">
+                <div class="property-image large">HERO IMAGE</div>
+                <div class="property-image">DETAIL 1</div>
+                <div class="property-image">DETAIL 2</div>
+            </div>
+
+            <div class="property-details">
+                <p class="property-address">1323 North Walters Street</p>
+                <h3 class="property-name">A Quadruplex<br>Reimagined</h3>
+                <p class="property-description">A meticulously restored property featuring four distinct residences. Two long-term units offer sophisticated urban living with thoughtfully appointed interiors, while two boutique short-term rentals provide travelers with an authentic, elevated experience.</p>
+                
+                <div class="property-features">
+                    <div class="feature-item">
+                        <p class="feature-label">Long-Term Units</p>
+                        <p class="feature-value">1 Bed / 1 Bath<br>Spacious Loft</p>
+                    </div>
+                    <div class="feature-item">
+                        <p class="feature-label">Short-Term Units</p>
+                        <p class="feature-value">2 Studio Suites<br>Fully Appointed</p>
+                    </div>
+                    <div class="feature-item">
+                        <p class="feature-label">Features</p>
+                        <p class="feature-value">Historic Details<br>Modern Systems</p>
+                    </div>
+                    <div class="feature-item">
+                        <p class="feature-label">Status</p>
+                        <p class="feature-value">Now Leasing<br>& Booking</p>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="cta-button">Inquire About This Property</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Overview -->
+    <section>
+        <div class="section-header">
+            <p class="section-label">Our Portfolio</p>
+            <h2 class="section-title">A Collection of<br>Distinctive Properties</h2>
+        </div>
+
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <div class="portfolio-icon"></div>
+                <h3>Historic Restorations</h3>
+                <p>Breathing new life into architectural treasures while honoring their original character and craftsmanship.</p>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-icon square"></div>
+                <h3>Long-Term Residences</h3>
+                <p>Thoughtfully designed apartments and homes for those seeking refined, comfortable living.</p>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-icon diamond"></div>
+                <h3>Short-Term Retreats</h3>
+                <p>Curated stays that offer travelers an authentic taste of elevated, residential-style hospitality.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnership Section -->
+    <section class="partnership-section" id="partnership">
+        <div class="section-header">
+            <p class="section-label">Investment Opportunities</p>
+            <h2 class="section-title">Let's Build Something<br>Beautiful Together</h2>
+        </div>
+
+        <div class="partnership-content">
+            <p>Sunday Best Group is always seeking exceptional properties and strategic partnerships. If you have a property with potential or an investment opportunity that aligns with our values of quality, integrity, and timeless design, we'd love to hear from you.</p>
+
+            <div class="partnership-boxes">
+                <div class="partnership-box">
+                    <h3>Property Owners</h3>
+                    <p>Have a property that deserves thoughtful restoration and expert management?</p>
+                </div>
+                <div class="partnership-box">
+                    <h3>Investors</h3>
+                    <p>Interested in partnering on acquisition and development opportunities?</p>
+                </div>
+                <div class="partnership-box">
+                    <h3>Developers</h3>
+                    <p>Looking for a partner who values quality craftsmanship and enduring design?</p>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <p style="font-size: 15px; margin-bottom: 40px; font-style: italic;">Whether you're considering selling, developing, or partnering on your next project, Amy Moody and the Sunday Best Group team bring decades of combined expertise in real estate investment, property management, and thoughtful development.</p>
+
+            <a href="partnership.html" class="cta-button">Start a Conversation</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-header">
+            <p class="section-label">Get in Touch</p>
+            <h2 class="section-title">We'd Love to<br>Hear From You</h2>
+        </div>
+
+        <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+            <p style="font-size: 17px; line-height: 2; margin-bottom: 50px; font-weight: 300;">Whether you're interested in leasing, investment opportunities, or simply learning more about our portfolio, we're here to help.</p>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 50px;">
+                <div>
+                    <p style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--sage); margin-bottom: 10px;">Email</p>
+                    <p style="font-size: 16px;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f29b9c949db281879c96938b9097818695809d8782dc919d9f">[email&#160;protected]</a></p>
+                </div>
+                <div>
+                    <p style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--sage); margin-bottom: 10px;">Phone</p>
+                    <p style="font-size: 16px;">(210) 555-0123</p>
+                </div>
+            </div>
+
+            <a href="/cdn-cgi/l/email-protection#e38a8d858ca390968d87829a8186909784918c9693cd808c8e" class="cta-button">Send Us a Message</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <div class="footer-logo">Sunday Best Group</div>
+                <div class="footer-tagline">Curated Properties</div>
+                <p class="footer-description">Independent real estate investment and property management specializing in historic restorations and thoughtfully designed residential spaces.</p>
+            </div>
+
+            <div class="footer-column">
+                <h4>Properties</h4>
+                <ul>
+                    <li><a href="#properties">Current Portfolio</a></li>
+                    <li><a href="#properties">Walters Street</a></li>
+                    <li><a href="#properties">Leasing Information</a></li>
+                    <li><a href="#properties">Short-Term Bookings</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#about">Our Story</a></li>
+                    <li><a href="#about">Philosophy</a></li>
+                    <li><a href="#partnership">Investment Opportunities</a></li>
+                    <li><a href="#partnership">Partner With Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
