@@ -1,0 +1,1752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlamoSites | Construction-Grade Websites for San Antonio Businesses</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #2C2C2C;
+            line-height: 1.6;
+            background: #FEFEFE;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(254, 254, 254, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #E5E5E5;
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 22px;
+            font-weight: 600;
+            color: #5E1803;
+        }
+        
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #2C2C2C;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #5E1803;
+        }
+        
+        .nav-cta {
+            padding: 12px 28px;
+            background: #5E1803;
+            color: #FEFEFE;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .nav-cta:hover {
+            background: #7A2104;
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section - Problem/Solution Focused */
+        .hero {
+            margin-top: 80px;
+            background: linear-gradient(135deg, #788176 0%, #5E1803 100%);
+            color: #FEFEFE;
+            padding: 100px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(0deg, transparent, transparent 30px, rgba(255,255,255,0.03) 30px, rgba(255,255,255,0.03) 31px),
+                repeating-linear-gradient(90deg, transparent, transparent 30px, rgba(255,255,255,0.03) 30px, rgba(255,255,255,0.03) 31px);
+            opacity: 0.5;
+        }
+        
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-left h1 {
+            font-size: 58px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            letter-spacing: -1px;
+        }
+        
+        .hero-subtitle {
+            font-size: 22px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: rgba(254, 254, 254, 0.9);
+        }
+        
+        .hero-proof {
+            font-size: 18px;
+            color: #CCB999;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+        
+        .hero-ctas {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .btn-primary {
+            padding: 18px 40px;
+            background: #CCB999;
+            color: #2C2C2C;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        
+        .btn-primary:hover {
+            background: #D9C6A3;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .btn-secondary {
+            padding: 18px 40px;
+            background: transparent;
+            color: #FEFEFE;
+            text-decoration: none;
+            border: 2px solid rgba(254, 254, 254, 0.5);
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        
+        .btn-secondary:hover {
+            border-color: #FEFEFE;
+            background: rgba(254, 254, 254, 0.1);
+        }
+        
+        .trust-badges {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: rgba(254, 254, 254, 0.8);
+        }
+        
+        .trust-badge-icon {
+            font-size: 20px;
+        }
+        
+        .hero-right {
+            background: rgba(254, 254, 254, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(254, 254, 254, 0.2);
+            border-radius: 12px;
+            padding: 40px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: #CCB999;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: rgba(254, 254, 254, 0.8);
+        }
+        
+        /* Problem Statement Section */
+        .problem {
+            padding: 100px 40px;
+            background: #F5F1E8;
+        }
+        
+        .problem-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .problem h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #2C2C2C;
+        }
+        
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .problem-item {
+            background: #FEFEFE;
+            padding: 40px 30px;
+            border-radius: 8px;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .problem-item:hover {
+            border-color: #5E1803;
+            transform: translateY(-5px);
+        }
+        
+        .problem-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .problem-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #5E1803;
+        }
+        
+        .problem-desc {
+            font-size: 15px;
+            color: #788176;
+            line-height: 1.6;
+        }
+        
+        /* Construction Metaphor Section */
+        .construction-method {
+            padding: 100px 40px;
+            background: #FEFEFE;
+        }
+        
+        .method-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .section-tag {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(94, 24, 3, 0.1);
+            color: #5E1803;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+        
+        .section-title {
+            font-size: 48px;
+            font-weight: 700;
+            color: #2C2C2C;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .section-subtitle {
+            font-size: 20px;
+            color: #788176;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 30px;
+            position: relative;
+        }
+        
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 50px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(90deg, #CCB999 0%, #788176 100%);
+            z-index: 0;
+        }
+        
+        .process-step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .step-number {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 25px;
+            background: linear-gradient(135deg, #788176 0%, #5E1803 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: 700;
+            color: #FEFEFE;
+            border: 4px solid #FEFEFE;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .step-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #2C2C2C;
+        }
+        
+        .step-desc {
+            font-size: 14px;
+            color: #788176;
+            line-height: 1.5;
+        }
+        
+        /* Pricing Calculator Section */
+        .pricing-calculator {
+            padding: 100px 40px;
+            background: linear-gradient(135deg, #788176 0%, #5E1803 100%);
+            color: #FEFEFE;
+        }
+        
+        .calculator-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .calculator-intro {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .calculator-intro h2 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .calculator-intro p {
+            font-size: 20px;
+            color: rgba(254, 254, 254, 0.9);
+        }
+        
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .calc-item {
+            background: rgba(254, 254, 254, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(254, 254, 254, 0.2);
+            border-radius: 8px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .calc-item:hover {
+            background: rgba(254, 254, 254, 0.15);
+            transform: translateY(-5px);
+        }
+        
+        .calc-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+        
+        .calc-label {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            color: #CCB999;
+        }
+        
+        .calc-value {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .calc-comparison {
+            font-size: 14px;
+            color: rgba(254, 254, 254, 0.75);
+        }
+        
+        .calculator-summary {
+            background: rgba(254, 254, 254, 0.15);
+            backdrop-filter: blur(10px);
+            border: 2px solid #CCB999;
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .summary-text {
+            font-size: 18px;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        
+        .summary-highlight {
+            font-size: 28px;
+            font-weight: 700;
+            color: #CCB999;
+            margin-bottom: 30px;
+        }
+        
+        /* Packages Section */
+        .packages {
+            padding: 100px 40px;
+            background: #FEFEFE;
+        }
+        
+        .packages-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+            margin-top: 60px;
+        }
+        
+        .package {
+            background: #F5F1E8;
+            border-radius: 12px;
+            padding: 50px 40px;
+            border: 3px solid transparent;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .package:hover {
+            border-color: #788176;
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+        
+        .package.featured {
+            background: linear-gradient(135deg, #788176 0%, #5E1803 100%);
+            border: none;
+            color: #FEFEFE;
+            transform: scale(1.05);
+        }
+        
+        .package.featured:hover {
+            transform: scale(1.05) translateY(-8px);
+        }
+        
+        .package-badge {
+            position: absolute;
+            top: -15px;
+            right: 30px;
+            background: #5E1803;
+            color: #FEFEFE;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .package.featured .package-badge {
+            background: #CCB999;
+            color: #2C2C2C;
+        }
+        
+        .package-name {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #788176;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .package.featured .package-name {
+            color: #CCB999;
+        }
+        
+        .package-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #2C2C2C;
+        }
+        
+        .package.featured .package-title {
+            color: #FEFEFE;
+        }
+        
+        .package-price {
+            font-size: 48px;
+            font-weight: 700;
+            color: #5E1803;
+            margin-bottom: 10px;
+        }
+        
+        .package.featured .package-price {
+            color: #FEFEFE;
+        }
+        
+        .package-period {
+            font-size: 16px;
+            color: #788176;
+            margin-bottom: 30px;
+        }
+        
+        .package.featured .package-period {
+            color: rgba(254, 254, 254, 0.8);
+        }
+        
+        .package-description {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 35px;
+            color: #2C2C2C;
+        }
+        
+        .package.featured .package-description {
+            color: rgba(254, 254, 254, 0.9);
+        }
+        
+        .package-features {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+        
+        .package-features li {
+            padding: 14px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 15px;
+            color: #2C2C2C;
+            border-bottom: 1px solid rgba(120, 129, 118, 0.2);
+        }
+        
+        .package-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #5E1803;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        .package.featured .package-features li {
+            color: rgba(254, 254, 254, 0.9);
+            border-bottom-color: rgba(254, 254, 254, 0.2);
+        }
+        
+        .package.featured .package-features li::before {
+            color: #CCB999;
+        }
+        
+        .package-cta {
+            display: block;
+            text-align: center;
+            padding: 16px 32px;
+            background: #5E1803;
+            color: #FEFEFE;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s;
+        }
+        
+        .package-cta:hover {
+            background: #7A2104;
+            transform: translateY(-2px);
+        }
+        
+        .package.featured .package-cta {
+            background: #CCB999;
+            color: #2C2C2C;
+        }
+        
+        .package.featured .package-cta:hover {
+            background: #D9C6A3;
+        }
+        
+        /* Maintenance Plans */
+        .maintenance {
+            padding: 100px 40px;
+            background: #F5F1E8;
+        }
+        
+        .maintenance-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .maintenance-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+            margin-top: 60px;
+        }
+        
+        .maintenance-plan {
+            background: #FEFEFE;
+            border-radius: 12px;
+            padding: 50px 40px;
+            border: 2px solid #E5E5E5;
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .maintenance-plan:hover {
+            border-color: #788176;
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+        
+        .maintenance-plan.featured {
+            border-color: #5E1803;
+            border-width: 3px;
+        }
+        
+        .plan-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #5E1803;
+            color: #FEFEFE;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .plan-name {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #2C2C2C;
+        }
+        
+        .plan-price {
+            font-size: 56px;
+            font-weight: 700;
+            color: #5E1803;
+            margin-bottom: 10px;
+        }
+        
+        .plan-period {
+            font-size: 16px;
+            color: #788176;
+            margin-bottom: 35px;
+        }
+        
+        .plan-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 35px;
+        }
+        
+        .plan-features li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 15px;
+            color: #2C2C2C;
+            border-bottom: 1px solid #E5E5E5;
+        }
+        
+        .plan-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #788176;
+            font-weight: 700;
+        }
+        
+        /* Case Studies Section */
+        .case-studies {
+            padding: 100px 40px;
+            background: #FEFEFE;
+        }
+        
+        .studies-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .studies-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .case-study {
+            background: #F5F1E8;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        
+        .case-study:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+        
+        .case-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #CCB999 0%, #788176 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 64px;
+        }
+        
+        .case-content {
+            padding: 35px 30px;
+        }
+        
+        .case-category {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #5E1803;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .case-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #2C2C2C;
+        }
+        
+        .case-description {
+            font-size: 15px;
+            color: #788176;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        
+        .case-metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(120, 129, 118, 0.2);
+        }
+        
+        .metric {
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: #5E1803;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+        
+        .metric-label {
+            font-size: 13px;
+            color: #788176;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 40px;
+            background: linear-gradient(135deg, #788176 0%, #5E1803 100%);
+            color: #FEFEFE;
+        }
+        
+        .testimonials-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .testimonial {
+            background: rgba(254, 254, 254, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(254, 254, 254, 0.2);
+            border-radius: 12px;
+            padding: 40px;
+        }
+        
+        .testimonial-quote {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            color: rgba(254, 254, 254, 0.95);
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            background: #CCB999;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: #2C2C2C;
+        }
+        
+        .author-info h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            font-size: 14px;
+            color: #CCB999;
+        }
+        
+        /* Industries */
+        .industries {
+            padding: 100px 40px;
+            background: #F5F1E8;
+        }
+        
+        .industries-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .industry {
+            background: #FEFEFE;
+            border-radius: 12px;
+            padding: 40px 30px;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        
+        .industry:hover {
+            border-color: #788176;
+            transform: translateY(-5px);
+        }
+        
+        .industry-icon {
+            font-size: 56px;
+            margin-bottom: 20px;
+        }
+        
+        .industry-name {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #2C2C2C;
+        }
+        
+        .industry-desc {
+            font-size: 15px;
+            color: #788176;
+            line-height: 1.6;
+        }
+        
+        /* Guarantee Section */
+        .guarantee {
+            padding: 100px 40px;
+            background: #FEFEFE;
+        }
+        
+        .guarantee-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            background: linear-gradient(135deg, #788176 0%, #5E1803 100%);
+            color: #FEFEFE;
+            padding: 80px 60px;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .guarantee-content::before {
+            content: '🛡️';
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .guarantee-content > * {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .guarantee-badge {
+            width: 100px;
+            height: 100px;
+            background: #CCB999;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 48px;
+        }
+        
+        .guarantee h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+        
+        .guarantee p {
+            font-size: 20px;
+            line-height: 1.7;
+            margin-bottom: 15px;
+            color: rgba(254, 254, 254, 0.95);
+        }
+        
+        .guarantee-terms {
+            font-size: 16px;
+            color: #CCB999;
+            margin-top: 30px;
+        }
+        
+        /* CTA Section */
+        .final-cta {
+            padding: 100px 40px;
+            background: #F5F1E8;
+        }
+        
+        .cta-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .cta-content h2 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: #2C2C2C;
+        }
+        
+        .cta-content p {
+            font-size: 20px;
+            color: #788176;
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .availability {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #FEFEFE;
+            border: 2px solid #5E1803;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #5E1803;
+        }
+        
+        .availability-number {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2C2C2C;
+            color: rgba(254, 254, 254, 0.8);
+            padding: 80px 40px 40px;
+        }
+        
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-brand h3 {
+            font-size: 24px;
+            color: #CCB999;
+            margin-bottom: 20px;
+        }
+        
+        .footer-tagline {
+            font-size: 16px;
+            line-height: 1.7;
+            color: rgba(254, 254, 254, 0.7);
+            margin-bottom: 25px;
+        }
+        
+        .footer-contact {
+            font-size: 15px;
+            line-height: 1.8;
+        }
+        
+        .footer-section h4 {
+            font-size: 16px;
+            color: #FEFEFE;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-section a {
+            color: rgba(254, 254, 254, 0.7);
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: #CCB999;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(254, 254, 254, 0.1);
+            color: rgba(254, 254, 254, 0.5);
+            font-size: 14px;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 1200px) {
+            .hero-content,
+            .packages-grid,
+            .maintenance-grid,
+            .studies-grid,
+            .industries-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .process-steps {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .calculator-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-content,
+            .packages-grid,
+            .maintenance-grid,
+            .studies-grid,
+            .industries-grid,
+            .testimonials-grid,
+            .process-steps,
+            .problem-grid,
+            .calculator-grid,
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 38px;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .package.featured {
+                transform: scale(1);
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">AlamoSites</div>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#process">Process</a></li>
+                    <li><a href="#work">Our Work</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                </ul>
+                <a href="#contact" class="nav-cta">Book Consultation</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-left">
+                <h1>We build websites the same way we build houses</h1>
+                <p class="hero-subtitle">On time. On budget. Built to last. No surprises.</p>
+                <p class="hero-proof">✓ Director of Operations with 15+ years in construction brings project management discipline to web design</p>
+                <div class="hero-ctas">
+                    <a href="#calculator" class="btn-primary">See Your Investment</a>
+                    <a href="#work" class="btn-secondary">View Our Work</a>
+                </div>
+                <div class="trust-badges">
+                    <div class="trust-badge">
+                        <span class="trust-badge-icon">⚡</span>
+                        <span>30-Day Average Turnaround</span>
+                    </div>
+                    <div class="trust-badge">
+                        <span class="trust-badge-icon">🏗️</span>
+                        <span>San Antonio Based</span>
+                    </div>
+                    <div class="trust-badge">
+                        <span class="trust-badge-icon">✓</span>
+                        <span>Zero Hidden Fees</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="stats-grid">
+                    <div class="stat">
+                        <div class="stat-number">340%</div>
+                        <div class="stat-label">Avg. Lead Increase for Clients</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">30</div>
+                        <div class="stat-label">Days Average Completion</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">$4.11</div>
+                        <div class="stat-label">Per Day Investment</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">On-Time Delivery Rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="problem-content">
+            <h2>Is your website costing you customers?</h2>
+            <div class="problem-grid">
+                <div class="problem-item">
+                    <div class="problem-icon">📱</div>
+                    <h3 class="problem-title">Mobile Nightmare</h3>
+                    <p class="problem-desc">Your site looks broken on phones, and 70% of San Antonio searches happen on mobile. Every day you lose potential customers.</p>
+                </div>
+                <div class="problem-item">
+                    <div class="problem-icon">⏰</div>
+                    <h3 class="problem-title">Outdated & Slow</h3>
+                    <p class="problem-desc">Built 5+ years ago, loads slowly, looks unprofessional. Customers judge your business quality by your website quality.</p>
+                </div>
+                <div class="problem-item">
+                    <div class="problem-icon">🔍</div>
+                    <h3 class="problem-title">Invisible on Google</h3>
+                    <p class="problem-desc">No one can find you. Your competitors show up first because they invested in proper SEO. You're losing customers every single day.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Construction Method Section -->
+    <section class="construction-method" id="process">
+        <div class="method-content">
+            <div class="section-header">
+                <span class="section-tag">Our Process</span>
+                <h2 class="section-title">Construction-grade project management<br>for your website</h2>
+                <p class="section-subtitle">Just like building a house, we follow a proven process with clear milestones, transparent communication, and no surprises.</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Site Inspection</h3>
+                    <p class="step-desc">Free audit of your current site (or competitors if you're starting fresh)</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Blueprint</h3>
+                    <p class="step-desc">Detailed mockups and sitemap. You see everything before we build</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Foundation</h3>
+                    <p class="step-desc">Core structure, responsive framework, and technical setup</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Build</h3>
+                    <p class="step-desc">Content, design, SEO optimization, and functionality integration</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3 class="step-title">Inspection</h3>
+                    <p class="step-desc">Quality assurance, your feedback, launch, and training</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Calculator Section -->
+    <section class="pricing-calculator" id="calculator">
+        <div class="calculator-content">
+            <div class="calculator-intro">
+                <h2>Your website investment: Less than daily coffee</h2>
+                <p>Our most popular Professional package broken down by time period</p>
+            </div>
+            <div class="calculator-grid">
+                <div class="calc-item">
+                    <div class="calc-icon">☕</div>
+                    <div class="calc-label">Per Day</div>
+                    <div class="calc-value">$4.11</div>
+                    <p class="calc-comparison">Less than a latte at your local coffee shop</p>
+                </div>
+                <div class="calc-item">
+                    <div class="calc-icon">🌮</div>
+                    <div class="calc-label">Per Week</div>
+                    <div class="calc-value">$28.85</div>
+                    <p class="calc-comparison">Two breakfast tacos at your favorite spot</p>
+                </div>
+                <div class="calc-item">
+                    <div class="calc-icon">🎬</div>
+                    <div class="calc-label">Per Month</div>
+                    <div class="calc-value">$125</div>
+                    <p class="calc-comparison">Dinner for two at a nice San Antonio restaurant</p>
+                </div>
+                <div class="calc-item">
+                    <div class="calc-icon">💼</div>
+                    <div class="calc-label">Per Year</div>
+                    <div class="calc-value">$1,500</div>
+                    <p class="calc-comparison">Total investment for a complete professional website</p>
+                </div>
+            </div>
+            <div class="calculator-summary">
+                <p class="summary-text">A professional website works 24/7 generating leads while you sleep. It's your best salesperson, never takes a day off, and costs less per day than lunch.</p>
+                <p class="summary-highlight">Your website pays for itself with just 1-2 new customers</p>
+                <a href="#services" class="btn-primary">View Package Details</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services/Packages Section -->
+    <section class="packages" id="services">
+        <div class="packages-content">
+            <div class="section-header">
+                <span class="section-tag">Web Design Packages</span>
+                <h2 class="section-title">Choose your foundation</h2>
+                <p class="section-subtitle">Transparent pricing. Clear deliverables. No hidden fees. Just like getting a construction bid.</p>
+            </div>
+            <div class="packages-grid">
+                <div class="package">
+                    <span class="package-badge">Foundation</span>
+                    <div class="package-name">Starter</div>
+                    <h3 class="package-title">Essential Presence</h3>
+                    <div class="package-price">$800</div>
+                    <div class="package-period">One-time investment</div>
+                    <p class="package-description">Perfect for new businesses or those needing a simple, professional online presence to establish credibility.</p>
+                    <ul class="package-features">
+                        <li>Up to 5 pages (Home, About, Services, Contact, etc.)</li>
+                        <li>Mobile-responsive design</li>
+                        <li>Contact form with email notifications</li>
+                        <li>Basic SEO optimization</li>
+                        <li>Social media integration</li>
+                        <li>Google Maps integration</li>
+                        <li>1 round of revisions</li>
+                        <li>30 days post-launch support</li>
+                    </ul>
+                    <a href="#contact" class="package-cta">Get Started</a>
+                </div>
+
+                <div class="package featured">
+                    <span class="package-badge">Most Popular</span>
+                    <div class="package-name">Professional</div>
+                    <h3 class="package-title">Complete Solution</h3>
+                    <div class="package-price">$1,500</div>
+                    <div class="package-period">One-time investment</div>
+                    <p class="package-description">Our most popular package. Everything you need to compete effectively and generate consistent leads online.</p>
+                    <ul class="package-features">
+                        <li>Up to 10 custom-designed pages</li>
+                        <li>Advanced mobile optimization</li>
+                        <li>Custom graphics and photo integration</li>
+                        <li>Comprehensive SEO strategy</li>
+                        <li>Blog/news section setup</li>
+                        <li>Photo gallery or portfolio</li>
+                        <li>Email marketing integration</li>
+                        <li>2 rounds of revisions</li>
+                        <li>60 days priority support</li>
+                    </ul>
+                    <a href="#contact" class="package-cta">Get Started</a>
+                </div>
+
+                <div class="package">
+                    <span class="package-badge">Premium</span>
+                    <div class="package-name">Enterprise</div>
+                    <h3 class="package-title">Complete Authority</h3>
+                    <div class="package-price">$3,000+</div>
+                    <div class="package-period">One-time investment</div>
+                    <p class="package-description">For businesses demanding the absolute best. Custom functionality, advanced features, and white-glove service.</p>
+                    <ul class="package-features">
+                        <li>Unlimited pages and custom architecture</li>
+                        <li>Custom design system and branding</li>
+                        <li>E-commerce capabilities</li>
+                        <li>Online booking/scheduling systems</li>
+                        <li>CRM and automation integrations</li>
+                        <li>Advanced analytics setup</li>
+                        <li>Dedicated project manager</li>
+                        <li>Unlimited revisions</li>
+                        <li>90 days concierge support</li>
+                    </ul>
+                    <a href="#contact" class="package-cta">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Maintenance Plans -->
+    <section class="maintenance">
+        <div class="maintenance-content">
+            <div class="section-header">
+                <span class="section-tag">Ongoing Maintenance</span>
+                <h2 class="section-title">Keep your website fresh and secure</h2>
+                <p class="section-subtitle">Just like a house needs maintenance, your website needs regular updates to stay secure, fast, and effective.</p>
+            </div>
+            <div class="maintenance-grid">
+                <div class="maintenance-plan">
+                    <h3 class="plan-name">Essential</h3>
+                    <div class="plan-price">$49</div>
+                    <div class="plan-period">per month</div>
+                    <ul class="plan-features">
+                        <li>Monthly content updates (text, images)</li>
+                        <li>Security monitoring & updates</li>
+                        <li>Performance optimization</li>
+                        <li>Weekly backups</li>
+                        <li>Email support (48hr response)</li>
+                        <li>Uptime monitoring</li>
+                    </ul>
+                    <a href="#contact" class="package-cta">Select Plan</a>
+                </div>
+
+                <div class="maintenance-plan featured">
+                    <span class="plan-badge">Best Value</span>
+                    <h3 class="plan-name">Growth</h3>
+                    <div class="plan-price">$149</div>
+                    <div class="plan-period">per month</div>
+                    <ul class="plan-features">
+                        <li>Weekly content updates</li>
+                        <li>Advanced security & SSL management</li>
+                        <li>SEO monitoring & adjustments</li>
+                        <li>Monthly analytics reports</li>
+                        <li>Priority phone & email support</li>
+                        <li>Minor design tweaks included</li>
+                        <li>2 hours of development per month</li>
+                    </ul>
+                    <a href="#contact" class="package-cta">Select Plan</a>
+                </div>
+
+                <div class="maintenance-plan">
+                    <h3 class="plan-name">Enterprise</h3>
+                    <div class="plan-price">$399</div>
+                    <div class="plan-period">per month</div>
+                    <ul class="plan-features">
+                        <li>Unlimited content updates</li>
+                        <li>24/7 security monitoring</li>
+                        <li>Comprehensive SEO management</li>
+                        <li>A/B testing & conversion optimization</li>
+                        <li>Dedicated account manager</li>
+                        <li>Major feature development</li>
+                        <li>8 hours of development per month</li>
+                    </ul>
+                    <a href="#contact" class="package-cta">Select Plan</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section class="case-studies" id="work">
+        <div class="studies-content">
+            <div class="section-header">
+                <span class="section-tag">Portfolio</span>
+                <h2 class="section-title">Real results for real businesses</h2>
+                <p class="section-subtitle">See how we've helped San Antonio businesses transform their online presence and generate more leads.</p>
+            </div>
+            <div class="studies-grid">
+                <div class="case-study">
+                    <div class="case-image">💅</div>
+                    <div class="case-content">
+                        <div class="case-category">Luxury Wellness</div>
+                        <h3 class="case-title">Zion Nails Spa</h3>
+                        <p class="case-description">Complete rebrand with online booking system, service menus, and gallery. Mobile-optimized for busy clients on the go.</p>
+                        <div class="case-metrics">
+                            <div class="metric">
+                                <div class="metric-value">+285%</div>
+                                <div class="metric-label">Online Bookings</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">4.8★</div>
+                                <div class="metric-label">Client Rating</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study">
+                    <div class="case-image">🏠</div>
+                    <div class="case-content">
+                        <div class="case-category">Property Management</div>
+                        <h3 class="case-title">Sunday Best Group</h3>
+                        <p class="case-description">Professional property portal with listings, tenant resources, and automated contact systems for a growing real estate firm.</p>
+                        <div class="case-metrics">
+                            <div class="metric">
+                                <div class="metric-value">+340%</div>
+                                <div class="metric-label">Lead Inquiries</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">28 Day</div>
+                                <div class="metric-label">Completion Time</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study">
+                    <div class="case-image">⚡</div>
+                    <div class="case-content">
+                        <div class="case-category">Construction Trades</div>
+                        <h3 class="case-title">Valdez Electrical</h3>
+                        <p class="case-description">Professional contractor showcase with project galleries, service breakdowns, and strategic lead capture systems.</p>
+                        <div class="case-metrics">
+                            <div class="metric">
+                                <div class="metric-value">+420%</div>
+                                <div class="metric-label">Quote Requests</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">30 Day</div>
+                                <div class="metric-label">Completion Time</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="testimonials-content">
+            <div class="section-header">
+                <span class="section-tag" style="background: rgba(204, 185, 153, 0.2); color: #CCB999;">Client Reviews</span>
+                <h2 class="section-title" style="color: #FEFEFE;">What our clients say</h2>
+                <p class="section-subtitle" style="color: rgba(254, 254, 254, 0.8);">We treat every project like we're building our own business website.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p class="testimonial-quote">"Finally, someone who understands deadlines! Bailey treated our website like a construction project - clear timeline, regular updates, delivered exactly when promised. Our bookings tripled in 60 days."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ZN</div>
+                        <div class="author-info">
+                            <h4>Zara Nakamura</h4>
+                            <p>Owner, Zion Nails Spa</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial">
+                    <p class="testimonial-quote">"As a real estate professional, I know quality work when I see it. AlamoSites delivered a site that looks expensive but came in under budget. Our leads have gone through the roof."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MR</div>
+                        <div class="author-info">
+                            <h4>Marcus Rodriguez</h4>
+                            <p>Principal, Sunday Best Group</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial">
+                    <p class="testimonial-quote">"I've worked with other web designers who disappear after launch. Bailey's maintenance plan keeps my site fresh and I actually get responses when I need help. Worth every penny."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">CV</div>
+                        <div class="author-info">
+                            <h4>Carlos Valdez</h4>
+                            <p>Owner, Valdez Electrical</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial">
+                    <p class="testimonial-quote">"Bailey speaks my language - I'm a contractor, they're a construction ops director. No confusing tech jargon, just straight talk about what I need and how much it costs. Refreshing!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JM</div>
+                        <div class="author-info">
+                            <h4>Jennifer Martinez</h4>
+                            <p>GM, Martinez Construction</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries -->
+    <section class="industries">
+        <div class="industries-content">
+            <div class="section-header">
+                <span class="section-tag">Industries We Serve</span>
+                <h2 class="section-title">Specialized expertise for<br>San Antonio's key sectors</h2>
+                <p class="section-subtitle">We understand the unique needs of different industries and create websites tailored to your specific market.</p>
+            </div>
+            <div class="industries-grid">
+                <div class="industry">
+                    <div class="industry-icon">🏗️</div>
+                    <h3 class="industry-name">Construction & Trades</h3>
+                    <p class="industry-desc">Project galleries, service breakdowns, quote request systems. Built by someone who understands your industry.</p>
+                </div>
+
+                <div class="industry">
+                    <div class="industry-icon">🏢</div>
+                    <h3 class="industry-name">Property Management</h3>
+                    <p class="industry-desc">Listing portals, tenant resources, automated showings. Professional systems that save you time.</p>
+                </div>
+
+                <div class="industry">
+                    <div class="industry-icon">✂️</div>
+                    <h3 class="industry-name">Salons & Wellness</h3>
+                    <p class="industry-desc">Online booking, service menus, visual portfolios. Elegant designs that attract premium clients.</p>
+                </div>
+
+                <div class="industry">
+                    <div class="industry-icon">🍽️</div>
+                    <h3 class="industry-name">Restaurants & Hospitality</h3>
+                    <p class="industry-desc">Digital menus, online ordering, reservation systems. Make it easy for customers to choose you.</p>
+                </div>
+
+                <div class="industry">
+                    <div class="industry-icon">⚖️</div>
+                    <h3 class="industry-name">Professional Services</h3>
+                    <p class="industry-desc">Credible, authoritative sites for lawyers, accountants, consultants. Establish trust immediately.</p>
+                </div>
+
+                <div class="industry">
+                    <div class="industry-icon">🏥</div>
+                    <h3 class="industry-name">Healthcare Practices</h3>
+                    <p class="industry-desc">HIPAA-compliant, accessible designs. Patient portals and appointment scheduling that works.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section class="guarantee">
+        <div class="guarantee-content">
+            <div class="guarantee-badge">✓</div>
+            <h2>Our Construction-Grade Guarantee</h2>
+            <p>If we don't deliver your website on time and on budget, you don't pay. That's our promise.</p>
+            <p>We treat every project with the same discipline and accountability we bring to construction management. Clear timeline, transparent pricing, regular updates, and quality work. No excuses.</p>
+            <p class="guarantee-terms">30-day money-back guarantee if you're not completely satisfied with the final deliverable.</p>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="contact">
+        <div class="cta-content">
+            <h2>Ready to build your website the right way?</h2>
+            <p>Let's schedule a free 30-minute consultation. We'll review your current site (or your competitors), discuss your goals, and give you a detailed project proposal with transparent pricing.</p>
+            <div class="cta-buttons">
+                <a href="mailto:hello@alamosites.com" class="btn-primary">Book Free Consultation</a>
+                <a href="tel:+12105550100" class="btn-secondary">Call (210) 555-0100</a>
+            </div>
+            <div class="availability">
+                <span class="availability-number">3 Spots</span>
+                <span>Available This Month</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>AlamoSites</h3>
+                <p class="footer-tagline">Construction-grade websites for San Antonio businesses. Built by a Director of Operations who understands project management, deadlines, and delivering quality work on time and on budget.</p>
+                <div class="footer-contact">
+                    <p><strong>Email:</strong> hello@alamosites.com</p>
+                    <p><strong>Phone:</strong> (210) 555-0100</p>
+                    <p><strong>Location:</strong> San Antonio, TX</p>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">Web Design Packages</a></li>
+                    <li><a href="#maintenance">Maintenance Plans</a></li>
+                    <li><a href="#work">Portfolio</a></li>
+                    <li><a href="#process">Our Process</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#testimonials">Client Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#guarantee">Our Guarantee</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Industries</h4>
+                <ul>
+                    <li><a href="#industries">Construction & Trades</a></li>
+                    <li><a href="#industries">Property Management</a></li>
+                    <li><a href="#industries">Salons & Wellness</a></li>
+                    <li><a href="#industries">Professional Services</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 AlamoSites. All rights reserved. Proudly serving San Antonio and surrounding areas.</p>
+        </div>
+    </footer>
+</body>
+</html>
