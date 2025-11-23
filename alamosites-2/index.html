@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlamoSites — Sophisticated Web Design for San Antonio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: #2C2C2C;
+            line-height: 1.7;
+            background: #FEFEFE;
+            font-size: 18px;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Helvetica Neue', 'Arial', sans-serif;
+            font-weight: 300;
+            letter-spacing: -0.02em;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(254, 254, 254, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(120, 129, 118, 0.15);
+        }
+        
+        .nav-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 30px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 20px;
+            font-weight: 400;
+            color: #5E1803;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 50px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #2C2C2C;
+            font-size: 14px;
+            font-weight: 400;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            letter-spacing: 0.05em;
+            transition: color 0.4s ease;
+            text-transform: uppercase;
+        }
+        
+        .nav-links a:hover {
+            color: #5E1803;
+        }
+        
+        /* Hero Section */
+        .hero {
+            margin-top: 100px;
+            min-height: 95vh;
+            background: linear-gradient(165deg, #788176 0%, #5E1803 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(204, 185, 153, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 150px 60px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 96px;
+            font-weight: 300;
+            color: #FEFEFE;
+            line-height: 1.05;
+            margin-bottom: 40px;
+            letter-spacing: -0.03em;
+            max-width: 900px;
+        }
+        
+        .hero-subtitle {
+            font-size: 26px;
+            color: rgba(254, 254, 254, 0.85);
+            max-width: 650px;
+            margin-bottom: 60px;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 20px 50px;
+            background: transparent;
+            color: #FEFEFE;
+            text-decoration: none;
+            border: 1.5px solid rgba(254, 254, 254, 0.5);
+            font-size: 14px;
+            font-weight: 400;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+        }
+        
+        .cta-button:hover {
+            background: rgba(254, 254, 254, 0.1);
+            border-color: #FEFEFE;
+        }
+        
+        /* Section Base */
+        .section {
+            padding: 150px 60px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        .section-small {
+            padding: 100px 60px;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 100px;
+        }
+        
+        .section-label {
+            font-size: 12px;
+            letter-spacing: 0.2em;
+            color: #788176;
+            font-weight: 400;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        .section-title {
+            font-size: 64px;
+            font-weight: 300;
+            color: #2C2C2C;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 30px;
+        }
+        
+        .section-description {
+            font-size: 22px;
+            color: #788176;
+            max-width: 850px;
+            margin: 0 auto;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+        
+        /* Philosophy Section */
+        .philosophy {
+            background: #F5F1E8;
+            padding: 150px 60px;
+        }
+        
+        .philosophy-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .philosophy-quote {
+            font-size: 36px;
+            line-height: 1.6;
+            color: #2C2C2C;
+            font-style: italic;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+        
+        .philosophy-author {
+            font-size: 16px;
+            color: #788176;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        /* Cost Breakdown Section */
+        .cost-breakdown {
+            background: #FEFEFE;
+            padding: 150px 60px;
+        }
+        
+        .breakdown-intro {
+            text-align: center;
+            margin-bottom: 100px;
+        }
+        
+        .breakdown-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .breakdown-item {
+            text-align: center;
+            padding: 60px 40px;
+            background: #F5F1E8;
+            border: 1px solid rgba(120, 129, 118, 0.2);
+            transition: all 0.4s ease;
+        }
+        
+        .breakdown-item:hover {
+            transform: translateY(-8px);
+            border-color: #788176;
+            box-shadow: 0 30px 60px rgba(94, 24, 3, 0.08);
+        }
+        
+        .breakdown-icon {
+            font-size: 56px;
+            margin-bottom: 30px;
+            display: block;
+        }
+        
+        .breakdown-label {
+            font-size: 13px;
+            color: #788176;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        .breakdown-price {
+            font-size: 48px;
+            color: #5E1803;
+            font-weight: 300;
+            margin-bottom: 15px;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        .breakdown-comparison {
+            font-size: 16px;
+            color: #2C2C2C;
+            line-height: 1.6;
+        }
+        
+        .breakdown-divider {
+            font-size: 16px;
+            color: #788176;
+            margin: 15px 0;
+        }
+        
+        /* Packages Section */
+        .packages-section {
+            background: #FEFEFE;
+            padding: 150px 60px;
+        }
+        
+        .packages-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            margin-top: 80px;
+        }
+        
+        .package {
+            background: #FEFEFE;
+            border: 1px solid rgba(120, 129, 118, 0.2);
+            padding: 80px 50px;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .package::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #CCB999;
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+        
+        .package:hover {
+            border-color: #788176;
+            transform: translateY(-12px);
+            box-shadow: 0 40px 80px rgba(94, 24, 3, 0.1);
+        }
+        
+        .package:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .package.featured {
+            background: linear-gradient(165deg, #788176 0%, #5E1803 100%);
+            border: none;
+            color: #FEFEFE;
+        }
+        
+        .package.featured::before {
+            background: #CCB999;
+            transform: scaleX(1);
+        }
+        
+        .package-tier {
+            font-size: 12px;
+            letter-spacing: 0.2em;
+            color: #788176;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        .package.featured .package-tier {
+            color: #CCB999;
+        }
+        
+        .package-name {
+            font-size: 42px;
+            font-weight: 300;
+            color: #2C2C2C;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+        
+        .package.featured .package-name {
+            color: #FEFEFE;
+        }
+        
+        .package-price {
+            font-size: 28px;
+            color: #5E1803;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+        
+        .package.featured .package-price {
+            color: rgba(254, 254, 254, 0.9);
+        }
+        
+        .package-description {
+            font-size: 17px;
+            color: #2C2C2C;
+            margin-bottom: 50px;
+            line-height: 1.7;
+        }
+        
+        .package.featured .package-description {
+            color: rgba(254, 254, 254, 0.85);
+        }
+        
+        .package-features {
+            list-style: none;
+            margin-bottom: 50px;
+        }
+        
+        .package-features li {
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(120, 129, 118, 0.15);
+            font-size: 16px;
+            color: #2C2C2C;
+        }
+        
+        .package.featured .package-features li {
+            border-bottom: 1px solid rgba(254, 254, 254, 0.15);
+            color: rgba(254, 254, 254, 0.85);
+        }
+        
+        .package-cta {
+            display: inline-block;
+            padding: 18px 45px;
+            background: transparent;
+            color: #2C2C2C;
+            text-decoration: none;
+            border: 1.5px solid rgba(44, 44, 44, 0.3);
+            font-size: 13px;
+            font-weight: 400;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+        }
+        
+        .package-cta:hover {
+            background: rgba(44, 44, 44, 0.05);
+            border-color: #2C2C2C;
+        }
+        
+        .package.featured .package-cta {
+            color: #FEFEFE;
+            border-color: rgba(254, 254, 254, 0.5);
+        }
+        
+        .package.featured .package-cta:hover {
+            background: rgba(254, 254, 254, 0.1);
+            border-color: #FEFEFE;
+        }
+        
+        /* Industries Section */
+        .industries {
+            background: #F5F1E8;
+            padding: 150px 60px;
+        }
+        
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            max-width: 1400px;
+            margin: 80px auto 0;
+        }
+        
+        .industry {
+            padding: 60px 40px;
+            background: #FEFEFE;
+            border: 1px solid rgba(120, 129, 118, 0.15);
+            transition: all 0.4s ease;
+        }
+        
+        .industry:hover {
+            transform: translateY(-8px);
+            border-color: #788176;
+            box-shadow: 0 30px 60px rgba(94, 24, 3, 0.08);
+        }
+        
+        .industry-icon {
+            font-size: 48px;
+            margin-bottom: 30px;
+        }
+        
+        .industry-name {
+            font-size: 24px;
+            font-weight: 300;
+            color: #2C2C2C;
+            margin-bottom: 20px;
+            letter-spacing: -0.01em;
+        }
+        
+        .industry-description {
+            font-size: 16px;
+            color: #788176;
+            line-height: 1.7;
+        }
+        
+        /* Maintenance Section */
+        .maintenance {
+            background: #FEFEFE;
+            padding: 150px 60px;
+        }
+        
+        .maintenance-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            max-width: 1400px;
+            margin: 80px auto 0;
+        }
+        
+        .plan {
+            padding: 80px 50px;
+            background: #F5F1E8;
+            border: 1px solid rgba(120, 129, 118, 0.2);
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .plan:hover {
+            transform: translateY(-12px);
+            border-color: #788176;
+            box-shadow: 0 40px 80px rgba(94, 24, 3, 0.1);
+        }
+        
+        .plan.featured {
+            background: #FEFEFE;
+            border: 2px solid #5E1803;
+        }
+        
+        .plan-badge {
+            position: absolute;
+            top: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #5E1803;
+            color: #FEFEFE;
+            padding: 8px 24px;
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        .plan-name {
+            font-size: 32px;
+            font-weight: 300;
+            color: #2C2C2C;
+            margin-bottom: 30px;
+            letter-spacing: -0.01em;
+        }
+        
+        .plan-price {
+            font-size: 56px;
+            font-weight: 300;
+            color: #5E1803;
+            margin-bottom: 10px;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        .plan-period {
+            font-size: 16px;
+            color: #788176;
+            margin-bottom: 40px;
+        }
+        
+        .plan-features {
+            list-style: none;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+        
+        .plan-features li {
+            padding: 15px 0;
+            font-size: 16px;
+            color: #2C2C2C;
+            border-bottom: 1px solid rgba(120, 129, 118, 0.15);
+        }
+        
+        /* Portfolio Section */
+        .portfolio {
+            background: linear-gradient(165deg, #788176 0%, #5E1803 100%);
+            padding: 150px 60px;
+            color: #FEFEFE;
+            position: relative;
+        }
+        
+        .portfolio::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 50%, rgba(204, 185, 153, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .portfolio-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            margin-top: 80px;
+        }
+        
+        .portfolio-item {
+            background: rgba(254, 254, 254, 0.08);
+            border: 1px solid rgba(254, 254, 254, 0.15);
+            transition: all 0.4s ease;
+            overflow: hidden;
+        }
+        
+        .portfolio-item:hover {
+            background: rgba(254, 254, 254, 0.12);
+            border-color: rgba(254, 254, 254, 0.3);
+            transform: translateY(-12px);
+        }
+        
+        .portfolio-image {
+            width: 100%;
+            height: 320px;
+            background: rgba(204, 185, 153, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 64px;
+            border-bottom: 1px solid rgba(254, 254, 254, 0.15);
+        }
+        
+        .portfolio-info {
+            padding: 50px 40px;
+        }
+        
+        .portfolio-category {
+            font-size: 11px;
+            color: #CCB999;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        .portfolio-title {
+            font-size: 28px;
+            font-weight: 300;
+            margin-bottom: 15px;
+            color: #FEFEFE;
+            letter-spacing: -0.01em;
+        }
+        
+        .portfolio-description {
+            font-size: 16px;
+            color: rgba(254, 254, 254, 0.75);
+            line-height: 1.7;
+        }
+        
+        /* Differentiator Section */
+        .differentiator {
+            background: #FEFEFE;
+            padding: 150px 60px;
+        }
+        
+        .diff-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 80px;
+            max-width: 1400px;
+            margin: 80px auto 0;
+        }
+        
+        .diff-item {
+            text-align: center;
+        }
+        
+        .diff-number {
+            font-size: 72px;
+            font-weight: 300;
+            color: #5E1803;
+            margin-bottom: 30px;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1;
+        }
+        
+        .diff-title {
+            font-size: 22px;
+            font-weight: 300;
+            color: #2C2C2C;
+            margin-bottom: 20px;
+            letter-spacing: -0.01em;
+        }
+        
+        .diff-description {
+            font-size: 17px;
+            color: #788176;
+            line-height: 1.7;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: #F5F1E8;
+            padding: 150px 60px;
+        }
+        
+        .contact-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .contact-details {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+            margin: 80px 0 60px;
+        }
+        
+        .contact-item {
+            padding: 50px 40px;
+            background: #FEFEFE;
+            border: 1px solid rgba(120, 129, 118, 0.15);
+        }
+        
+        .contact-label {
+            font-size: 12px;
+            color: #788176;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        .contact-value {
+            font-size: 24px;
+            font-weight: 300;
+            color: #5E1803;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2C2C2C;
+            color: rgba(254, 254, 254, 0.7);
+            padding: 100px 60px 50px;
+        }
+        
+        .footer-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 80px;
+            margin-bottom: 80px;
+        }
+        
+        .footer-brand {
+            max-width: 400px;
+        }
+        
+        .footer-logo {
+            font-size: 18px;
+            color: #CCB999;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        .footer-tagline {
+            font-size: 16px;
+            line-height: 1.7;
+            color: rgba(254, 254, 254, 0.6);
+        }
+        
+        .footer-section h4 {
+            font-size: 14px;
+            color: #FEFEFE;
+            margin-bottom: 25px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 400;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-section a {
+            color: rgba(254, 254, 254, 0.7);
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: #CCB999;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 50px;
+            border-top: 1px solid rgba(254, 254, 254, 0.1);
+            color: rgba(254, 254, 254, 0.5);
+            font-size: 13px;
+            letter-spacing: 0.05em;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 1200px) {
+            .packages-grid,
+            .industries-grid,
+            .maintenance-grid,
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .diff-grid {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 20px 30px;
+            }
+            
+            .nav-links {
+                gap: 25px;
+                font-size: 12px;
+            }
+            
+            .hero h1 {
+                font-size: 56px;
+            }
+            
+            .hero-subtitle {
+                font-size: 20px;
+            }
+            
+            .hero-content {
+                padding: 100px 30px;
+            }
+            
+            .section {
+                padding: 100px 30px;
+            }
+            
+            .section-title {
+                font-size: 42px;
+            }
+            
+            .section-description {
+                font-size: 18px;
+            }
+            
+            .packages-grid,
+            .industries-grid,
+            .maintenance-grid,
+            .portfolio-grid,
+            .breakdown-grid,
+            .contact-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .philosophy-quote {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">AlamoSites</div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#approach">Approach</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Sophisticated design<br>for discerning businesses</h1>
+            <p class="hero-subtitle">We create elevated digital experiences that reflect the quality and professionalism of your business. Based in San Antonio, serving clients who understand the value of exceptional design.</p>
+            <a href="#services" class="cta-button">Explore Our Work</a>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="philosophy">
+        <div class="philosophy-content">
+            <p class="philosophy-quote">"Good design is invisible. Great design is inevitable. Your website should feel like the natural extension of your business—professional, purposeful, and unmistakably yours."</p>
+            <p class="philosophy-author">— Our Design Philosophy</p>
+        </div>
+    </section>
+
+    <!-- Cost Breakdown Section -->
+    <section class="cost-breakdown">
+        <div class="breakdown-intro">
+            <div class="section-label">Investment Perspective</div>
+            <h2 class="section-title">Less than your daily coffee</h2>
+            <p class="section-description">A professional website is one of the most valuable investments you can make in your business. Here's how our most popular package breaks down over time.</p>
+        </div>
+        
+        <div class="breakdown-grid">
+            <div class="breakdown-item">
+                <span class="breakdown-icon">☕</span>
+                <div class="breakdown-label">Daily Cost</div>
+                <div class="breakdown-price">$4.11</div>
+                <div class="breakdown-divider">—</div>
+                <p class="breakdown-comparison">Less than a specialty coffee. An investment that works for you 24/7, generating leads while you sleep.</p>
+            </div>
+            
+            <div class="breakdown-item">
+                <span class="breakdown-icon">🌮</span>
+                <div class="breakdown-label">Weekly Cost</div>
+                <div class="breakdown-price">$28.85</div>
+                <div class="breakdown-divider">—</div>
+                <p class="breakdown-comparison">The price of lunch for two. Your digital storefront that never closes, never takes a day off.</p>
+            </div>
+            
+            <div class="breakdown-item">
+                <span class="breakdown-icon">🎬</span>
+                <div class="breakdown-label">Monthly Cost</div>
+                <div class="breakdown-price">$125</div>
+                <div class="breakdown-divider">—</div>
+                <p class="breakdown-comparison">One dinner out. A powerful marketing tool that establishes credibility and attracts clients.</p>
+            </div>
+            
+            <div class="breakdown-item">
+                <span class="breakdown-icon">✈️</span>
+                <div class="breakdown-label">Annual Cost</div>
+                <div class="breakdown-price">$1,500</div>
+                <div class="breakdown-divider">—</div>
+                <p class="breakdown-comparison">The cost of our Professional package. A complete digital presence that pays dividends for years.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="packages-section" id="services">
+        <div class="packages-container">
+            <div class="section-header">
+                <div class="section-label">Our Services</div>
+                <h2 class="section-title">Thoughtfully designed packages<br>for every stage of growth</h2>
+                <p class="section-description">Whether you're establishing your first digital presence or elevating an existing brand, our services are crafted to deliver sophisticated results that match your ambitions.</p>
+            </div>
+            
+            <div class="packages-grid">
+                <div class="package">
+                    <div class="package-tier">Foundation</div>
+                    <h3 class="package-name">Starter</h3>
+                    <div class="package-price">Starting at $800</div>
+                    <p class="package-description">Essential digital presence for businesses taking their first professional step online. Clean, effective, and built to grow with you.</p>
+                    <ul class="package-features">
+                        <li>Up to 5 carefully crafted pages</li>
+                        <li>Mobile-responsive design</li>
+                        <li>Contact form integration</li>
+                        <li>Foundational SEO optimization</li>
+                        <li>Social media integration</li>
+                        <li>30 days of post-launch support</li>
+                    </ul>
+                    <a href="#contact" class="package-cta">Begin Your Project</a>
+                </div>
+
+                <div class="package featured">
+                    <div class="package-tier">Most Selected</div>
+                    <h3 class="package-name">Professional</h3>
+                    <div class="package-price">Starting at $1,500</div>
+                    <p class="package-description">Comprehensive digital experience for established businesses. This is where design sophistication meets strategic functionality.</p>
+                    <ul class="package-features">
+                        <li>Up to 10 thoughtfully designed pages</li>
+                        <li>Advanced responsive architecture</li>
+                        <li>Custom visual elements & photography</li>
+                        <li>Strategic SEO implementation</li>
+                        <li>Blog or news section</li>
+                        <li>Location & mapping integration</li>
+                        <li>60 days of priority support</li>
+                    </ul>
+                    <a href="#contact" class="package-cta">Begin Your Project</a>
+                </div>
+
+                <div class="package">
+                    <div class="package-tier">Elevated</div>
+                    <h3 class="package-name">Premium</h3>
+                    <div class="package-price">Starting at $3,000</div>
+                    <p class="package-description">Exceptional design for businesses that demand uncompromising quality. Complete creative freedom, advanced functionality, lasting impact.</p>
+                    <ul class="package-features">
+                        <li>Unlimited page architecture</li>
+                        <li>Bespoke design system</li>
+                        <li>E-commerce capabilities</li>
+                        <li>Advanced integrations & automation</li>
+                        <li>Booking & scheduling systems</li>
+                        <li>Dedicated project management</li>
+                        <li>90 days of concierge support</li>
+                    </ul>
+                    <a href="#contact" class="package-cta">Begin Your Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section class="industries">
+        <div class="section-header">
+            <div class="section-label">Industry Expertise</div>
+            <h2 class="section-title">Specialization across<br>San Antonio's finest businesses</h2>
+            <p class="section-description">We bring deep understanding and tailored approaches to the industries that define our city's character and economy.</p>
+        </div>
+        
+        <div class="industries-grid">
+            <div class="industry">
+                <div class="industry-icon">🏗️</div>
+                <h3 class="industry-name">Construction & Trades</h3>
+                <p class="industry-description">Project showcases, service breakdowns, and lead capture systems designed specifically for contractors who understand the value of quality craftsmanship.</p>
+            </div>
+            
+            <div class="industry">
+                <div class="industry-icon">🏢</div>
+                <h3 class="industry-name">Property Management</h3>
+                <p class="industry-description">Sophisticated portals for listings, tenant resources, and property showcases that establish trust and streamline operations.</p>
+            </div>
+            
+            <div class="industry">
+                <div class="industry-icon">✂️</div>
+                <h3 class="industry-name">Salons & Wellness</h3>
+                <p class="industry-description">Elegant booking systems, service presentations, and visual portfolios that attract the clientele you deserve.</p>
+            </div>
+            
+            <div class="industry">
+                <div class="industry-icon">🍽️</div>
+                <h3 class="industry-name">Hospitality & Dining</h3>
+                <p class="industry-description">Immersive menu experiences, reservation systems, and atmospheric design that drives reservations and foot traffic.</p>
+            </div>
+            
+            <div class="industry">
+                <div class="industry-icon">⚖️</div>
+                <h3 class="industry-name">Professional Services</h3>
+                <p class="industry-description">Authoritative, credible presentations for lawyers, accountants, consultants, and advisors who serve discerning clients.</p>
+            </div>
+            
+            <div class="industry">
+                <div class="industry-icon">🏥</div>
+                <h3 class="industry-name">Healthcare & Medical</h3>
+                <p class="industry-description">Compliant, accessible, and reassuring designs for practices, clinics, and wellness providers who prioritize patient experience.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Maintenance Section -->
+    <section class="maintenance">
+        <div class="section-header">
+            <div class="section-label">Ongoing Partnership</div>
+            <h2 class="section-title">Keep your digital presence<br>fresh and performing</h2>
+            <p class="section-description">Your website is a living asset that requires care and attention. Our maintenance plans ensure it continues to serve your business effectively.</p>
+        </div>
+        
+        <div class="maintenance-grid">
+            <div class="plan">
+                <h3 class="plan-name">Essential</h3>
+                <div class="plan-price">$49</div>
+                <div class="plan-period">per month</div>
+                <ul class="plan-features">
+                    <li>Monthly content updates</li>
+                    <li>Security monitoring</li>
+                    <li>Performance optimization</li>
+                    <li>Backup management</li>
+                    <li>Technical support via email</li>
+                </ul>
+            </div>
+            
+            <div class="plan featured">
+                <span class="plan-badge">Most Popular</span>
+                <h3 class="plan-name">Growth</h3>
+                <div class="plan-price">$149</div>
+                <div class="plan-period">per month</div>
+                <ul class="plan-features">
+                    <li>Weekly content updates</li>
+                    <li>Advanced security protocols</li>
+                    <li>SEO monitoring & adjustments</li>
+                    <li>Monthly analytics reports</li>
+                    <li>Priority phone & email support</li>
+                    <li>Minor design refinements</li>
+                </ul>
+            </div>
+            
+            <div class="plan">
+                <h3 class="plan-name">Enterprise</h3>
+                <div class="plan-price">$399</div>
+                <div class="plan-period">per month</div>
+                <ul class="plan-features">
+                    <li>Unlimited content updates</li>
+                    <li>24/7 security & uptime monitoring</li>
+                    <li>Comprehensive SEO management</li>
+                    <li>A/B testing & conversion optimization</li>
+                    <li>Dedicated account manager</li>
+                    <li>Major feature development</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="portfolio-container">
+            <div class="section-header">
+                <div class="section-label" style="color: #CCB999;">Recent Work</div>
+                <h2 class="section-title" style="color: #FEFEFE;">Projects that reflect<br>our commitment to excellence</h2>
+                <p class="section-description" style="color: rgba(254, 254, 254, 0.75);">Each project is an opportunity to solve unique challenges and create digital experiences that truly resonate with the intended audience.</p>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">💅</div>
+                    <div class="portfolio-info">
+                        <div class="portfolio-category">Luxury Wellness</div>
+                        <h3 class="portfolio-title">Zion Nails</h3>
+                        <p class="portfolio-description">Elevated booking experience with service menus, gallery showcase, and seamless appointment scheduling for a high-end nail salon.</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-image">🏠</div>
+                    <div class="portfolio-info">
+                        <div class="portfolio-category">Property Management</div>
+                        <h3 class="portfolio-title">Sunday Best Group</h3>
+                        <p class="portfolio-description">Comprehensive property management portal with sophisticated listing presentations and tenant resource systems.</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-image">⚡</div>
+                    <div class="portfolio-info">
+                        <div class="portfolio-category">Trades & Construction</div>
+                        <h3 class="portfolio-title">Valdez Electrical</h3>
+                        <p class="portfolio-description">Professional contractor showcase with project galleries, detailed service pages, and strategic lead capture systems.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Differentiator Section -->
+    <section class="differentiator" id="approach">
+        <div class="section-header">
+            <div class="section-label">Why AlamoSites</div>
+            <h2 class="section-title">Built by someone who understands<br>both design and business</h2>
+            <p class="section-description">As Director of Operations for a construction company, I bring project management discipline, business acumen, and an appreciation for quality craftsmanship to every digital project.</p>
+        </div>
+        
+        <div class="diff-grid">
+            <div class="diff-item">
+                <div class="diff-number">01</div>
+                <h3 class="diff-title">Construction Industry Insight</h3>
+                <p class="diff-description">I understand deadlines, budgets, and the importance of delivering quality work on time. This discipline translates directly to how we manage web design projects.</p>
+            </div>
+            
+            <div class="diff-item">
+                <div class="diff-number">02</div>
+                <h3 class="diff-title">Deep San Antonio Roots</h3>
+                <p class="diff-description">Local understanding matters. We design with appreciation for San Antonio's culture, business landscape, and what resonates with customers in our market.</p>
+            </div>
+            
+            <div class="diff-item">
+                <div class="diff-number">03</div>
+                <h3 class="diff-title">Business-First Philosophy</h3>
+                <p class="diff-description">Every design decision serves your business goals. Beautiful websites are table stakes—we focus on creating digital experiences that drive real business results.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-content">
+            <div class="section-label">Get In Touch</div>
+            <h2 class="section-title">Ready to begin your project?</h2>
+            <p class="section-description">Let's discuss how we can create a digital presence that truly reflects the quality and professionalism of your business.</p>
+            
+            <div class="contact-details">
+                <div class="contact-item">
+                    <div class="contact-label">Email</div>
+                    <div class="contact-value">hello@alamosites.com</div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-label">Phone</div>
+                    <div class="contact-value">(210) 555-0100</div>
+                </div>
+            </div>
+            
+            <a href="mailto:hello@alamosites.com" class="cta-button">Start the Conversation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="footer-logo">AlamoSites</div>
+                <p class="footer-tagline">Sophisticated web design for discerning San Antonio businesses. We bring the discipline of construction project management to the art of digital design.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">Web Design</a></li>
+                    <li><a href="#services">Brand Strategy</a></li>
+                    <li><a href="#maintenance">Maintenance Plans</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#approach">Our Approach</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#process">Process</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Service Area</h4>
+                <ul>
+                    <li>San Antonio</li>
+                    <li>Alamo Heights</li>
+                    <li>Stone Oak</li>
+                    <li>Greater Bexar County</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 AlamoSites. All rights reserved. Proudly serving San Antonio, Texas.</p>
+        </div>
+    </footer>
+</body>
+</html>
