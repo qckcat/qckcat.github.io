@@ -1,0 +1,1570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elbow Room | Luxury ADUs & Backyard Living Spaces in Central Texas</title>
+    <meta name="description" content="Woman-owned luxury ADU builder in Central Texas. Full-service design, permitting, and construction for accessory dwelling units, home offices, and multi-generational living spaces. Transparent pricing, exceptional quality.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --turquoise: #3ee3d4;
+            --cream: #f8f7f7;
+            --dark-brown: #422510;
+            --golden: #ecb12d;
+            --white: #ffffff;
+            --soft-gray: #f5f5f3;
+            --text-gray: #666666;
+            --warm-black: #2a2a2a;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--warm-black);
+            background-color: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            padding: 25px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(42, 42, 42, 0.06);
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            font-weight: 500;
+            color: var(--dark-brown);
+            letter-spacing: 1px;
+        }
+
+        .logo-accent {
+            color: var(--turquoise);
+            font-style: italic;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 45px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--warm-black);
+            font-size: 15px;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--turquoise);
+        }
+
+        .nav-cta {
+            background: var(--turquoise);
+            color: var(--white) !important;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 500;
+        }
+
+        .nav-cta:hover {
+            background: var(--dark-brown);
+        }
+
+        /* Hero - Storytelling Approach */
+        .hero {
+            margin-top: 80px;
+            background: linear-gradient(to bottom, var(--cream) 0%, var(--white) 100%);
+            padding: 120px 60px 100px;
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 82px;
+            margin-bottom: 35px;
+            line-height: 1.05;
+            letter-spacing: -1px;
+        }
+
+        .hero-accent {
+            color: var(--turquoise);
+            font-style: italic;
+        }
+
+        .hero-intro {
+            font-size: 24px;
+            line-height: 1.65;
+            color: var(--text-gray);
+            margin-bottom: 45px;
+            font-weight: 300;
+        }
+
+        .hero-personality {
+            background: var(--white);
+            padding: 35px 40px;
+            border-left: 4px solid var(--turquoise);
+            margin-bottom: 50px;
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--dark-brown);
+            font-style: italic;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .btn-primary {
+            background: var(--turquoise);
+            color: var(--white);
+            padding: 20px 45px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 16px;
+            letter-spacing: 0.3px;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-brown);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--dark-brown);
+            padding: 20px 45px;
+            text-decoration: none;
+            border: 2px solid var(--dark-brown);
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 16px;
+            letter-spacing: 0.3px;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: var(--dark-brown);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .hero-trust-badges {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .trust-badge {
+            text-align: center;
+        }
+
+        .trust-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 48px;
+            color: var(--turquoise);
+            font-weight: 500;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .trust-label {
+            font-size: 13px;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image-main {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background: linear-gradient(135deg, var(--cream) 0%, #e8e8e6 100%);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-gray);
+            font-size: 14px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        .hero-image-accent {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 200px;
+            height: 200px;
+            background: var(--golden);
+            opacity: 0.3;
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        /* Problem/Solution Section */
+        .problem-solution {
+            padding: 100px 60px;
+            background: var(--white);
+        }
+
+        .ps-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-intro {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-eyebrow {
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--golden);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-size: 64px;
+            margin-bottom: 25px;
+            line-height: 1.1;
+        }
+
+        .section-subtitle {
+            font-size: 20px;
+            color: var(--text-gray);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .ps-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+        }
+
+        .ps-card {
+            background: var(--cream);
+            padding: 50px;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .ps-card.solution {
+            background: linear-gradient(135deg, var(--turquoise) 0%, #2dd4c7 100%);
+            color: var(--white);
+        }
+
+        .ps-card h3 {
+            font-size: 36px;
+            margin-bottom: 25px;
+        }
+
+        .ps-card.solution h3 {
+            color: var(--white);
+        }
+
+        .ps-list {
+            list-style: none;
+            margin-top: 30px;
+        }
+
+        .ps-list li {
+            padding: 15px 0;
+            padding-left: 35px;
+            position: relative;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .ps-card.problem .ps-list li:before {
+            content: "×";
+            position: absolute;
+            left: 0;
+            color: #d4534f;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .ps-card.solution .ps-list li {
+            color: rgba(255,255,255,0.95);
+        }
+
+        .ps-card.solution .ps-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--white);
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Our Spaces - SEO Optimized */
+        .our-spaces {
+            padding: 100px 60px;
+            background: var(--soft-gray);
+        }
+
+        .spaces-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .space-feature {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-bottom: 120px;
+        }
+
+        .space-feature:nth-child(even) .space-image {
+            order: 2;
+        }
+
+        .space-feature:nth-child(even) .space-content {
+            order: 1;
+        }
+
+        .space-image {
+            width: 100%;
+            aspect-ratio: 4/3;
+            background: linear-gradient(135deg, var(--cream) 0%, #e8e8e6 100%);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-gray);
+            font-size: 14px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+        }
+
+        .space-number {
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--golden);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .space-content h2 {
+            font-size: 56px;
+            margin-bottom: 25px;
+            line-height: 1.1;
+        }
+
+        .space-content p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+        }
+
+        .space-features {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 4px;
+            margin-bottom: 30px;
+        }
+
+        .space-features h4 {
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--dark-brown);
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .feature-item {
+            font-size: 14px;
+            padding: 10px 0;
+            color: var(--text-gray);
+        }
+
+        .feature-item:before {
+            content: "→";
+            color: var(--turquoise);
+            margin-right: 8px;
+            font-weight: bold;
+        }
+
+        .space-cta {
+            color: var(--dark-brown);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: gap 0.3s;
+        }
+
+        .space-cta:hover {
+            gap: 15px;
+            color: var(--turquoise);
+        }
+
+        /* Transparent Investment Pricing */
+        .pricing {
+            padding: 100px 60px;
+            background: var(--white);
+        }
+
+        .pricing-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .pricing-intro {
+            max-width: 900px;
+            margin: 0 auto 80px;
+            text-align: center;
+        }
+
+        .pricing-intro h2 {
+            font-size: 64px;
+            margin-bottom: 30px;
+        }
+
+        .pricing-personality {
+            font-size: 20px;
+            line-height: 1.7;
+            color: var(--text-gray);
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .pricing-tier {
+            background: var(--cream);
+            border-radius: 4px;
+            padding: 50px 40px;
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .pricing-tier:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+        }
+
+        .pricing-tier.featured {
+            background: var(--dark-brown);
+            color: var(--white);
+            transform: scale(1.05);
+        }
+
+        .pricing-tier.featured:hover {
+            transform: scale(1.05) translateY(-8px);
+        }
+
+        .tier-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--turquoise);
+            color: var(--white);
+            padding: 8px 25px;
+            border-radius: 20px;
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .tier-name {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .tier-descriptor {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+        }
+
+        .pricing-tier.featured .tier-descriptor {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .tier-price {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 72px;
+            color: var(--turquoise);
+            font-weight: 500;
+            line-height: 1;
+            margin-bottom: 30px;
+        }
+
+        .tier-features {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        .tier-features li {
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(42, 42, 42, 0.1);
+            font-size: 15px;
+        }
+
+        .pricing-tier.featured .tier-features li {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255,255,255,0.95);
+        }
+
+        .tier-features li:before {
+            content: "✓";
+            color: var(--turquoise);
+            margin-right: 12px;
+            font-weight: bold;
+        }
+
+        .tier-cta {
+            width: 100%;
+            text-align: center;
+            padding: 18px;
+            border: 2px solid var(--dark-brown);
+            background: transparent;
+            color: var(--dark-brown);
+            text-decoration: none;
+            display: block;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .tier-cta:hover {
+            background: var(--dark-brown);
+            color: var(--white);
+        }
+
+        .pricing-tier.featured .tier-cta {
+            background: var(--turquoise);
+            color: var(--white);
+            border-color: var(--turquoise);
+        }
+
+        .pricing-tier.featured .tier-cta:hover {
+            background: var(--white);
+            color: var(--dark-brown);
+            border-color: var(--white);
+        }
+
+        .pricing-note {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background: var(--soft-gray);
+            border-radius: 4px;
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-gray);
+        }
+
+        /* Process - The How */
+        .process {
+            padding: 100px 60px;
+            background: var(--cream);
+        }
+
+        .process-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 50px;
+            margin-top: 80px;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-icon {
+            width: 100px;
+            height: 100px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .step-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 48px;
+            color: var(--turquoise);
+            font-weight: 500;
+        }
+
+        .process-step h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .process-step p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text-gray);
+        }
+
+        /* Trust & Proof */
+        .trust-section {
+            padding: 100px 60px;
+            background: var(--dark-brown);
+            color: var(--white);
+        }
+
+        .trust-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .trust-section h2 {
+            font-size: 64px;
+            margin-bottom: 30px;
+            color: var(--white);
+        }
+
+        .trust-section .section-subtitle {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 80px;
+        }
+
+        .testimonial-showcase {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+            margin-bottom: 80px;
+        }
+
+        .testimonial {
+            background: rgba(255,255,255,0.08);
+            padding: 50px;
+            border-radius: 4px;
+            text-align: left;
+            backdrop-filter: blur(10px);
+        }
+
+        .testimonial-quote {
+            font-size: 20px;
+            line-height: 1.7;
+            color: var(--white);
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--turquoise);
+            margin-bottom: 5px;
+        }
+
+        .testimonial-details {
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 100px;
+            margin-top: 80px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-item-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 72px;
+            color: var(--turquoise);
+            font-weight: 500;
+            line-height: 1;
+            margin-bottom: 15px;
+        }
+
+        .stat-item-label {
+            font-size: 14px;
+            color: rgba(255,255,255,0.8);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Blog Preview Section */
+        .blog-preview {
+            padding: 100px 60px;
+            background: var(--white);
+        }
+
+        .blog-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .blog-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .blog-header h2 {
+            font-size: 64px;
+        }
+
+        .view-all-link {
+            color: var(--dark-brown);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: gap 0.3s;
+        }
+
+        .view-all-link:hover {
+            gap: 15px;
+            color: var(--turquoise);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .blog-card {
+            background: var(--cream);
+            border-radius: 4px;
+            overflow: hidden;
+            text-decoration: none;
+            display: block;
+            transition: transform 0.3s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-image {
+            width: 100%;
+            aspect-ratio: 16/10;
+            background: linear-gradient(135deg, #e8e8e6 0%, #d4d4d2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+
+        .blog-content {
+            padding: 35px;
+        }
+
+        .blog-category {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--turquoise);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .blog-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--dark-brown);
+            line-height: 1.3;
+        }
+
+        .blog-excerpt {
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+        }
+
+        .blog-meta {
+            font-size: 13px;
+            color: var(--text-gray);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 120px 60px;
+            background: linear-gradient(135deg, var(--turquoise) 0%, #2dd4c7 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .cta-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            font-size: 72px;
+            margin-bottom: 30px;
+            color: var(--white);
+        }
+
+        .cta-section p {
+            font-size: 22px;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.95);
+            margin-bottom: 50px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .btn-white {
+            background: var(--white);
+            color: var(--dark-brown);
+            padding: 20px 45px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .btn-white:hover {
+            background: var(--dark-brown);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .btn-outline-white {
+            background: transparent;
+            color: var(--white);
+            padding: 20px 45px;
+            text-decoration: none;
+            border: 2px solid var(--white);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .btn-outline-white:hover {
+            background: var(--white);
+            color: var(--turquoise);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-brown);
+            color: rgba(255,255,255,0.8);
+            padding: 80px 60px 40px;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 80px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            margin-bottom: 25px;
+            color: var(--white);
+        }
+
+        .footer-brand p {
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .footer-contact a {
+            color: var(--turquoise);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+            transition: color 0.3s;
+        }
+
+        .footer-contact a:hover {
+            color: var(--white);
+        }
+
+        .footer-column h4 {
+            font-size: 16px;
+            margin-bottom: 25px;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 15px;
+        }
+
+        .footer-column a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: var(--turquoise);
+        }
+
+        .footer-bottom {
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 30px;
+        }
+
+        .footer-legal a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-legal a:hover {
+            color: var(--turquoise);
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .hero-container,
+            .space-feature {
+                grid-template-columns: 1fr;
+            }
+
+            .space-feature:nth-child(even) .space-image,
+            .space-feature:nth-child(even) .space-content {
+                order: initial;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-tier.featured {
+                transform: scale(1);
+            }
+
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 20px 30px;
+            }
+
+            .hero,
+            .problem-solution,
+            .our-spaces,
+            .pricing,
+            .process,
+            .trust-section,
+            .blog-preview,
+            .cta-section {
+                padding: 60px 30px;
+            }
+
+            .hero-content h1,
+            .section-title,
+            .pricing-intro h2,
+            .trust-section h2,
+            .blog-header h2,
+            .cta-section h2 {
+                font-size: 42px;
+            }
+
+            .space-content h2 {
+                font-size: 36px;
+            }
+
+            .hero-trust-badges {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .ps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial-showcase {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-row {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Elbow <span class="logo-accent">Room</span></div>
+        <ul>
+            <li><a href="#spaces">Our Spaces</a></li>
+            <li><a href="#pricing">Investment</a></li>
+            <li><a href="#process">How It Works</a></li>
+            <li><a href="#blog">Resources</a></li>
+            <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Luxury ADUs for<br><span class="hero-accent">Real Life</span></h1>
+                <p class="hero-intro">We build beautiful, thoughtfully designed accessory dwelling units throughout Central Texas—and handle absolutely everything from permits to the final walkthrough.</p>
+                
+                <div class="hero-personality">
+                    "Because your backyard deserves better than a shed with delusions of grandeur. We're talking real architecture, real quality, real expertise—and zero construction drama on your end."
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="#pricing" class="btn-primary">See Pricing (Yes, Really)</a>
+                    <a href="#process" class="btn-secondary">How We Work</a>
+                </div>
+
+                <div class="hero-trust-badges">
+                    <div class="trust-badge">
+                        <div class="trust-number">100+</div>
+                        <div class="trust-label">Spaces Built</div>
+                    </div>
+                    <div class="trust-badge">
+                        <div class="trust-number">5.0</div>
+                        <div class="trust-label">Average Rating</div>
+                    </div>
+                    <div class="trust-badge">
+                        <div class="trust-number">164%</div>
+                        <div class="trust-label">Avg. Value Increase</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-main">
+                    [Modern luxury ADU exterior - warm evening light, architectural details, sophisticated landscaping]
+                </div>
+                <div class="hero-image-accent"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem/Solution -->
+    <section class="problem-solution">
+        <div class="ps-container">
+            <div class="section-intro">
+                <div class="section-eyebrow">THE HONEST TRUTH</div>
+                <h2 class="section-title">Most ADU Builders? A Headache.</h2>
+                <p class="section-subtitle">Hidden fees. Permit nightmares. Radio silence for weeks. Low-quality finishes that look great in renderings but disappointing in person. We built Elbow Room to be everything they're not.</p>
+            </div>
+
+            <div class="ps-grid">
+                <div class="ps-card problem">
+                    <h3>The Industry Standard</h3>
+                    <ul class="ps-list">
+                        <li>Surprise costs that appear mid-project</li>
+                        <li>"You handle the permits" (good luck)</li>
+                        <li>Generic designs that feel contractor-grade</li>
+                        <li>Weeks without updates or communication</li>
+                        <li>Cheap finishes dressed up with marketing</li>
+                        <li>Timeline delays with vague explanations</li>
+                    </ul>
+                </div>
+
+                <div class="ps-card solution">
+                    <h3>The Elbow Room Way</h3>
+                    <ul class="ps-list">
+                        <li>One transparent price. That's it. Forever.</li>
+                        <li>We handle every permit, HOA form, and signature</li>
+                        <li>Curated designs that actually look luxurious</li>
+                        <li>Weekly updates (without you having to ask)</li>
+                        <li>Quality materials we'd use in our own homes</li>
+                        <li>4-6 week builds for non-permitted structures</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Spaces -->
+    <section class="our-spaces" id="spaces">
+        <div class="spaces-container">
+            <div class="section-intro">
+                <div class="section-eyebrow">DESIGNED FOR LIVING</div>
+                <h2 class="section-title">Three Tiers. Infinite Possibilities.</h2>
+                <p class="section-subtitle">From creative studios to full-time living spaces, every Elbow Room is built like a luxury home—because that's exactly what it should be.</p>
+            </div>
+
+            <!-- Studio -->
+            <div class="space-feature">
+                <div class="space-image">
+                    [Modern home office studio - built-in desk, floor-to-ceiling windows, warm wood tones, sophisticated lighting]
+                </div>
+                <div class="space-content">
+                    <div class="space-number">01 — STUDIO</div>
+                    <h2>Your Escape<br>From the House</h2>
+                    <p>Perfect for home offices, creative studios, yoga sanctuaries, or that music room you've been dreaming about. No plumbing required means simpler permitting and faster timelines—but the quality? That's still luxury.</p>
+                    
+                    <div class="space-features">
+                        <h4>What's Included</h4>
+                        <div class="feature-list">
+                            <div class="feature-item">Climate control throughout</div>
+                            <div class="feature-item">Complete electrical package</div>
+                            <div class="feature-item">Curated interior finishes</div>
+                            <div class="feature-item">Foundation & sitework</div>
+                            <div class="feature-item">Insulation & drywall</div>
+                            <div class="feature-item">One-year warranty</div>
+                        </div>
+                    </div>
+
+                    <a href="#pricing" class="space-cta">See Studio Pricing →</a>
+                </div>
+            </div>
+
+            <!-- Suite -->
+            <div class="space-feature">
+                <div class="space-image">
+                    [Elegant bathroom interior - walk-in shower, modern vanity, warm lighting, luxurious tiles]
+                </div>
+                <div class="space-content">
+                    <div class="space-number">02 — SUITE</div>
+                    <h2>Welcome Home,<br>But Not Too Home</h2>
+                    <p>The sweet spot for multi-generational living, long-term guests, or rental income. A full bathroom (and optional kitchenette) means real independence. Think boutique hotel, not spare bedroom.</p>
+                    
+                    <div class="space-features">
+                        <h4>Suite Upgrades</h4>
+                        <div class="feature-list">
+                            <div class="feature-item">Full luxury bathroom</div>
+                            <div class="feature-item">Kitchenette options</div>
+                            <div class="feature-item">Premium plumbing fixtures</div>
+                            <div class="feature-item">Multiple layout choices</div>
+                            <div class="feature-item">Complete permitting service</div>
+                            <div class="feature-item">HOA coordination</div>
+                        </div>
+                    </div>
+
+                    <a href="#pricing" class="space-cta">See Suite Pricing →</a>
+                </div>
+            </div>
+
+            <!-- Residence -->
+            <div class="space-feature">
+                <div class="space-image">
+                    [Full ADU interior - open kitchen, living area, bedroom visible in background, high-end finishes, natural light]
+                </div>
+                <div class="space-content">
+                    <div class="space-number">03 — RESIDENCE</div>
+                    <h2>A Complete<br>Home. Scaled Perfectly.</h2>
+                    <p>Two bedrooms, two baths, full kitchen—this is full-time living, done luxuriously. Whether it's for aging parents, adult children, or rental income, this is a real residence that happens to be in your backyard.</p>
+                    
+                    <div class="space-features">
+                        <h4>Residence Features</h4>
+                        <div class="feature-list">
+                            <div class="feature-item">Two bedrooms, two baths</div>
+                            <div class="feature-item">Full gourmet kitchen</div>
+                            <div class="feature-item">Luxury finish package</div>
+                            <div class="feature-item">Custom design options</div>
+                            <div class="feature-item">Up to 800 square feet</div>
+                            <div class="feature-item">Turnkey white-glove service</div>
+                        </div>
+                    </div>
+
+                    <a href="#pricing" class="space-cta">See Residence Pricing →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
+        <div class="pricing-container">
+            <div class="pricing-intro">
+                <div class="section-eyebrow">TRANSPARENT INVESTMENT</div>
+                <h2>What It Actually Costs</h2>
+                <p class="pricing-personality">"We know. Most builders make you schedule three calls and sign an NDA before they'll whisper a number. Not our style. Here's exactly what you'll invest—permits, foundation, warranty, everything."</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Studio Tier -->
+                <div class="pricing-tier">
+                    <h3 class="tier-name">Studio</h3>
+                    <p class="tier-descriptor">Accessory Structure • No Plumbing</p>
+                    <div class="tier-price">$26k+</div>
+                    <ul class="tier-features">
+                        <li>Starting at 8' × 8'</li>
+                        <li>Climate controlled</li>
+                        <li>Complete electrical</li>
+                        <li>Quality finishes</li>
+                        <li>Foundation included</li>
+                        <li>4-6 week timeline</li>
+                        <li>One-year warranty</li>
+                    </ul>
+                    <a href="#contact" class="tier-cta">Design Your Studio</a>
+                </div>
+
+                <!-- Suite Tier (Featured) -->
+                <div class="pricing-tier featured">
+                    <div class="tier-badge">Most Popular</div>
+                    <h3 class="tier-name">Suite</h3>
+                    <p class="tier-descriptor">With Plumbing • Full Bathroom</p>
+                    <div class="tier-price">$75k+</div>
+                    <ul class="tier-features">
+                        <li>320-400 square feet</li>
+                        <li>Full luxury bathroom</li>
+                        <li>Kitchenette option</li>
+                        <li>Premium finishes</li>
+                        <li>Complete permitting</li>
+                        <li>HOA coordination</li>
+                        <li>One-year warranty</li>
+                    </ul>
+                    <a href="#contact" class="tier-cta">Design Your Suite</a>
+                </div>
+
+                <!-- Residence Tier -->
+                <div class="pricing-tier">
+                    <h3 class="tier-name">Residence</h3>
+                    <p class="tier-descriptor">Full ADU • Complete Home</p>
+                    <div class="tier-price">$197k</div>
+                    <ul class="tier-features">
+                        <li>Up to 800 square feet</li>
+                        <li>Two beds, two baths</li>
+                        <li>Full gourmet kitchen</li>
+                        <li>Luxury finish package</li>
+                        <li>Custom design options</li>
+                        <li>Turnkey service</li>
+                        <li>One-year warranty</li>
+                    </ul>
+                    <a href="#contact" class="tier-cta">Plan Your Residence</a>
+                </div>
+            </div>
+
+            <div class="pricing-note">
+                <strong>What's included:</strong> Design consultation, architectural plans, all permits, foundation, complete construction, four inspections, final walkthrough, and one-year warranty. The only things not included? Sewage/water connections and, in some cases, electrical hookup to your main house. That's it. No hidden fees, no surprise costs, no fine print gotchas.
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process" id="process">
+        <div class="process-container">
+            <div class="section-intro">
+                <div class="section-eyebrow">HOW IT WORKS</div>
+                <h2 class="section-title">We Handle Everything.<br>You Relax.</h2>
+                <p class="section-subtitle">Seriously. From the first design conversation to the moment you get your keys, we're managing every detail. This is what full-service actually means.</p>
+            </div>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-icon">
+                        <div class="step-number">1</div>
+                    </div>
+                    <h3>Design & Vision</h3>
+                    <p>Use our Design Hub or schedule a consultation. Pick your size, layout, and finishes. Get an immediate, transparent quote—no games, no pressure.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-icon">
+                        <div class="step-number">2</div>
+                    </div>
+                    <h3>Permits & Planning</h3>
+                    <p>We handle every form, every signature, every HOA meeting. You'll get weekly updates, but you never have to chase down bureaucrats or decode permit language.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-icon">
+                        <div class="step-number">3</div>
+                    </div>
+                    <h3>Construction</h3>
+                    <p>Our team builds with the same materials and standards as luxury homes. Four inspections, regular photo updates, and direct communication throughout.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-icon">
+                        <div class="step-number">4</div>
+                    </div>
+                    <h3>Move-In Ready</h3>
+                    <p>Final walkthrough, warranty activation, and you're done. Plus ongoing support because we're not the type to disappear after we cash the check.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust & Social Proof -->
+    <section class="trust-section">
+        <div class="trust-container">
+            <h2>People Actually Like Us</h2>
+            <p class="section-subtitle">Wild concept in construction, we know. But when you deliver on promises, communicate clearly, and build quality spaces, people tend to be happy about it.</p>
+
+            <div class="testimonial-showcase">
+                <div class="testimonial">
+                    <p class="testimonial-quote">"We interviewed four ADU builders. Elbow Room was the only one who gave us a firm price upfront and actually stuck to it. The build quality exceeded what we saw at other companies charging 30% more."</p>
+                    <p class="testimonial-author">Jennifer M.</p>
+                    <p class="testimonial-details">Multi-Gen Suite | Alamo Heights</p>
+                </div>
+
+                <div class="testimonial">
+                    <p class="testimonial-quote">"As a therapist, I needed a professional space that felt elevated but warm. They nailed it. More importantly, the permitting process was completely painless—they handled everything."</p>
+                    <p class="testimonial-author">Dr. Patricia S.</p>
+                    <p class="testimonial-details">Professional Office | Terrell Hills</p>
+                </div>
+            </div>
+
+            <div class="stats-row">
+                <div class="stat-item">
+                    <div class="stat-item-number">100+</div>
+                    <div class="stat-item-label">Spaces Created</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-item-number">98%</div>
+                    <div class="stat-item-label">Client Satisfaction</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-item-number">5.0</div>
+                    <div class="stat-item-label">Average Rating</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Preview -->
+    <section class="blog-preview" id="blog">
+        <div class="blog-container">
+            <div class="blog-header">
+                <h2>The Resource Library</h2>
+                <a href="/blog" class="view-all-link">View All Articles →</a>
+            </div>
+
+            <div class="blog-grid">
+                <a href="/blog/adu-vs-home-addition" class="blog-card">
+                    <div class="blog-image">[Blog featured image]</div>
+                    <div class="blog-content">
+                        <div class="blog-category">Planning</div>
+                        <h3>ADU vs. Home Addition: Which Makes More Financial Sense?</h3>
+                        <p class="blog-excerpt">Breaking down the real costs, ROI, and property value impact of backyard ADUs versus traditional home additions in Central Texas.</p>
+                        <p class="blog-meta">5 min read</p>
+                    </div>
+                </a>
+
+                <a href="/blog/permitting-guide-central-texas" class="blog-card">
+                    <div class="blog-image">[Blog featured image]</div>
+                    <div class="blog-content">
+                        <div class="blog-category">Permits & Legal</div>
+                        <h3>The Complete Permitting Guide for Central Texas ADUs</h3>
+                        <p class="blog-excerpt">Everything you need to know about ADU regulations, permits, and HOA requirements across San Antonio, Austin, and beyond.</p>
+                        <p class="blog-meta">8 min read</p>
+                    </div>
+                </a>
+
+                <a href="/blog/multi-generational-living-design" class="blog-card">
+                    <div class="blog-image">[Blog featured image]</div>
+                    <div class="blog-content">
+                        <div class="blog-category">Design</div>
+                        <h3>Designing for Multi-Generational Living: What Actually Works</h3>
+                        <p class="blog-excerpt">Practical design strategies for ADUs that balance independence, accessibility, and comfort for aging parents or adult children.</p>
+                        <p class="blog-meta">6 min read</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" id="contact">
+        <div class="cta-container">
+            <h2>Let's Build Something Beautiful</h2>
+            <p>Ready to add space, value, and possibility to your property? Schedule a no-pressure consultation and let's talk about what's possible for your backyard.</p>
+            <div class="cta-buttons">
+                <a href="mailto:sales@elbowroom.com" class="btn-white">Start the Conversation</a>
+                <a href="tel:2108544023" class="btn-outline-white">(210) 854-4023</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Elbow Room</h3>
+                    <p>Woman-owned, Texas-born, and dedicated to building luxury ADUs that actually live up to the hype. Serving Central Texas with transparent pricing, exceptional quality, and zero construction drama.</p>
+                    <div class="footer-contact">
+                        <a href="tel:2108544023">(210) 854-4023</a>
+                        <a href="mailto:sales@elbowroom.com">sales@elbowroom.com</a>
+                        <a href="#">1175 W. Bitters #3100<br>San Antonio, TX 78216</a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="#spaces">Our Spaces</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#process">How It Works</a></li>
+                        <li><a href="/portfolio">Portfolio</a></li>
+                        <li><a href="/about">About Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="/blog">Blog & Guides</a></li>
+                        <li><a href="/design-hub">Design Hub</a></li>
+                        <li><a href="/faq">FAQ</a></li>
+                        <li><a href="/financing">Financing Options</a></li>
+                        <li><a href="/service-area">Service Area</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#contact">Schedule Consultation</a></li>
+                        <li><a href="/quote">Request Quote</a></li>
+                        <li><a href="https://linkedin.com/company/elbow-room-adu">LinkedIn</a></li>
+                        <li><a href="https://instagram.com/elbowroom">Instagram</a></li>
+                        <li><a href="https://facebook.com/elbowroom">Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 Elbow Room. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="/privacy">Privacy Policy</a>
+                    <a href="/terms">Terms of Service</a>
+                    <a href="/accessibility">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
