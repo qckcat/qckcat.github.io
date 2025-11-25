@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADU Build Process | From Idea to Keys in Hand | Elbow Room</title>
+    <meta name="description" content="See exactly how an Elbow Room ADU goes from idea to keys in hand. Clear steps, transparent timelines, and what to expect at every phase of your project.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --turquoise: #3ee3d4;
+            --cream: #f8f7f7;
+            --dark-brown: #422510;
+            --golden: #ecb12d;
+            --white: #ffffff;
+            --soft-gray: #f5f5f3;
+            --text-gray: #6b6b6b;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark-brown);
+            background-color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            line-height: 1.1;
+        }
+
+        /* Navigation (same as other pages) */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            padding: 35px 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(66, 37, 16, 0.08);
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            font-weight: 400;
+            color: var(--dark-brown);
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        .logo-accent {
+            color: var(--turquoise);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 50px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark-brown);
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--turquoise);
+        }
+
+        .nav-cta {
+            background: var(--turquoise);
+            color: var(--white) !important;
+            padding: 16px 40px;
+            border-radius: 2px;
+            font-weight: 500;
+        }
+
+        .nav-cta:hover {
+            background: var(--dark-brown);
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--white);
+            min-width: 220px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 12px 30px;
+            font-size: 15px;
+        }
+
+        /* Layout helpers */
+        .section {
+            padding: 180px 80px;
+        }
+
+        .section.alt {
+            background: var(--soft-gray);
+        }
+
+        .section.cream {
+            background: var(--cream);
+        }
+
+        .section-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .section-eyebrow {
+            font-size: 16px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--golden);
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-size: 96px;
+            margin-bottom: 40px;
+            font-weight: 300;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            font-size: 24px;
+            color: var(--text-gray);
+            max-width: 900px;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(115deg, #fefdfb 0%, #f5f5f3 35%, #e8f8f6 90%);
+            margin-top: 100px;
+            padding: 180px 80px 160px;
+        }
+
+        .hero-content {
+            max-width: 1600px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 100px;
+            align-items: flex-end;
+        }
+
+        .hero-left h1 {
+            font-size: 120px;
+            margin-bottom: 50px;
+            font-weight: 300;
+            letter-spacing: -2px;
+        }
+
+        .hero-left p {
+            font-size: 26px;
+            color: var(--text-gray);
+            max-width: 800px;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .hero-right {
+            border-left: 1px solid rgba(66, 37, 16, 0.12);
+            padding-left: 40px;
+        }
+
+        .hero-stat-label {
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-gray);
+            margin-bottom: 12px;
+        }
+
+        .hero-stat-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            margin-bottom: 6px;
+        }
+
+        .hero-stat-note {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 24px;
+        }
+
+        /* Process steps */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-top: 80px;
+        }
+
+        .process-card {
+            background: var(--white);
+            padding: 40px 36px 48px;
+            border-radius: 2px;
+            box-shadow: 0 18px 60px rgba(0,0,0,0.06);
+            position: relative;
+        }
+
+        .process-step-number {
+            width: 44px;
+            height: 44px;
+            border-radius: 999px;
+            border: 1px solid rgba(66, 37, 16, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
+
+        .process-card h3 {
+            font-size: 32px;
+            margin-bottom: 18px;
+        }
+
+        .process-meta {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-gray);
+            margin-bottom: 16px;
+        }
+
+        .process-card p {
+            font-size: 15px;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+        }
+
+        .process-list {
+            list-style: none;
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .process-list li {
+            padding: 6px 0;
+        }
+
+        .process-list li::before {
+            content: "— ";
+        }
+
+        /* Timeline band */
+        .timeline-band {
+            padding: 80px 0 0;
+            margin-top: 40px;
+            border-top: 1px solid rgba(66, 37, 16, 0.12);
+        }
+
+        .timeline-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            font-size: 14px;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .timeline-pill {
+            padding: 10px 18px;
+            border-radius: 999px;
+            border: 1px solid rgba(66, 37, 16, 0.25);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        /* Included section */
+        .included-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1.4fr 1.2fr;
+            gap: 60px;
+            margin-top: 80px;
+        }
+
+        .included-column h3 {
+            font-size: 28px;
+            margin-bottom: 18px;
+        }
+
+        .included-column p {
+            font-size: 15px;
+            color: var(--text-gray);
+            margin-bottom: 16px;
+        }
+
+        .check-list {
+            list-style: none;
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .check-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .check-icon {
+            font-size: 16px;
+            margin-top: 2px;
+        }
+
+        /* Two-column comparison */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1.3fr;
+            gap: 80px;
+            margin-top: 80px;
+        }
+
+        .comparison-card {
+            background: var(--white);
+            padding: 40px 36px;
+            border-radius: 2px;
+            box-shadow: 0 16px 50px rgba(0,0,0,0.05);
+        }
+
+        .comparison-card h3 {
+            font-size: 28px;
+            margin-bottom: 16px;
+        }
+
+        .comparison-card p {
+            font-size: 15px;
+            color: var(--text-gray);
+            margin-bottom: 18px;
+        }
+
+        .comparison-list {
+            list-style: none;
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .comparison-list li {
+            padding: 7px 0;
+            border-bottom: 1px solid rgba(66, 37, 16, 0.08);
+        }
+
+        .comparison-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* CTA */
+        .cta-section {
+            text-align: center;
+        }
+
+        .cta-section .section-title {
+            margin-bottom: 32px;
+        }
+
+        .cta-section .section-subtitle {
+            margin: 0 auto 60px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .btn-primary {
+            background: var(--turquoise);
+            color: var(--white);
+            padding: 20px 46px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-brown);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--dark-brown);
+            padding: 20px 46px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border: 1px solid var(--dark-brown);
+            border-radius: 2px;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: var(--dark-brown);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* Footer (same structure as other pages) */
+        footer {
+            background: var(--dark-brown);
+            color: rgba(255,255,255,0.7);
+            padding: 120px 80px 60px;
+        }
+
+        .footer-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 80px;
+            margin-bottom: 100px;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            color: var(--white);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .footer-brand p {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .footer-contact a {
+            color: var(--turquoise);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .footer-column h4 {
+            font-size: 18px;
+            color: var(--white);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 15px;
+        }
+
+        .footer-column a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: var(--turquoise);
+        }
+
+        .footer-bottom {
+            padding-top: 60px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 40px;
+        }
+
+        .footer-legal a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+        }
+
+        .footer-legal a:hover {
+            color: var(--turquoise);
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .hero-content {
+                grid-template-columns: 1.6fr 1fr;
+                gap: 60px;
+            }
+
+            .hero-left h1 {
+                font-size: 90px;
+            }
+
+            .section-title {
+                font-size: 72px;
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .included-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 20px 30px;
+            }
+
+            nav ul {
+                gap: 20px;
+                font-size: 14px;
+            }
+
+            .hero,
+            .section,
+            footer {
+                padding: 100px 30px;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-right {
+                margin-top: 40px;
+                border-left: none;
+                border-top: 1px solid rgba(66, 37, 16, 0.12);
+                padding-left: 0;
+                padding-top: 30px;
+            }
+
+            .hero-left h1 {
+                font-size: 56px;
+            }
+
+            .section-title {
+                font-size: 48px;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .included-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 20px;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="01-homepage.html" class="logo">Elbow <span class="logo-accent">Room</span></a>
+        <ul>
+            <li><a href="02-models-overview.html">Models</a></li>
+            <li><a href="03-design-center.html">Design Center</a></li>
+            <li><a href="04-portfolio.html">Portfolio</a></li>
+            <li><a href="05-process.html">Process</a></li>
+            <li class="dropdown">
+                <a href="#">Resources ▾</a>
+                <div class="dropdown-content">
+                    <a href="08-blog-landing.html">Blog</a>
+                    <a href="10-faq.html">FAQ</a>
+                    <a href="11-financing.html">Financing</a>
+                </div>
+            </li>
+            <li><a href="06-about.html">About</a></li>
+            <li><a href="07-contact.html" class="nav-cta">Get Started</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-left">
+                <div class="section-eyebrow">Our Process</div>
+                <h1>From idea to keys in hand.</h1>
+                <p>Building an ADU shouldn’t feel mysterious. We walk you through every step—from first conversation, to permits, to the moment you unlock your new space.</p>
+            </div>
+            <div class="hero-right">
+                <div class="hero-stat-label">Typical Timeline</div>
+                <div class="hero-stat-value">6–10 months</div>
+                <div class="hero-stat-note">From design approval to move-in, depending on city and scope.</div>
+
+                <div class="hero-stat-label">Projects / Year</div>
+                <div class="hero-stat-value">30–40</div>
+                <div class="hero-stat-note">Specializing in ADUs and backyard structures in Central Texas.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Major Steps -->
+    <section class="section">
+        <div class="section-container">
+            <div class="section-eyebrow">Step by Step</div>
+            <h2 class="section-title">How an Elbow Room project unfolds.</h2>
+            <p class="section-subtitle">
+                Every project follows the same backbone: clarify, design, permit, build, support. 
+                Within that, we tailor details to your property, city, and goals.
+            </p>
+
+            <div class="process-grid">
+                <!-- Step 1 -->
+                <article class="process-card">
+                    <div class="process-step-number">01</div>
+                    <div class="process-meta">2–3 weeks</div>
+                    <h3>Discover & Define</h3>
+                    <p>We start by getting clear on your property, budget, and how you want to use your ADU.</p>
+                    <ul class="process-list">
+                        <li>Site review (photos, survey, utilities)</li>
+                        <li>Use case + budget alignment</li>
+                        <li>High-level feasibility in your city</li>
+                        <li>Model / collection recommendations</li>
+                    </ul>
+                </article>
+
+                <!-- Step 2 -->
+                <article class="process-card">
+                    <div class="process-step-number">02</div>
+                    <div class="process-meta">4–8 weeks</div>
+                    <h3>Design & Approvals</h3>
+                    <p>We translate your ideas into drawings, selections, and a clear scope of work.</p>
+                    <ul class="process-list">
+                        <li>Base model + options selected</li>
+                        <li>Preliminary layout & elevations</li>
+                        <li>Finish selections from Design Center</li>
+                        <li>Budget & scope sign-off</li>
+                    </ul>
+                </article>
+
+                <!-- Step 3 -->
+                <article class="process-card">
+                    <div class="process-step-number">03</div>
+                    <div class="process-meta">6–12+ weeks</div>
+                    <h3>Permits & Sitework</h3>
+                    <p>We handle the paperwork and prep the site so construction can move efficiently.</p>
+                    <ul class="process-list">
+                        <li>Full permit set & engineering</li>
+                        <li>Submittals to your city / county</li>
+                        <li>Utility coordination & tap plans</li>
+                        <li>Grading, forms, foundation, inspections</li>
+                    </ul>
+                </article>
+
+                <!-- Step 4 -->
+                <article class="process-card">
+                    <div class="process-step-number">04</div>
+                    <div class="process-meta">3–5 months</div>
+                    <h3>Build & Turnover</h3>
+                    <p>We build your ADU, manage trades, and keep you informed until keys are in your hand.</p>
+                    <ul class="process-list">
+                        <li>Framing, rough-ins, insulation, drywall</li>
+                        <li>Exterior cladding, windows, roofing</li>
+                        <li>Interior finishes, fixtures, appliances</li>
+                        <li>Final inspections, punch list, handoff</li>
+                    </ul>
+                </article>
+            </div>
+
+            <div class="timeline-band">
+                <div class="timeline-row">
+                    <div>
+                        <div class="timeline-pill">Pre-Construction</div>
+                        Feasibility • Design • Approvals
+                    </div>
+                    <div>
+                        <div class="timeline-pill">Construction</div>
+                        Sitework • Build • Inspections
+                    </div>
+                    <div>
+                        <div class="timeline-pill">Post-Turnover</div>
+                        Warranty • Maintenance • Future projects
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's included -->
+    <section class="section alt">
+        <div class="section-container">
+            <div class="section-eyebrow">What You Get</div>
+            <h2 class="section-title">Clarity at every phase.</h2>
+
+            <div class="included-grid">
+                <div class="included-column">
+                    <h3>Before you sign</h3>
+                    <p>We don’t ask you to commit until you understand scope, pricing, and path to permit.</p>
+                    <ul class="check-list">
+                        <li><span class="check-icon">✓</span><span>Site review and zoning check</span></li>
+                        <li><span class="check-icon">✓</span><span>Preliminary concept & budget range</span></li>
+                        <li><span class="check-icon">✓</span><span>Discussion of utilities & access</span></li>
+                        <li><span class="check-icon">✓</span><span>Realistic timeline estimate</span></li>
+                    </ul>
+                </div>
+
+                <div class="included-column">
+                    <h3>During design</h3>
+                    <p>Our Design Center keeps decisions organized and aligned with your budget.</p>
+                    <ul class="check-list">
+                        <li><span class="check-icon">✓</span><span>Base model + upgrade menu</span></li>
+                        <li><span class="check-icon">✓</span><span>Finish boards and selections log</span></li>
+                        <li><span class="check-icon">✓</span><span>Updated pricing as options change</span></li>
+                        <li><span class="check-icon">✓</span><span>Permit-ready drawings & engineering</span></li>
+                    </ul>
+                </div>
+
+                <div class="included-column">
+                    <h3>During construction</h3>
+                    <p>You always know what’s happening, what’s next, and who is on site.</p>
+                    <ul class="check-list">
+                        <li><span class="check-icon">✓</span><span>Weekly progress updates</span></li>
+                        <li><span class="check-icon">✓</span><span>Inspection schedule & results</span></li>
+                        <li><span class="check-icon">✓</span><span>Change order approvals in writing</span></li>
+                        <li><span class="check-icon">✓</span><span>Final walkthrough & punch list</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h3>Your role</h3>
+                    <p>We guide you, but we’ll still need you for key decisions and approvals.</p>
+                    <ul class="comparison-list">
+                        <li>Share goals, budget, and non-negotiables</li>
+                        <li>Provide any existing surveys or documents</li>
+                        <li>Make design & finish decisions on schedule</li>
+                        <li>Approve change orders and milestones</li>
+                        <li>Clear access to the build area</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <h3>Our role</h3>
+                    <p>We handle the heavy lifting—from drawings and permits to trades and inspections.</p>
+                    <ul class="comparison-list">
+                        <li>Feasibility and code/ setback checks</li>
+                        <li>Drawings, engineering, and permit submittals</li>
+                        <li>Scheduling and managing all trades</li>
+                        <li>Quality control and site supervision</li>
+                        <li>City inspections and final approvals</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Warranty & support -->
+    <section class="section cream">
+        <div class="section-container">
+            <div class="section-eyebrow">After Move-In</div>
+            <h2 class="section-title">We don’t disappear when the paint dries.</h2>
+            <p class="section-subtitle">
+                Your Elbow Room ADU includes a 1-year craftsmanship warranty. We check in at 6 and 11 months 
+                so small items can be handled before they become big frustrations.
+            </p>
+            <div class="included-grid" style="margin-top: 60px;">
+                <div class="included-column">
+                    <h3>Warranty coverage</h3>
+                    <ul class="check-list">
+                        <li><span class="check-icon">✓</span><span>Craftsmanship defects within year one</span></li>
+                        <li><span class="check-icon">✓</span><span>Structural issues related to our work</span></li>
+                        <li><span class="check-icon">✓</span><span>Mechanical, electrical, plumbing workmanship</span></li>
+                    </ul>
+                </div>
+                <div class="included-column">
+                    <h3>Manufacturer support</h3>
+                    <ul class="check-list">
+                        <li><span class="check-icon">✓</span><span>Mini-split and appliance warranties</span></li>
+                        <li><span class="check-icon">✓</span><span>Documentation for registrations</span></li>
+                        <li><span class="check-icon">✓</span><span>Help connecting with manufacturers</span></li>
+                    </ul>
+                </div>
+                <div class="included-column">
+                    <h3>Check-ins</h3>
+                    <ul class="check-list">
+                        <li><span class="check-icon">✓</span><span>6-month walkthrough invitation</span></li>
+                        <li><span class="check-icon">✓</span><span>11-month checklist before warranty end</span></li>
+                        <li><span class="check-icon">✓</span><span>Simple online form to submit items</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section">
+        <div class="section-container cta-section">
+            <div class="section-eyebrow">Next Step</div>
+            <h2 class="section-title">Walk the process with us.</h2>
+            <p class="section-subtitle">
+                If you’d like us to look at your specific property, we can usually confirm basic feasibility 
+                and give you a ballpark range on a short call.
+            </p>
+            <div class="cta-buttons">
+                <a href="07-contact.html" class="btn-primary">Schedule a Consultation</a>
+                <a href="02-models-overview.html" class="btn-secondary">Browse Models First</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Elbow Room</h3>
+                    <p>Woman-owned luxury ADU builder serving Central Texas with transparent pricing, complete permitting services, and white-glove construction management.</p>
+                    <div class="footer-contact">
+                        <a href="tel:2108544023">(210) 854-4023</a>
+                        <a href="mailto:sales@elbowroom.com">sales@elbowroom.com</a>
+                        <a href="#">19302 Highway 281 North<br>San Antonio, TX 78258</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="02-models-overview.html">Models</a></li>
+                        <li><a href="03-design-center.html">Design Center</a></li>
+                        <li><a href="04-portfolio.html">Portfolio</a></li>
+                        <li><a href="05-process.html">Process</a></li>
+                        <li><a href="06-about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="08-blog-landing.html">Blog</a></li>
+                        <li><a href="10-faq.html">FAQ</a></li>
+                        <li><a href="11-financing.html">Financing</a></li>
+                        <li><a href="12-service-area.html">Service Area</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="07-contact.html">Contact</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Elbow Room. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
