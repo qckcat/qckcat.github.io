@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name=viewport content="width=device-width, initial-scale=1.0">
     <title>Luxury ADUs & Accessory Structures | Elbow Room | Central Texas</title>
     <meta name="description" content="Woman-owned builder specializing in accessory structures, accessory structures with plumbing, and full ADUs across Central Texas. Turn-key design, permitting, and construction with curated finishes.">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -165,7 +165,7 @@
             font-weight: 300;
         }
 
-        /* HERO – “old” dramatic version */
+        /* HERO – dramatic version */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -470,4 +470,325 @@
         }
 
         .process-preview-card h3 {
-            fo
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .process-preview-card p {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        /* Portfolio preview */
+        .portfolio-row {
+            display: grid;
+            grid-template-columns: 1.4fr 1.5fr;
+            gap: 80px;
+            align-items: center;
+            margin-top: 60px;
+        }
+
+        .portfolio-list {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-gray);
+        }
+
+        .portfolio-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(66,37,16,0.08);
+        }
+
+        .portfolio-list li:last-child {
+            border-bottom: none;
+        }
+
+        .portfolio-tagline {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-top: 18px;
+        }
+
+        .portfolio-highlight {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 2px;
+            box-shadow: 0 18px 60px rgba(0,0,0,0.06);
+        }
+
+        .portfolio-highlight h3 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .portfolio-highlight p {
+            font-size: 15px;
+            color: var(--text-gray);
+            margin-bottom: 16px;
+        }
+
+        /* CTA band */
+        .cta-band {
+            text-align: center;
+        }
+
+        .cta-band .section-title {
+            margin-bottom: 24px;
+        }
+
+        .cta-band .section-subtitle {
+            margin: 0 auto 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-brown);
+            color: rgba(255,255,255,0.7);
+            padding: 120px 80px 60px;
+        }
+
+        .footer-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 80px;
+            margin-bottom: 100px;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            color: var(--white);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .footer-brand p {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .footer-contact a {
+            color: var(--turquoise);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .footer-column h4 {
+            font-size: 18px;
+            color: var(--white);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 15px;
+        }
+
+        .footer-column a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: var(--turquoise);
+        }
+
+        .footer-bottom {
+            padding-top: 60px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 40px;
+        }
+
+        .footer-legal a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+        }
+
+        .footer-legal a:hover {
+            color: var(--turquoise);
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .hero {
+                padding: 130px 60px;
+            }
+
+            .hero h1 {
+                font-size: 100px;
+            }
+
+            .section-title {
+                font-size: 72px;
+            }
+
+            .model-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .pillars-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .process-preview-grid {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+
+            .feature-row,
+            .portfolio-row {
+                grid-template-columns: 1.4fr 1.3fr;
+            }
+        }
+
+        @media (max-width: 992px) {
+            nav {
+                padding: 20px 30px;
+            }
+
+            nav ul {
+                gap: 24px;
+                font-size: 14px;
+            }
+
+            .hero,
+            .section,
+            footer {
+                padding: 100px 30px;
+            }
+
+            .hero h1 {
+                font-size: 72px;
+            }
+
+            .section-title {
+                font-size: 52px;
+            }
+
+            .model-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pillars-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-row,
+            .portfolio-row {
+                grid-template-columns: 1fr;
+            }
+
+            .process-preview-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            nav ul {
+                display: none; /* static prototype; real build would use mobile menu */
+            }
+
+            .hero {
+                padding: 100px 24px;
+            }
+
+            .hero h1 {
+                font-size: 52px;
+            }
+
+            .hero-subhead {
+                font-size: 22px;
+            }
+
+            .process-preview-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">Elbow <span class="logo-accent">Room</span></a>
+        <ul>
+            <li><a href="models.html">Models</a></li>
+            <li><a href="design-center.html">Design Center</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="process.html">Process</a></li>
+            <li class="dropdown">
+                <a href="#">Resources ▾</a>
+                <div class="dropdown-content">
+                    <a href="blog.html">Blog</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="financing.html">Financing</a>
+                    <a href="service-area.html">Service Area</a>
+                </div>
+            </li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-eyebrow">Woman-Owned • Central Texas</div>
+            <h1>Refined backyard<br>living for <span class="hero-highlight">real life.</span></h1>
+            <p class="hero-subhead">
+                We design and build acc
