@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Elbow Room | Start Your Studio, Suite, or Residence ADU</title>
+    <meta name="description" content="Tell us about your yard, your goals, and whether you’re thinking Studio, Suite, or Residence ADU. Elbow Room serves San Antonio, Austin, and Central Texas with turn-key backyard builds.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --turquoise: #3ee3d4;
+            --cream: #f8f7f7;
+            --dark-brown: #422510;
+            --golden: #ecb12d;
+            --white: #ffffff;
+            --soft-gray: #f5f5f3;
+            --text-gray: #6b6b6b;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark-brown);
+            background-color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            line-height: 1.1;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            padding: 35px 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(66, 37, 16, 0.08);
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            font-weight: 400;
+            color: var(--dark-brown);
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        .logo-accent { color: var(--turquoise); }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 50px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark-brown);
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: var(--turquoise); }
+
+        .nav-cta {
+            background: var(--turquoise);
+            color: var(--white) !important;
+            padding: 16px 40px;
+            border-radius: 2px;
+            font-weight: 500;
+        }
+
+        .nav-cta:hover { background: var(--dark-brown); }
+
+        .dropdown { position: relative; }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%; left: 0;
+            background: var(--white);
+            min-width: 220px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+
+        .dropdown:hover .dropdown-content { display: block; }
+
+        .dropdown-content a {
+            display: block;
+            padding: 12px 30px;
+            font-size: 15px;
+        }
+
+        /* Layout helpers */
+        .section {
+            padding: 160px 80px;
+        }
+
+        .section.alt { background: var(--soft-gray); }
+        .section.cream { background: var(--cream); }
+
+        .section-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .section-eyebrow {
+            font-size: 16px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--golden);
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-size: 80px;
+            margin-bottom: 24px;
+            font-weight: 300;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            font-size: 22px;
+            color: var(--text-gray);
+            max-width: 900px;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(to bottom right, #111111 0%, #29211a 40%, #3a2615 100%),
+                radial-gradient(circle at top left, rgba(62,227,212,0.12) 0%, transparent 55%);
+            margin-top: 100px;
+            padding: 150px 80px 130px;
+            color: var(--white);
+        }
+
+        .hero-inner {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .hero-eyebrow {
+            font-size: 14px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 24px;
+        }
+
+        .hero-title {
+            font-size: 96px;
+            margin-bottom: 18px;
+            font-weight: 300;
+            letter-spacing: -2px;
+        }
+
+        .hero-title span {
+            color: var(--turquoise);
+            font-style: italic;
+        }
+
+        .hero-subhead {
+            font-size: 24px;
+            max-width: 720px;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 24px;
+        }
+
+        .hero-meta {
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.75);
+        }
+
+        .hero-actions {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .btn-primary {
+            background: var(--turquoise);
+            color: var(--dark-brown);
+            padding: 14px 28px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+        }
+
+        .btn-primary:hover {
+            background: var(--white);
+            color: var(--dark-brown);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 14px 28px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border: 1px solid rgba(255,255,255,0.6);
+            border-radius: 2px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-1px);
+        }
+
+        .hero-card {
+            background: rgba(0,0,0,0.5);
+            border-radius: 2px;
+            padding: 24px 22px 22px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .hero-card p {
+            font-size: 15px;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 12px;
+        }
+
+        .hero-card ul {
+            list-style: none;
+            font-size: 14px;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .hero-card li { padding: 4px 0; }
+
+        .hero-card a {
+            color: var(--turquoise);
+            text-decoration: none;
+        }
+
+        /* Contact form block */
+        .contact-section {
+            padding: 150px 80px 130px;
+            background: var(--soft-gray);
+        }
+
+        .contact-grid {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 80px;
+            align-items: flex-start;
+        }
+
+        .contact-intro {
+            margin-bottom: 26px;
+        }
+
+        .contact-intro p {
+            font-size: 16px;
+            color: var(--text-gray);
+            max-width: 700px;
+        }
+
+        form {
+            background: var(--white);
+            padding: 26px 24px 24px;
+            border-radius: 2px;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.06);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            margin-bottom: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-gray);
+            margin-bottom: 6px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px 11px;
+            border-radius: 2px;
+            border: 1px solid rgba(66,37,16,0.18);
+            font-size: 14px;
+            font-family: inherit;
+            color: var(--dark-brown);
+            background: #fafafa;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .help-text {
+            font-size: 12px;
+            color: var(--text-gray);
+            margin-top: 4px;
+        }
+
+        .structure-options,
+        .timeline-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 18px;
+            margin-top: 4px;
+        }
+
+        .structure-options label,
+        .timeline-options label {
+            font-size: 13px;
+            text-transform: none;
+            letter-spacing: 0;
+            font-weight: 400;
+            color: var(--dark-brown);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .structure-options input,
+        .timeline-options input {
+            accent-color: var(--turquoise);
+        }
+
+        .form-footer {
+            margin-top: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 12px;
+            color: var(--text-gray);
+        }
+
+        .submit-row {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .submit-row button {
+            background: var(--turquoise);
+            color: var(--dark-brown);
+            padding: 13px 26px;
+            border-radius: 2px;
+            border: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-row button:hover {
+            background: var(--dark-brown);
+            color: var(--white);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .submit-note {
+            font-size: 12px;
+            color: var(--text-gray);
+        }
+
+        .contact-aside-card {
+            background: var(--white);
+            padding: 24px 22px 22px;
+            border-radius: 2px;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.05);
+            margin-bottom: 22px;
+        }
+
+        .contact-aside-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .contact-aside-card p {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 10px;
+        }
+
+        .contact-aside-card a {
+            color: var(--turquoise);
+            text-decoration: none;
+        }
+
+        .contact-list {
+            list-style: none;
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .contact-list li { padding: 4px 0; }
+
+        /* Studio / Suite / Residence quick prompts */
+        .prompt-section {
+            padding: 120px 80px 130px;
+            background: var(--white);
+        }
+
+        .prompt-grid {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 26px;
+        }
+
+        .prompt-card {
+            background: var(--cream);
+            padding: 20px 18px 18px;
+            border-radius: 2px;
+            border: 1px solid rgba(66,37,16,0.08);
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .prompt-card h3 {
+            font-size: 20px;
+            margin-bottom: 6px;
+        }
+
+        .prompt-card p { margin-bottom: 8px; }
+
+        .prompt-card ul {
+            list-style: none;
+            font-size: 13px;
+        }
+
+        .prompt-card li {
+            padding: 3px 0;
+        }
+
+        /* CTA */
+        .cta-band {
+            padding: 120px 80px 130px;
+            background: var(--dark-brown);
+            color: var(--white);
+        }
+
+        .cta-inner {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .cta-eyebrow {
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 22px;
+        }
+
+        .cta-title {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .cta-subtitle {
+            font-size: 18px;
+            color: rgba(255,255,255,0.86);
+            max-width: 720px;
+        }
+
+        .cta-actions {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .btn-cta-primary {
+            background: var(--turquoise);
+            color: var(--dark-brown);
+            padding: 14px 28px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .btn-cta-primary:hover {
+            background: var(--white);
+            transform: translateY(-1px);
+        }
+
+        .btn-cta-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 14px 28px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            border: 1px solid rgba(255,255,255,0.6);
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .btn-cta-secondary:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-1px);
+        }
+
+        .cta-side {
+            font-size: 14px;
+            color: rgba(255,255,255,0.86);
+        }
+
+        .cta-side ul {
+            list-style: none;
+            margin-top: 16px;
+        }
+
+        .cta-side li {
+            padding: 4px 0;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-brown);
+            color: rgba(255,255,255,0.7);
+            padding: 120px 80px 60px;
+        }
+
+        .footer-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 80px;
+            margin-bottom: 100px;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            color: var(--white);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .footer-brand p {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .footer-contact a {
+            color: var(--turquoise);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .footer-column h4 {
+            font-size: 18px;
+            color: var(--white);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: 15px; }
+
+        .footer-column a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover { color: var(--turquoise); }
+
+        .footer-bottom {
+            padding-top: 60px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 40px;
+        }
+
+        .footer-legal a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+        }
+
+        .footer-legal a:hover { color: var(--turquoise); }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            nav { padding: 24px 40px; }
+            .hero { padding: 130px 60px 110px; }
+            .contact-section,
+            .prompt-section,
+            .cta-band,
+            footer {
+                padding-left: 60px;
+                padding-right: 60px;
+            }
+            .hero-inner,
+            .contact-grid,
+            .cta-inner {
+                gap: 50px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            nav ul { gap: 24px; font-size: 14px; }
+            .hero-inner {
+                grid-template-columns: 1fr;
+            }
+            .hero-title { font-size: 72px; }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .prompt-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+            .cta-inner {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 20px 24px; }
+            .hero,
+            .contact-section,
+            .prompt-section,
+            .cta-band,
+            footer {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+            .section-title { font-size: 48px; }
+            .hero-title { font-size: 54px; }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .prompt-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            nav ul { display: none; }
+            .hero { padding-top: 100px; }
+            .hero-title { font-size: 44px; }
+            .cta-actions {
+                flex-direction: column;
+            }
+            .btn-cta-primary,
+            .btn-cta-secondary {
+                width: 100%;
+                text-align: center;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">Elbow <span class="logo-accent">Room</span></a>
+        <ul>
+            <li><a href="models.html">Models</a></li>
+            <li><a href="design-center.html">Design Center</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="process.html">Process</a></li>
+            <li class="dropdown">
+                <a href="#">Resources ▾</a>
+                <div class="dropdown-content">
+                    <a href="blog.html">Blog</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="financing.html">Financing</a>
+                    <a href="service-area.html">Service Area</a>
+                </div>
+            </li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div>
+                <div class="hero-eyebrow">Contact Elbow Room</div>
+                <h1 class="hero-title">Tell us about your <span>backyard.</span></h1>
+                <p class="hero-subhead">
+                    Share your address, your goals, and whether you’re thinking Studio, Suite, or Residence.
+                    We’ll reply with a clear next step—not a high-pressure sales call.
+                </p>
+                <p class="hero-meta">
+                    Studio · Suite · Residence · San Antonio · Austin · Central Texas
+                </p>
+                <div class="hero-actions">
+                    <a href="#contact-form" class="btn-primary">Fill out the form</a>
+                    <a href="models.html" class="btn-secondary">Browse models first</a>
+                </div>
+            </div>
+            <aside class="hero-card">
+                <h3>Prefer to call or email?</h3>
+                <p>Reach out directly and we’ll walk you through whether a Studio, Suite, or Residence is the right lane.</p>
+                <ul>
+                    <li>• Phone: <a href="tel:2108544023">(210) 854-4023</a></li>
+                    <li>• Email: <a href="mailto:sales@elbowroom.com">sales@elbowroom.com</a></li>
+                    <li>• Office: 19302 Highway 281 North, San Antonio, TX 78258</li>
+                </ul>
+                <p style="margin-top: 10px;">
+                    Typical response time: within one business day. If your city or lot is not a fit, we’ll tell you that too.
+                </p>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Contact form -->
+    <section class="contact-section" id="contact-form">
+        <div class="contact-grid">
+            <div>
+                <div class="section-eyebrow">Start Here</div>
+                <h2 class="section-title">A few details go a long way.</h2>
+                <div class="contact-intro">
+                    <p>
+                        You don’t need a finished vision or a mood board to reach out. This form simply gives us enough
+                        context to understand your lot, your goals, and which structure type (Studio, Suite, or Residence)
+                        might make the most sense.
+                    </p>
+                </div>
+
+                <form action="#" method="post">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name*</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email*</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                            <div class="help-text">We’ll only use this for project-related communication.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Project address*</label>
+                            <input type="text" id="address" name="address" placeholder="Street, city, ZIP" required>
+                            <div class="help-text">We work primarily in San Antonio, Austin, and surrounding cities.</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>What are you considering building?*</label>
+                        <div class="structure-options">
+                            <label><input type="checkbox" name="structure-type" value="studio"> Studio (no plumbing)</label>
+                            <label><input type="checkbox" name="structure-type" value="suite"> Suite (with bath)</label>
+                            <label><input type="checkbox" name="structure-type" value="residence"> Residence (full ADU)</label>
+                            <label><input type="checkbox" name="structure-type" value="not-sure"> Not sure yet</label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="budget">Comfortable budget range</label>
+                            <select id="budget" name="budget">
+                                <option value="">Select an option</option>
+                                <option value="under-150">Under $150,000</option>
+                                <option value="150-250">$150,000 – $250,000</option>
+                                <option value="250-350">$250,000 – $350,000</option>
+                                <option value="350-plus">$350,000+</option>
+                                <option value="unsure">Not sure yet</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Ideal start timing</label>
+                            <div class="timeline-options">
+                                <label><input type="radio" name="timeline" value="0-3"> 0–3 months</label>
+                                <label><input type="radio" name="timeline" value="3-6"> 3–6 months</label>
+                                <label><input type="radio" name="timeline" value="6-12"> 6–12 months</label>
+                                <label><input type="radio" name="timeline" value="12-plus"> 12+ months / just exploring</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="goals">What are you hoping this space will do for you?*</label>
+                        <textarea id="goals" name="goals" required placeholder="Examples: a quiet office away from the main house, a suite for aging parents, a rental-ready ADU, etc."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hear-about">How did you hear about Elbow Room?</label>
+                        <input type="text" id="hear-about" name="hear-about" placeholder="Friend, online search, social media, agent, etc.">
+                    </div>
+
+                    <div class="form-footer">
+                        <div class="submit-row">
+                            <button type="submit">Submit inquiry</button>
+                            <div class="submit-note">
+                                We’ll review your details and follow up with a clear, next-step conversation—not a script.
+                            </div>
+                        </div>
+                        <div>
+                            By submitting, you agree that we may contact you about your project.
+                            We won’t sell or share your information.
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <aside>
+                <div class="contact-aside-card">
+                    <h3>Want to talk before filling out the form?</h3>
+                    <p>We’re happy to have a quick, informal conversation first.</p>
+                    <ul class="contact-list">
+                        <li>• Call or text: <a href="tel:2108544023">(210) 854-4023</a></li>
+                        <li>• Email: <a href="mailto:sales@elbowroom.com">sales@elbowroom.com</a></li>
+                        <li>• Office: 19302 Highway 281 North, San Antonio, TX 78258</li>
+                    </ul>
+                    <p style="margin-top: 10px;">
+                        If you’re outside our core service area, we’ll let you know right away and share what we recommend.
+                    </p>
+                </div>
+
+                <div class="contact-aside-card">
+                    <h3>Trade partners & agents.</h3>
+                    <p>
+                        Builders, architects, designers, and real estate agents: we love good partnerships.
+                    </p>
+                    <p>
+                        Email <a href="mailto:partners@elbowroom.com">partners@elbowroom.com</a> with your details,
+                        and we’ll connect you with the right person on our team.
+                    </p>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Quick prompts: Studio / Suite / Residence -->
+    <section class="prompt-section">
+        <div class="section-container">
+            <div class="section-eyebrow">Not sure what to say?</div>
+            <h2 class="section-title">Use these prompts when you reach out.</h2>
+            <p class="section-subtitle">
+                You don’t have to know the technical terms. Pick the card that sounds most like you and use that
+                language in your message. We’ll help translate it into a clear plan.
+            </p>
+
+            <div class="prompt-grid">
+                <article class="prompt-card">
+                    <h3>Studio (no plumbing)</h3>
+                    <p>“We need more space for daily life.”</p>
+                    <ul>
+                        <li>• “We’re both working from home and running out of room.”</li>
+                        <li>• “I need a quiet therapy / coaching / creative space.”</li>
+                        <li>• “We’d love a gym or studio that doesn’t live in the garage.”</li>
+                    </ul>
+                </article>
+                <article class="prompt-card">
+                    <h3>Suite (with bath)</h3>
+                    <p>“We want to host or care for people better.”</p>
+                    <ul>
+                        <li>• “Parents or in-laws may need to stay for longer stretches.”</li>
+                        <li>• “We want a real guest space, not just a couch.”</li>
+                        <li>• “We’re picturing a pool house or teen hangout with a bathroom.”</li>
+                    </ul>
+                </article>
+                <article class="prompt-card">
+                    <h3>Residence (full ADU)</h3>
+                    <p>“We’re thinking long-term flexibility and income.”</p>
+                    <ul>
+                        <li>• “We’d like rental income but want to keep things high quality.”</li>
+                        <li>• “We want a place for adult kids or family to land.”</li>
+                        <li>• “We want a small second home on the property as a long-term play.”</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-band">
+        <div class="cta-inner">
+            <div>
+                <div class="cta-eyebrow">Next Step</div>
+                <h2 class="cta-title">Let’s see what your yard can hold.</h2>
+                <p class="cta-subtitle">
+                    Whether you’re just exploring or ready to move quickly, we’ll give you a grounded view of
+                    what’s possible with a Studio, Suite, or Residence on your lot—and what it would realistically take.
+                </p>
+                <div class="cta-actions">
+                    <a href="#contact-form" class="btn-cta-primary">Submit the inquiry form</a>
+                    <a href="process.html" class="btn-cta-secondary">Review the full process</a>
+                </div>
+            </div>
+            <aside class="cta-side">
+                <p><strong>We’ll help you answer questions like:</strong></p>
+                <ul>
+                    <li>• “Is my lot a good fit for an ADU?”</li>
+                    <li>• “Studio vs Suite vs Residence—what’s right for us?”</li>
+                    <li>• “What’s a realistic investment and timeline in our city?”</li>
+                </ul>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Elbow Room</h3>
+                    <p>
+                        Woman-owned luxury builder serving Central Texas with transparent pricing,
+                        complete permitting services, and white-glove construction management for
+                        accessory structures and ADUs.
+                    </p>
+                    <div class="footer-contact">
+                        <a href="tel:2108544023">(210) 854-4023</a>
+                        <a href="mailto:sales@elbowroom.com">sales@elbowroom.com</a>
+                        <a href="#">19302 Highway 281 North<br>San Antonio, TX 78258</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="models.html">Models</a></li>
+                        <li><a href="design-center.html">Design Center</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="process.html">Process</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="financing.html">Financing</a></li>
+                        <li><a href="service-area.html">Service Area</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Local Pages</h4>
+                    <ul>
+                        <li><a href="san-antonio-adus.html">San Antonio ADUs</a></li>
+                        <li><a href="austin-adus.html">Austin ADUs</a></li>
+                        <li><a href="central-texas-cities.html">Central Texas ADUs</a></li>
+                        <li><a href="contact.html">Work with us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Elbow Room. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
