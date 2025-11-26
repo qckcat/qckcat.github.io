@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interior Design | Studios, Suites & Residences | Elbow Room</title>
+    <meta name="description" content="Explore Elbow Room’s base interior design options for Studios, Suites, and Residences, including flooring, paint, kitchens, kitchenettes, appliances, and more.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --turquoise: #3ee3d4;
+            --cream: #f8f7f7;
+            --dark-brown: #422510;
+            --golden: #ecb12d;
+            --white: #ffffff;
+            --soft-gray: #f5f5f3;
+            --text-gray: #6b6b6b;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark-brown);
+            background-color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            line-height: 1.1;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            padding: 35px 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(66, 37, 16, 0.08);
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            font-weight: 400;
+            color: var(--dark-brown);
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        .logo-accent { color: var(--turquoise); }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 50px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark-brown);
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: var(--turquoise); }
+
+        .nav-cta {
+            background: var(--turquoise);
+            color: var(--white) !important;
+            padding: 16px 40px;
+            border-radius: 2px;
+            font-weight: 500;
+        }
+
+        .nav-cta:hover { background: var(--dark-brown); }
+
+        .dropdown { position: relative; }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%; left: 0;
+            background: var(--white);
+            min-width: 220px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+
+        .dropdown:hover .dropdown-content { display: block; }
+
+        .dropdown-content a {
+            display: block;
+            padding: 12px 30px;
+            font-size: 15px;
+        }
+
+        /* Layout helpers */
+        .section {
+            padding: 160px 80px;
+        }
+
+        .section.alt { background: var(--soft-gray); }
+        .section.cream { background: var(--cream); }
+
+        .section-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .section-eyebrow {
+            font-size: 16px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--golden);
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-size: 80px;
+            margin-bottom: 24px;
+            font-weight: 300;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            font-size: 22px;
+            color: var(--text-gray);
+            max-width: 900px;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(to right, #111111 0%, #27201b 42%, #f8f7f7 100%),
+                radial-gradient(circle at top left, rgba(62,227,212,0.16) 0%, transparent 55%);
+            margin-top: 100px;
+            padding: 150px 80px 130px;
+            color: var(--white);
+        }
+
+        .hero-inner {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .hero-eyebrow {
+            font-size: 14px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 14px;
+        }
+
+        .hero-breadcrumbs {
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 10px;
+        }
+
+        .hero-breadcrumbs a {
+            color: rgba(255,255,255,0.75);
+            text-decoration: none;
+        }
+
+        .hero-breadcrumbs span {
+            opacity: 0.7;
+        }
+
+        .hero-title {
+            font-size: 88px;
+            margin-bottom: 18px;
+            font-weight: 300;
+            letter-spacing: -2px;
+        }
+
+        .hero-title span {
+            color: var(--turquoise);
+            font-style: italic;
+        }
+
+        .hero-subhead {
+            font-size: 24px;
+            max-width: 720px;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.86);
+            margin-bottom: 24px;
+        }
+
+        .hero-meta {
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.75);
+        }
+
+        .hero-actions {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .btn-primary {
+            background: var(--turquoise);
+            color: var(--dark-brown);
+            padding: 14px 28px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+        }
+
+        .btn-primary:hover {
+            background: var(--white);
+            color: var(--dark-brown);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 14px 28px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border: 1px solid rgba(255,255,255,0.6);
+            border-radius: 2px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-1px);
+        }
+
+        .hero-card {
+            background: rgba(0,0,0,0.5);
+            border-radius: 2px;
+            padding: 24px 22px 22px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .hero-card p {
+            font-size: 15px;
+            color: rgba(255,255,255,0.86);
+            margin-bottom: 12px;
+        }
+
+        .hero-card ul {
+            list-style: none;
+            font-size: 14px;
+            color: rgba(255,255,255,0.85);
+        }
+
+        .hero-card li { padding: 4px 0; }
+
+        /* Overview & quick links */
+        .overview-section {
+            padding: 140px 80px 120px;
+            background: var(--cream);
+        }
+
+        .overview-grid {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.6fr 1fr;
+            gap: 70px;
+        }
+
+        .overview-main p {
+            font-size: 16px;
+            color: var(--text-gray);
+            margin-bottom: 18px;
+            max-width: 840px;
+        }
+
+        .overview-list {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-gray);
+            margin-top: 10px;
+        }
+
+        .overview-list li {
+            padding: 4px 0;
+        }
+
+        .overview-aside {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .overview-aside-card {
+            background: var(--white);
+            padding: 22px 20px 20px;
+            border-radius: 2px;
+            border: 1px solid rgba(66,37,16,0.08);
+            margin-bottom: 22px;
+        }
+
+        .overview-aside-card h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .overview-aside-card p {
+            margin-bottom: 8px;
+        }
+
+        .overview-aside-card a {
+            color: var(--turquoise);
+            text-decoration: none;
+        }
+
+        .pill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .pill {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(66,37,16,0.15);
+            background: #fbfaf8;
+        }
+
+        /* Category grid */
+        .categories-section {
+            padding: 120px 80px 120px;
+            background: var(--white);
+        }
+
+        .categories-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .categories-subtitle {
+            font-size: 18px;
+            color: var(--text-gray);
+            max-width: 900px;
+        }
+
+        .categories-grid {
+            margin-top: 32px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 26px;
+        }
+
+        .category-card {
+            background: var(--cream);
+            padding: 22px 20px 20px;
+            border-radius: 2px;
+            border: 1px solid rgba(66,37,16,0.08);
+            font-size: 14px;
+            color: var(--text-gray);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .category-tag {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--golden);
+            margin-bottom: 4px;
+        }
+
+        .category-card h3 {
+            font-size: 24px;
+            margin-bottom: 6px;
+        }
+
+        .category-card p {
+            margin-bottom: 10px;
+        }
+
+        .category-list {
+            list-style: none;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .category-list li {
+            padding: 3px 0;
+        }
+
+        .category-cta {
+            margin-top: 12px;
+            font-size: 13px;
+        }
+
+        .category-cta a {
+            color: var(--turquoise);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Packages band */
+        .packages-section {
+            padding: 120px 80px 120px;
+            background: var(--soft-gray);
+        }
+
+        .packages-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .packages-grid {
+            margin-top: 32px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 26px;
+        }
+
+        .package-card {
+            background: var(--white);
+            padding: 24px 20px 20px;
+            border-radius: 2px;
+            border: 1px solid rgba(66,37,16,0.08);
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .package-label {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--golden);
+            margin-bottom: 6px;
+        }
+
+        .package-card h3 {
+            font-size: 24px;
+            margin-bottom: 6px;
+        }
+
+        .package-card p {
+            margin-bottom: 10px;
+        }
+
+        .package-card ul {
+            list-style: none;
+            font-size: 13px;
+        }
+
+        .package-card li {
+            padding: 3px 0;
+        }
+
+        .package-note {
+            font-size: 13px;
+            color: var(--text-gray);
+            margin-top: 20px;
+            max-width: 900px;
+        }
+
+        /* Studio / Suite / Residence lens */
+        .lens-section {
+            padding: 120px 80px 120px;
+            background: var(--white);
+        }
+
+        .lens-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 70px;
+        }
+
+        .lens-main p {
+            font-size: 16px;
+            color: var(--text-gray);
+            margin-bottom: 16px;
+            max-width: 840px;
+        }
+
+        .lens-grid {
+            margin-top: 18px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .lens-card {
+            background: var(--cream);
+            padding: 20px 18px 18px;
+            border-radius: 2px;
+            border: 1px solid rgba(66,37,16,0.08);
+            font-size: 13px;
+            color: var(--text-gray);
+        }
+
+        .lens-card h3 {
+            font-size: 20px;
+            margin-bottom: 6px;
+        }
+
+        .lens-card p {
+            margin-bottom: 8px;
+        }
+
+        .lens-card ul {
+            list-style: none;
+        }
+
+        .lens-card li {
+            padding: 3px 0;
+        }
+
+        .lens-aside {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .lens-aside-card {
+            background: var(--cream);
+            padding: 22px 20px 20px;
+            border-radius: 2px;
+            border: 1px solid rgba(66,37,16,0.1);
+        }
+
+        .lens-aside-card h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .lens-aside-card p {
+            margin-bottom: 8px;
+        }
+
+        .lens-aside-card a {
+            color: var(--turquoise);
+            text-decoration: none;
+        }
+
+        /* CTA */
+        .cta-band {
+            padding: 120px 80px 130px;
+            background: var(--dark-brown);
+            color: var(--white);
+        }
+
+        .cta-inner {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .cta-eyebrow {
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 22px;
+        }
+
+        .cta-title {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .cta-subtitle {
+            font-size: 18px;
+            color: rgba(255,255,255,0.86);
+            max-width: 720px;
+        }
+
+        .cta-actions {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .btn-cta-primary {
+            background: var(--turquoise);
+            color: var(--dark-brown);
+            padding: 14px 28px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .btn-cta-primary:hover {
+            background: var(--white);
+            transform: translateY(-1px);
+        }
+
+        .btn-cta-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 14px 28px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            border: 1px solid rgba(255,255,255,0.6);
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .btn-cta-secondary:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-1px);
+        }
+
+        .cta-side {
+            font-size: 14px;
+            color: rgba(255,255,255,0.86);
+        }
+
+        .cta-side ul {
+            list-style: none;
+            margin-top: 16px;
+        }
+
+        .cta-side li {
+            padding: 4px 0;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-brown);
+            color: rgba(255,255,255,0.7);
+            padding: 120px 80px 60px;
+        }
+
+        .footer-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 80px;
+            margin-bottom: 100px;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            color: var(--white);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .footer-brand p {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .footer-contact a {
+            color: var(--turquoise);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .footer-column h4 {
+            font-size: 18px;
+            color: var(--white);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: 15px; }
+
+        .footer-column a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover { color: var(--turquoise); }
+
+        .footer-bottom {
+            padding-top: 60px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 40px;
+        }
+
+        .footer-legal a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+        }
+
+        .footer-legal a:hover { color: var(--turquoise); }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            nav { padding: 24px 40px; }
+            .hero { padding: 130px 60px 110px; }
+            .overview-section,
+            .categories-section,
+            .packages-section,
+            .lens-section,
+            .cta-band,
+            footer {
+                padding-left: 60px;
+                padding-right: 60px;
+            }
+            .hero-inner,
+            .overview-grid,
+            .lens-container,
+            .cta-inner {
+                gap: 50px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            nav ul { gap: 24px; font-size: 14px; }
+            .hero-inner {
+                grid-template-columns: 1fr;
+            }
+            .hero-title { font-size: 72px; }
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
+            .categories-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            .packages-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            .lens-container {
+                grid-template-columns: 1fr;
+            }
+            .lens-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 20px 24px; }
+            .hero,
+            .overview-section,
+            .categories-section,
+            .packages-section,
+            .lens-section,
+            .cta-band,
+            footer {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+            .section-title { font-size: 48px; }
+            .hero-title { font-size: 54px; }
+            .categories-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .packages-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .lens-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            nav ul { display: none; }
+            .hero { padding-top: 100px; }
+            .hero-title { font-size: 44px; }
+            .cta-actions {
+                flex-direction: column;
+            }
+            .btn-cta-primary,
+            .btn-cta-secondary {
+                width: 100%;
+                text-align: center;
+            }
+            .categories-grid,
+            .packages-grid,
+            .lens-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">Elbow <span class="logo-accent">Room</span></a>
+        <ul>
+            <li><a href="models.html">Models</a></li>
+            <li><a href="design-center.html">Design Center</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="process.html">Process</a></li>
+            <li class="dropdown">
+                <a href="#">Resources ▾</a>
+                <div class="dropdown-content">
+                    <a href="blog.html">Blog</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="financing.html">Financing</a>
+                    <a href="service-area.html">Service Area</a>
+                </div>
+            </li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div>
+                <div class="hero-breadcrumbs">
+                    <a href="design-center.html">Design Center</a> <span> / Interior Design</span>
+                </div>
+                <div class="hero-eyebrow">Finishes that feel like you</div>
+                <h1 class="hero-title">Interior design for <span>Studios, Suites & Residences.</span></h1>
+                <p class="hero-subhead">
+                    This is where we talk about what it’s like to actually live inside your Studio, Suite, or Residence:
+                    flooring under bare feet, paint in afternoon light, the way the kitchenette or kitchen supports how
+                    you cook, host, and rest.
+                </p>
+                <p class="hero-meta">
+                    Flooring · Paint · Kitchens · Kitchenettes · Appliances · Fixtures
+                </p>
+                <div class="hero-actions">
+                    <a href="#categories" class="btn-primary">Browse interior categories</a>
+                    <a href="contact.html" class="btn-secondary">Talk through your style</a>
+                </div>
+            </div>
+            <aside class="hero-card">
+                <h3>Base options that don’t feel basic.</h3>
+                <p>
+                    Our base interior standards are designed to feel considered, not “builder grade.” You pick from
+                    curated palettes, then we dial in the details together.
+                </p>
+                <ul>
+                    <li>• Cohesive palettes across flooring, paint, and cabinetry.</li>
+                    <li>• Appliance and fixture levels that feel good long-term.</li>
+                    <li>• Options that flex for Studio, Suite, and Residence use.</li>
+                </ul>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section class="overview-section">
+        <div class="overview-grid">
+            <div class="overview-main">
+                <div class="section-eyebrow">Interior design overview</div>
+                <h2 class="section-title">A clear interior roadmap, not a random showroom visit.</h2>
+                <p>
+                    Instead of handing you a catalog and saying “good luck,” we guide you through a simple interior
+                    structure: start with the big surfaces (floors, paint), layer in kitchens or kitchenettes, then
+                    refine with appliances, fixtures, lighting, and hardware.
+                </p>
+                <p>
+                    Each interior decision stays anchored to:
+                </p>
+                <ul class="overview-list">
+                    <li>• The structure type (Studio, Suite, or Residence).</li>
+                    <li>• How the space will actually be used (daily living, guests, work, rental, etc.).</li>
+                    <li>• A base package level that matches your budget band.</li>
+                </ul>
+                <p>
+                    From there, we can selectively upgrade where it matters to you most—without losing the cohesion
+                    that makes the space feel calm, finished, and intentional.
+                </p>
+            </div>
+            <aside class="overview-aside">
+                <div class="overview-aside-card">
+                    <h3>What lives in this interior section.</h3>
+                    <p>Dedicated subpages for:</p>
+                    <ul class="overview-list">
+                        <li>• <strong>Kitchens</strong> for Residences.</li>
+                        <li>• <strong>Kitchenettes</strong> for Suites and some Studios.</li>
+                        <li>• <strong>Bathrooms</strong> & wet areas.</li>
+                        <li>• <strong>Flooring</strong> & base material palettes.</li>
+                        <li>• <strong>Paint</strong>, trim, and wall treatments.</li>
+                        <li>• <strong>Appliances</strong>, fixtures, and hardware.</li>
+                    </ul>
+                    <p style="margin-top: 10px;">
+                        As we refine new palettes and packages, this is where they’ll live.
+                    </p>
+                    <div class="pill-list">
+                        <div class="pill">Base standards</div>
+                        <div class="pill">Curated palettes</div>
+                        <div class="pill">Upgrade paths</div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Category grid -->
+    <section class="categories-section" id="categories">
+        <div class="categories-container">
+            <div class="section-eyebrow">Interior categories</div>
+            <h2 class="section-title">Where each interior decision will live.</h2>
+            <p class="categories-subtitle">
+                These are the core subpages that make up the interior section. Each one goes deeper into base options,
+                recommended combinations, and how those choices flex across Studio, Suite, and Residence projects.
+            </p>
+
+            <div class="categories-grid">
+                <!-- Kitchens -->
+                <article class="category-card">
+                    <div>
+                        <div class="category-tag">Residences · Full kitchens</div>
+                        <h3>Kitchens</h3>
+                        <p>
+                            Layouts, cabinetry styles, countertop options, and base appliance packages for full
+                            Residence kitchens.
+                        </p>
+                        <ul class="category-list">
+                            <li>• Base + elevated cabinet and door styles.</li>
+                            <li>• Countertop and backsplash pairings.</li>
+                            <li>• Standard vs upgraded appliance suites.</li>
+                        </ul>
+                    </div>
+                    <div class="category-cta">
+                        <a href="interiors-kitchen.html">View kitchen standards →</a>
+                    </div>
+                </article>
+
+                <!-- Kitchenettes -->
+                <article class="category-card">
+                    <div>
+                        <div class="category-tag">Suites · Compact kitchens</div>
+                        <h3>Kitchenettes</h3>
+                        <p>
+                            Compact, efficient cooking setups for Suites and select Studios—scaled to how the space will
+                            actually be used.
+                        </p>
+                        <ul class="category-list">
+                            <li>• Typical kitchenette layouts and clearances.</li>
+                            <li>• Under-counter and compact appliance options.</li>
+                            <li>• Storage and open-shelf strategies.</li>
+                        </ul>
+                    </div>
+                    <div class="category-cta">
+                        <a href="interiors-kitchenette.html">View kitchenette standards →</a>
+                    </div>
+                </article>
+
+                <!-- Bathrooms -->
+                <article class="category-card">
+                    <div>
+                        <div class="category-tag">Suites & Residences</div>
+                        <h3>Bathrooms</h3>
+                        <p>
+                            Base bathroom packages for Suites and Residences, from tile and vanity styles to plumbing
+                            fixtures and mirrors.
+                        </p>
+                        <ul class="category-list">
+                            <li>• Shower vs tub configurations.</li>
+                            <li>• Tile, grout, and niche details.</li>
+                            <li>• Fixture finish families (chrome, black, brass).</li>
+                        </ul>
+                    </div>
+                    <div class="category-cta">
+                        <a href="interiors-bathrooms.html">View bathroom standards →</a>
+                    </div>
+                </article>
+
+                <!-- Flooring -->
+                <article class="category-card">
+                    <div>
+                        <div class="category-tag">All structure types</div>
+                        <h3>Flooring</h3>
+                        <p>
+                            The base flooring palette for Studios, Suites, and Residences, designed to feel durable and
+                            calm, not trendy for a single season.
+                        </p>
+                        <ul class="category-list">
+                            <li>• Core plank and tile options.</li>
+                            <li>• Wet-area vs dry-area strategies.</li>
+                            <li>• How flooring flows with wall color.</li>
+                        </ul>
+                    </div>
+                    <div class="category-cta">
+                        <a href="interiors-flooring.html">View flooring palette →</a>
+                    </div>
+                </article>
+
+                <!-- Paint & walls -->
+                <article class="category-card">
+                    <div>
+                        <div class="category-tag">All structure types</div>
+                        <h3>Paint & Walls</h3>
+                        <p>
+                            Wall and trim colors that stay timeless—and how accent moments show up without overwhelming
+                            small spaces.
+                        </p>
+                        <ul class="category-list">
+                            <li>• Base interior wall and trim colors.</li>
+                            <li>• Approved accent colors and locations.</li>
+                            <li>• Optional wall treatments and textures.</li>
+                        </ul>
+                    </div>
+                    <div class="category-cta">
+                        <a href="interiors-paint.html">View paint & wall standards →</a>
+                    </div>
+                </article>
+
+                <!-- Appliances & fixtures -->
+                <article class="category-card">
+                    <div>
+                        <div class="category-tag">Suites & Residences</div>
+                        <h3>Appliances & Fixtures</h3>
+                        <p>
+                            Base appliance and plumbing fixture levels for Suites and Residences, plus where upgrades
+                            typically make the most impact.
+                        </p>
+                        <ul class="category-list">
+                            <li>• Standard appliance package outlines.</li>
+                            <li>• Plumbing fixture families by finish.</li>
+                            <li>• Recommended upgrade patterns.</li>
+                        </ul>
+                    </div>
+                    <div class="category-cta">
+                        <a href="interiors-appliances.html">View appliance & fixture standards →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages band -->
+    <section class="packages-section">
+        <div class="packages-container">
+            <div class="section-eyebrow">Base packages</div>
+            <h2 class="section-title">Three interior package levels to start from.</h2>
+            <p class="section-subtitle">
+                Behind the scenes, we align every Studio, Suite, and Residence with an interior package: a sensible
+                starting point for how “dressed up” your interior will be. From there we can selectively dial things up
+                or keep them clean and simple.
+            </p>
+
+            <div class="packages-grid">
+                <!-- Essential -->
+                <article class="package-card">
+                    <div class="package-label">Package 01</div>
+                    <h3>Essential</h3>
+                    <p>
+                        A clean, durable base that feels calm and intentional—never like a bare minimum rental.
+                    </p>
+                    <ul>
+                        <li>• Core flooring, paint, and cabinet selections.</li>
+                        <li>• Thoughtful but simple hardware and fixtures.</li>
+                        <li>• Ideal for Studios and straightforward Suites.</li>
+                    </ul>
+                </article>
+
+                <!-- Elevated -->
+                <article class="package-card">
+                    <div class="package-label">Package 02</div>
+                    <h3>Elevated</h3>
+                    <p>
+                        A step up in texture, contrast, and detail—without tipping into “show house” preciousness.
+                    </p>
+                    <ul>
+                        <li>• Expanded palette of flooring and tile.</li>
+                        <li>• Upgraded cabinet options and hardware.</li>
+                        <li>• Great fit for Suites and many Residences.</li>
+                    </ul>
+                </article>
+
+                <!-- Signature -->
+                <article class="package-card">
+                    <div class="package-label">Package 03</div>
+                    <h3>Signature</h3>
+                    <p>
+                        The most curated version of our interiors: more nuance in materials, layering, and detail.
+                    </p>
+                    <ul>
+                        <li>• Signature palette and special material options.</li>
+                        <li>• Coordinated upgrades across multiple categories.</li>
+                        <li>• Ideal for flagship Residences or long-term family use.</li>
+                    </ul>
+                </article>
+            </div>
+
+            <p class="package-note">
+                Each interior subpage will reference these package levels, so you can see exactly what “Essential,”
+                “Elevated,” and “Signature” mean for kitchens, kitchenettes, baths, flooring, paint, and fixtures.
+            </p>
+        </div>
+    </section>
+
+    <!-- Studio / Suite / Residence lens -->
+    <section class="lens-section">
+        <div class="lens-container">
+            <div class="lens-main">
+                <div class="section-eyebrow">Aligned with how you’ll live</div>
+                <h2 class="section-title">Interiors that match Studios, Suites, and Residences.</h2>
+                <p>
+                    The interior package you choose will look slightly different depending on whether you’re building a
+                    Studio, Suite, or Residence. This isn’t just about square footage—it’s about how the space needs to
+                    perform.
+                </p>
+
+                <div class="lens-grid">
+                    <article class="lens-card">
+                        <h3>Studios</h3>
+                        <p>
+                            Work-forward or hobby-forward spaces that still feel warm and finished.
+                        </p>
+                        <ul>
+                            <li>• Flooring and paint do most of the visual heavy lifting.</li>
+                            <li>• Kitchenette is optional and scaled to use.</li>
+                            <li>• Fixtures kept streamlined and easy to maintain.</li>
+                        </ul>
+                    </article>
+
+                    <article class="lens-card">
+                        <h3>Suites</h3>
+                        <p>
+                            Guest-forward or flex living spaces where baths and kitchenettes matter more.
+                        </p>
+                        <ul>
+                            <li>• Bathrooms and kitchenettes take center stage.</li>
+                            <li>• Furniture layout and lighting get extra attention.</li>
+                            <li>• Great candidates for Elevated interior packages.</li>
+                        </ul>
+                    </article>
+
+                    <article class="lens-card">
+                        <h3>Residences</h3>
+                        <p>
+                            True small homes where interiors need to support daily living for years.
+                        </p>
+                        <ul>
+                            <li>• Full kitchens and baths with more storage detail.</li>
+                            <li>• Furniture circulation and long-term wear considered.</li>
+                            <li>• Often Elevated or Signature packages.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+
+            <aside class="lens-aside">
+                <div class="lens-aside-card">
+                    <h3>Where to go from here.</h3>
+                    <p>
+                        You don’t have to memorize the package levels. Start here, then:
+                    </p>
+                    <ul class="overview-list">
+                        <li>• Visit the kitchen and kitchenette subpages for cooking spaces.</li>
+                        <li>• Visit bathrooms, flooring, and paint pages for surface decisions.</li>
+                        <li>• Use appliances & fixtures to fine-tune performance and feel.</li>
+                    </ul>
+                    <p style="margin-top: 8px;">
+                        <a href="design-center.html">Back to Design Center overview →</a>
+                    </p>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-band">
+        <div class="cta-inner">
+            <div>
+                <div class="cta-eyebrow">Next step</div>
+                <h2 class="cta-title">Pair your structure with the right interior path.</h2>
+                <p class="cta-subtitle">
+                    Already leaning toward a Studio, Suite, or Residence? We can suggest an interior package level and
+                    a starting palette, then refine it room by room together.
+                </p>
+                <div class="cta-actions">
+                    <a href="contact.html" class="btn-cta-primary">Talk through interiors</a>
+                    <a href="models.html" class="btn-cta-secondary">Review structure types</a>
+                </div>
+            </div>
+            <aside class="cta-side">
+                <p><strong>Helpful to share:</strong></p>
+                <ul>
+                    <li>• Studio, Suite, or Residence (or “not sure yet”).</li>
+                    <li>• A few inspiration photos or vibes you’re drawn to.</li>
+                    <li>• Any “must-have” materials or colors to consider.</li>
+                </ul>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Elbow Room</h3>
+                    <p>
+                        Woman-owned luxury builder serving Central Texas with transparent pricing,
+                        complete permitting services, and white-glove construction management for
+                        accessory structures and ADUs.
+                    </p>
+                    <div class="footer-contact">
+                        <a href="tel:2108544023">(210) 854-4023</a>
+                        <a href="mailto:sales@elbowroom.com">sales@elbowroom.com</a>
+                        <a href="#">19302 Highway 281 North<br>San Antonio, TX 78258</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="models.html">Models</a></li>
+                        <li><a href="design-center.html">Design Center</a></li>
+                        <li><a href="interior-design.html">Interior Design</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="process.html">Process</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="financing.html">Financing</a></li>
+                        <li><a href="service-area.html">Service Area</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Local Pages</h4>
+                    <ul>
+                        <li><a href="san-antonio-adus.html">San Antonio ADUs</a></li>
+                        <li><a href="austin-adus.html">Austin ADUs</a></li>
+                        <li><a href="central-texas-cities.html">Central Texas ADUs</a></li>
+                        <li><a href="contact.html">Work with us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Elbow Room. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
