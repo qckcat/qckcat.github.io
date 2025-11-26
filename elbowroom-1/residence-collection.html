@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Residence Collection | Full ADUs & Backyard Homes | Elbow Room</title>
+    <meta name="description" content="Explore Elbow Room’s Residence Collection of full ADUs. Complete backyard homes with kitchens, living rooms, and 1–2 bedrooms designed for rentals or multi-generational living.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --turquoise: #3ee3d4;
+            --cream: #f8f7f7;
+            --dark-brown: #422510;
+            --golden: #ecb12d;
+            --white: #ffffff;
+            --soft-gray: #f5f5f3;
+            --text-gray: #6b6b6b;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark-brown);
+            background-color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            line-height: 1.1;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            padding: 35px 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(66, 37, 16, 0.08);
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            font-weight: 400;
+            color: var(--dark-brown);
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        .logo-accent { color: var(--turquoise); }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 50px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark-brown);
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: var(--turquoise); }
+
+        .nav-cta {
+            background: var(--turquoise);
+            color: var(--white) !important;
+            padding: 16px 40px;
+            border-radius: 2px;
+            font-weight: 500;
+        }
+
+        .nav-cta:hover { background: var(--dark-brown); }
+
+        .dropdown { position: relative; }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%; left: 0;
+            background: var(--white);
+            min-width: 220px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+
+        .dropdown:hover .dropdown-content { display: block; }
+
+        .dropdown-content a {
+            display: block;
+            padding: 12px 30px;
+            font-size: 15px;
+        }
+
+        /* Layout helpers */
+        .section {
+            padding: 160px 80px;
+        }
+
+        .section.alt { background: var(--soft-gray); }
+        .section.cream { background: var(--cream); }
+
+        .section-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .section-eyebrow {
+            font-size: 16px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--golden);
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-size: 80px;
+            margin-bottom: 24px;
+            font-weight: 300;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            font-size: 22px;
+            color: var(--text-gray);
+            max-width: 900px;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 55vh;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(to right, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.9) 100%),
+                radial-gradient(circle at top left, #e8f8f6 0%, #fefefe 45%, #f5f5f3 100%);
+            margin-top: 100px;
+            padding: 150px 80px 110px;
+        }
+
+        .hero-content {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .breadcrumbs {
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-gray);
+            margin-bottom: 26px;
+        }
+
+        .breadcrumbs a {
+            color: var(--text-gray);
+            text-decoration: none;
+        }
+
+        .breadcrumbs span { opacity: 0.7; }
+
+        .hero h1 {
+            font-size: 96px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--turquoise);
+            font-style: italic;
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            color: var(--text-gray);
+            max-width: 940px;
+            margin-bottom: 24px;
+        }
+
+        .hero-meta {
+            font-size: 14px;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero-meta strong { color: var(--dark-brown); }
+
+        /* Layout split */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 80px;
+            align-items: flex-start;
+            margin-top: 60px;
+        }
+
+        .info-block-title {
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+
+        .info-block-text {
+            font-size: 16px;
+            color: var(--text-gray);
+            margin-bottom: 12px;
+        }
+
+        .info-meta {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        /* Model grid */
+        .model-section {
+            padding: 120px 80px 80px;
+        }
+
+        .model-section.alt { background: var(--soft-gray); }
+
+        .model-grid {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 34px;
+        }
+
+        .model-card {
+            background: var(--white);
+            padding: 30px 24px 26px;
+            border-radius: 2px;
+            box-shadow: 0 14px 40px rgba(0,0,0,0.06);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .model-image {
+            height: 160px;
+            background: var(--cream);
+            font-size: 12px;
+            color: var(--text-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .model-name {
+            font-size: 28px;
+            margin-bottom: 4px;
+        }
+
+        .model-tagline {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 10px;
+        }
+
+        .model-price {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 14px;
+        }
+
+        .model-meta {
+            font-size: 13px;
+            color: var(--text-gray);
+            margin-bottom: 14px;
+        }
+
+        .model-features {
+            list-style: none;
+            margin-bottom: 18px;
+        }
+
+        .model-features li {
+            font-size: 14px;
+            color: var(--text-gray);
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(66, 37, 16, 0.12);
+        }
+
+        .model-features li:last-child { border-bottom: none; }
+
+        .model-buttons {
+            margin-top: auto;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--turquoise);
+            color: var(--white);
+            padding: 12px 22px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-brown);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--dark-brown);
+            padding: 12px 22px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border: 1px solid var(--dark-brown);
+            border-radius: 2px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+        }
+
+        .btn-secondary:hover {
+            background: var(--dark-brown);
+            color: var(--white);
+            transform: translateY(-1px);
+        }
+
+        /* ROI / numbers band */
+        .roi-band {
+            padding: 120px 80px;
+            background: var(--cream);
+        }
+
+        .roi-grid {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 80px;
+            align-items: flex-start;
+        }
+
+        .roi-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            font-size: 14px;
+        }
+
+        .roi-table th,
+        .roi-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid rgba(66, 37, 16, 0.12);
+            text-align: left;
+        }
+
+        .roi-table th {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-gray);
+        }
+
+        .roi-table td strong { color: var(--dark-brown); }
+
+        .roi-sidebox {
+            background: var(--white);
+            padding: 30px 26px;
+            border-radius: 2px;
+            box-shadow: 0 16px 50px rgba(0,0,0,0.06);
+        }
+
+        .roi-sidebox h3 {
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+
+        .roi-sidebox p {
+            font-size: 15px;
+            color: var(--text-gray);
+            margin-bottom: 10px;
+        }
+
+        .roi-sidebox strong { color: var(--dark-brown); }
+
+        /* CTA band */
+        .cta-band {
+            text-align: center;
+            padding: 120px 80px 140px;
+            background: var(--soft-gray);
+        }
+
+        .cta-band .section-title { margin-bottom: 18px; }
+        .cta-band .section-subtitle { margin: 0 auto 34px; }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-brown);
+            color: rgba(255,255,255,0.7);
+            padding: 120px 80px 60px;
+        }
+
+        .footer-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 80px;
+            margin-bottom: 100px;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            color: var(--white);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .footer-brand p {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .footer-contact a {
+            color: var(--turquoise);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .footer-column h4 {
+            font-size: 18px;
+            color: var(--white);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: 15px; }
+
+        .footer-column a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover { color: var(--turquoise); }
+
+        .footer-bottom {
+            padding-top: 60px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 40px;
+        }
+
+        .footer-legal a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+        }
+
+        .footer-legal a:hover { color: var(--turquoise); }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .hero { padding: 130px 60px 90px; }
+            .hero h1 { font-size: 72px; }
+            .two-column { grid-template-columns: 1.1fr 1fr; gap: 40px; }
+        }
+
+        @media (max-width: 992px) {
+            nav { padding: 20px 30px; }
+            nav ul { gap: 24px; font-size: 14px; }
+
+            .hero,
+            .section,
+            .model-section,
+            .roi-band,
+            .cta-band,
+            footer {
+                padding: 100px 30px;
+            }
+
+            .hero h1 { font-size: 58px; }
+
+            .two-column,
+            .roi-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .model-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 640px) {
+            nav ul { display: none; }
+
+            .hero,
+            .section,
+            .model-section,
+            .roi-band,
+            .cta-band,
+            footer {
+                padding: 80px 24px;
+            }
+
+            .hero h1 { font-size: 42px; }
+            .hero-subtitle { font-size: 18px; }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                text-align: center;
+            }
+
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">Elbow <span class="logo-accent">Room</span></a>
+        <ul>
+            <li><a href="models.html">Models</a></li>
+            <li><a href="design-center.html">Design Center</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="process.html">Process</a></li>
+            <li class="dropdown">
+                <a href="#">Resources ▾</a>
+                <div class="dropdown-content">
+                    <a href="blog.html">Blog</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="financing.html">Financing</a>
+                    <a href="service-area.html">Service Area</a>
+                </div>
+            </li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="breadcrumbs">
+                <a href="models.html">Models</a> <span>· Residence Collection</span>
+            </div>
+            <h1>Residence Collection<span>.</span></h1>
+            <p class="hero-subtitle">
+                Full accessory dwelling units with kitchens, living rooms, and 1–2 bedrooms. Backyard homes that
+                live like a small house, built for long-term tenants or family.
+            </p>
+            <p class="hero-meta">
+                <strong>Structure type:</strong> ADUs (Full Residences) · <strong>Typical range:</strong> $150k–$197k
+            </p>
+
+            <div class="two-column">
+                <div>
+                    <h3 class="info-block-title">A real home, not a “tiny house experiment.”</h3>
+                    <p class="info-block-text">
+                        These plans are designed to feel like a complete home: dedicated bedrooms, full kitchens,
+                        real storage, and layouts that make sense for daily life—not just Pinterest.
+                    </p>
+                    <p class="info-block-text">
+                        Clients use Residence models for long-term rentals, multi-generational living, downsizing
+                        on their own property, or a “backup plan” for future needs.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="info-block-title">Built to match the main home in quality.</h3>
+                    <p class="info-block-text">
+                        We bring the same finish level and construction standards we’d want in a main house:
+                        solid surfaces, thoughtful lighting, and details that age well.
+                    </p>
+                    <p class="info-meta">
+                        We align exterior architecture and color with your existing home or create a complementary
+                        contrast—either way, it feels intentional.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Models -->
+    <section class="model-section">
+        <div class="section-container">
+            <div class="section-eyebrow">Residence Floor Plans</div>
+            <h2 class="section-title">From efficient to expansive.</h2>
+            <p class="section-subtitle">
+                The Residence Collection covers the sizes that make the most sense for Central Texas lots and
+                zoning, from efficient two-bed layouts to near-maximum ADU footprints.
+            </p>
+        </div>
+    </section>
+
+    <section class="model-section alt">
+        <div class="model-grid">
+            <!-- The Compound -->
+            <article class="model-card">
+                <div class="model-image">The Compound · hero rendering placeholder</div>
+                <h3 class="model-name">The Compound</h3>
+                <p class="model-tagline">Efficient layout · ~650 sq ft · 2 bed / 1.5 bath</p>
+                <div class="model-price">Starting at $165k</div>
+                <p class="model-meta">
+                    A smart, compact two-bedroom ADU that works well for small families, roommates, or long-term guests.
+                </p>
+                <ul class="model-features">
+                    <li>Open living/kitchen core for connection</li>
+                    <li>Two bedrooms with storage and privacy</li>
+                    <li>1.5 baths for better morning flow</li>
+                    <li>Optional covered porch or patio extension</li>
+                </ul>
+                <div class="model-buttons">
+                    <a href="design-center.html" class="btn-primary">Configure in Design Center</a>
+                    <a href="#" class="btn-secondary">View plan details</a>
+                </div>
+            </article>
+
+            <!-- The Estate -->
+            <article class="model-card">
+                <div class="model-image">The Estate · hero rendering placeholder</div>
+                <h3 class="model-name">The Estate</h3>
+                <p class="model-tagline">Maximum comfort · ~800 sq ft · 2 bed / 2 bath</p>
+                <div class="model-price">Starting at $197k</div>
+                <p class="model-meta">
+                    A larger ADU with two full bathrooms and a layout that supports true independence and long-term living.
+                </p>
+                <ul class="model-features">
+                    <li>Two full bathrooms for flexibility</li>
+                    <li>Generous kitchen with full-size appliances</li>
+                    <li>Defined entry, living, and dining zones</li>
+                    <li>Ideal for full-time tenants or parents</li>
+                </ul>
+                <div class="model-buttons">
+                    <a href="design-center.html" class="btn-primary">Configure in Design Center</a>
+                    <a href="#" class="btn-secondary">View plan details</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- ROI band -->
+    <section class="roi-band">
+        <div class="roi-grid">
+            <div>
+                <div class="section-eyebrow">Big Picture</div>
+                <h2 class="section-title">An ADU as part of your financial plan.</h2>
+                <p class="section-subtitle">
+                    We don’t treat your ADU as just a cool project. It’s a serious asset. We’ll talk through rent
+                    ranges, different use scenarios, and how this fits into your larger plan for the property.
+                </p>
+                <table class="roi-table">
+                    <thead>
+                        <tr>
+                            <th>Scenario</th>
+                            <th>Use</th>
+                            <th>What Matters Most</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Long-term tenant</strong></td>
+                            <td>12+ month leases</td>
+                            <td>Privacy, durability, low maintenance finishes</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Family first</strong></td>
+                            <td>Parents, adult children</td>
+                            <td>Comfort, accessibility, proximity and sightlines</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Flex mix</strong></td>
+                            <td>Sometimes family, sometimes rental</td>
+                            <td>Flexible layout and storage, design that ages well</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <aside class="roi-sidebox">
+                <h3>Running numbers with you.</h3>
+                <p>
+                    We’ll help you think through realistic rent ranges based on your city and the model you choose.
+                    No wild promises—just grounded, experience-based ranges.
+                </p>
+                <p>
+                    From there, we’ll look at rough payback periods and help you decide whether a Suite or a
+                    full Residence is the better fit.
+                </p>
+                <p style="margin-top: 12px;">
+                    <a href="financing.html" style="color: var(--turquoise); text-decoration: none;">
+                        See financing & lending basics →
+                    </a>
+                </p>
+            </aside>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-band">
+        <div class="section-container">
+            <div class="section-eyebrow">Next Step</div>
+            <h2 class="section-title">Tell us who lives here.</h2>
+            <p class="section-subtitle">
+                Tenant, parent, sibling, or maybe you someday—once we know who you’re building for, we can steer
+                you toward the right Residence model and options.
+            </p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn-primary">Start an ADU conversation</a>
+                <a href="models.html" class="btn-secondary">Back to all models</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Elbow Room</h3>
+                    <p>
+                        Woman-owned luxury builder serving Central Texas with transparent pricing,
+                        complete permitting services, and white-glove construction management for
+                        accessory structures and ADUs.
+                    </p>
+                    <div class="footer-contact">
+                        <a href="tel:2108544023">(210) 854-4023</a>
+                        <a href="mailto:sales@elbowroom.com">sales@elbowroom.com</a>
+                        <a href="#">19302 Highway 281 North<br>San Antonio, TX 78258</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="models.html">Models</a></li>
+                        <li><a href="design-center.html">Design Center</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="process.html">Process</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="financing.html">Financing</a></li>
+                        <li><a href="service-area.html">Service Area</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Local Pages</h4>
+                    <ul>
+                        <li><a href="san-antonio-adus.html">San Antonio ADUs</a></li>
+                        <li><a href="austin-adus.html">Austin ADUs</a></li>
+                        <li><a href="central-texas-cities.html">Central Texas ADUs</a></li>
+                        <li><a href="contact.html">Work with us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Elbow Room. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
