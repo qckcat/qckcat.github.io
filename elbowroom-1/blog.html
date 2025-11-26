@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backyard Building Blog | Elbow Room</title>
+    <meta name="description" content="Straightforward articles about Studios, Suites, and Residence ADUs in Central Texas—covering design decisions, permitting paths, costs, and practical tips for real backyards.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --turquoise: #3ee3d4;
+            --cream: #f8f7f7;
+            --dark-brown: #422510;
+            --golden: #ecb12d;
+            --white: #ffffff;
+            --soft-gray: #f5f5f3;
+            --text-gray: #6b6b6b;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark-brown);
+            background-color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            line-height: 1.1;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            padding: 35px 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(66, 37, 16, 0.08);
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            font-weight: 400;
+            color: var(--dark-brown);
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        .logo-accent { color: var(--turquoise); }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 50px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark-brown);
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: var(--turquoise); }
+
+        .nav-cta {
+            background: var(--turquoise);
+            color: var(--white) !important;
+            padding: 16px 40px;
+            border-radius: 2px;
+            font-weight: 500;
+        }
+
+        .nav-cta:hover { background: var(--dark-brown); }
+
+        .dropdown { position: relative; }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%; left: 0;
+            background: var(--white);
+            min-width: 220px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+
+        .dropdown:hover .dropdown-content { display: block; }
+
+        .dropdown-content a {
+            display: block;
+            padding: 12px 30px;
+            font-size: 15px;
+        }
+
+        /* Layout helpers */
+        .section {
+            padding: 160px 80px;
+        }
+
+        .section.alt { background: var(--soft-gray); }
+        .section.cream { background: var(--cream); }
+
+        .section-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .section-eyebrow {
+            font-size: 16px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--golden);
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-size: 80px;
+            margin-bottom: 24px;
+            font-weight: 300;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            font-size: 22px;
+            color: var(--text-gray);
+            max-width: 900px;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(to right, #111111 0%, #27201b 40%, #f8f7f7 100%),
+                radial-gradient(circle at top left, rgba(62,227,212,0.18) 0%, transparent 55%);
+            margin-top: 100px;
+            padding: 150px 80px 130px;
+            color: var(--white);
+        }
+
+        .hero-inner {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .hero-eyebrow {
+            font-size: 14px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 24px;
+        }
+
+        .hero-title {
+            font-size: 96px;
+            margin-bottom: 18px;
+            font-weight: 300;
+            letter-spacing: -2px;
+        }
+
+        .hero-title span {
+            color: var(--turquoise);
+            font-style: italic;
+        }
+
+        .hero-subhead {
+            font-size: 24px;
+            max-width: 720px;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.86);
+            margin-bottom: 24px;
+        }
+
+        .hero-meta {
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.75);
+        }
+
+        .hero-actions {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .btn-primary {
+            background: var(--turquoise);
+            color: var(--dark-brown);
+            padding: 14px 28px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+        }
+
+        .btn-primary:hover {
+            background: var(--white);
+            color: var(--dark-brown);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 14px 28px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border: 1px solid rgba(255,255,255,0.6);
+            border-radius: 2px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-1px);
+        }
+
+        .hero-card {
+            background: rgba(0,0,0,0.5);
+            border-radius: 2px;
+            padding: 24px 22px 22px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .hero-card p {
+            font-size: 15px;
+            color: rgba(255,255,255,0.86);
+            margin-bottom: 12px;
+        }
+
+        .hero-card ul {
+            list-style: none;
+            font-size: 14px;
+            color: rgba(255,255,255,0.85);
+        }
+
+        .hero-card li {
+            padding: 4px 0;
+        }
+
+        /* Filters */
+        .filters-section {
+            padding: 80px 80px 40px;
+            background: var(--cream);
+        }
+
+        .filters-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .filters-label {
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-gray);
+        }
+
+        .filters-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .filter-pill {
+            border-radius: 999px;
+            padding: 7px 16px;
+            font-size: 13px;
+            background: var(--white);
+            border: 1px solid rgba(66,37,16,0.2);
+            cursor: default;
+        }
+
+        .filter-pill.is-primary {
+            background: var(--dark-brown);
+            color: var(--white);
+            border-color: var(--dark-brown);
+        }
+
+        /* Blog listing */
+        .blog-section {
+            padding: 40px 80px 120px;
+            background: var(--cream);
+        }
+
+        .blog-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+        }
+
+        .blog-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 26px;
+        }
+
+        .blog-card {
+            background: var(--white);
+            padding: 20px 18px 18px;
+            border-radius: 2px;
+            border: 1px solid rgba(66,37,16,0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .blog-meta-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px;
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-gray);
+        }
+
+        .blog-category {
+            color: var(--golden);
+        }
+
+        .blog-title {
+            font-size: 22px;
+            margin-bottom: 4px;
+        }
+
+        .blog-excerpt {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .blog-link {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 6px;
+        }
+
+        .blog-link a {
+            color: var(--dark-brown);
+            text-decoration: none;
+        }
+
+        .blog-link a:hover {
+            color: var(--turquoise);
+        }
+
+        /* Sidebar */
+        .blog-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .sidebar-card {
+            background: var(--white);
+            padding: 20px 18px 18px;
+            border-radius: 2px;
+            border: 1px solid rgba(66,37,16,0.1);
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .sidebar-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar-card p {
+            margin-bottom: 6px;
+        }
+
+        .sidebar-list {
+            list-style: none;
+            font-size: 13px;
+        }
+
+        .sidebar-list li {
+            padding: 3px 0;
+        }
+
+        .sidebar-list a {
+            color: var(--dark-brown);
+            text-decoration: none;
+        }
+
+        .sidebar-list a:hover {
+            color: var(--turquoise);
+        }
+
+        .note-tag {
+            display: inline-block;
+            margin-top: 6px;
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-gray);
+        }
+
+        /* CTA */
+        .cta-band {
+            padding: 120px 80px 130px;
+            background: var(--dark-brown);
+            color: var(--white);
+        }
+
+        .cta-inner {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .cta-eyebrow {
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 22px;
+        }
+
+        .cta-title {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .cta-subtitle {
+            font-size: 18px;
+            color: rgba(255,255,255,0.86);
+            max-width: 720px;
+        }
+
+        .cta-actions {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .btn-cta-primary {
+            background: var(--turquoise);
+            color: var(--dark-brown);
+            padding: 14px 28px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .btn-cta-primary:hover {
+            background: var(--white);
+            transform: translateY(-1px);
+        }
+
+        .btn-cta-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 14px 28px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            border: 1px solid rgba(255,255,255,0.6);
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .btn-cta-secondary:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-1px);
+        }
+
+        .cta-side {
+            font-size: 14px;
+            color: rgba(255,255,255,0.86);
+        }
+
+        .cta-side ul {
+            list-style: none;
+            margin-top: 16px;
+        }
+
+        .cta-side li {
+            padding: 4px 0;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-brown);
+            color: rgba(255,255,255,0.7);
+            padding: 120px 80px 60px;
+        }
+
+        .footer-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 80px;
+            margin-bottom: 100px;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            color: var(--white);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .footer-brand p {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .footer-contact a {
+            color: var(--turquoise);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .footer-column h4 {
+            font-size: 18px;
+            color: var(--white);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: 15px; }
+
+        .footer-column a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover { color: var(--turquoise); }
+
+        .footer-bottom {
+            padding-top: 60px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 40px;
+        }
+
+        .footer-legal a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+        }
+
+        .footer-legal a:hover { color: var(--turquoise); }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            nav { padding: 24px 40px; }
+            .hero { padding: 130px 60px 110px; }
+            .filters-section,
+            .blog-section,
+            .cta-band,
+            footer {
+                padding-left: 60px;
+                padding-right: 60px;
+            }
+            .hero-inner,
+            .blog-container,
+            .cta-inner {
+                gap: 50px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            nav ul { gap: 24px; font-size: 14px; }
+            .hero-inner {
+                grid-template-columns: 1fr;
+            }
+            .hero-title { font-size: 72px; }
+            .blog-container {
+                grid-template-columns: 1fr;
+            }
+            .blog-list {
+                grid-template-columns: 1fr 1fr;
+            }
+            .cta-inner {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 20px 24px; }
+            .hero,
+            .filters-section,
+            .blog-section,
+            .cta-band,
+            footer {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+            .section-title { font-size: 48px; }
+            .hero-title { font-size: 54px; }
+            .blog-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            nav ul { display: none; }
+            .hero { padding-top: 100px; }
+            .hero-title { font-size: 44px; }
+            .cta-actions {
+                flex-direction: column;
+            }
+            .btn-cta-primary,
+            .btn-cta-secondary {
+                width: 100%;
+                text-align: center;
+            }
+            .filters-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">Elbow <span class="logo-accent">Room</span></a>
+        <ul>
+            <li><a href="models.html">Models</a></li>
+            <li><a href="design-center.html">Design Center</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="process.html">Process</a></li>
+            <li class="dropdown">
+                <a href="#">Resources ▾</a>
+                <div class="dropdown-content">
+                    <a href="blog.html">Blog</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="financing.html">Financing</a>
+                    <a href="service-area.html">Service Area</a>
+                </div>
+            </li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div>
+                <div class="hero-eyebrow">Backyard Building Blog</div>
+                <h1 class="hero-title">Studios, Suites & Residences, <span>explained.</span></h1>
+                <p class="hero-subhead">
+                    Clear, practical articles from a builder who lives in the world of accessory structures and ADUs—
+                    not just once in a while, but all day, every day in Central Texas backyards.
+                </p>
+                <p class="hero-meta">
+                    Studio · Suite · Residence · Codes · Design · Real budgets
+                </p>
+                <div class="hero-actions">
+                    <a href="#blog-list" class="btn-primary">Browse recent posts</a>
+                    <a href="contact.html" class="btn-secondary">Talk about your project</a>
+                </div>
+            </div>
+            <aside class="hero-card">
+                <h3>What you’ll find here.</h3>
+                <p>
+                    Think of this as the “behind the scenes” of building a Studio, Suite, or Residence:
+                    what we wish more homeowners knew before they start.
+                </p>
+                <ul>
+                    <li>• How cities treat accessory structures vs ADUs</li>
+                    <li>• Real-world design decisions that actually matter</li>
+                    <li>• Budget ranges and trade-offs in plain language</li>
+                    <li>• Lessons from active projects in Central Texas</li>
+                </ul>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="filters-section">
+        <div class="filters-container">
+            <div class="filters-label">Filter by lens (for future CMS integration)</div>
+            <div class="filters-group">
+                <span class="filter-pill is-primary">All topics</span>
+                <span class="filter-pill">Studio</span>
+                <span class="filter-pill">Suite</span>
+                <span class="filter-pill">Residence / ADU</span>
+                <span class="filter-pill">Permits & Rules</span>
+                <span class="filter-pill">Design & Finish</span>
+                <span class="filter-pill">Budget & Financing</span>
+                <span class="filter-pill">Central Texas Cities</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog listing -->
+    <section class="blog-section" id="blog-list">
+        <div class="blog-container">
+            <!-- Main list -->
+            <div class="blog-list">
+                <article class="blog-card">
+                    <div class="blog-meta-row">
+                        <span class="blog-category">Studio · Accessory Structure</span>
+                        <span>Reading time: 6 min</span>
+                    </div>
+                    <h2 class="blog-title">Studio vs. clearing out a bedroom: when a separate structure wins.</h2>
+                    <p class="blog-excerpt">
+                        If you’re working from the dining table, squeezing a therapy practice into the spare room,
+                        or sharing office space with laundry baskets, this article breaks down when a Studio in the yard
+                        is actually a smarter move than “just re-arranging the house.”
+                    </p>
+                    <p class="blog-link"><a href="#">Read article →</a></p>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-meta-row">
+                        <span class="blog-category">Suite · Bath Included</span>
+                        <span>Reading time: 7 min</span>
+                    </div>
+                    <h2 class="blog-title">Designing a guest Suite that doesn’t feel like a forgotten room.</h2>
+                    <p class="blog-excerpt">
+                        Guest and in-law Suites need a different kind of planning than a standard bedroom. We walk through
+                        light, privacy, storage, and bath layouts so the space feels like a calm retreat—without feeling
+                        disconnected from the main house.
+                    </p>
+                    <p class="blog-link"><a href="#">Read article →</a></p>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-meta-row">
+                        <span class="blog-category">Residence · ADU · Central Texas</span>
+                        <span>Reading time: 9 min</span>
+                    </div>
+                    <h2 class="blog-title">What Central Texas cities really mean by a “full” ADU.</h2>
+                    <p class="blog-excerpt">
+                        Every city uses slightly different language—granny flat, secondary unit, ADU—but most of them
+                        draw the line at one key thing: a kitchen. Here’s how we translate “Residence” into city code
+                        in San Antonio, Austin, and nearby municipalities.
+                    </p>
+                    <p class="blog-link"><a href="#">Read article →</a></p>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-meta-row">
+                        <span class="blog-category">Permits & Rules</span>
+                        <span>Reading time: 8 min</span>
+                    </div>
+                    <h2 class="blog-title">From sketch to permit: the ADU path in plain language.</h2>
+                    <p class="blog-excerpt">
+                        You don’t need to love paperwork to build a Studio, Suite, or Residence—but you do need a
+                        builder who respects the process. This post maps out the typical path from early ideas to a
+                        stamped permit set, step by step.
+                    </p>
+                    <p class="blog-link"><a href="#">Read article →</a></p>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-meta-row">
+                        <span class="blog-category">Design Center · Finishes</span>
+                        <span>Reading time: 5 min</span>
+                    </div>
+                    <h2 class="blog-title">Three finish decisions that quietly shape your ADU.</h2>
+                    <p class="blog-excerpt">
+                        Not every selection needs hours of debate. We highlight a small handful of choices—like flooring,
+                        lighting layers, and bath hardware—that dramatically affect how your Studio, Suite, or Residence
+                        feels and functions day-to-day.
+                    </p>
+                    <p class="blog-link"><a href="#">Read article →</a></p>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-meta-row">
+                        <span class="blog-category">Budget & Planning</span>
+                        <span>Reading time: 7 min</span>
+                    </div>
+                    <h2 class="blog-title">Framing a realistic budget for a backyard structure.</h2>
+                    <p class="blog-excerpt">
+                        We walk through how we talk about budget ranges, what’s typically included for Studios, Suites,
+                        and Residences, and how to think about “good, better, best” finish levels without feeling lost
+                        in line items.
+                    </p>
+                    <p class="blog-link"><a href="#">Read article →</a></p>
+                </article>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="blog-sidebar">
+                <div class="sidebar-card">
+                    <h3>Read by structure type.</h3>
+                    <p>Use these as content lanes as the blog fills in:</p>
+                    <ul class="sidebar-list">
+                        <li>• <a href="#">Studio: quiet work, creative space, and gyms</a></li>
+                        <li>• <a href="#">Suite: guest, in-law, and pool-side living</a></li>
+                        <li>• <a href="#">Residence: full ADUs with kitchens and baths</a></li>
+                    </ul>
+                    <span class="note-tag">Structure lanes · Studio · Suite · Residence</span>
+                </div>
+
+                <div class="sidebar-card">
+                    <h3>Planning & permitting.</h3>
+                    <p>Articles that unpack how cities think about ADUs and accessory structures.</p>
+                    <ul class="sidebar-list">
+                        <li>• <a href="#">San Antonio: accessory structures vs. ADUs</a></li>
+                        <li>• <a href="#">Austin: setbacks, height, and parking rules</a></li>
+                        <li>• <a href="#">Common “gotchas” on real projects</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-card">
+                    <h3>Curious about a specific topic?</h3>
+                    <p>
+                        If there’s a Studio, Suite, or Residence question you don’t see here yet, we’d genuinely like to hear it.
+                    </p>
+                    <p>
+                        Email us at <a href="mailto:sales@elbowroom.com">sales@elbowroom.com</a> with “Blog topic” in the subject line,
+                        and we’ll consider it for a future article.
+                    </p>
+                </div>
+
+                <div class="sidebar-card">
+                    <h3>Ready for a real conversation?</h3>
+                    <p>
+                        These articles are meant to de-mystify the process. When you’re ready to talk about your
+                        specific lot and goals, we’re here.
+                    </p>
+                    <p><a href="contact.html">Start with the contact form →</a></p>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-band">
+        <div class="cta-inner">
+            <div>
+                <div class="cta-eyebrow">Next Step</div>
+                <h2 class="cta-title">Turn information into a plan.</h2>
+                <p class="cta-subtitle">
+                    Use the blog to get grounded, then bring us your address and a few lines about how you’d like to
+                    use a Studio, Suite, or Residence. We’ll connect the dots between articles and your actual yard.
+                </p>
+                <div class="cta-actions">
+                    <a href="contact.html" class="btn-cta-primary">Talk about your project</a>
+                    <a href="models.html" class="btn-cta-secondary">Browse our models</a>
+                </div>
+            </div>
+            <aside class="cta-side">
+                <p><strong>Good questions to bring:</strong></p>
+                <ul>
+                    <li>• “Is my lot better suited for Studio, Suite, or Residence?”</li>
+                    <li>• “What does my city typically approve?”</li>
+                    <li>• “How should I be thinking about budget ranges?”</li>
+                </ul>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Elbow Room</h3>
+                    <p>
+                        Woman-owned luxury builder serving Central Texas with transparent pricing,
+                        complete permitting services, and white-glove construction management for
+                        accessory structures and ADUs.
+                    </p>
+                    <div class="footer-contact">
+                        <a href="tel:2108544023">(210) 854-4023</a>
+                        <a href="mailto:sales@elbowroom.com">sales@elbowroom.com</a>
+                        <a href="#">19302 Highway 281 North<br>San Antonio, TX 78258</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="models.html">Models</a></li>
+                        <li><a href="design-center.html">Design Center</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="process.html">Process</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="financing.html">Financing</a></li>
+                        <li><a href="service-area.html">Service Area</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Local Pages</h4>
+                    <ul>
+                        <li><a href="san-antonio-adus.html">San Antonio ADUs</a></li>
+                        <li><a href="austin-adus.html">Austin ADUs</a></li>
+                        <li><a href="central-texas-cities.html">Central Texas ADUs</a></li>
+                        <li><a href="contact.html">Work with us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Elbow Room. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
