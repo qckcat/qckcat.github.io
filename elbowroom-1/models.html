@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADU Models & Floor Plans | Accessory Structures to Full Residences | Elbow Room</title>
+    <meta name="description" content="Explore Elbow Room’s model collections: accessory structures, accessory structures with plumbing, and full ADUs. Compare sizes, prices, and layouts for backyard offices, guest suites, and full residences.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --turquoise: #3ee3d4;
+            --cream: #f8f7f7;
+            --dark-brown: #422510;
+            --golden: #ecb12d;
+            --white: #ffffff;
+            --soft-gray: #f5f5f3;
+            --text-gray: #6b6b6b;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark-brown);
+            background-color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            line-height: 1.1;
+        }
+
+        /* Navigation (matches index.html) */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            padding: 35px 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(66, 37, 16, 0.08);
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            font-weight: 400;
+            color: var(--dark-brown);
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        .logo-accent {
+            color: var(--turquoise);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 50px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark-brown);
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--turquoise);
+        }
+
+        .nav-cta {
+            background: var(--turquoise);
+            color: var(--white) !important;
+            padding: 16px 40px;
+            border-radius: 2px;
+            font-weight: 500;
+        }
+
+        .nav-cta:hover {
+            background: var(--dark-brown);
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--white);
+            min-width: 220px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 12px 30px;
+            font-size: 15px;
+        }
+
+        /* Layout helpers */
+        .section {
+            padding: 180px 80px;
+        }
+
+        .section.alt {
+            background: var(--soft-gray);
+        }
+
+        .section.cream {
+            background: var(--cream);
+        }
+
+        .section-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .section-eyebrow {
+            font-size: 16px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--golden);
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-size: 80px;
+            margin-bottom: 30px;
+            font-weight: 300;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            font-size: 22px;
+            color: var(--text-gray);
+            max-width: 900px;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(to right, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.9) 100%),
+                radial-gradient(circle at top left, #e8f8f6 0%, #fefefe 45%, #f5f5f3 100%);
+            margin-top: 100px;
+            padding: 150px 80px 120px;
+        }
+
+        .hero-content {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .hero-eyebrow {
+            font-size: 16px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--golden);
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .hero-title {
+            font-size: 100px;
+            line-height: 1.05;
+            margin-bottom: 24px;
+            font-weight: 300;
+            letter-spacing: -2px;
+        }
+
+        .hero-title span {
+            color: var(--turquoise);
+            font-style: italic;
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            line-height: 1.6;
+            color: var(--text-gray);
+            max-width: 1050px;
+            margin-bottom: 30px;
+        }
+
+        .hero-meta {
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-gray);
+        }
+
+        .hero-meta strong {
+            color: var(--dark-brown);
+        }
+
+        /* Unit type strip */
+        .unit-type-strip {
+            padding: 60px 80px 40px;
+            background: var(--white);
+            border-bottom: 1px solid rgba(66,37,16,0.06);
+        }
+
+        .unit-type-grid {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .unit-type-card {
+            background: var(--soft-gray);
+            padding: 30px 26px 26px;
+            border-radius: 2px;
+        }
+
+        .unit-type-label {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--text-gray);
+            margin-bottom: 12px;
+        }
+
+        .unit-type-name {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .unit-type-desc {
+            font-size: 15px;
+            color: var(--text-gray);
+            margin-bottom: 12px;
+        }
+
+        .unit-type-meta {
+            font-size: 13px;
+            color: var(--text-gray);
+        }
+
+        .unit-type-meta strong {
+            color: var(--dark-brown);
+        }
+
+        .unit-type-link {
+            display: inline-block;
+            margin-top: 16px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            color: var(--dark-brown);
+            border-bottom: 1px solid rgba(66,37,16,0.3);
+            padding-bottom: 2px;
+        }
+
+        /* Collection filters */
+        .filter-bar {
+            padding: 40px 80px 0;
+            background: var(--white);
+        }
+
+        .filter-inner {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .filter-label {
+            font-size: 14px;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .filter-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid rgba(66, 37, 16, 0.3);
+            padding: 10px 18px;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: default;
+            border-radius: 999px;
+            color: var(--dark-brown);
+        }
+
+        .filter-btn.active {
+            background: var(--dark-brown);
+            color: var(--white);
+            border-color: var(--dark-brown);
+        }
+
+        /* Collections */
+        .collection-section {
+            padding: 140px 80px 120px;
+        }
+
+        .collection-section.alt {
+            background: var(--soft-gray);
+        }
+
+        .collection-header {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+            gap: 80px;
+            align-items: flex-start;
+            margin-bottom: 70px;
+        }
+
+        .collection-badge {
+            display: inline-block;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--text-gray);
+            border: 1px solid rgba(66, 37, 16, 0.2);
+            padding: 8px 16px;
+            border-radius: 999px;
+            margin-bottom: 20px;
+        }
+
+        .collection-title {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        .collection-description {
+            font-size: 17px;
+            color: var(--text-gray);
+            max-width: 540px;
+            margin-bottom: 18px;
+        }
+
+        .collection-meta {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .collection-meta strong {
+            color: var(--dark-brown);
+        }
+
+        .price-range {
+            font-size: 16px;
+            margin-top: 12px;
+            color: var(--dark-brown);
+        }
+
+        .collection-links {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .collection-links a {
+            color: var(--dark-brown);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(66,37,16,0.3);
+            padding-bottom: 2px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 34px;
+        }
+
+        .model-card {
+            background: var(--white);
+            padding: 30px 24px 28px;
+            border-radius: 2px;
+            box-shadow: 0 14px 40px rgba(0,0,0,0.06);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .model-image {
+            height: 140px;
+            background: var(--cream);
+            margin-bottom: 20px;
+            font-size: 12px;
+            color: var(--text-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .model-content h3 {
+            font-size: 24px;
+            margin-bottom: 6px;
+        }
+
+        .model-subtitle {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 10px;
+        }
+
+        .model-price {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 14px;
+        }
+
+        .model-features {
+            list-style: none;
+            margin-bottom: 18px;
+        }
+
+        .model-features li {
+            font-size: 14px;
+            color: var(--text-gray);
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(66, 37, 16, 0.1);
+        }
+
+        .model-features li:last-child {
+            border-bottom: none;
+        }
+
+        .model-buttons {
+            margin-top: auto;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--turquoise);
+            color: var(--white);
+            padding: 12px 22px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            transition: all 0.3s;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-brown);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--dark-brown);
+            padding: 12px 22px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border: 1px solid var(--dark-brown);
+            border-radius: 2px;
+            transition: all 0.3s;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+
+        .btn-secondary:hover {
+            background: var(--dark-brown);
+            color: var(--white);
+            transform: translateY(-1px);
+        }
+
+        /* Footer (matches index.html) */
+        footer {
+            background: var(--dark-brown);
+            color: rgba(255,255,255,0.7);
+            padding: 120px 80px 60px;
+        }
+
+        .footer-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 80px;
+            margin-bottom: 100px;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            color: var(--white);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .footer-brand p {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .footer-contact a {
+            color: var(--turquoise);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .footer-column h4 {
+            font-size: 18px;
+            color: var(--white);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 15px;
+        }
+
+        .footer-column a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: var(--turquoise);
+        }
+
+        .footer-bottom {
+            padding-top: 60px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 40px;
+        }
+
+        .footer-legal a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+        }
+
+        .footer-legal a:hover {
+            color: var(--turquoise);
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .hero {
+                padding: 130px 60px 100px;
+            }
+
+            .hero-title {
+                font-size: 80px;
+            }
+
+            .section-title {
+                font-size: 64px;
+            }
+
+            .collection-header {
+                grid-template-columns: 1.1fr 1.1fr;
+                gap: 40px;
+            }
+
+            .model-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .unit-type-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 992px) {
+            nav {
+                padding: 20px 30px;
+            }
+
+            nav ul {
+                gap: 24px;
+                font-size: 14px;
+            }
+
+            .hero,
+            .section,
+            .collection-section,
+            footer {
+                padding: 100px 30px;
+            }
+
+            .unit-type-strip {
+                padding: 50px 30px 30px;
+            }
+
+            .filter-bar {
+                padding: 30px;
+            }
+
+            .hero-title {
+                font-size: 64px;
+            }
+
+            .collection-header {
+                grid-template-columns: 1fr;
+            }
+
+            .model-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .unit-type-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            nav ul {
+                display: none; /* static prototype; real build would use a mobile menu */
+            }
+
+            .hero {
+                padding: 90px 24px 70px;
+            }
+
+            .hero-title {
+                font-size: 44px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .collection-section,
+            .section {
+                padding: 80px 24px;
+            }
+
+            .filter-bar {
+                padding: 24px;
+            }
+
+            .filter-inner {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            .model-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">Elbow <span class="logo-accent">Room</span></a>
+        <ul>
+            <li><a href="models.html">Models</a></li>
+            <li><a href="design-center.html">Design Center</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="process.html">Process</a></li>
+            <li class="dropdown">
+                <a href="#">Resources ▾</a>
+                <div class="dropdown-content">
+                    <a href="blog.html">Blog</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="financing.html">Financing</a>
+                    <a href="service-area.html">Service Area</a>
+                </div>
+            </li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-eyebrow">Models & Floor Plans</div>
+            <h1 class="hero-title">Three structure types.<br>One <span>Elbow Room</span> standard.</h1>
+            <p class="hero-subtitle">
+                Start with the right structure for your property—an accessory structure, an accessory
+                structure with plumbing, or a full ADU. From there, choose a model for how you actually
+                live: quiet offices, guest suites, or complete backyard homes.
+            </p>
+            <p class="hero-meta">
+                <strong>Pricing overview:</strong> Accessory Structures from the mid-$20s · Plumbing suites from the mid-$70s · Full ADUs up to ~$197k
+            </p>
+        </div>
+    </section>
+
+    <!-- Unit Type Strip -->
+    <section class="unit-type-strip">
+        <div class="unit-type-grid">
+            <!-- Accessory Structures -->
+            <article class="unit-type-card">
+                <div class="unit-type-label">Type 01</div>
+                <h3 class="unit-type-name">Accessory Structures</h3>
+                <p class="unit-type-desc">
+                    Finished, climate-controlled backyard spaces without plumbing—ideal for offices, studios, gyms,
+                    and workrooms that feel like part of the home, not an afterthought.
+                </p>
+                <p class="unit-type-meta">
+                    <strong>Best fits:</strong> Offices, art studios, music rooms, home gyms, workshops.
+                </p>
+                <a href="#studio" class="unit-type-link">Jump to models →</a>
+            </article>
+
+            <!-- Accessory Structures w/ Plumbing -->
+            <article class="unit-type-card">
+                <div class="unit-type-label">Type 02</div>
+                <h3 class="unit-type-name">Accessory Structures w/ Plumbing</h3>
+                <p class="unit-type-desc">
+                    Suites with full bathrooms and optional kitchenettes—built for guest stays, aging parents,
+                    or rentals where comfort and privacy really matter.
+                </p>
+                <p class="unit-type-meta">
+                    <strong>Best fits:</strong> Guest casitas, in-law suites, long-term visitors, boutique rentals.
+                </p>
+                <a href="#suite" class="unit-type-link">Jump to models →</a>
+            </article>
+
+            <!-- Full ADUs -->
+            <article class="unit-type-card">
+                <div class="unit-type-label">Type 03</div>
+                <h3 class="unit-type-name">ADUs (Full Residences)</h3>
+                <p class="unit-type-desc">
+                    Backyard homes that live like a small house, with full kitchens and 1–2 bedrooms, designed for
+                    long-term rentals or multi-generational living.
+                </p>
+                <p class="unit-type-meta">
+                    <strong>Best fits:</strong> Full-time tenants, adult children, parents, or downsizing on your own lot.
+                </p>
+                <a href="#residence" class="unit-type-link">Jump to models →</a>
+            </article>
+        </div>
+    </section>
+
+    <!-- Filter bar (static for prototype) -->
+    <section class="filter-bar">
+        <div class="filter-inner">
+            <div class="filter-label">Browse by structure type</div>
+            <div class="filter-options">
+                <button class="filter-btn active">All Models</button>
+                <button class="filter-btn">Accessory Structures</button>
+                <button class="filter-btn">With Plumbing</button>
+                <button class="filter-btn">Full ADUs</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accessory Structures / Studio Collection -->
+    <section class="collection-section" id="studio">
+        <div class="section-container">
+            <div class="collection-header">
+                <div>
+                    <div class="collection-badge">Accessory Structures · Studio Collection</div>
+                    <h2 class="collection-title">Dedicated<br>Spaces</h2>
+                    <p class="collection-description">
+                        Climate-controlled structures with full electrical and HVAC but no plumbing. Perfect for
+                        offices, creative studios, gyms, or workshops when you want a real room—not a converted shed.
+                    </p>
+                    <p class="collection-meta">
+                        <strong>Structure type:</strong> Accessory Structure (no plumbing)<br>
+                        <strong>Typical uses:</strong> Office, creative space, gym, workshop<br>
+                        <span class="price-range">Price range: $26k – $45k</span>
+                    </p>
+                </div>
+                <div class="collection-links">
+                    <p>
+                        Want to see these as a group?
+                        <a href="studio-collection.html">View studio collection overview →</a>
+                    </p>
+                    <p style="margin-top: 10px;">
+                        Ready to play with finishes?
+                        <a href="design-center.html">Open the Design Center →</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="model-grid">
+                <!-- The Mark -->
+                <article class="model-card">
+                    <div class="model-image">[The Mark – 8×16 accessory structure exterior]</div>
+                    <div class="model-content">
+                        <h3>The Mark</h3>
+                        <p class="model-subtitle">Signature home office · 8' × 16' · 128 sq ft</p>
+                        <div class="model-price">$28k</div>
+                        <ul class="model-features">
+                            <li>Complete electrical system with dedicated circuits</li>
+                            <li>Climate-controlled with efficient HVAC</li>
+                            <li>Premium interior finishes and trim</li>
+                            <li>Foundation included</li>
+                        </ul>
+                        <div class="model-buttons">
+                            <a href="design-center.html" class="btn-primary">Configure</a>
+                            <a href="model-the-mark.html" class="btn-secondary">Details</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- The Canvas -->
+                <article class="model-card">
+                    <div class="model-image">[The Canvas – 10×12 accessory structure exterior]</div>
+                    <div class="model-content">
+                        <h3>The Canvas</h3>
+                        <p class="model-subtitle">Creative studio · 10' × 12' · 120 sq ft</p>
+                        <div class="model-price">$29k</div>
+                        <ul class="model-features">
+                            <li>Higher ceilings for artwork and vertical storage</li>
+                            <li>Emphasis on natural light</li>
+                            <li>Durable, easy-clean flooring</li>
+                            <li>Optional built-in storage or worktable</li>
+                        </ul>
+                        <div class="model-buttons">
+                            <a href="design-center.html" class="btn-primary">Configure</a>
+                            <a href="#" class="btn-secondary">Details</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- The Flex -->
+                <article class="model-card">
+                    <div class="model-image">[The Flex – 12×16 accessory structure exterior]</div>
+                    <div class="model-content">
+                        <h3>The Flex</h3>
+                        <p class="model-subtitle">Multi-purpose space · 12' × 16' · 192 sq ft</p>
+                        <div class="model-price">$35k</div>
+                        <ul class="model-features">
+                            <li>Larger footprint for gym or workshop</li>
+                            <li>Heavy-duty flooring options</li>
+                            <li>Double doors for equipment or large items</li>
+                            <li>Flexible layout for future re-use</li>
+                        </ul>
+                        <div class="model-buttons">
+                            <a href="design-center.html" class="btn-primary">Configure</a>
+                            <a href="#" class="btn-secondary">Details</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- The Nest -->
+                <article class="model-card">
+                    <div class="model-image">[The Nest – 10×10 accessory structure exterior]</div>
+                    <div class="model-content">
+                        <h3>The Nest</h3>
+                        <p class="model-subtitle">Compact office · 10' × 10' · 100 sq ft</p>
+                        <div class="model-price">$26k</div>
+                        <ul class="model-features">
+                            <li>Perfect for small or irregular lots</li>
+                            <li>Focus-first layout for productivity</li>
+                            <li>Built-in desk option</li>
+                            <li>Most affordable entry into Elbow Room</li>
+                        </ul>
+                        <div class="model-buttons">
+                            <a href="design-center.html" class="btn-primary">Configure</a>
+                            <a href="#" class="btn-secondary">Details</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accessory Structures w/ Plumbing / Suite Collection -->
+    <section class="collection-section alt" id="suite">
+        <div class="section-container">
+            <div class="collection-header">
+                <div>
+                    <div class="collection-badge">Accessory Structures w/ Plumbing · Suite Collection</div>
+                    <h2 class="collection-title">Independent<br>Suites</h2>
+                    <p class="collection-description">
+                        Suites with full bathrooms and kitchenettes when you need privacy, comfort, and hospitality.
+                        Built for aging parents, long-term guests, or rentals that feel like a boutique stay.
+                    </p>
+                    <p class="collection-meta">
+                        <strong>Structure type:</strong> Accessory Structure with plumbing<br>
+                        <strong>Typical uses:</strong> Casitas, in-law suites, guest houses, part-time rentals<br>
+                        <span class="price-range">Price range: $75k – $140k</span>
+                    </p>
+                </div>
+                <div class="collection-links">
+                    <p>
+                        Compare all suites together:
+                        <a href="suite-collection.html">View suite collection overview →</a>
+                    </p>
+                    <p style="margin-top: 10px;">
+                        Want to see finishes and fixtures?
+                        <a href="design-center.html">Open the Design Center →</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="model-grid">
+                <!-- The Retreat -->
+                <article class="model-card">
+                    <div class="model-image">[The Retreat – 320 sq ft suite exterior]</div>
+                    <div class="model-content">
+                        <h3>The Retreat</h3>
+                        <p class="model-subtitle">Most popular · ~320 sq ft · Full bathroom</p>
+                        <div class="model-price">$75k</div>
+                        <ul class="model-features">
+                            <li>Luxury full bathroom with walk-in shower</li>
+                            <li>Open living area that doesn’t feel cramped</li>
+                            <li>Optional kitchenette upgrade</li>
+                            <li>Dedicated entry for privacy</li>
+                        </ul>
+                        <div class="model-buttons">
+                            <a href="design-center.html" class="btn-primary">Configure</a>
+                            <a href="model-the-retreat.html" class="btn-secondary">Details</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- The Haven -->
+                <article class="model-card">
+                    <div class="model-image">[The Haven – 400 sq ft suite exterior]</div>
+                    <div class="model-content">
+                        <h3>The Haven</h3>
+                        <p class="model-subtitle">Expanded suite · ~400 sq ft · Full bath + kitchenette</p>
+                        <div class="model-price">$95k</div>
+                        <ul class="model-features">
+                            <li>Full kitchenette included standard</li>
+                            <li>Defined sleeping area off the main living space</li>
+                            <li>Premium appliance package</li>
+                            <li>Walk-in closet for real storage</li>
+                        </ul>
+                        <div class="model-buttons">
+                            <a href="design-center.html" class="btn-primary">Configure</a>
+                            <a href="#" class="btn-secondary">Details</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- The Vista -->
+                <article class="model-card">
+                    <div class="model-image">[The Vista – 360 sq ft + loft suite exterior]</div>
+                    <div class="model-content">
+                        <h3>The Vista</h3>
+                        <p class="model-subtitle">Loft option · ~360 sq ft + loft · Full bathroom</p>
+                        <div class="model-price">$89k</div>
+                        <ul class="model-features">
+                            <li>Optional sleeping loft for guests or storage</li>
+                            <li>High ceilings and tall windows</li>
+                            <li>Open-concept main level</li>
+                            <li>Modern mountain/Scandi-inspired aesthetic</li>
+                        </ul>
+                        <div class="model-buttons">
+                            <a href="design-center.html" class="btn-primary">Configure</a>
+                            <a href="#" class="btn-secondary">Details</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Open slot or future suite -->
+                <article class="model-card">
+                    <div class="model-image">[Additional suite – future model placeholder]</div>
+                    <div class="model-content">
+                        <h3>Future Suite Model</h3>
+                        <p class="model-subtitle">Reserved for future floor plan expansion</p>
+                        <div class="model-price">TBD</div>
+                        <ul class="model-features">
+                            <li>Slot reserved for additional suite option</li>
+                            <li>Will maintain full bath + kitchenette standard</li>
+                            <li>Designed around Central Texas permitting realities</li>
+                            <li>Built on the same Elbow Room quality baseline</li>
+                        </ul>
+                        <div class="model-buttons">
+                            <a href="design-center.html" class="btn-primary">Configure</a>
+                            <a href="#" class="btn-secondary">Details</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADUs (Full Residences) / Residence Collection -->
+    <section class="collection-section" id="residence">
+        <div class="section-container">
+            <div class="collection-header">
+                <div>
+                    <div class="collection-badge">ADUs (Full Residences) · Residence Collection</div>
+                    <h2 class="collection-title">Complete<br>Homes</h2>
+                    <p class="collection-description">
+                        Full accessory dwelling units with kitchens, living rooms, and 1–2 bedrooms. Designed
+                        to live like a small home, whether for a tenant, a family member, or for you.
+                    </p>
+                    <p class="collection-meta">
+                        <strong>Structure type:</strong> ADU (full residence)<br>
+                        <strong>Typical uses:</strong> Long-term rental, multi-generational living, downsizing<br>
+                        <span class="price-range">Price range: $150k – $197k</span>
+                    </p>
+                </div>
+                <div class="collection-links">
+                    <p>
+                        Explore the full ADU set:
+                        <a href="residence-collection.html">View residence collection overview →</a>
+                    </p>
+                    <p style="margin-top: 10px;">
+                        Need to run numbers?
+                        <a href="financing.html">See financing & ROI basics →</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="model-grid">
+                <!-- The Vista (if you ever treat as small ADU, you can move it, but leaving suites above for now) -->
+
+                <!-- The Compound -->
+                <article class="model-card">
+                    <div class="model-image">[The Compound – 650 sq ft ADU exterior]</div>
+                    <div class="model-content">
+                        <h3>The Compound</h3>
+                        <p class="model-subtitle">Efficient design · ~650 sq ft · 2 bed / 1.5 bath</p>
+                        <div class="model-price">$165k</div>
+                        <ul class="model-features">
+                            <li>Smart space planning for families or roommates</li>
+                            <li>Modern open-concept living/kitchen area</li>
+                            <li>Full kitchen with real storage and prep space</li>
+                            <li>Optional covered porch for outdoor living</li>
+                        </ul>
+                        <div class="model-buttons">
+                            <a href="design-center.html" class="btn-primary">Configure</a>
+                            <a href="#" class="btn-secondary">Details</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- The Estate -->
+                <article class="model-card">
+                    <div class="model-image">[The Estate – 800 sq ft ADU exterior]</div>
+                    <div class="model-content">
+                        <h3>The Estate</h3>
+                        <p class="model-subtitle">Maximum size · ~800 sq ft · 2 bed / 2 bath</p>
+                        <div class="model-price">$197k</div>
+                        <ul class="model-features">
+                            <li>Two full bathrooms for true independence</li>
+                            <li>Complete kitchen with full-size appliances</li>
+                            <li>Separation between public and private zones</li>
+                            <li>Luxury finishes throughout, aligned with main home</li>
+                        </ul>
+                        <div class="model-buttons">
+                            <a href="design-center.html" class="btn-primary">Configure</a>
+                            <a href="#" class="btn-secondary">Details</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Additional ADU slot 1 -->
+                <article class="model-card">
+                    <div class="model-image">[Additional ADU – future 1-bedroom model]</div>
+                    <div class="model-content">
+                        <h3>Future 1-Bed ADU</h3>
+                        <p class="model-subtitle">Reserved · ~450–550 sq ft · 1 bed / 1 bath</p>
+                        <div class="model-price">TBD</div>
+                        <ul class="model-features">
+                            <li>Right-sized for tighter urban lots</li>
+                            <li>Optimized for long-term rental performance</li>
+                            <li>Full kitchen with stacked laundry option</li>
+                            <li>Designed for Central Texas code realities</li>
+                        </ul>
+                        <div class="model-buttons">
+                            <a href="design-center.html" class="btn-primary">Configure</a>
+                            <a href="#" class="btn-secondary">Details</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Additional ADU slot 2 -->
+                <article class="model-card">
+                    <div class="model-image">[Additional ADU – future studio/loft residence]</div>
+                    <div class="model-content">
+                        <h3>Future Loft ADU</h3>
+                        <p class="model-subtitle">Reserved · lofted layout · flexible sleeping</p>
+                        <div class="model-price">TBD</div>
+                        <ul class="model-features">
+                            <li>Lofted sleeping or office space</li>
+                            <li>Open-plan living + kitchen</li>
+                            <li>Perfect for design-forward renters</li>
+                            <li>Same Elbow Room quality baseline as all models</li>
+                        </ul>
+                        <div class="model-buttons">
+                            <a href="design-center.html" class="btn-primary">Configure</a>
+                            <a href="#" class="btn-secondary">Details</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Elbow Room</h3>
+                    <p>
+                        Woman-owned luxury builder serving Central Texas with transparent pricing,
+                        complete permitting services, and white-glove construction management for
+                        accessory structures and ADUs.
+                    </p>
+                    <div class="footer-contact">
+                        <a href="tel:2108544023">(210) 854-4023</a>
+                        <a href="mailto:sales@elbowroom.com">sales@elbowroom.com</a>
+                        <a href="#">19302 Highway 281 North<br>San Antonio, TX 78258</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="models.html">Models</a></li>
+                        <li><a href="design-center.html">Design Center</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="process.html">Process</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="financing.html">Financing</a></li>
+                        <li><a href="service-area.html">Service Area</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Local Pages</h4>
+                    <ul>
+                        <li><a href="san-antonio-adus.html">San Antonio ADUs</a></li>
+                        <li><a href="austin-adus.html">Austin ADUs</a></li>
+                        <li><a href="central-texas-cities.html">Central Texas ADUs</a></li>
+                        <li><a href="contact.html">Work with us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Elbow Room. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
