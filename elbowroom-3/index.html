@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elbow Room | Premium ADU Builder | Central Texas</title>
-    <meta name="description" content="Turn-key luxury ADUs in Central Texas. Transparent pricing, complete permitting, and white-glove service. From $26k. Woman-owned, Texas-based.">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Luxury ADUs in Central Texas | Elbow Room | Turn-Key Design & Build</title>
+    <meta name="description" content="Woman-owned luxury ADU builder in Central Texas offering turn-key design, permitting, and construction. Studio to full residence backyard homes with curated finishes and white-glove service.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -15,49 +15,50 @@
 
         :root {
             --turquoise: #3ee3d4;
-            --olive-green: #b5b800;
             --cream: #f8f7f7;
             --dark-brown: #422510;
             --golden: #ecb12d;
             --white: #ffffff;
             --soft-gray: #f5f5f3;
-            --text-gray: #595959;
-            --navy: #1a2332;
+            --text-gray: #6b6b6b;
         }
 
         body {
-            font-family: 'DM Sans', sans-serif;
-            color: var(--navy);
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark-brown);
             background-color: var(--white);
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        h1, h2, h3, h4, h5 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 500;
-            line-height: 1.2;
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            line-height: 1.1;
         }
 
-        /* Navigation - Turquoise Background */
+        /* Navigation */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: var(--white);
-            padding: 20px 60px;
+            background: rgba(255, 255, 255, 0.98);
+            padding: 35px 80px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(66, 37, 16, 0.08);
         }
 
         .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 32px;
-            font-weight: 600;
-            color: var(--navy);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            font-weight: 400;
+            color: var(--dark-brown);
+            letter-spacing: 2px;
+            text-decoration: none;
         }
 
         .logo-accent {
@@ -67,16 +68,16 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 45px;
+            gap: 50px;
             align-items: center;
         }
 
         nav a {
             text-decoration: none;
-            color: var(--navy);
-            font-size: 15px;
-            font-weight: 500;
-            letter-spacing: 0.3px;
+            color: var(--dark-brown);
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 1px;
             transition: color 0.3s;
         }
 
@@ -87,862 +88,520 @@
         .nav-cta {
             background: var(--turquoise);
             color: var(--white) !important;
-            padding: 12px 32px;
-            border-radius: 6px;
-            font-weight: 600;
+            padding: 16px 40px;
+            border-radius: 2px;
+            font-weight: 500;
         }
 
         .nav-cta:hover {
-            background: var(--olive-green);
+            background: var(--dark-brown);
         }
 
-        /* Hero - Bold Turquoise Section */
-        .hero {
-            margin-top: 80px;
-            background: linear-gradient(135deg, var(--turquoise) 0%, #2dd4c7 100%);
-            color: var(--white);
-            padding: 100px 60px;
+        .dropdown {
             position: relative;
-            overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
+        .dropdown-content {
+            display: none;
             position: absolute;
-            top: 0;
-            right: -10%;
-            width: 50%;
-            height: 100%;
-            background: rgba(255,255,255,0.05);
-            transform: skewX(-15deg);
-        }
-
-        .hero-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.3fr 1fr;
-            gap: 80px;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: rgba(255,255,255,0.2);
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-size: 13px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 30px;
-            backdrop-filter: blur(10px);
-        }
-
-        .hero h1 {
-            font-size: 68px;
-            margin-bottom: 30px;
-            line-height: 1.1;
-            color: var(--white);
-            font-weight: 600;
-        }
-
-        .hero-subtitle {
-            font-size: 22px;
-            line-height: 1.6;
-            margin-bottom: 45px;
-            color: rgba(255,255,255,0.95);
-            font-weight: 400;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 60px;
-        }
-
-        .btn-white {
+            top: 100%;
+            left: 0;
             background: var(--white);
-            color: var(--turquoise);
-            padding: 18px 40px;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.3s;
-            display: inline-block;
+            min-width: 220px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            padding: 20px 0;
+            margin-top: 20px;
         }
 
-        .btn-white:hover {
-            background: var(--navy);
-            color: var(--white);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
 
-        .btn-outline {
-            background: transparent;
-            color: var(--white);
-            padding: 18px 40px;
-            text-decoration: none;
-            border: 2px solid var(--white);
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.3s;
-            display: inline-block;
-        }
-
-        .btn-outline:hover {
-            background: var(--white);
-            color: var(--turquoise);
-            transform: translateY(-2px);
-        }
-
-        .hero-stats {
-            display: flex;
-            gap: 60px;
-        }
-
-        .hero-stat {
-            text-align: left;
-        }
-
-        .hero-stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 52px;
-            font-weight: 600;
-            line-height: 1;
-            margin-bottom: 8px;
-            color: var(--white);
-        }
-
-        .hero-stat-label {
-            font-size: 14px;
-            color: rgba(255,255,255,0.9);
-            font-weight: 500;
-        }
-
-        .hero-image {
-            position: relative;
-        }
-
-        .hero-image-main {
-            width: 100%;
-            aspect-ratio: 4/5;
-            background: var(--white);
-            border-radius: 8px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-gray);
-            font-size: 14px;
-        }
-
-        /* Trust Bar */
-        .trust-bar {
-            background: var(--navy);
-            color: var(--white);
-            padding: 40px 60px;
-        }
-
-        .trust-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .trust-item {
-            text-align: center;
-        }
-
-        .trust-icon {
-            font-size: 32px;
-            margin-bottom: 12px;
-            color: var(--turquoise);
-        }
-
-        .trust-text {
+        .dropdown-content a {
+            display: block;
+            padding: 12px 30px;
             font-size: 15px;
-            font-weight: 500;
-            color: rgba(255,255,255,0.95);
         }
 
-        /* Value Props with Color Blocks */
-        .value-props {
-            padding: 100px 60px;
-            background: var(--white);
+        /* Layout helpers */
+        .section {
+            padding: 180px 80px;
         }
 
-        .value-container {
-            max-width: 1400px;
+        .section.alt {
+            background: var(--soft-gray);
+        }
+
+        .section.cream {
+            background: var(--cream);
+        }
+
+        .section-container {
+            max-width: 1600px;
             margin: 0 auto;
         }
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-
-        .section-label {
-            font-size: 14px;
+        .section-eyebrow {
+            font-size: 16px;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--turquoise);
-            font-weight: 700;
-            margin-bottom: 20px;
+            color: var(--golden);
+            margin-bottom: 40px;
+            font-weight: 500;
         }
 
         .section-title {
-            font-size: 56px;
-            margin-bottom: 25px;
-            color: var(--navy);
+            font-size: 96px;
+            margin-bottom: 40px;
+            font-weight: 300;
+            letter-spacing: -1px;
         }
 
-        .section-description {
-            font-size: 20px;
+        .section-subtitle {
+            font-size: 24px;
             color: var(--text-gray);
-            max-width: 800px;
-            margin: 0 auto;
+            max-width: 900px;
             line-height: 1.7;
+            font-weight: 300;
         }
 
-        .value-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
+        /* Hero */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(115deg, #fefdfb 0%, #f5f5f3 35%, #e8f8f6 90%);
+            margin-top: 100px;
+            padding: 180px 80px 160px;
         }
 
-        .value-card {
-            padding: 50px 40px;
-            border-radius: 8px;
-            transition: transform 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .value-card:hover {
-            transform: translateY(-8px);
-        }
-
-        .value-card:nth-child(1) {
-            background: linear-gradient(135deg, var(--turquoise) 0%, #2dd4c7 100%);
-            color: var(--white);
-        }
-
-        .value-card:nth-child(2) {
-            background: var(--olive-green);
-            color: var(--white);
-        }
-
-        .value-card:nth-child(3) {
-            background: var(--navy);
-            color: var(--white);
-        }
-
-        .value-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 72px;
-            font-weight: 600;
-            opacity: 0.2;
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            line-height: 1;
-        }
-
-        .value-card h3 {
-            font-size: 32px;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
-            color: var(--white);
-        }
-
-        .value-card p {
-            font-size: 16px;
-            line-height: 1.7;
-            position: relative;
-            z-index: 1;
-            color: rgba(255,255,255,0.95);
-        }
-
-        /* Pricing - Clean Grid */
-        .pricing {
-            padding: 100px 60px;
-            background: var(--soft-gray);
-        }
-
-        .pricing-container {
-            max-width: 1400px;
+        .hero-inner {
+            max-width: 1600px;
             margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 2.1fr 1.1fr;
+            gap: 100px;
+            align-items: flex-end;
         }
 
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+        .hero-left h1 {
+            font-size: 140px;
+            margin-bottom: 40px;
+            font-weight: 300;
+            letter-spacing: -2px;
+        }
+
+        .hero-left p {
+            font-size: 26px;
+            color: var(--text-gray);
+            max-width: 780px;
+            line-height: 1.7;
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
             margin-bottom: 50px;
         }
 
-        .pricing-card {
-            background: var(--white);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            transition: all 0.3s;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
-        }
-
-        .pricing-header {
-            padding: 40px 40px 30px;
-            border-bottom: 2px solid var(--soft-gray);
-        }
-
-        .pricing-card:nth-child(1) .pricing-header {
-            background: linear-gradient(135deg, rgba(62, 227, 212, 0.1) 0%, rgba(45, 212, 199, 0.1) 100%);
-        }
-
-        .pricing-card:nth-child(2) .pricing-header {
-            background: rgba(181, 184, 0, 0.1);
-        }
-
-        .pricing-card:nth-child(3) .pricing-header {
-            background: rgba(26, 35, 50, 0.08);
-        }
-
-        .pricing-tier-name {
-            font-size: 14px;
+        .hero-badge {
+            padding: 10px 20px;
+            border-radius: 999px;
+            border: 1px solid rgba(66, 37, 16, 0.2);
+            font-size: 13px;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: var(--text-gray);
-            margin-bottom: 12px;
-            font-weight: 700;
         }
 
-        .pricing-card:nth-child(2) .pricing-tier-name {
-            color: var(--olive-green);
-        }
-
-        .pricing-card h3 {
-            font-size: 36px;
-            margin-bottom: 15px;
-            color: var(--navy);
-        }
-
-        .pricing-descriptor {
-            font-size: 14px;
-            color: var(--text-gray);
-            margin-bottom: 25px;
-        }
-
-        .pricing-amount {
+        .hero-cta-row {
             display: flex;
-            align-items: baseline;
-            gap: 8px;
-            margin-bottom: 10px;
-        }
-
-        .price-large {
-            font-family: 'Playfair Display', serif;
-            font-size: 64px;
-            font-weight: 600;
-            color: var(--navy);
-            line-height: 1;
-        }
-
-        .pricing-card:nth-child(1) .price-large {
-            color: var(--turquoise);
-        }
-
-        .pricing-card:nth-child(2) .price-large {
-            color: var(--olive-green);
-        }
-
-        .price-suffix {
-            font-size: 24px;
-            color: var(--text-gray);
-        }
-
-        .pricing-body {
-            padding: 40px;
-        }
-
-        .pricing-features {
-            list-style: none;
-            margin-bottom: 35px;
-        }
-
-        .pricing-features li {
-            padding: 14px 0;
-            border-bottom: 1px solid var(--soft-gray);
-            font-size: 15px;
-            color: var(--text-gray);
-            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
             align-items: center;
-            gap: 12px;
         }
 
-        .pricing-features li:last-child {
-            border-bottom: none;
-        }
-
-        .feature-check {
-            color: var(--turquoise);
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-        .pricing-card:nth-child(2) .feature-check {
-            color: var(--olive-green);
-        }
-
-        .pricing-cta {
-            width: 100%;
-            padding: 16px;
-            background: var(--navy);
-            color: var(--white);
-            text-align: center;
-            text-decoration: none;
-            display: block;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 15px;
-            transition: all 0.3s;
-        }
-
-        .pricing-cta:hover {
+        .btn-primary {
             background: var(--turquoise);
+            color: var(--white);
+            padding: 22px 52px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-brown);
             transform: translateY(-2px);
         }
 
-        .pricing-card:nth-child(2) .pricing-cta {
-            background: var(--olive-green);
-        }
-
-        .pricing-card:nth-child(2) .pricing-cta:hover {
-            background: var(--navy);
-        }
-
-        .pricing-note {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 8px;
-            text-align: center;
-            font-size: 15px;
-            line-height: 1.8;
-            color: var(--text-gray);
-            border-left: 4px solid var(--turquoise);
-        }
-
-        /* Spaces Showcase */
-        .spaces {
-            padding: 100px 60px;
-            background: var(--white);
-        }
-
-        .spaces-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .space-row {
-            display: grid;
-            grid-template-columns: 1.1fr 1fr;
-            gap: 80px;
-            align-items: center;
-            margin-bottom: 100px;
-        }
-
-        .space-row:nth-child(even) .space-image {
-            order: 2;
-        }
-
-        .space-row:nth-child(even) .space-content {
-            order: 1;
-        }
-
-        .space-image {
-            position: relative;
-        }
-
-        .space-image-wrapper {
-            width: 100%;
-            aspect-ratio: 4/3;
-            background: linear-gradient(135deg, var(--soft-gray) 0%, #e8e8e6 100%);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-gray);
-            font-size: 14px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-
-        .space-badge {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background: var(--turquoise);
-            color: var(--white);
-            padding: 8px 20px;
-            border-radius: 6px;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
-
-        .space-row:nth-child(2) .space-badge {
-            background: var(--olive-green);
-        }
-
-        .space-row:nth-child(3) .space-badge {
-            background: var(--navy);
-        }
-
-        .space-content h2 {
-            font-size: 48px;
-            margin-bottom: 25px;
-            color: var(--navy);
-        }
-
-        .space-content p {
-            font-size: 18px;
-            line-height: 1.7;
-            color: var(--text-gray);
-            margin-bottom: 35px;
-        }
-
-        .space-specs {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-bottom: 35px;
-        }
-
-        .spec-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 15px;
-            color: var(--text-gray);
-        }
-
-        .spec-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--turquoise);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 18px;
-        }
-
-        .space-row:nth-child(2) .spec-icon {
-            background: var(--olive-green);
-        }
-
-        .space-row:nth-child(3) .spec-icon {
-            background: var(--navy);
-        }
-
-        .space-cta {
-            color: var(--turquoise);
+        .btn-secondary {
+            background: transparent;
+            color: var(--dark-brown);
+            padding: 22px 52px;
             text-decoration: none;
-            font-weight: 600;
             font-size: 16px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: gap 0.3s;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border: 1px solid var(--dark-brown);
+            border-radius: 2px;
+            transition: all 0.3s;
+            display: inline-block;
         }
 
-        .space-cta:hover {
-            gap: 15px;
-        }
-
-        .space-row:nth-child(2) .space-cta {
-            color: var(--olive-green);
-        }
-
-        .space-row:nth-child(3) .space-cta {
-            color: var(--navy);
-        }
-
-        /* Process - Olive Green Section */
-        .process {
-            padding: 100px 60px;
-            background: linear-gradient(135deg, var(--olive-green) 0%, #a3a700 100%);
+        .btn-secondary:hover {
+            background: var(--dark-brown);
             color: var(--white);
+            transform: translateY(-2px);
         }
 
-        .process-container {
-            max-width: 1400px;
-            margin: 0 auto;
+        .hero-right {
+            border-left: 1px solid rgba(66, 37, 16, 0.12);
+            padding-left: 40px;
         }
 
-        .process-header {
-            text-align: center;
-            margin-bottom: 80px;
+        .stat-block {
+            margin-bottom: 32px;
         }
 
-        .process-header h2 {
-            font-size: 56px;
-            margin-bottom: 25px;
-            color: var(--white);
-        }
-
-        .process-header p {
-            font-size: 20px;
-            color: rgba(255,255,255,0.95);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-        }
-
-        .process-step {
-            text-align: center;
-            position: relative;
-        }
-
-        .step-circle {
-            width: 80px;
-            height: 80px;
-            background: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 25px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        }
-
-        .step-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 36px;
-            color: var(--olive-green);
-            font-weight: 600;
-        }
-
-        .process-step h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: var(--white);
-        }
-
-        .process-step p {
-            font-size: 15px;
-            line-height: 1.6;
-            color: rgba(255,255,255,0.9);
-        }
-
-        /* Social Proof */
-        .social-proof {
-            padding: 100px 60px;
-            background: var(--white);
-        }
-
-        .proof-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-            margin-bottom: 80px;
-        }
-
-        .testimonial {
-            background: var(--soft-gray);
-            padding: 45px;
-            border-radius: 8px;
-            position: relative;
-        }
-
-        .quote-mark {
-            font-size: 80px;
-            color: var(--turquoise);
-            opacity: 0.2;
-            position: absolute;
-            top: 20px;
-            left: 30px;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .testimonial-text {
-            font-size: 18px;
-            line-height: 1.7;
-            color: var(--navy);
-            margin-bottom: 25px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .testimonial-author {
-            font-weight: 600;
-            color: var(--navy);
-            margin-bottom: 5px;
-        }
-
-        .testimonial-location {
+        .stat-label {
             font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
             color: var(--text-gray);
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-        }
-
-        .stat-box {
-            text-align: center;
-            padding: 40px 30px;
-            background: var(--turquoise);
-            border-radius: 8px;
-            color: var(--white);
-        }
-
-        .stat-box:nth-child(2) {
-            background: var(--olive-green);
-        }
-
-        .stat-box:nth-child(3) {
-            background: var(--navy);
-        }
-
-        .stat-box:nth-child(4) {
-            background: var(--golden);
-        }
-
-        .stat-box-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 56px;
-            font-weight: 600;
-            line-height: 1;
             margin-bottom: 12px;
         }
 
-        .stat-box-label {
-            font-size: 14px;
-            font-weight: 500;
+        .stat-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            margin-bottom: 6px;
         }
 
-        /* CTA Section */
-        .cta-section {
-            padding: 100px 60px;
-            background: var(--navy);
-            color: var(--white);
+        .stat-note {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        /* Models preview */
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 80px;
+        }
+
+        .model-card {
+            background: var(--white);
+            padding: 40px 34px 44px;
+            border-radius: 2px;
+            box-shadow: 0 18px 60px rgba(0,0,0,0.06);
+            position: relative;
+        }
+
+        .model-eyebrow {
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-gray);
+            margin-bottom: 10px;
+        }
+
+        .model-title {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .model-meta {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 16px;
+        }
+
+        .model-description {
+            font-size: 15px;
+            color: var(--text-gray);
+            margin-bottom: 22px;
+        }
+
+        .model-link {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            color: var(--dark-brown);
+        }
+
+        .model-link span {
+            border-bottom: 1px solid rgba(66,37,16,0.3);
+            padding-bottom: 2px;
+        }
+
+        /* Value props */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+            margin-top: 70px;
+        }
+
+        .pillar {
+            max-width: 420px;
+        }
+
+        .pillar h3 {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        .pillar p {
+            font-size: 15px;
+            color: var(--text-gray);
+        }
+
+        /* Featured model */
+        .feature-row {
+            display: grid;
+            grid-template-columns: 1.5fr 1.3fr;
+            gap: 80px;
+            align-items: center;
+            margin-top: 60px;
+        }
+
+        .feature-tag {
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-gray);
+            margin-bottom: 18px;
+        }
+
+        .feature-title {
+            font-size: 54px;
+            margin-bottom: 24px;
+        }
+
+        .feature-body {
+            font-size: 17px;
+            color: var(--text-gray);
+            margin-bottom: 24px;
+            max-width: 640px;
+        }
+
+        .feature-meta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .feature-meta-group {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .feature-meta-label {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 4px;
+            font-size: 12px;
+        }
+
+        .feature-meta-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+        }
+
+        .feature-box {
+            background: var(--white);
+            padding: 40px 34px;
+            border-radius: 2px;
+            box-shadow: 0 18px 60px rgba(0,0,0,0.06);
+        }
+
+        .feature-box p {
+            font-size: 15px;
+            color: var(--text-gray);
+            margin-bottom: 14px;
+        }
+
+        .feature-box ul {
+            list-style: none;
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 18px;
+        }
+
+        .feature-box li {
+            padding: 4px 0;
+        }
+
+        .feature-box li::before {
+            content: "— ";
+        }
+
+        /* Process preview */
+        .process-preview-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .process-preview-card {
+            background: var(--white);
+            padding: 32px 30px 38px;
+            border-radius: 2px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+        }
+
+        .process-step-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 999px;
+            border: 1px solid rgba(66, 37, 16, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .process-preview-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .process-preview-card p {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        /* Portfolio preview */
+        .portfolio-row {
+            display: grid;
+            grid-template-columns: 1.4fr 1.5fr;
+            gap: 80px;
+            align-items: center;
+            margin-top: 60px;
+        }
+
+        .portfolio-list {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-gray);
+        }
+
+        .portfolio-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(66,37,16,0.08);
+        }
+
+        .portfolio-list li:last-child {
+            border-bottom: none;
+        }
+
+        .portfolio-tagline {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-top: 18px;
+        }
+
+        .portfolio-highlight {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 2px;
+            box-shadow: 0 18px 60px rgba(0,0,0,0.06);
+        }
+
+        .portfolio-highlight h3 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .portfolio-highlight p {
+            font-size: 15px;
+            color: var(--text-gray);
+            margin-bottom: 16px;
+        }
+
+        /* CTA band */
+        .cta-band {
             text-align: center;
         }
 
-        .cta-container {
-            max-width: 900px;
-            margin: 0 auto;
+        .cta-band .section-title {
+            margin-bottom: 24px;
         }
 
-        .cta-section h2 {
-            font-size: 56px;
-            margin-bottom: 25px;
-            color: var(--white);
-        }
-
-        .cta-section p {
-            font-size: 20px;
-            line-height: 1.7;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 45px;
+        .cta-band .section-subtitle {
+            margin: 0 auto 40px;
         }
 
         .cta-buttons {
             display: flex;
-            gap: 20px;
             justify-content: center;
-        }
-
-        .btn-turquoise {
-            background: var(--turquoise);
-            color: var(--white);
-            padding: 18px 40px;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.3s;
-        }
-
-        .btn-turquoise:hover {
-            background: var(--olive-green);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            gap: 30px;
+            flex-wrap: wrap;
         }
 
         /* Footer */
         footer {
-            background: var(--navy);
-            color: rgba(255,255,255,0.8);
-            padding: 80px 60px 40px;
+            background: var(--dark-brown);
+            color: rgba(255,255,255,0.7);
+            padding: 120px 80px 60px;
         }
 
         .footer-container {
-            max-width: 1400px;
+            max-width: 1600px;
             margin: 0 auto;
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr 1fr;
-            gap: 60px;
-            margin-bottom: 60px;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 80px;
+            margin-bottom: 100px;
         }
 
         .footer-brand h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 32px;
-            margin-bottom: 20px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
             color: var(--white);
+            margin-bottom: 30px;
+            font-weight: 300;
         }
 
         .footer-brand p {
-            font-size: 15px;
+            font-size: 16px;
             line-height: 1.7;
-            margin-bottom: 25px;
-            color: rgba(255,255,255,0.7);
+            margin-bottom: 40px;
+            font-weight: 300;
         }
 
         .footer-contact a {
             color: var(--turquoise);
             text-decoration: none;
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            font-size: 16px;
         }
 
         .footer-column h4 {
-            font-size: 16px;
-            margin-bottom: 20px;
+            font-size: 18px;
             color: var(--white);
+            margin-bottom: 30px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
+            letter-spacing: 2px;
+            font-weight: 500;
         }
 
         .footer-column ul {
@@ -950,7 +609,7 @@
         }
 
         .footer-column li {
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
 
         .footer-column a {
@@ -965,7 +624,7 @@
         }
 
         .footer-bottom {
-            padding-top: 40px;
+            padding-top: 60px;
             border-top: 1px solid rgba(255,255,255,0.1);
             display: flex;
             justify-content: space-between;
@@ -975,7 +634,7 @@
 
         .footer-legal {
             display: flex;
-            gap: 25px;
+            gap: 40px;
         }
 
         .footer-legal a {
@@ -989,66 +648,126 @@
 
         /* Responsive */
         @media (max-width: 1200px) {
-            .hero-container,
-            .space-row {
-                grid-template-columns: 1fr;
+            .hero-inner {
+                grid-template-columns: 1.7fr 1.1fr;
+                gap: 60px;
             }
 
-            .space-row:nth-child(even) .space-image,
-            .space-row:nth-child(even) .space-content {
-                order: initial;
+            .hero-left h1 {
+                font-size: 110px;
             }
 
-            .value-grid,
-            .pricing-grid,
-            .process-steps,
-            .stats-grid {
-                grid-template-columns: 1fr;
+            .section-title {
+                font-size: 72px;
             }
 
-            .testimonial-grid {
-                grid-template-columns: 1fr;
+            .model-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .pillars-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .process-preview-grid {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+
+            .feature-row,
+            .portfolio-row {
+                grid-template-columns: 1.4fr 1.3fr;
             }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
             nav {
-                padding: 15px 30px;
+                padding: 20px 30px;
+            }
+
+            nav ul {
+                gap: 24px;
+                font-size: 14px;
             }
 
             .hero,
-            .value-props,
-            .pricing,
-            .spaces,
-            .process,
-            .social-proof,
-            .cta-section {
-                padding: 60px 30px;
+            .section,
+            footer {
+                padding: 100px 30px;
             }
 
-            .hero h1,
-            .section-title,
-            .cta-section h2 {
-                font-size: 42px;
+            .hero-inner {
+                grid-template-columns: 1fr;
             }
 
-            .space-content h2 {
-                font-size: 36px;
+            .hero-right {
+                margin-top: 40px;
+                border-left: none;
+                border-top: 1px solid rgba(66, 37, 16, 0.12);
+                padding-left: 0;
+                padding-top: 30px;
             }
 
-            .hero-stats {
-                flex-direction: column;
-                gap: 30px;
+            .hero-left h1 {
+                font-size: 72px;
+            }
+
+            .section-title {
+                font-size: 52px;
+            }
+
+            .model-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pillars-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-row,
+            .portfolio-row {
+                grid-template-columns: 1fr;
+            }
+
+            .process-preview-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            nav ul {
+                display: none; /* for a quick static mock; real build would swap to mobile menu */
+            }
+
+            .hero-left h1 {
+                font-size: 52px;
+            }
+
+            .process-preview-grid {
+                grid-template-columns: 1fr;
             }
 
             .footer-grid {
                 grid-template-columns: 1fr;
-                gap: 40px;
             }
 
             .footer-bottom {
                 flex-direction: column;
+                align-items: flex-start;
                 gap: 20px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
                 text-align: center;
             }
         }
@@ -1057,398 +776,304 @@
 <body>
     <!-- Navigation -->
     <nav>
-        <div class="logo">Elbow <span class="logo-accent">Room</span></div>
+        <a href="index.html" class="logo">Elbow <span class="logo-accent">Room</span></a>
         <ul>
-            <li><a href="#spaces">Spaces</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#process">Process</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact" class="nav-cta">Get Started</a></li>
+            <li><a href="models.html">Models</a></li>
+            <li><a href="design-center.html">Design Center</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="process.html">Process</a></li>
+            <li class="dropdown">
+                <a href="#">Resources ▾</a>
+                <div class="dropdown-content">
+                    <a href="blog.html">Blog</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="financing.html">Financing</a>
+                    <a href="service-area.html">Service Area</a>
+                </div>
+            </li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="nav-cta">Get Started</a></li>
         </ul>
     </nav>
 
     <!-- Hero -->
     <section class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-badge">Woman-Owned • Central Texas</div>
-                <h1>Premium ADUs,<br>Delivered Turn-Key</h1>
-                <p class="hero-subtitle">From design to final inspection, we handle every detail. Transparent pricing, complete permitting, and white-glove service across Central Texas.</p>
-                <div class="hero-buttons">
-                    <a href="#pricing" class="btn-white">View Pricing</a>
-                    <a href="#process" class="btn-outline">How We Build</a>
+        <div class="hero-inner">
+            <div class="hero-left">
+                <div class="section-eyebrow">Luxury ADUs in Central Texas</div>
+                <h1>Backyard homes worth living in.</h1>
+                <p>
+                    Woman-owned, turn-key ADU design + build from San Antonio to Austin. 
+                    Clear pricing, curated finishes, and a team that handles the hard parts—
+                    from permits to punch list.
+                </p>
+                <div class="hero-badges">
+                    <div class="hero-badge">Studio • Suite • Residence</div>
+                    <div class="hero-badge">30–40 projects / year</div>
+                    <div class="hero-badge">Design, permits, construction</div>
                 </div>
-                <div class="hero-stats">
-                    <div class="hero-stat">
-                        <div class="hero-stat-number">100+</div>
-                        <div class="hero-stat-label">Completed Projects</div>
-                    </div>
-                    <div class="hero-stat">
-                        <div class="hero-stat-number">4-6</div>
-                        <div class="hero-stat-label">Week Timeline</div>
-                    </div>
-                    <div class="hero-stat">
-                        <div class="hero-stat-number">5.0</div>
-                        <div class="hero-stat-label">Client Rating</div>
-                    </div>
+                <div class="hero-cta-row">
+                    <a href="contact.html" class="btn-primary">Schedule a Consultation</a>
+                    <a href="models.html" class="btn-secondary">Browse ADU Models</a>
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="hero-image-main">
-                    [Modern ADU exterior - luxury materials, clean architecture, professional photography]
+            <div class="hero-right">
+                <div class="stat-block">
+                    <div class="stat-label">Typical Budget Range</div>
+                    <div class="stat-value">$125k–$350k+</div>
+                    <div class="stat-note">From compact studios to full two-bedroom residences.</div>
+                </div>
+                <div class="stat-block">
+                    <div class="stat-label">Timeline</div>
+                    <div class="stat-value">6–10 months</div>
+                    <div class="stat-note">From design approval to move-in, depending on city and scope.</div>
+                </div>
+                <div class="stat-block">
+                    <div class="stat-label">Service Area</div>
+                    <div class="stat-note">
+                        San Antonio • Austin • New Braunfels • San Marcos • Surrounding Central Texas cities.<br>
+                        <a href="service-area.html" style="color: var(--turquoise); text-decoration: none;">See full service map →</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Trust Bar -->
-    <section class="trust-bar">
-        <div class="trust-container">
-            <div class="trust-item">
-                <div class="trust-icon">✓</div>
-                <div class="trust-text">Complete Permitting Included</div>
-            </div>
-            <div class="trust-item">
-                <div class="trust-icon">✓</div>
-                <div class="trust-text">Foundation & Sitework</div>
-            </div>
-            <div class="trust-item">
-                <div class="trust-icon">✓</div>
-                <div class="trust-text">HVAC & Electrical</div>
-            </div>
-            <div class="trust-item">
-                <div class="trust-icon">✓</div>
-                <div class="trust-text">One-Year Warranty</div>
-            </div>
-        </div>
-    </section>
+    <!-- Model overview -->
+    <section class="section">
+        <div class="section-container">
+            <div class="section-eyebrow">Model Collections</div>
+            <h2 class="section-title">Pick the right starting point.</h2>
+            <p class="section-subtitle">
+                Every Elbow Room ADU begins with a proven model—then we tailor finishes, options,
+                and site-specific details to your property and budget.
+            </p>
 
-    <!-- Value Props -->
-    <section class="value-props">
-        <div class="value-container">
-            <div class="section-header">
-                <div class="section-label">Why Choose Elbow Room</div>
-                <h2 class="section-title">Built on Quality,<br>Delivered with Excellence</h2>
-                <p class="section-description">We're redefining what it means to build an ADU in Central Texas. Every project is managed with precision, transparency, and unwavering commitment to quality.</p>
-            </div>
-
-            <div class="value-grid">
-                <div class="value-card">
-                    <div class="value-number">01</div>
-                    <h3>Transparent<br>Pricing</h3>
-                    <p>One clear investment covers everything: design, permits, foundation, construction, and warranty. No hidden fees, no surprise costs.</p>
-                </div>
-
-                <div class="value-card">
-                    <div class="value-number">02</div>
-                    <h3>Full-Service<br>Approach</h3>
-                    <p>From architectural plans to HOA approvals, permitting to final walkthrough—we manage every detail so you don't have to.</p>
-                </div>
-
-                <div class="value-card">
-                    <div class="value-number">03</div>
-                    <h3>Luxury-Grade<br>Materials</h3>
-                    <p>Same standards as high-end homes. Quality finishes, precision construction, and four independent inspections ensure excellence.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing -->
-    <section class="pricing" id="pricing">
-        <div class="pricing-container">
-            <div class="section-header">
-                <div class="section-label">Investment</div>
-                <h2 class="section-title">Transparent Pricing,<br>No Surprises</h2>
-                <p class="section-description">Every tier includes complete design, permitting, construction, and warranty coverage. Choose the option that fits your vision and budget.</p>
-            </div>
-
-            <div class="pricing-grid">
+            <div class="model-grid">
                 <!-- Studio -->
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <div class="pricing-tier-name">Studio</div>
-                        <h3>Accessory Structure</h3>
-                        <p class="pricing-descriptor">No plumbing • Starting at 8' × 8'</p>
-                        <div class="pricing-amount">
-                            <span class="price-large">$26k</span>
-                            <span class="price-suffix">+</span>
-                        </div>
-                    </div>
-                    <div class="pricing-body">
-                        <ul class="pricing-features">
-                            <li><span class="feature-check">✓</span> Climate controlled</li>
-                            <li><span class="feature-check">✓</span> Complete electrical</li>
-                            <li><span class="feature-check">✓</span> Quality finishes</li>
-                            <li><span class="feature-check">✓</span> Foundation included</li>
-                            <li><span class="feature-check">✓</span> 4-6 week timeline</li>
-                            <li><span class="feature-check">✓</span> One-year warranty</li>
-                        </ul>
-                        <a href="#contact" class="pricing-cta">Configure Studio</a>
-                    </div>
-                </div>
+                <article class="model-card" id="studio">
+                    <div class="model-eyebrow">Studios • Offices • Guest Suites</div>
+                    <h3 class="model-title">Studio Collection</h3>
+                    <div class="model-meta">Approx. 240–480 sq ft • 1 bath</div>
+                    <p class="model-description">
+                        Compact, highly efficient ADUs for guest stays, home offices, and creative work.
+                        Balanced storage, natural light, and the right amount of privacy.
+                    </p>
+                    <a href="studio-collection.html" class="model-link">
+                        <span>View Studio collection →</span>
+                    </a>
+                </article>
 
                 <!-- Suite -->
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <div class="pricing-tier-name">Suite • Most Popular</div>
-                        <h3>With Plumbing</h3>
-                        <p class="pricing-descriptor">Full bathroom • 320-400 sq ft</p>
-                        <div class="pricing-amount">
-                            <span class="price-large">$75k</span>
-                            <span class="price-suffix">+</span>
-                        </div>
-                    </div>
-                    <div class="pricing-body">
-                        <ul class="pricing-features">
-                            <li><span class="feature-check">✓</span> Full luxury bathroom</li>
-                            <li><span class="feature-check">✓</span> Kitchenette option</li>
-                            <li><span class="feature-check">✓</span> Premium finishes</li>
-                            <li><span class="feature-check">✓</span> Complete permitting</li>
-                            <li><span class="feature-check">✓</span> HOA coordination</li>
-                            <li><span class="feature-check">✓</span> One-year warranty</li>
-                        </ul>
-                        <a href="#contact" class="pricing-cta">Configure Suite</a>
-                    </div>
-                </div>
+                <article class="model-card" id="suite">
+                    <div class="model-eyebrow">Long-Term Stays • Rentals</div>
+                    <h3 class="model-title">Suite Collection</h3>
+                    <div class="model-meta">Approx. 450–650 sq ft • 1 bed</div>
+                    <p class="model-description">
+                        True one-bedroom ADUs with full kitchens and living spaces,
+                        ideal for family, aging parents, or high-demand rental units.
+                    </p>
+                    <a href="suite-collection.html" class="model-link">
+                        <span>Explore Suite plans →</span>
+                    </a>
+                </article>
 
                 <!-- Residence -->
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <div class="pricing-tier-name">Residence</div>
-                        <h3>Full ADU</h3>
-                        <p class="pricing-descriptor">Complete home • Up to 800 sq ft</p>
-                        <div class="pricing-amount">
-                            <span class="price-large">$197k</span>
-                        </div>
-                    </div>
-                    <div class="pricing-body">
-                        <ul class="pricing-features">
-                            <li><span class="feature-check">✓</span> Two beds, two baths</li>
-                            <li><span class="feature-check">✓</span> Full kitchen</li>
-                            <li><span class="feature-check">✓</span> Luxury finishes</li>
-                            <li><span class="feature-check">✓</span> Custom design options</li>
-                            <li><span class="feature-check">✓</span> Turnkey service</li>
-                            <li><span class="feature-check">✓</span> One-year warranty</li>
-                        </ul>
-                        <a href="#contact" class="pricing-cta">Configure Residence</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pricing-note">
-                <strong>What's Included:</strong> Design consultation, architectural plans, all permitting, foundation work, complete construction, HVAC system, electrical installation, four inspections, final walkthrough, and comprehensive one-year warranty. Additional costs limited to water/sewage connections and address-specific permit requirements.
+                <article class="model-card" id="residence">
+                    <div class="model-eyebrow">Family-Focused • Income-Ready</div>
+                    <h3 class="model-title">Residence Collection</h3>
+                    <div class="model-meta">Approx. 650–900+ sq ft • 2 beds</div>
+                    <p class="model-description">
+                        Larger backyard homes that live like a small house—designed for families,
+                        long-term tenancies, and serious rental income potential.
+                    </p>
+                    <a href="residence-collection.html" class="model-link">
+                        <span>See Residence layouts →</span>
+                    </a>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Spaces -->
-    <section class="spaces" id="spaces">
-        <div class="spaces-container">
-            <div class="section-header">
-                <div class="section-label">Our Spaces</div>
-                <h2 class="section-title">Designed for Every Vision</h2>
-                <p class="section-description">From home offices to complete residences, each Elbow Room is crafted with the same attention to detail and commitment to quality.</p>
-            </div>
+    <!-- Value proposition -->
+    <section class="section alt">
+        <div class="section-container">
+            <div class="section-eyebrow">Why Elbow Room</div>
+            <h2 class="section-title">Luxury finishes, without losing your weekends.</h2>
+            <p class="section-subtitle">
+                We exist for homeowners who care about design and want the project managed well—
+                from the first zoning question to the final walkthrough.
+            </p>
 
-            <!-- Studio -->
-            <div class="space-row">
-                <div class="space-image">
-                    <div class="space-image-wrapper">
-                        [Professional home office interior - built-in desk, shelving, natural light]
-                    </div>
-                    <div class="space-badge">STUDIO</div>
+            <div class="pillars-grid">
+                <div class="pillar">
+                    <h3>Woman-owned & detail-obsessed</h3>
+                    <p>
+                        You get a team that sweats the “small” things—baseboard profiles, tile layout,
+                        sightlines—because they’re what make your ADU feel considered instead of generic.
+                    </p>
                 </div>
-                <div class="space-content">
-                    <h2>Studio Spaces</h2>
-                    <p>Ideal for home offices, creative studios, fitness rooms, or personal workshops. Climate-controlled and professionally finished, Studios provide dedicated space without the complexity of plumbing permits.</p>
-                    <div class="space-specs">
-                        <div class="spec-item">
-                            <div class="spec-icon">□</div>
-                            <span>Starting 8' × 8'</span>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-icon">◇</div>
-                            <span>Climate controlled</span>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-icon">⚡</div>
-                            <span>Complete electrical</span>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-icon">⌚</div>
-                            <span>4-6 week build</span>
-                        </div>
-                    </div>
-                    <a href="#pricing" class="space-cta">Explore Studio Pricing →</a>
+                <div class="pillar">
+                    <h3>Turn-key means truly turn-key</h3>
+                    <p>
+                        Design, permitting, utilities, construction, inspections—we coordinate it all.
+                        You stay informed with clear updates instead of chasing a dozen different trades.
+                    </p>
                 </div>
-            </div>
-
-            <!-- Suite -->
-            <div class="space-row">
-                <div class="space-image">
-                    <div class="space-image-wrapper">
-                        [Luxury bathroom interior - modern fixtures, tile work, professional lighting]
-                    </div>
-                    <div class="space-badge">SUITE</div>
-                </div>
-                <div class="space-content">
-                    <h2>Suite Spaces</h2>
-                    <p>Perfect for multi-generational living, guest accommodations, or rental income. With full bathroom and optional kitchenette, Suites provide independent living while remaining connected to your main home.</p>
-                    <div class="space-specs">
-                        <div class="spec-item">
-                            <div class="spec-icon">□</div>
-                            <span>320-400 square feet</span>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-icon">🚿</div>
-                            <span>Full bathroom</span>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-icon">🍳</div>
-                            <span>Kitchenette option</span>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-icon">★</div>
-                            <span>Premium finishes</span>
-                        </div>
-                    </div>
-                    <a href="#pricing" class="space-cta">Explore Suite Pricing →</a>
-                </div>
-            </div>
-
-            <!-- Residence -->
-            <div class="space-row">
-                <div class="space-image">
-                    <div class="space-image-wrapper">
-                        [Full ADU interior - open living space, kitchen, high-end finishes]
-                    </div>
-                    <div class="space-badge">RESIDENCE</div>
-                </div>
-                <div class="space-content">
-                    <h2>Residence Spaces</h2>
-                    <p>Complete accessory dwelling units designed for full-time living. With two bedrooms, two bathrooms, and a full kitchen, Residences offer all the amenities of a traditional home in a thoughtfully designed footprint.</p>
-                    <div class="space-specs">
-                        <div class="spec-item">
-                            <div class="spec-icon">□</div>
-                            <span>Up to 800 sq ft</span>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-icon">🛏</div>
-                            <span>2 beds, 2 baths</span>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-icon">🍳</div>
-                            <span>Full kitchen</span>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-icon">✦</div>
-                            <span>Luxury package</span>
-                        </div>
-                    </div>
-                    <a href="#pricing" class="space-cta">Explore Residence Pricing →</a>
+                <div class="pillar">
+                    <h3>Clarity on cost & scope</h3>
+                    <p>
+                        Model-based pricing, transparent upgrade menus, and written approvals for changes.
+                        No mystery allowances, no “we’ll see” line items.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Process -->
-    <section class="process" id="process">
-        <div class="process-container">
-            <div class="process-header">
-                <h2>Streamlined Process,<br>Exceptional Results</h2>
-                <p>From initial consultation to final walkthrough, we manage every phase with precision and clear communication.</p>
-            </div>
-
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-circle">
-                        <div class="step-number">1</div>
+    <!-- Featured model -->
+    <section class="section cream">
+        <div class="section-container">
+            <div class="section-eyebrow">Featured Model</div>
+            <div class="feature-row">
+                <div>
+                    <div class="feature-tag">Most-requested Suite layout</div>
+                    <h2 class="feature-title">The Retreat</h2>
+                    <p class="feature-body">
+                        A one-bedroom ADU that lives far bigger than its footprint. Defined entry,
+                        generous kitchen, and a living room that doesn’t feel like an afterthought.
+                        Perfect for long-term guests or a high-quality rental.
+                    </p>
+                    <div class="feature-meta-row">
+                        <div class="feature-meta-group">
+                            <div class="feature-meta-label">Approx. Size</div>
+                            <div class="feature-meta-value">~550 sq ft</div>
+                        </div>
+                        <div class="feature-meta-group">
+                            <div class="feature-meta-label">Beds / Baths</div>
+                            <div class="feature-meta-value">1 bed • 1 bath</div>
+                        </div>
+                        <div class="feature-meta-group">
+                            <div class="feature-meta-label">Starting From</div>
+                            <div class="feature-meta-value">$185k+</div>
+                        </div>
                     </div>
-                    <h3>Design</h3>
-                    <p>Configure your space using our Design Hub or schedule a consultation. Receive transparent pricing immediately.</p>
+                    <a href="model-the-retreat.html" class="btn-secondary" style="margin-right: 14px;">View The Retreat</a>
+                    <a href="models.html" class="btn-primary">See all models</a>
                 </div>
-
-                <div class="process-step">
-                    <div class="step-circle">
-                        <div class="step-number">2</div>
-                    </div>
-                    <h3>Permits</h3>
-                    <p>We handle all architectural plans, HOA approvals, and permitting requirements. Regular updates throughout the process.</p>
-                </div>
-
-                <div class="process-step">
-                    <div class="step-circle">
-                        <div class="step-number">3</div>
-                    </div>
-                    <h3>Build</h3>
-                    <p>Our experienced team executes with precision. Four independent inspections ensure quality at every phase.</p>
-                </div>
-
-                <div class="process-step">
-                    <div class="step-circle">
-                        <div class="step-number">4</div>
-                    </div>
-                    <h3>Deliver</h3>
-                    <p>Final walkthrough, warranty activation, and ongoing support. Your space is ready for immediate use.</p>
-                </div>
+                <aside class="feature-box">
+                    <p><strong>Highlights:</strong></p>
+                    <ul>
+                        <li>Dedicated bedroom with full-height closet</li>
+                        <li>Full kitchen with real storage and counter space</li>
+                        <li>Stackable laundry closet option</li>
+                        <li>Covered porch upgrade for indoor-outdoor living</li>
+                    </ul>
+                    <p><strong>Best for:</strong></p>
+                    <ul>
+                        <li>Aging parents who deserve comfort</li>
+                        <li>Long-term tenants who pay for quality</li>
+                        <li>Guests who stay often enough to feel at home</li>
+                    </ul>
+                    <p>
+                        Ask us how The Retreat performs as a rental in your city:
+                        <a href="contact.html" style="color: var(--turquoise); text-decoration: none;">talk to our team →</a>
+                    </p>
+                </aside>
             </div>
         </div>
     </section>
 
-    <!-- Social Proof -->
-    <section class="social-proof">
-        <div class="proof-container">
-            <div class="section-header">
-                <div class="section-label">Client Testimonials</div>
-                <h2 class="section-title">Trusted Across<br>Central Texas</h2>
+    <!-- Process preview -->
+    <section class="section">
+        <div class="section-container">
+            <div class="section-eyebrow">How It Works</div>
+            <h2 class="section-title">A clear path from “we’ve been talking about it” to “move in.”</h2>
+            <p class="section-subtitle">
+                Every ADU follows the same backbone: clarify, design, permit, build, support. 
+                Within that, we tailor details to your property, city, and goals.
+            </p>
+
+            <div class="process-preview-grid">
+                <article class="process-preview-card">
+                    <div class="process-step-number">01</div>
+                    <h3>Discover & Define</h3>
+                    <p>We look at your property, goals, and budget to confirm basic feasibility and the right model collection.</p>
+                </article>
+                <article class="process-preview-card">
+                    <div class="process-step-number">02</div>
+                    <h3>Design & Selections</h3>
+                    <p>Use our Design Center to choose layouts, finishes, and options with clear pricing as things evolve.</p>
+                </article>
+                <article class="process-preview-card">
+                    <div class="process-step-number">03</div>
+                    <h3>Permits & Sitework</h3>
+                    <p>We handle drawings, engineering, utility coordination, and city submittals so you don’t have to.</p>
+                </article>
+                <article class="process-preview-card">
+                    <div class="process-step-number">04</div>
+                    <h3>Build & Turnover</h3>
+                    <p>Your ADU gets built to spec, inspected, and delivered with a 1-year craftsmanship warranty.</p>
+                </article>
             </div>
 
-            <div class="testimonial-grid">
-                <div class="testimonial">
-                    <div class="quote-mark">"</div>
-                    <p class="testimonial-text">The quality and attention to detail exceeded our expectations. Elbow Room managed every aspect professionally, and the final result is a beautiful, functional space our family uses daily.</p>
-                    <p class="testimonial-author">Jennifer M.</p>
-                    <p class="testimonial-location">Multi-Gen Suite • Alamo Heights</p>
-                </div>
-
-                <div class="testimonial">
-                    <div class="quote-mark">"</div>
-                    <p class="testimonial-text">As a medical professional, I needed a home office that reflected the quality of my practice. The entire process was seamless, and the permitting coordination was handled flawlessly.</p>
-                    <p class="testimonial-author">Dr. Patricia S.</p>
-                    <p class="testimonial-location">Professional Office • Terrell Hills</p>
-                </div>
-            </div>
-
-            <div class="stats-grid">
-                <div class="stat-box">
-                    <div class="stat-box-number">100+</div>
-                    <div class="stat-box-label">Projects Completed</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-box-number">98%</div>
-                    <div class="stat-box-label">Satisfaction Rate</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-box-number">5.0</div>
-                    <div class="stat-box-label">Average Rating</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-box-number">164%</div>
-                    <div class="stat-box-label">Value Increase</div>
-                </div>
+            <div style="margin-top: 40px;">
+                <a href="process.html" class="btn-secondary">See the full process</a>
             </div>
         </div>
     </section>
 
-    <!-- CTA -->
-    <section class="cta-section" id="contact">
-        <div class="cta-container">
-            <h2>Ready to Begin?</h2>
-            <p>Schedule a consultation to discuss your vision. Our team will guide you through options, answer questions, and provide transparent pricing for your specific project.</p>
+    <!-- Portfolio preview -->
+    <section class="section alt">
+        <div class="section-container">
+            <div class="section-eyebrow">Recent Work</div>
+            <div class="portfolio-row">
+                <div>
+                    <h2 class="section-title" style="margin-bottom: 20px;">Backyards that actually get used.</h2>
+                    <p class="section-subtitle">
+                        From East Austin alleys to wide-open Hill Country lots, we shape ADUs around how you
+                        really live—morning coffee, late-night Netflix, long-weekend guests and all.
+                    </p>
+                    <p class="portfolio-tagline">
+                        See more details, floor plans, and finish stories in our project gallery.
+                    </p>
+                    <div style="margin-top: 30px;">
+                        <a href="portfolio.html" class="btn-primary">View portfolio</a>
+                    </div>
+                </div>
+                <aside class="portfolio-highlight">
+                    <h3>San Antonio backyard guest house</h3>
+                    <p>
+                        A light-filled suite tucked behind a midcentury home, used as a guest space most
+                        of the year and a fully booked rental during Fiesta season.
+                    </p>
+                    <ul class="portfolio-list">
+                        <li><strong>Type:</strong> Suite Collection, custom porch</li>
+                        <li><strong>Size:</strong> ~520 sq ft</li>
+                        <li><strong>Use:</strong> Guest stays + part-time rental</li>
+                        <li><strong>Finish story:</strong> Warm oak, plaster-look walls, brass accents</li>
+                    </ul>
+                    <p style="margin-top: 18px;">
+                        We’re currently building ADUs in San Antonio, Austin, and neighboring Central Texas cities.
+                        <a href="service-area.html" style="color: var(--turquoise); text-decoration: none;">See where we work →</a>
+                    </p>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section cream">
+        <div class="section-container cta-band">
+            <div class="section-eyebrow">Next Step</div>
+            <h2 class="section-title">Tell us about your backyard.</h2>
+            <p class="section-subtitle">
+                A quick conversation is usually enough to confirm basic feasibility, talk through budget ranges,
+                and decide whether an ADU makes sense for your property.
+            </p>
             <div class="cta-buttons">
-                <a href="mailto:sales@elbowroom.com" class="btn-turquoise">Schedule Consultation</a>
-                <a href="tel:2108544023" class="btn-outline">(210) 854-4023</a>
+                <a href="contact.html" class="btn-primary">Start a project conversation</a>
+                <a href="models.html" class="btn-secondary">Browse models first</a>
             </div>
         </div>
     </section>
@@ -1459,54 +1084,51 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <h3>Elbow Room</h3>
-                    <p>Woman-owned ADU builder serving Central Texas with transparent pricing, complete permitting services, and luxury-grade construction.</p>
+                    <p>
+                        Woman-owned luxury ADU builder serving Central Texas with transparent pricing,
+                        complete permitting services, and white-glove construction management.
+                    </p>
                     <div class="footer-contact">
                         <a href="tel:2108544023">(210) 854-4023</a>
                         <a href="mailto:sales@elbowroom.com">sales@elbowroom.com</a>
-                        <a href="#">1175 W. Bitters #3100<br>San Antonio, TX 78216</a>
+                        <a href="#">19302 Highway 281 North<br>San Antonio, TX 78258</a>
                     </div>
                 </div>
-
                 <div class="footer-column">
                     <h4>Explore</h4>
                     <ul>
-                        <li><a href="#spaces">Our Spaces</a></li>
-                        <li><a href="#pricing">Pricing</a></li>
-                        <li><a href="#process">Process</a></li>
-                        <li><a href="/portfolio">Portfolio</a></li>
-                        <li><a href="/about">About</a></li>
+                        <li><a href="models.html">Models</a></li>
+                        <li><a href="design-center.html">Design Center</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="process.html">Process</a></li>
+                        <li><a href="about.html">About</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-column">
                     <h4>Resources</h4>
                     <ul>
-                        <li><a href="/design-hub">Design Hub</a></li>
-                        <li><a href="/blog">Knowledge Base</a></li>
-                        <li><a href="/faq">FAQ</a></li>
-                        <li><a href="/financing">Financing</a></li>
-                        <li><a href="/service-area">Service Area</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="financing.html">Financing</a></li>
+                        <li><a href="service-area.html">Service Area</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-column">
-                    <h4>Connect</h4>
+                    <h4>Local Pages</h4>
                     <ul>
-                        <li><a href="#contact">Get Started</a></li>
-                        <li><a href="/quote">Request Quote</a></li>
-                        <li><a href="#">LinkedIn</a></li>
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">Facebook</a></li>
+                        <li><a href="san-antonio-adus.html">San Antonio ADUs</a></li>
+                        <li><a href="austin-adus.html">Austin ADUs</a></li>
+                        <li><a href="central-texas-cities.html">Central Texas ADUs</a></li>
+                        <li><a href="contact.html">Work with us</a></li>
                     </ul>
                 </div>
             </div>
-
             <div class="footer-bottom">
                 <p>© 2025 Elbow Room. All rights reserved.</p>
                 <div class="footer-legal">
-                    <a href="/privacy">Privacy Policy</a>
-                    <a href="/terms">Terms of Service</a>
-                    <a href="/accessibility">Accessibility</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Accessibility</a>
                 </div>
             </div>
         </div>
