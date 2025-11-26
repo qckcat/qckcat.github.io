@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Design Center | Configure Your ADU or Accessory Structure | Elbow Room</title>
-    <meta name="description" content="Use the Elbow Room Design Center to configure your accessory structure or ADU, explore finishes, and preview pricing before you build.">
+    <title>Design Center | Configure Your ADU or Studio | Elbow Room</title>
+    <meta name="description" content="Use the Elbow Room Design Center to configure your Studio, Suite, or Residence model. Explore finish packages, upgrades, and see live pricing ranges for your project.">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -147,39 +147,37 @@
 
         /* Hero */
         .hero {
-            min-height: 55vh;
+            min-height: 60vh;
             display: flex;
             align-items: center;
             background:
-                linear-gradient(to right, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.9) 100%),
-                radial-gradient(circle at top left, #e8f8f6 0%, #fefefe 45%, #f5f5f3 100%);
+                linear-gradient(to bottom right, #111111 0%, #222222 20%, #2b2018 60%, #3a2615 100%),
+                radial-gradient(circle at top left, rgba(62,227,212,0.12) 0%, transparent 50%);
             margin-top: 100px;
-            padding: 150px 80px 110px;
+            padding: 150px 80px 130px;
+            color: var(--white);
         }
 
         .hero-content {
-            max-width: 1600px;
+            max-width: 1200px;
             margin: 0 auto;
+            text-align: left;
         }
 
-        .breadcrumbs {
-            font-size: 13px;
-            letter-spacing: 2px;
+        .hero-eyebrow {
+            font-size: 14px;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            color: var(--text-gray);
-            margin-bottom: 26px;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 24px;
         }
-
-        .breadcrumbs a {
-            color: var(--text-gray);
-            text-decoration: none;
-        }
-
-        .breadcrumbs span { opacity: 0.7; }
 
         .hero h1 {
-            font-size: 96px;
-            margin-bottom: 20px;
+            font-size: 110px;
+            margin-bottom: 30px;
+            font-weight: 300;
+            line-height: 1.05;
+            letter-spacing: -2px;
         }
 
         .hero h1 span {
@@ -187,126 +185,695 @@
             font-style: italic;
         }
 
-        .hero-subtitle {
+        .hero-subhead {
             font-size: 24px;
-            color: var(--text-gray);
-            max-width: 940px;
-            margin-bottom: 24px;
+            max-width: 720px;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 28px;
         }
 
         .hero-meta {
             font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .hero-meta strong { color: var(--turquoise); }
+
+        .hero-actions {
+            margin-top: 34px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .btn-primary {
+            background: var(--turquoise);
+            color: var(--dark-brown);
+            padding: 14px 28px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+        }
+
+        .btn-primary:hover {
+            background: var(--white);
+            color: var(--dark-brown);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 14px 28px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border: 1px solid rgba(255,255,255,0.6);
+            border-radius: 2px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-1px);
+        }
+
+        /* How it works */
+        .how-it-works {
+            padding: 140px 80px 120px;
+            background: var(--soft-gray);
+        }
+
+        .how-grid {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 80px;
+            align-items: flex-start;
+        }
+
+        .how-steps {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 26px;
+        }
+
+        .step-card {
+            background: var(--white);
+            padding: 22px 20px 20px;
+            border-radius: 2px;
+            box-shadow: 0 10px 32px rgba(0,0,0,0.04);
+        }
+
+        .step-label {
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--golden);
+            margin-bottom: 8px;
+        }
+
+        .step-title {
+            font-size: 18px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .step-text {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .how-sidebox {
+            background: var(--white);
+            padding: 26px 24px 24px;
+            border-radius: 2px;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.05);
+        }
+
+        .how-sidebox h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .how-sidebox p {
+            font-size: 15px;
+            color: var(--text-gray);
+            margin-bottom: 8px;
+        }
+
+        .how-sidebox ul {
+            list-style: none;
+            margin-top: 12px;
+        }
+
+        .how-sidebox li {
+            font-size: 14px;
+            color: var(--text-gray);
+            padding: 4px 0;
+        }
+
+        /* Design Center shell (iframe area) */
+        .design-center-shell {
+            padding: 120px 80px 120px;
+            background: var(--white);
+        }
+
+        .iframe-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .iframe-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .iframe-header-main {
+            max-width: 900px;
+        }
+
+        .iframe-header-meta {
+            font-size: 13px;
             color: var(--text-gray);
             text-transform: uppercase;
             letter-spacing: 2px;
         }
 
-        .hero-meta strong { color: var(--dark-brown); }
-
-        /* Steps section */
-        .steps-section {
-            padding: 120px 80px 80px;
-        }
-
-        .steps-grid {
-            max-width: 1600px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 40px;
-            margin-top: 50px;
-        }
-
-        .step-card {
-            background: var(--white);
+        .iframe-placeholder {
+            position: relative;
             border-radius: 2px;
-            box-shadow: 0 14px 40px rgba(0,0,0,0.05);
-            padding: 34px 26px 30px;
+            border: 1px dashed rgba(66, 37, 16, 0.25);
+            background: linear-gradient(135deg, #f8f7f7 0%, #ffffff 60%, #f2fffc 100%);
+            min-height: 900px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            text-align: center;
         }
 
-        .step-number {
-            font-size: 14px;
-            letter-spacing: 3px;
+        .iframe-placeholder-inner {
+            max-width: 520px;
+        }
+
+        .iframe-placeholder-label {
+            font-size: 12px;
+            letter-spacing: 2px;
             text-transform: uppercase;
             color: var(--golden);
             margin-bottom: 12px;
-            font-weight: 500;
         }
 
-        .step-title {
+        .iframe-placeholder h3 {
             font-size: 26px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
-        .step-text {
+        .iframe-placeholder p {
             font-size: 15px;
             color: var(--text-gray);
+            margin-bottom: 10px;
         }
 
-        /* Iframe wrapper */
-        .design-center-wrapper {
-            padding: 80px 80px 140px;
+        .iframe-note {
+            font-size: 12px;
+            color: var(--text-gray);
+            margin-top: 8px;
+        }
+
+        /* Summary band */
+        .summary-band {
+            padding: 120px 80px 130px;
             background: var(--cream);
         }
 
-        .design-center-inner {
+        .summary-grid {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 80px;
+        }
+
+        .summary-list {
+            margin-top: 24px;
+        }
+
+        .summary-list h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .summary-list ul {
+            list-style: none;
+        }
+
+        .summary-list li {
+            font-size: 15px;
+            color: var(--text-gray);
+            padding: 6px 0;
+        }
+
+        .summary-card {
+            background: var(--white);
+            padding: 26px 24px 24px;
+            border-radius: 2px;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.05);
+        }
+
+        .summary-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .summary-card p {
+            font-size: 15px;
+            color: var(--text-gray);
+            margin-bottom: 10px;
+        }
+
+        .summary-card a {
+            color: var(--turquoise);
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-brown);
+            color: rgba(255,255,255,0.7);
+            padding: 120px 80px 60px;
+        }
+
+        .footer-container {
             max-width: 1600px;
             margin: 0 auto;
         }
 
-        .design-center-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            gap: 40px;
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 80px;
+            margin-bottom: 100px;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            color: var(--white);
             margin-bottom: 30px;
-            flex-wrap: wrap;
+            font-weight: 300;
         }
 
-        .design-center-header-left {
-            max-width: 900px;
+        .footer-brand p {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            font-weight: 300;
         }
 
-        .design-center-header-right {
-            font-size: 14px;
-            color: var(--text-gray);
-            max-width: 380px;
+        .footer-contact a {
+            color: var(--turquoise);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 15px;
+            font-size: 16px;
         }
 
-        .design-center-header-right strong {
-            color: var(--dark-brown);
+        .footer-column h4 {
+            font-size: 18px;
+            color: var(--white);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
         }
 
-        .design-center-iframe-shell {
-            border-radius: 6px;
-            overflow: hidden;
-            box-shadow: 0 22px 80px rgba(0,0,0,0.14);
-            background: var(--white);
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: 15px; }
+
+        .footer-column a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s;
         }
 
-        .design-center-iframe-toolbar {
-            background: linear-gradient(to right, #f2f0ec, #f9f7f5);
-            border-bottom: 1px solid rgba(66, 37, 16, 0.08);
-            padding: 14px 20px;
+        .footer-column a:hover { color: var(--turquoise); }
+
+        .footer-bottom {
+            padding-top: 60px;
+            border-top: 1px solid rgba(255,255,255,0.1);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 12px;
-            color: var(--text-gray);
+            font-size: 14px;
         }
 
-        .toolbar-dots {
+        .footer-legal {
             display: flex;
-            gap: 8px;
-            align-items: center;
+            gap: 40px;
         }
 
-        .toolbar-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: #e2d6c8;
+        .footer-legal a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
         }
 
-        .toolbar-dot:nth-child(1) { background: #f66f6f; }
-        .toolbar-
+        .footer-legal a:hover { color: var(--turquoise); }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .hero { padding: 130px 60px 110px; }
+            .hero h1 { font-size: 80px; }
+            .how-grid,
+            .summary-grid {
+                grid-template-columns: 1.1fr 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            nav { padding: 20px 30px; }
+            nav ul { gap: 24px; font-size: 14px; }
+
+            .hero,
+            .how-it-works,
+            .design-center-shell,
+            .summary-band,
+            footer {
+                padding: 100px 30px;
+            }
+
+            .hero h1 { font-size: 58px; }
+            .hero-subhead { font-size: 20px; }
+
+            .how-grid,
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .how-steps {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .how-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .iframe-placeholder {
+                min-height: 700px;
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            nav ul { display: none; }
+
+            .hero,
+            .how-it-works,
+            .design-center-shell,
+            .summary-band,
+            footer {
+                padding: 80px 24px;
+            }
+
+            .hero h1 { font-size: 42px; }
+            .hero-subhead { font-size: 18px; }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                text-align: center;
+            }
+
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">Elbow <span class="logo-accent">Room</span></a>
+        <ul>
+            <li><a href="models.html">Models</a></li>
+            <li><a href="design-center.html">Design Center</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="process.html">Process</a></li>
+            <li class="dropdown">
+                <a href="#">Resources ▾</a>
+                <div class="dropdown-content">
+                    <a href="blog.html">Blog</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="financing.html">Financing</a>
+                    <a href="service-area.html">Service Area</a>
+                </div>
+            </li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-eyebrow">Interactive Pricing & Finishes</div>
+            <h1>Design Center<span>.</span></h1>
+            <p class="hero-subhead">
+                Configure your Studio, Suite, or Residence in real time. Pick a model, tune the layout, set your
+                finishes, and see how each decision shapes your budget.
+            </p>
+            <p class="hero-meta">
+                <strong>Works with:</strong> Studio · Suite · Residence collections
+            </p>
+            <div class="hero-actions">
+                <a href="#design-center-app" class="btn-primary">Open configurator</a>
+                <a href="models.html" class="btn-secondary">Browse models first</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="how-it-works">
+        <div class="how-grid">
+            <div>
+                <div class="section-eyebrow">How It Works</div>
+                <h2 class="section-title">From idea to a real number.</h2>
+                <p class="section-subtitle">
+                    The Design Center is where we turn “I think I want an ADU” into a grounded, realistic plan. It’s
+                    not a final contract—it’s the clearest way to understand scope, finishes, and budget together.
+                </p>
+
+                <div class="how-steps">
+                    <article class="step-card">
+                        <div class="step-label">Step 1</div>
+                        <h3 class="step-title">Choose structure type</h3>
+                        <p class="step-text">
+                            Start with the big decision: <strong>Studio</strong> (no plumbing),
+                            <strong>Suite</strong> (with bath), or <strong>Residence</strong> (full ADU).
+                        </p>
+                    </article>
+                    <article class="step-card">
+                        <div class="step-label">Step 2</div>
+                        <h3 class="step-title">Select a model</h3>
+                        <p class="step-text">
+                            Pick a named floor plan—like <em>The Mark</em>, <em>The Retreat</em>, or <em>The Compound</em>—
+                            that fits your yard and goals.
+                        </p>
+                    </article>
+                    <article class="step-card">
+                        <div class="step-label">Step 3</div>
+                        <h3 class="step-title">Dial in finishes</h3>
+                        <p class="step-text">
+                            Explore curated finish packages and key upgrades. See how moving between tiers
+                            affects your overall range.
+                        </p>
+                    </article>
+                    <article class="step-card">
+                        <div class="step-label">Step 4</div>
+                        <h3 class="step-title">Save & share</h3>
+                        <p class="step-text">
+                            Save your configuration, export a summary, and send it to our team so we can review
+                            your property and city and refine the numbers together.
+                        </p>
+                    </article>
+                </div>
+            </div>
+
+            <aside class="how-sidebox">
+                <h3>What the Design Center is (and isn’t).</h3>
+                <p>
+                    The Design Center gives you <strong>structured choices</strong> and <strong>live price ranges</strong>
+                    based on our real builds in Central Texas.
+                </p>
+                <ul>
+                    <li>✓ Good for comparing Studio vs Suite vs Residence</li>
+                    <li>✓ Good for feeling out finish levels and big upgrades</li>
+                    <li>✓ Good for a ballpark range before site review</li>
+                </ul>
+                <p style="margin-top: 12px;">
+                    It doesn’t replace permits, engineering, or city approvals—we’ll layer those in once we’ve seen your
+                    lot, utilities, and local rules.
+                </p>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Design Center app shell (iframe placeholder) -->
+    <section class="design-center-shell" id="design-center-app">
+        <div class="iframe-container">
+            <div class="iframe-header">
+                <div class="iframe-header-main">
+                    <div class="section-eyebrow">Interactive App</div>
+                    <h2 class="section-title">Your configuration lives here.</h2>
+                    <p class="section-subtitle">
+                        This is where your actual Design Center app will load. For now, it’s a placeholder. When your
+                        React app is deployed, we’ll swap this box for a live iframe and hook it up to your models.
+                    </p>
+                </div>
+                <div class="iframe-header-meta">
+                    BUILT FOR: Desktop first · Mobile friendly<br>
+                    INTEGRATION: Single iframe drop-in
+                </div>
+            </div>
+
+            <div class="iframe-placeholder">
+                <div class="iframe-placeholder-inner">
+                    <div class="iframe-placeholder-label">Design Center iframe placeholder</div>
+                    <h3>Embed your app in one place.</h3>
+                    <p>
+                        When your Design Center app is ready, replace this div with an iframe pointing at your live URL
+                        (for example: <code>https://design.elbowroom.com</code>).
+                    </p>
+                    <p>
+                        All the surrounding content, navigation, and mobile behavior have already been designed around
+                        a single embedded app.
+                    </p>
+                    <div class="iframe-note">
+                        <!--
+                        INTEGRATION NOTES (high level):
+                        1. Replace the .iframe-placeholder div with an <iframe>.
+                        2. Recommended minimum: min-height: 1200px on desktop.
+                        3. Use a title attribute for accessibility, e.g. title="Elbow Room Design Center".
+                        4. Consider: loading="lazy" and allow="clipboard-write" or others as needed.
+                        5. If your app needs postMessage communication, wire it up here.
+                        
+                        Example:
+                        <iframe
+                            src="https://design.elbowroom.com"
+                            title="Elbow Room Design Center"
+                            style="width: 100%; min-height: 1200px; border: 0; border-radius: 2px;"
+                            loading="lazy"
+                        ></iframe>
+                        -->
+                        Developer note: see DESIGN-CENTER-INTEGRATION docs for full iframe attributes and messaging.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Summary / next steps -->
+    <section class="summary-band">
+        <div class="summary-grid">
+            <div>
+                <div class="section-eyebrow">After the Configurator</div>
+                <h2 class="section-title">What happens once you click “Save.”</h2>
+                <p class="section-subtitle">
+                    Once you’ve built a configuration you like, our team reviews it against your actual property,
+                    city rules, and site constraints. From there, we refine the scope, schedule, and final pricing.
+                </p>
+                <div class="summary-list">
+                    <h3>We’ll look at:</h3>
+                    <ul>
+                        <li>• Your chosen model and structure type (Studio / Suite / Residence)</li>
+                        <li>• Major upgrades and finish level assumptions</li>
+                        <li>• Site realities: access, topography, utilities</li>
+                        <li>• City: permit path, ADU rules, parking, and setbacks</li>
+                    </ul>
+                </div>
+            </div>
+            <aside class="summary-card">
+                <h3>Send us your Design Center file.</h3>
+                <p>
+                    When you’re ready, send your saved configuration to our team with a quick note about who you’re
+                    building for—tenant, family, or “we’re not sure yet.”
+                </p>
+                <p>
+                    We’ll schedule a call, sanity-check the assumptions, and talk through the best path forward for
+                    your specific lot.
+                </p>
+                <p style="margin-top: 10px;">
+                    <a href="contact.html">Share a configuration & schedule a call →</a>
+                </p>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Elbow Room</h3>
+                    <p>
+                        Woman-owned luxury builder serving Central Texas with transparent pricing,
+                        complete permitting services, and white-glove construction management for
+                        accessory structures and ADUs.
+                    </p>
+                    <div class="footer-contact">
+                        <a href="tel:2108544023">(210) 854-4023</a>
+                        <a href="mailto:sales@elbowroom.com">sales@elbowroom.com</a>
+                        <a href="#">19302 Highway 281 North<br>San Antonio, TX 78258</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="models.html">Models</a></li>
+                        <li><a href="design-center.html">Design Center</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="process.html">Process</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="financing.html">Financing</a></li>
+                        <li><a href="service-area.html">Service Area</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Local Pages</h4>
+                    <ul>
+                        <li><a href="san-antonio-adus.html">San Antonio ADUs</a></li>
+                        <li><a href="austin-adus.html">Austin ADUs</a></li>
+                        <li><a href="central-texas-cities.html">Central Texas ADUs</a></li>
+                        <li><a href="contact.html">Work with us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Elbow Room. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
