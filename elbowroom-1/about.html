@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Elbow Room | Central Texas ADUs & Accessory Structures</title>
+    <meta name="description" content="Learn who Elbow Room is, why we specialize in Studios, Suites, and Residence ADUs, and how we serve San Antonio, Austin, and Central Texas with turn-key backyard builds.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --turquoise: #3ee3d4;
+            --cream: #f8f7f7;
+            --dark-brown: #422510;
+            --golden: #ecb12d;
+            --white: #ffffff;
+            --soft-gray: #f5f5f3;
+            --text-gray: #6b6b6b;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark-brown);
+            background-color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            line-height: 1.1;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            padding: 35px 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(66, 37, 16, 0.08);
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            font-weight: 400;
+            color: var(--dark-brown);
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        .logo-accent { color: var(--turquoise); }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 50px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark-brown);
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: var(--turquoise); }
+
+        .nav-cta {
+            background: var(--turquoise);
+            color: var(--white) !important;
+            padding: 16px 40px;
+            border-radius: 2px;
+            font-weight: 500;
+        }
+
+        .nav-cta:hover { background: var(--dark-brown); }
+
+        .dropdown { position: relative; }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%; left: 0;
+            background: var(--white);
+            min-width: 220px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+
+        .dropdown:hover .dropdown-content { display: block; }
+
+        .dropdown-content a {
+            display: block;
+            padding: 12px 30px;
+            font-size: 15px;
+        }
+
+        /* Layout helpers */
+        .section {
+            padding: 160px 80px;
+        }
+
+        .section.alt { background: var(--soft-gray); }
+        .section.cream { background: var(--cream); }
+
+        .section-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .section-eyebrow {
+            font-size: 16px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--golden);
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-size: 80px;
+            margin-bottom: 24px;
+            font-weight: 300;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            font-size: 22px;
+            color: var(--text-gray);
+            max-width: 900px;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(to right, rgba(248,247,247,1) 0%, rgba(255,255,255,1) 40%, #e9f7f4 100%),
+                radial-gradient(circle at top left, rgba(62,227,212,0.15) 0%, transparent 55%);
+            margin-top: 100px;
+            padding: 150px 80px 130px;
+            color: var(--dark-brown);
+        }
+
+        .hero-inner {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .hero-eyebrow {
+            font-size: 14px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--text-gray);
+            margin-bottom: 24px;
+        }
+
+        .hero-title {
+            font-size: 96px;
+            margin-bottom: 18px;
+            font-weight: 300;
+            letter-spacing: -2px;
+        }
+
+        .hero-title span {
+            color: var(--turquoise);
+            font-style: italic;
+        }
+
+        .hero-subhead {
+            font-size: 24px;
+            max-width: 720px;
+            line-height: 1.7;
+            color: var(--text-gray);
+            margin-bottom: 24px;
+        }
+
+        .hero-meta {
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-gray);
+        }
+
+        .hero-meta strong { color: var(--dark-brown); }
+
+        .hero-actions {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .btn-primary {
+            background: var(--turquoise);
+            color: var(--dark-brown);
+            padding: 14px 28px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-brown);
+            color: var(--white);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--dark-brown);
+            padding: 14px 28px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border: 1px solid rgba(66,37,16,0.35);
+            border-radius: 2px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(66,37,16,0.05);
+            transform: translateY(-1px);
+        }
+
+        .hero-card {
+            background: var(--white);
+            border-radius: 2px;
+            padding: 24px 22px 22px;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.06);
+        }
+
+        .hero-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .hero-card p {
+            font-size: 15px;
+            color: var(--text-gray);
+            margin-bottom: 12px;
+        }
+
+        .hero-card ul {
+            list-style: none;
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .hero-card li {
+            padding: 4px 0;
+        }
+
+        /* Story section */
+        .story-section {
+            padding: 150px 80px 130px;
+            background: var(--soft-gray);
+        }
+
+        .story-grid {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 80px;
+            align-items: flex-start;
+        }
+
+        .story-body {
+            font-size: 16px;
+            color: var(--text-gray);
+            line-height: 1.9;
+        }
+
+        .story-body p + p {
+            margin-top: 16px;
+        }
+
+        .story-aside-card {
+            background: var(--white);
+            padding: 24px 22px 22px;
+            border-radius: 2px;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.05);
+        }
+
+        .story-aside-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .story-aside-list {
+            list-style: none;
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .story-aside-list li {
+            padding: 4px 0;
+        }
+
+        /* Values */
+        .values-section {
+            padding: 130px 80px 130px;
+            background: var(--white);
+        }
+
+        .values-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .values-grid {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 30px;
+        }
+
+        .value-card {
+            background: var(--cream);
+            padding: 22px 20px 20px;
+            border-radius: 2px;
+            border: 1px solid rgba(66,37,16,0.08);
+        }
+
+        .value-label {
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--golden);
+            margin-bottom: 6px;
+        }
+
+        .value-card h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .value-card p {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        /* Studio/Suite/Residence snapshot */
+        .type-section {
+            padding: 120px 80px 130px;
+            background: var(--cream);
+        }
+
+        .type-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.3fr 1.3fr;
+            gap: 80px;
+            align-items: flex-start;
+        }
+
+        .type-pill-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .type-pill {
+            border-radius: 999px;
+            padding: 6px 14px;
+            font-size: 12px;
+            background: var(--white);
+            border: 1px solid rgba(66,37,16,0.15);
+        }
+
+        .type-columns {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+            margin-top: 26px;
+        }
+
+        .type-card {
+            background: var(--white);
+            padding: 18px 16px 16px;
+            border-radius: 2px;
+            border: 1px solid rgba(66,37,16,0.08);
+        }
+
+        .type-card h3 {
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+
+        .type-card small {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-gray);
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .type-card p {
+            font-size: 13px;
+            color: var(--text-gray);
+        }
+
+        /* Service area / stats */
+        .service-section {
+            padding: 120px 80px 130px;
+            background: var(--white);
+        }
+
+        .service-grid {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1.2fr;
+            gap: 80px;
+            align-items: flex-start;
+        }
+
+        .service-list {
+            margin-top: 20px;
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-gray);
+        }
+
+        .service-list li {
+            padding: 4px 0;
+        }
+
+        .service-note {
+            font-size: 13px;
+            color: var(--text-gray);
+            margin-top: 12px;
+        }
+
+        .service-card {
+            background: var(--cream);
+            padding: 24px 22px 22px;
+            border-radius: 2px;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.05);
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .service-stats {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+            margin-top: 10px;
+        }
+
+        .service-stat {
+            font-size: 13px;
+            color: var(--text-gray);
+        }
+
+        .service-stat strong {
+            display: block;
+            font-size: 24px;
+            margin-bottom: 4px;
+            color: var(--dark-brown);
+        }
+
+        .service-card p {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-top: 10px;
+        }
+
+        .service-card a {
+            color: var(--turquoise);
+            text-decoration: none;
+        }
+
+        /* CTA */
+        .cta-band {
+            padding: 120px 80px 130px;
+            background: var(--dark-brown);
+            color: var(--white);
+        }
+
+        .cta-inner {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .cta-eyebrow {
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 22px;
+        }
+
+        .cta-title {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .cta-subtitle {
+            font-size: 18px;
+            color: rgba(255,255,255,0.86);
+            max-width: 720px;
+        }
+
+        .cta-actions {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .btn-cta-primary {
+            background: var(--turquoise);
+            color: var(--dark-brown);
+            padding: 14px 28px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .btn-cta-primary:hover {
+            background: var(--white);
+            transform: translateY(-1px);
+        }
+
+        .btn-cta-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 14px 28px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            border: 1px solid rgba(255,255,255,0.6);
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .btn-cta-secondary:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-1px);
+        }
+
+        .cta-side {
+            font-size: 14px;
+            color: rgba(255,255,255,0.86);
+        }
+
+        .cta-side ul {
+            list-style: none;
+            margin-top: 16px;
+        }
+
+        .cta-side li {
+            padding: 4px 0;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-brown);
+            color: rgba(255,255,255,0.7);
+            padding: 120px 80px 60px;
+        }
+
+        .footer-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 80px;
+            margin-bottom: 100px;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            color: var(--white);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .footer-brand p {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .footer-contact a {
+            color: var(--turquoise);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .footer-column h4 {
+            font-size: 18px;
+            color: var(--white);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: 15px; }
+
+        .footer-column a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover { color: var(--turquoise); }
+
+        .footer-bottom {
+            padding-top: 60px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 40px;
+        }
+
+        .footer-legal a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+        }
+
+        .footer-legal a:hover { color: var(--turquoise); }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            nav { padding: 24px 40px; }
+            .hero { padding: 130px 60px 110px; }
+            .section,
+            .story-section,
+            .values-section,
+            .type-section,
+            .service-section,
+            .cta-band,
+            footer {
+                padding-left: 60px;
+                padding-right: 60px;
+            }
+            .hero-inner,
+            .story-grid,
+            .type-container,
+            .service-grid,
+            .cta-inner {
+                gap: 50px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            nav ul { gap: 24px; font-size: 14px; }
+            .hero-inner {
+                grid-template-columns: 1fr;
+            }
+            .hero-title { font-size: 72px; }
+            .story-grid {
+                grid-template-columns: 1fr;
+            }
+            .values-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+            .type-container {
+                grid-template-columns: 1fr;
+            }
+            .type-columns {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+            .cta-inner {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 20px 24px; }
+            .hero,
+            .story-section,
+            .values-section,
+            .type-section,
+            .service-section,
+            .cta-band,
+            footer {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+            .section-title { font-size: 48px; }
+            .hero-title { font-size: 54px; }
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+            .type-columns {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            nav ul { display: none; }
+            .hero { padding-top: 100px; }
+            .hero-title { font-size: 44px; }
+            .type-columns {
+                grid-template-columns: 1fr;
+            }
+            .cta-actions {
+                flex-direction: column;
+            }
+            .btn-cta-primary,
+            .btn-cta-secondary {
+                width: 100%;
+                text-align: center;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">Elbow <span class="logo-accent">Room</span></a>
+        <ul>
+            <li><a href="models.html">Models</a></li>
+            <li><a href="design-center.html">Design Center</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="process.html">Process</a></li>
+            <li class="dropdown">
+                <a href="#">Resources ▾</a>
+                <div class="dropdown-content">
+                    <a href="blog.html">Blog</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="financing.html">Financing</a>
+                    <a href="service-area.html">Service Area</a>
+                </div>
+            </li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div>
+                <div class="hero-eyebrow">About Elbow Room</div>
+                <h1 class="hero-title">Backyards built with <span>intention.</span></h1>
+                <p class="hero-subhead">
+                    Elbow Room is a Central Texas builder focused on one thing: turning underused yards into
+                    Studios, Suites, and Residence ADUs that actually work for the way you live, earn, and host.
+                </p>
+                <p class="hero-meta">
+                    <strong>Based in:</strong> Central Texas · San Antonio · Austin · Surrounding cities
+                </p>
+                <div class="hero-actions">
+                    <a href="portfolio.html" class="btn-primary">See the work</a>
+                    <a href="process.html" class="btn-secondary">See the process</a>
+                </div>
+            </div>
+            <aside class="hero-card">
+                <h3>What we focus on.</h3>
+                <p>
+                    Instead of trying to build everything, we specialize in three kinds of backyard structures:
+                </p>
+                <ul>
+                    <li>• <strong>Studio</strong> – Accessory Structure, no plumbing (office, studio, gym)</li>
+                    <li>• <strong>Suite</strong> – Accessory Structure with bath (guest, in-law, pool suite)</li>
+                    <li>• <strong>Residence</strong> – Full ADU (kitchen + bath, rental or family use)</li>
+                </ul>
+                <p style="margin-top: 12px;">
+                    That narrow focus lets us stay sharp on ADU rules, permitting paths, and what actually
+                    works on real Central Texas lots.
+                </p>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Story -->
+    <section class="story-section">
+        <div class="story-grid">
+            <div>
+                <div class="section-eyebrow">Our Story</div>
+                <h2 class="section-title">From “we need more space” to a clear path.</h2>
+                <p class="section-subtitle">
+                    Elbow Room was built for homeowners who were tired of vague bids, unclear timelines, and
+                    builders who treated backyards as an afterthought instead of a primary living space.
+                </p>
+                <div class="story-body">
+                    <p>
+                        We’ve sat at the same kitchen tables you have—trying to figure out where aging parents will
+                        stay, how to support kids coming back home for a season, or how to make a property carry a
+                        little more of its own weight without turning it into a full-time job.
+                    </p>
+                    <p>
+                        Instead of “one-off” backyard construction, we decided to specialize. By focusing on
+                        accessory structures and ADUs, we’ve been able to standardize the parts of the process that
+                        should feel predictable—models, finish levels, permitting paths—while still leaving room for
+                        the kind of design details that make a space feel like it belongs to your house, your street,
+                        and your family.
+                    </p>
+                    <p>
+                        The result is a builder that thinks like a designer, communicates like a project manager, and
+                        executes like a seasoned construction team. You get one partner to walk you through models,
+                        Design Center choices, city approvals, and the full build, all the way to punch list and
+                        warranty.
+                    </p>
+                </div>
+            </div>
+            <aside class="story-aside-card">
+                <h3>What clients tend to say.</h3>
+                <ul class="story-aside-list">
+                    <li>• “We finally understand what this will cost and why.”</li>
+                    <li>• “They actually walked our yard and talked about how we live.”</li>
+                    <li>• “I know which phase we’re in and what’s happening next.”</li>
+                    <li>• “It feels like an extension of our home, not an afterthought.”</li>
+                </ul>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Values -->
+    <section class="values-section">
+        <div class="values-container">
+            <div class="section-eyebrow">What Guides Us</div>
+            <h2 class="section-title">The way we build matters as much as what we build.</h2>
+            <p class="section-subtitle">
+                We work in your yard, near your family, and inside your city’s rules.
+                That demands a different kind of builder.
+            </p>
+
+            <div class="values-grid">
+                <article class="value-card">
+                    <div class="value-label">01 · Clarity</div>
+                    <h3>Real numbers, real expectations.</h3>
+                    <p>
+                        We’d rather be honest about ranges and constraints than win a project with a lowball guess.
+                        Our Design Center and model structure keep every decision tied to a budget and a timeline.
+                    </p>
+                </article>
+                <article class="value-card">
+                    <div class="value-label">02 · Respect</div>
+                    <h3>We build where you live.</h3>
+                    <p>
+                        Construction shouldn’t feel like chaos. That means clear communication, predictable
+                        milestones, and treating your property and neighbors like our own throughout the build.
+                    </p>
+                </article>
+                <article class="value-card">
+                    <div class="value-label">03 · Design</div>
+                    <h3>Backyards deserve good design.</h3>
+                    <p>
+                        Studios, Suites, and Residences are small but they play a big role in your daily life.
+                        We sweat light, privacy, storage, and the overall feel of the space—not just square footage.
+                    </p>
+                </article>
+                <article class="value-card">
+                    <div class="value-label">04 · Focus</div>
+                    <h3>We stay in our lane.</h3>
+                    <p>
+                        By specializing in Studios, Suites, and Residence ADUs, we can keep refining one system
+                        instead of stretching ourselves thin on unrelated projects.
+                    </p>
+                </article>
+                <article class="value-card">
+                    <div class="value-label">05 · Partnership</div>
+                    <h3>We’re in this together.</h3>
+                    <p>
+                        We see ourselves as partners, not vendors. We’ll give you the same guidance we’d give a friend
+                        or family member building on their own property.
+                    </p>
+                </article>
+                <article class="value-card">
+                    <div class="value-label">06 · Longevity</div>
+                    <h3>Thinking beyond move-in day.</h3>
+                    <p>
+                        Every Studio, Suite, and Residence is designed with a “what if” lens—what if your needs
+                        change, what if family moves in, what if you decide to rent. We plan for those pivots early.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Studio / Suite / Residence snapshot -->
+    <section class="type-section">
+        <div class="type-container">
+            <div>
+                <div class="section-eyebrow">What We Build</div>
+                <h2 class="section-title">One builder, three structure types.</h2>
+                <p class="section-subtitle">
+                    We call them Studio, Suite, and Residence to make the options feel human, not like a codebook.
+                    Under the hood, they’re three different ways to use your lot and navigate your city’s rules.
+                </p>
+                <div class="type-pill-row">
+                    <span class="type-pill">Studio · Accessory Structure · No plumbing</span>
+                    <span class="type-pill">Suite · Accessory Structure · With bath</span>
+                    <span class="type-pill">Residence · ADU · Kitchen + bath</span>
+                </div>
+            </div>
+            <div class="type-columns">
+                <article class="type-card">
+                    <h3>Studio</h3>
+                    <small>Accessory Structure · No plumbing</small>
+                    <p>
+                        Offices, creative rooms, therapy spaces, gyms—quiet, focused space just outside your back door,
+                        without plumbing complexity.
+                    </p>
+                </article>
+                <article class="type-card">
+                    <h3>Suite</h3>
+                    <small>Accessory Structure · With bath</small>
+                    <p>
+                        Guest and in-law suites, pool houses, teen hangouts—spaces that give people privacy while
+                        staying closely tied to the main house.
+                    </p>
+                </article>
+                <article class="type-card">
+                    <h3>Residence</h3>
+                    <small>ADU · Full residence</small>
+                    <p>
+                        Self-contained homes with a kitchen, bath, and private entry—built for long-term family use,
+                        rental income, or both over time.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service area & stats -->
+    <section class="service-section">
+        <div class="service-grid">
+            <div>
+                <div class="section-eyebrow">Where We Work</div>
+                <h2 class="section-title">Deep roots in Central Texas.</h2>
+                <p class="section-subtitle">
+                    We focus our time and energy where we can be most effective—places where we deeply understand
+                    the permitting paths, ADU rules, and the way people actually use these structures.
+                </p>
+                <ul class="service-list">
+                    <li>• San Antonio and nearby communities</li>
+                    <li>• Austin and surrounding municipalities</li>
+                    <li>• Select Central Texas cities with clear ADU paths</li>
+                </ul>
+                <p class="service-note">
+                    Not sure if your city is a good fit for a Studio, Suite, or Residence ADU?
+                    We’ll give you a straightforward answer and a realistic path forward—or tell you if it’s not
+                    the right move for your property.
+                </p>
+            </div>
+            <aside class="service-card">
+                <h3>Why people call us first.</h3>
+                <div class="service-stats">
+                    <div class="service-stat">
+                        <strong>Studios</strong>
+                        <span>Office, creative work, and practice spaces that reclaim your living room.</span>
+                    </div>
+                    <div class="service-stat">
+                        <strong>Suites</strong>
+                        <span>In-law, guest, and pool suites that let everyone breathe.</span>
+                    </div>
+                    <div class="service-stat">
+                        <strong>Residences</strong>
+                        <span>ADUs that add flexibility, family options, and potential rental income.</span>
+                    </div>
+                    <div class="service-stat">
+                        <strong>Turn-key</strong>
+                        <span>Design, permitting, and construction under one roof.</span>
+                    </div>
+                </div>
+                <p>
+                    Curious if your yard could hold a Studio, Suite, or Residence? Share your address and a bit of your
+                    story, and we’ll let you know what’s realistic.
+                </p>
+                <p style="margin-top: 8px;">
+                    <a href="contact.html">Start with a site review →</a>
+                </p>
+            </aside>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-band">
+        <div class="cta-inner">
+            <div>
+                <div class="cta-eyebrow">Next Step</div>
+                <h2 class="cta-title">Let’s talk about your backyard.</h2>
+                <p class="cta-subtitle">
+                    Use this page to get a feel for who we are. When you’re ready, we’ll take a walk (in person or
+                    virtually), talk through Studio vs Suite vs Residence, and outline a path that fits your specific lot.
+                </p>
+                <div class="cta-actions">
+                    <a href="contact.html" class="btn-cta-primary">Book a conversation</a>
+                    <a href="models.html" class="btn-cta-secondary">Browse models</a>
+                </div>
+            </div>
+            <aside class="cta-side">
+                <p><strong>Bring us your questions, like:</strong></p>
+                <ul>
+                    <li>• “Studio, Suite, or Residence—which makes the most sense?”</li>
+                    <li>• “Can my city even support an ADU?”</li>
+                    <li>• “What would this realistically cost and take to build?”</li>
+                </ul>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Elbow Room</h3>
+                    <p>
+                        Woman-owned luxury builder serving Central Texas with transparent pricing,
+                        complete permitting services, and white-glove construction management for
+                        accessory structures and ADUs.
+                    </p>
+                    <div class="footer-contact">
+                        <a href="tel:2108544023">(210) 854-4023</a>
+                        <a href="mailto:sales@elbowroom.com">sales@elbowroom.com</a>
+                        <a href="#">19302 Highway 281 North<br>San Antonio, TX 78258</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="models.html">Models</a></li>
+                        <li><a href="design-center.html">Design Center</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="process.html">Process</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="financing.html">Financing</a></li>
+                        <li><a href="service-area.html">Service Area</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Local Pages</h4>
+                    <ul>
+                        <li><a href="san-antonio-adus.html">San Antonio ADUs</a></li>
+                        <li><a href="austin-adus.html">Austin ADUs</a></li>
+                        <li><a href="central-texas-cities.html">Central Texas ADUs</a></li>
+                        <li><a href="contact.html">Work with us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Elbow Room. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
