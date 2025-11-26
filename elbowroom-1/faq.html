@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions | Elbow Room</title>
+    <meta name="description" content="Straightforward answers to common questions about Studios, Suites, and Residence ADUs in Central Texas—covering cost, timeline, permitting, and how we work.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --turquoise: #3ee3d4;
+            --cream: #f8f7f7;
+            --dark-brown: #422510;
+            --golden: #ecb12d;
+            --white: #ffffff;
+            --soft-gray: #f5f5f3;
+            --text-gray: #6b6b6b;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark-brown);
+            background-color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            line-height: 1.1;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            padding: 35px 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(66, 37, 16, 0.08);
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            font-weight: 400;
+            color: var(--dark-brown);
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        .logo-accent { color: var(--turquoise); }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 50px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark-brown);
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: var(--turquoise); }
+
+        .nav-cta {
+            background: var(--turquoise);
+            color: var(--white) !important;
+            padding: 16px 40px;
+            border-radius: 2px;
+            font-weight: 500;
+        }
+
+        .nav-cta:hover { background: var(--dark-brown); }
+
+        .dropdown { position: relative; }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%; left: 0;
+            background: var(--white);
+            min-width: 220px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+
+        .dropdown:hover .dropdown-content { display: block; }
+
+        .dropdown-content a {
+            display: block;
+            padding: 12px 30px;
+            font-size: 15px;
+        }
+
+        /* Layout helpers */
+        .section {
+            padding: 160px 80px;
+        }
+
+        .section.alt { background: var(--soft-gray); }
+        .section.cream { background: var(--cream); }
+
+        .section-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .section-eyebrow {
+            font-size: 16px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--golden);
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-size: 80px;
+            margin-bottom: 24px;
+            font-weight: 300;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            font-size: 22px;
+            color: var(--text-gray);
+            max-width: 900px;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(to right, #111111 0%, #27201b 40%, #f8f7f7 100%),
+                radial-gradient(circle at top left, rgba(62,227,212,0.18) 0%, transparent 55%);
+            margin-top: 100px;
+            padding: 150px 80px 130px;
+            color: var(--white);
+        }
+
+        .hero-inner {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .hero-eyebrow {
+            font-size: 14px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 24px;
+        }
+
+        .hero-title {
+            font-size: 96px;
+            margin-bottom: 18px;
+            font-weight: 300;
+            letter-spacing: -2px;
+        }
+
+        .hero-title span {
+            color: var(--turquoise);
+            font-style: italic;
+        }
+
+        .hero-subhead {
+            font-size: 24px;
+            max-width: 720px;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.86);
+            margin-bottom: 24px;
+        }
+
+        .hero-meta {
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.75);
+        }
+
+        .hero-actions {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .btn-primary {
+            background: var(--turquoise);
+            color: var(--dark-brown);
+            padding: 14px 28px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+        }
+
+        .btn-primary:hover {
+            background: var(--white);
+            color: var(--dark-brown);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 14px 28px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border: 1px solid rgba(255,255,255,0.6);
+            border-radius: 2px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-1px);
+        }
+
+        .hero-card {
+            background: rgba(0,0,0,0.5);
+            border-radius: 2px;
+            padding: 24px 22px 22px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .hero-card p {
+            font-size: 15px;
+            color: rgba(255,255,255,0.86);
+            margin-bottom: 12px;
+        }
+
+        .hero-card ul {
+            list-style: none;
+            font-size: 14px;
+            color: rgba(255,255,255,0.85);
+        }
+
+        .hero-card li { padding: 4px 0; }
+
+        .hero-card a {
+            color: var(--turquoise);
+            text-decoration: none;
+        }
+
+        /* FAQ section */
+        .faq-section {
+            padding: 140px 80px 130px;
+            background: var(--cream);
+        }
+
+        .faq-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.6fr 1fr;
+            gap: 70px;
+        }
+
+        .faq-columns {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 26px;
+            margin-top: 40px;
+        }
+
+        .faq-group-label {
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--golden);
+            margin-bottom: 10px;
+        }
+
+        .faq-item {
+            background: var(--white);
+            padding: 18px 18px 16px;
+            border-radius: 2px;
+            border: 1px solid rgba(66,37,16,0.1);
+            margin-bottom: 10px;
+        }
+
+        .faq-question {
+            font-size: 15px;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        .faq-answer {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .faq-note {
+            font-size: 13px;
+            color: var(--text-gray);
+            margin-top: 18px;
+        }
+
+        .faq-aside {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .faq-aside-card {
+            background: var(--white);
+            padding: 22px 20px 20px;
+            border-radius: 2px;
+            border: 1px solid rgba(66,37,16,0.08);
+            margin-bottom: 22px;
+        }
+
+        .faq-aside-card h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .faq-aside-card p {
+            margin-bottom: 8px;
+        }
+
+        .faq-aside-card a {
+            color: var(--turquoise);
+            text-decoration: none;
+        }
+
+        .faq-aside-list {
+            list-style: none;
+            font-size: 13px;
+        }
+
+        .faq-aside-list li {
+            padding: 3px 0;
+        }
+
+        /* Comparison strip */
+        .comparison-section {
+            padding: 120px 80px 120px;
+            background: var(--white);
+        }
+
+        .comparison-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .comparison-grid {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .comparison-card {
+            background: var(--cream);
+            padding: 20px 18px 18px;
+            border-radius: 2px;
+            border: 1px solid rgba(66,37,16,0.08);
+            font-size: 13px;
+            color: var(--text-gray);
+        }
+
+        .comparison-card h3 {
+            font-size: 20px;
+            margin-bottom: 4px;
+        }
+
+        .comparison-card small {
+            display: block;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--golden);
+            margin-bottom: 8px;
+        }
+
+        .comparison-card ul {
+            list-style: none;
+        }
+
+        .comparison-card li {
+            padding: 3px 0;
+        }
+
+        /* CTA */
+        .cta-band {
+            padding: 120px 80px 130px;
+            background: var(--dark-brown);
+            color: var(--white);
+        }
+
+        .cta-inner {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .cta-eyebrow {
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 22px;
+        }
+
+        .cta-title {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .cta-subtitle {
+            font-size: 18px;
+            color: rgba(255,255,255,0.86);
+            max-width: 720px;
+        }
+
+        .cta-actions {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .btn-cta-primary {
+            background: var(--turquoise);
+            color: var(--dark-brown);
+            padding: 14px 28px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .btn-cta-primary:hover {
+            background: var(--white);
+            transform: translateY(-1px);
+        }
+
+        .btn-cta-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 14px 28px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            border: 1px solid rgba(255,255,255,0.6);
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .btn-cta-secondary:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-1px);
+        }
+
+        .cta-side {
+            font-size: 14px;
+            color: rgba(255,255,255,0.86);
+        }
+
+        .cta-side ul {
+            list-style: none;
+            margin-top: 16px;
+        }
+
+        .cta-side li {
+            padding: 4px 0;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-brown);
+            color: rgba(255,255,255,0.7);
+            padding: 120px 80px 60px;
+        }
+
+        .footer-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 80px;
+            margin-bottom: 100px;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            color: var(--white);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .footer-brand p {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .footer-contact a {
+            color: var(--turquoise);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .footer-column h4 {
+            font-size: 18px;
+            color: var(--white);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: 15px; }
+
+        .footer-column a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover { color: var(--turquoise); }
+
+        .footer-bottom {
+            padding-top: 60px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 40px;
+        }
+
+        .footer-legal a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+        }
+
+        .footer-legal a:hover { color: var(--turquoise); }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            nav { padding: 24px 40px; }
+            .hero { padding: 130px 60px 110px; }
+            .faq-section,
+            .comparison-section,
+            .cta-band,
+            footer {
+                padding-left: 60px;
+                padding-right: 60px;
+            }
+            .hero-inner,
+            .faq-container,
+            .cta-inner {
+                gap: 50px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            nav ul { gap: 24px; font-size: 14px; }
+            .hero-inner {
+                grid-template-columns: 1fr;
+            }
+            .hero-title { font-size: 72px; }
+            .faq-container {
+                grid-template-columns: 1fr;
+            }
+            .faq-columns {
+                grid-template-columns: 1fr 1fr;
+            }
+            .comparison-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            .cta-inner {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 20px 24px; }
+            .hero,
+            .faq-section,
+            .comparison-section,
+            .cta-band,
+            footer {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+            .section-title { font-size: 48px; }
+            .hero-title { font-size: 54px; }
+            .faq-columns {
+                grid-template-columns: 1fr;
+            }
+            .comparison-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            nav ul { display: none; }
+            .hero { padding-top: 100px; }
+            .hero-title { font-size: 44px; }
+            .cta-actions {
+                flex-direction: column;
+            }
+            .btn-cta-primary,
+            .btn-cta-secondary {
+                width: 100%;
+                text-align: center;
+            }
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">Elbow <span class="logo-accent">Room</span></a>
+        <ul>
+            <li><a href="models.html">Models</a></li>
+            <li><a href="design-center.html">Design Center</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="process.html">Process</a></li>
+            <li class="dropdown">
+                <a href="#">Resources ▾</a>
+                <div class="dropdown-content">
+                    <a href="blog.html">Blog</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="financing.html">Financing</a>
+                    <a href="service-area.html">Service Area</a>
+                </div>
+            </li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div>
+                <div class="hero-eyebrow">Frequently Asked Questions</div>
+                <h1 class="hero-title">Studios, Suites & Residences, <span>in plain language.</span></h1>
+                <p class="hero-subhead">
+                    These are the questions we hear the most when people first start exploring a backyard Studio,
+                    Suite, or Residence ADU in Central Texas. If your question isn’t here, that’s our cue to add it.
+                </p>
+                <p class="hero-meta">
+                    Cost · Timeline · Permitting · Design · Central Texas rules
+                </p>
+                <div class="hero-actions">
+                    <a href="#faq-list" class="btn-primary">Jump to FAQs</a>
+                    <a href="contact.html" class="btn-secondary">Ask a question directly</a>
+                </div>
+            </div>
+            <aside class="hero-card">
+                <h3>Short answer: yes, it’s a lot to navigate.</h3>
+                <p>
+                    The good news is that you don’t have to become an expert in ADU codes, setbacks, and finish specs.
+                    You just need a builder who lives in that world and explains it clearly.
+                </p>
+                <ul>
+                    <li>• We specialize in Studios, Suites, and Residence ADUs.</li>
+                    <li>• We work primarily in San Antonio, Austin, and nearby cities.</li>
+                    <li>• We translate technical rules into human, practical decisions.</li>
+                </ul>
+            </aside>
+        </div>
+    </section>
+
+    <!-- FAQ main section -->
+    <section class="faq-section" id="faq-list">
+        <div class="faq-container">
+            <div>
+                <div class="section-eyebrow">Start with the basics</div>
+                <h2 class="section-title">Common questions, honest answers.</h2>
+                <p class="section-subtitle">
+                    These FAQs are meant to help you decide if a Studio, Suite, or Residence is worth exploring,
+                    not pressure you into a build. Use them as a gut-check before you reach out.
+                </p>
+
+                <div class="faq-columns">
+                    <!-- Column 1: What / Where / Timeline -->
+                    <div>
+                        <div class="faq-group-label">What we build</div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">What’s the difference between a Studio, Suite, and Residence?</div>
+                            <div class="faq-answer">
+                                <strong>Studio</strong> is an accessory structure without plumbing—think office, creative room,
+                                gym, or therapy space. <strong>Suite</strong> adds a bathroom, making it ideal for guests, in-laws,
+                                pool-side use, or teens. <strong>Residence</strong> is a full ADU with a kitchen and bath,
+                                functioning as a small, independent home for family or rental use.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">Do I have to know which one I want before reaching out?</div>
+                            <div class="faq-answer">
+                                No. Many people come to us thinking “maybe a backyard office” and end up aligning on a
+                                Suite or Residence after we talk through how they really plan to use the space over time.
+                                Part of our job is helping you choose the right lane for your lot and goals.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">Where do you currently build?</div>
+                            <div class="faq-answer">
+                                We focus on <strong>San Antonio, Austin, and select Central Texas cities</strong> where we
+                                understand the permitting paths and ADU rules. If you’re slightly outside those areas,
+                                reach out anyway—we’ll give you a clear yes/no and, if needed, suggestions for next steps.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">How long does a project typically take?</div>
+                            <div class="faq-answer">
+                                Timelines vary by city and scope, but very broadly:
+                                <br><br>
+                                • <strong>Design + permitting:</strong> often measured in months, not weeks.<br>
+                                • <strong>Construction:</strong> typically a few months once we’re in the ground.<br><br>
+                                One of the first things we’ll do is outline a realistic timeline for your specific city,
+                                structure type, and season.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 2: Cost / Process / Design -->
+                    <div>
+                        <div class="faq-group-label">Cost, process & design</div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">How much does a Studio, Suite, or Residence usually cost?</div>
+                            <div class="faq-answer">
+                                Costs depend on size, site conditions, and finish level, but in general:<br><br>
+                                • <strong>Studios</strong> (no plumbing) sit at the lighter end of the spectrum.<br>
+                                • <strong>Suites</strong> add bathroom plumbing and finish complexity.<br>
+                                • <strong>Residences</strong> (full ADUs) involve kitchen, bath, and utility planning
+                                  similar to a small home.<br><br>
+                                We’ll talk about budget ranges early and keep every decision tied back to a realistic
+                                overall number for your project—not just the base structure.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">What’s your process from first conversation to move-in?</div>
+                            <div class="faq-answer">
+                                We keep it simple and transparent:<br><br>
+                                1) <strong>Discover:</strong> Learn your goals, lot conditions, and rough budget.<br>
+                                2) <strong>Align:</strong> Map your needs to Studio, Suite, or Residence models.<br>
+                                3) <strong>Design & permits:</strong> Refine the layout, submit to your city, and handle
+                                   permitting.<br>
+                                4) <strong>Build:</strong> Manage construction, inspections, and quality control.<br>
+                                5) <strong>Close-out & warranty:</strong> Final walkthrough, punch list, and post-move support.<br><br>
+                                You can see the full outline on our <a href="process.html">Process</a> page.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">Will my Studio, Suite, or Residence actually match my house?</div>
+                            <div class="faq-answer">
+                                That’s one of the main reasons people choose us. We treat your Studio, Suite, or Residence
+                                as an <strong>extension of your home</strong>, not a random shed. That means caring about
+                                proportions, rooflines, window placement, siding, and the overall feel from the house and yard—
+                                not just the interior finishes.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">Do you help with interiors and furnishings?</div>
+                            <div class="faq-answer">
+                                Yes, we can help you think through <strong>interior layouts, lighting, storage, and key
+                                finish decisions</strong>. Depending on scope, we can also support furnishing and decor
+                                planning so the space is truly move-in ready for your guests, family, or tenants.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="faq-note">
+                    If you’re torn between Studio, Suite, and Residence, it’s very normal. Most clients refine their
+                    choice after we’ve talked about family, work, hosting, and long-term goals—not just square footage.
+                </p>
+            </div>
+
+            <!-- FAQ aside -->
+            <aside class="faq-aside">
+                <div class="faq-aside-card">
+                    <h3>Questions about financing?</h3>
+                    <p>
+                        There are multiple ways to fund a Studio, Suite, or Residence—from cash and home equity to
+                        specialized renovation and construction products.
+                    </p>
+                    <p>
+                        We don’t push one specific product, but we can help you frame the right questions to ask your
+                        lender or financial advisor.
+                    </p>
+                    <p style="margin-top: 6px;">
+                        See more on our <a href="financing.html">Financing</a> page.
+                    </p>
+                </div>
+
+                <div class="faq-aside-card">
+                    <h3>City-specific rules.</h3>
+                    <p>Every city handles ADUs a little differently. Some questions we can answer quickly:</p>
+                    <ul class="faq-aside-list">
+                        <li>• Can your lot size support a Residence ADU?</li>
+                        <li>• Are there height or setback limits that matter?</li>
+                        <li>• How does parking factor into your plan?</li>
+                    </ul>
+                    <p style="margin-top: 6px;">
+                        A good next step is a brief conversation with your address in hand. From there, we can point
+                        you to the right <a href="service-area.html">Service Area</a> details.
+                    </p>
+                </div>
+
+                <div class="faq-aside-card">
+                    <h3>Have a question not listed here?</h3>
+                    <p>
+                        If you’re thinking it, someone else probably is too. Send it our way and we may add it to this
+                        page to help future homeowners.
+                    </p>
+                    <p>
+                        Email: <a href="mailto:sales@elbowroom.com">sales@elbowroom.com</a><br>
+                        Or use the <a href="contact.html">Contact</a> page.
+                    </p>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Comparison strip -->
+    <section class="comparison-section">
+        <div class="comparison-container">
+            <div class="section-eyebrow">Studio · Suite · Residence</div>
+            <h2 class="section-title">Which one sounds most like you?</h2>
+            <p class="section-subtitle">
+                You don’t have to memorize terminology. Use this as a quick gut check and bring your answers into our
+                first conversation.
+            </p>
+
+            <div class="comparison-grid">
+                <article class="comparison-card">
+                    <h3>Studio</h3>
+                    <small>Accessory Structure · No plumbing</small>
+                    <ul>
+                        <li>• You need quiet, focused work or creative space.</li>
+                        <li>• You’re tired of using the dining table as an office.</li>
+                        <li>• You want a gym, studio, or practice room that isn’t in the garage.</li>
+                        <li>• Plumbing complexity isn’t necessary for how you’ll use the space.</li>
+                    </ul>
+                </article>
+                <article class="comparison-card">
+                    <h3>Suite</h3>
+                    <small>Accessory Structure · With bath</small>
+                    <ul>
+                        <li>• You host family or guests regularly.</li>
+                        <li>• You’re thinking about longer stays for parents or in-laws.</li>
+                        <li>• You want a pool house or teen hangout with real privacy.</li>
+                        <li>• A bathroom on-site would make the space truly usable.</li>
+                    </ul>
+                </article>
+                <article class="comparison-card">
+                    <h3>Residence</h3>
+                    <small>ADU · Full residence</small>
+                    <ul>
+                        <li>• You want a self-contained home with kitchen + bath.</li>
+                        <li>• You’re thinking about rental income or a long-term family plan.</li>
+                        <li>• You’re comfortable talking about a larger investment for flexibility.</li>
+                        <li>• You see this as part of your property’s long-term story.</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-band">
+        <div class="cta-inner">
+            <div>
+                <div class="cta-eyebrow">Next Step</div>
+                <h2 class="cta-title">Turn FAQ answers into a backyard plan.</h2>
+                <p class="cta-subtitle">
+                    If these answers have you nodding yes—or raising new questions—that’s the perfect time to talk.
+                    Bring your address, a rough budget range, and whether Studio, Suite, or Residence feels closest.
+                </p>
+                <div class="cta-actions">
+                    <a href="contact.html" class="btn-cta-primary">Start with the contact form</a>
+                    <a href="process.html" class="btn-cta-secondary">Review our process</a>
+                </div>
+            </div>
+            <aside class="cta-side">
+                <p><strong>We’ll help you clarify:</strong></p>
+                <ul>
+                    <li>• Whether your lot and city fit a Studio, Suite, or Residence.</li>
+                    <li>• A realistic budget and timeline range.</li>
+                    <li>• The right sequence of decisions from here.</li>
+                </ul>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Elbow Room</h3>
+                    <p>
+                        Woman-owned luxury builder serving Central Texas with transparent pricing,
+                        complete permitting services, and white-glove construction management for
+                        accessory structures and ADUs.
+                    </p>
+                    <div class="footer-contact">
+                        <a href="tel:2108544023">(210) 854-4023</a>
+                        <a href="mailto:sales@elbowroom.com">sales@elbowroom.com</a>
+                        <a href="#">19302 Highway 281 North<br>San Antonio, TX 78258</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="models.html">Models</a></li>
+                        <li><a href="design-center.html">Design Center</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="process.html">Process</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="financing.html">Financing</a></li>
+                        <li><a href="service-area.html">Service Area</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Local Pages</h4>
+                    <ul>
+                        <li><a href="san-antonio-adus.html">San Antonio ADUs</a></li>
+                        <li><a href="austin-adus.html">Austin ADUs</a></li>
+                        <li><a href="central-texas-cities.html">Central Texas ADUs</a></li>
+                        <li><a href="contact.html">Work with us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Elbow Room. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
