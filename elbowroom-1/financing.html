@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financing Your Studio, Suite, or Residence | Elbow Room</title>
+    <meta name="description" content="Neutral, plain-language guidance on ways to fund a Studio, Suite, or Residence ADU in Central Texas—cash, home equity, and renovation or construction loan paths.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --turquoise: #3ee3d4;
+            --cream: #f8f7f7;
+            --dark-brown: #422510;
+            --golden: #ecb12d;
+            --white: #ffffff;
+            --soft-gray: #f5f5f3;
+            --text-gray: #6b6b6b;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark-brown);
+            background-color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            line-height: 1.1;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            padding: 35px 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(66, 37, 16, 0.08);
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            font-weight: 400;
+            color: var(--dark-brown);
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        .logo-accent { color: var(--turquoise); }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 50px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark-brown);
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: var(--turquoise); }
+
+        .nav-cta {
+            background: var(--turquoise);
+            color: var(--white) !important;
+            padding: 16px 40px;
+            border-radius: 2px;
+            font-weight: 500;
+        }
+
+        .nav-cta:hover { background: var(--dark-brown); }
+
+        .dropdown { position: relative; }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%; left: 0;
+            background: var(--white);
+            min-width: 220px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+
+        .dropdown:hover .dropdown-content { display: block; }
+
+        .dropdown-content a {
+            display: block;
+            padding: 12px 30px;
+            font-size: 15px;
+        }
+
+        /* Layout helpers */
+        .section {
+            padding: 160px 80px;
+        }
+
+        .section.alt { background: var(--soft-gray); }
+        .section.cream { background: var(--cream); }
+
+        .section-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .section-eyebrow {
+            font-size: 16px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--golden);
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-size: 80px;
+            margin-bottom: 24px;
+            font-weight: 300;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            font-size: 22px;
+            color: var(--text-gray);
+            max-width: 900px;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(to right, #111111 0%, #27201b 40%, #f8f7f7 100%),
+                radial-gradient(circle at top left, rgba(62,227,212,0.18) 0%, transparent 55%);
+            margin-top: 100px;
+            padding: 150px 80px 130px;
+            color: var(--white);
+        }
+
+        .hero-inner {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .hero-eyebrow {
+            font-size: 14px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 24px;
+        }
+
+        .hero-title {
+            font-size: 96px;
+            margin-bottom: 18px;
+            font-weight: 300;
+            letter-spacing: -2px;
+        }
+
+        .hero-title span {
+            color: var(--turquoise);
+            font-style: italic;
+        }
+
+        .hero-subhead {
+            font-size: 24px;
+            max-width: 720px;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.86);
+            margin-bottom: 24px;
+        }
+
+        .hero-meta {
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.75);
+        }
+
+        .hero-actions {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .btn-primary {
+            background: var(--turquoise);
+            color: var(--dark-brown);
+            padding: 14px 28px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+        }
+
+        .btn-primary:hover {
+            background: var(--white);
+            color: var(--dark-brown);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 14px 28px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border: 1px solid rgba(255,255,255,0.6);
+            border-radius: 2px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-1px);
+        }
+
+        .hero-card {
+            background: rgba(0,0,0,0.5);
+            border-radius: 2px;
+            padding: 24px 22px 22px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .hero-card p {
+            font-size: 15px;
+            color: rgba(255,255,255,0.86);
+            margin-bottom: 12px;
+        }
+
+        .hero-card ul {
+            list-style: none;
+            font-size: 14px;
+            color: rgba(255,255,255,0.85);
+        }
+
+        .hero-card li { padding: 4px 0; }
+
+        /* Overview */
+        .overview-section {
+            padding: 140px 80px 120px;
+            background: var(--cream);
+        }
+
+        .overview-grid {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 70px;
+        }
+
+        .overview-main p {
+            font-size: 16px;
+            color: var(--text-gray);
+            margin-bottom: 18px;
+            max-width: 840px;
+        }
+
+        .overview-list {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-gray);
+            margin-top: 10px;
+        }
+
+        .overview-list li {
+            padding: 4px 0;
+        }
+
+        .overview-aside {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .overview-aside-card {
+            background: var(--white);
+            padding: 22px 20px 20px;
+            border-radius: 2px;
+            border: 1px solid rgba(66,37,16,0.08);
+            margin-bottom: 22px;
+        }
+
+        .overview-aside-card h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .overview-aside-card p {
+            margin-bottom: 8px;
+        }
+
+        .overview-aside-card a {
+            color: var(--turquoise);
+            text-decoration: none;
+        }
+
+        /* Funding lanes */
+        .lanes-section {
+            padding: 120px 80px 120px;
+            background: var(--white);
+        }
+
+        .lanes-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .lanes-grid {
+            margin-top: 32px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 26px;
+        }
+
+        .lane-card {
+            background: var(--cream);
+            padding: 20px 18px 18px;
+            border-radius: 2px;
+            border: 1px solid rgba(66,37,16,0.08);
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .lane-card h3 {
+            font-size: 20px;
+            margin-bottom: 4px;
+        }
+
+        .lane-card small {
+            display: block;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--golden);
+            margin-bottom: 8px;
+        }
+
+        .lane-subtitle {
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .lane-heading {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--dark-brown);
+            margin-top: 10px;
+            margin-bottom: 4px;
+        }
+
+        .lane-card ul {
+            list-style: none;
+            font-size: 13px;
+        }
+
+        .lane-card li {
+            padding: 3px 0;
+        }
+
+        /* Budget alignment */
+        .budget-section {
+            padding: 120px 80px 120px;
+            background: var(--soft-gray);
+        }
+
+        .budget-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .budget-grid {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .budget-card {
+            background: var(--white);
+            padding: 20px 18px 18px;
+            border-radius: 2px;
+            border: 1px solid rgba(66,37,16,0.08);
+            font-size: 13px;
+            color: var(--text-gray);
+        }
+
+        .budget-card h3 {
+            font-size: 20px;
+            margin-bottom: 4px;
+        }
+
+        .budget-card small {
+            display: block;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--golden);
+            margin-bottom: 8px;
+        }
+
+        .budget-card ul {
+            list-style: none;
+        }
+
+        .budget-card li {
+            padding: 3px 0;
+        }
+
+        .budget-note {
+            margin-top: 18px;
+            font-size: 13px;
+            color: var(--text-gray);
+            max-width: 900px;
+        }
+
+        /* What we do / don't do */
+        .scope-section {
+            padding: 120px 80px 120px;
+            background: var(--white);
+        }
+
+        .scope-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 70px;
+        }
+
+        .scope-main p {
+            font-size: 16px;
+            color: var(--text-gray);
+            margin-bottom: 16px;
+            max-width: 840px;
+        }
+
+        .scope-list {
+            list-style: none;
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .scope-list li {
+            padding: 4px 0;
+        }
+
+        .scope-aside {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .scope-aside-card {
+            background: var(--cream);
+            padding: 20px 18px 18px;
+            border-radius: 2px;
+            border: 1px solid rgba(66,37,16,0.1);
+        }
+
+        .scope-aside-card h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .scope-aside-card p {
+            margin-bottom: 6px;
+        }
+
+        .scope-aside-card a {
+            color: var(--turquoise);
+            text-decoration: none;
+        }
+
+        /* CTA */
+        .cta-band {
+            padding: 120px 80px 130px;
+            background: var(--dark-brown);
+            color: var(--white);
+        }
+
+        .cta-inner {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .cta-eyebrow {
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 22px;
+        }
+
+        .cta-title {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .cta-subtitle {
+            font-size: 18px;
+            color: rgba(255,255,255,0.86);
+            max-width: 720px;
+        }
+
+        .cta-actions {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .btn-cta-primary {
+            background: var(--turquoise);
+            color: var(--dark-brown);
+            padding: 14px 28px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .btn-cta-primary:hover {
+            background: var(--white);
+            transform: translateY(-1px);
+        }
+
+        .btn-cta-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 14px 28px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            border: 1px solid rgba(255,255,255,0.6);
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .btn-cta-secondary:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-1px);
+        }
+
+        .cta-side {
+            font-size: 14px;
+            color: rgba(255,255,255,0.86);
+        }
+
+        .cta-side ul {
+            list-style: none;
+            margin-top: 16px;
+        }
+
+        .cta-side li {
+            padding: 4px 0;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-brown);
+            color: rgba(255,255,255,0.7);
+            padding: 120px 80px 60px;
+        }
+
+        .footer-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 80px;
+            margin-bottom: 100px;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            color: var(--white);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .footer-brand p {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .footer-contact a {
+            color: var(--turquoise);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .footer-column h4 {
+            font-size: 18px;
+            color: var(--white);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: 15px; }
+
+        .footer-column a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover { color: var(--turquoise); }
+
+        .footer-bottom {
+            padding-top: 60px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 40px;
+        }
+
+        .footer-legal a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+        }
+
+        .footer-legal a:hover { color: var(--turquoise); }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            nav { padding: 24px 40px; }
+            .hero { padding: 130px 60px 110px; }
+            .overview-section,
+            .lanes-section,
+            .budget-section,
+            .scope-section,
+            .cta-band,
+            footer {
+                padding-left: 60px;
+                padding-right: 60px;
+            }
+            .hero-inner,
+            .overview-grid,
+            .scope-container,
+            .cta-inner {
+                gap: 50px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            nav ul { gap: 24px; font-size: 14px; }
+            .hero-inner {
+                grid-template-columns: 1fr;
+            }
+            .hero-title { font-size: 72px; }
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
+            .lanes-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            .budget-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            .scope-container {
+                grid-template-columns: 1fr;
+            }
+            .cta-inner {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 20px 24px; }
+            .hero,
+            .overview-section,
+            .lanes-section,
+            .budget-section,
+            .scope-section,
+            .cta-band,
+            footer {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+            .section-title { font-size: 48px; }
+            .hero-title { font-size: 54px; }
+            .lanes-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .budget-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            nav ul { display: none; }
+            .hero { padding-top: 100px; }
+            .hero-title { font-size: 44px; }
+            .cta-actions {
+                flex-direction: column;
+            }
+            .btn-cta-primary,
+            .btn-cta-secondary {
+                width: 100%;
+                text-align: center;
+            }
+            .lanes-grid,
+            .budget-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">Elbow <span class="logo-accent">Room</span></a>
+        <ul>
+            <li><a href="models.html">Models</a></li>
+            <li><a href="design-center.html">Design Center</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="process.html">Process</a></li>
+            <li class="dropdown">
+                <a href="#">Resources ▾</a>
+                <div class="dropdown-content">
+                    <a href="blog.html">Blog</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="financing.html">Financing</a>
+                    <a href="service-area.html">Service Area</a>
+                </div>
+            </li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div>
+                <div class="hero-eyebrow">Financing & Budget</div>
+                <h1 class="hero-title">Ways to fund your <span>Studio, Suite, or Residence.</span></h1>
+                <p class="hero-subhead">
+                    We’re not a lender—and we like it that way. Our role is to help you see the full investment clearly,
+                    then ask smarter questions of whoever you trust with your money.
+                </p>
+                <p class="hero-meta">
+                    Cash · Home equity · Renovation & construction products · Central Texas
+                </p>
+                <div class="hero-actions">
+                    <a href="#lanes" class="btn-primary">See funding lanes</a>
+                    <a href="contact.html" class="btn-secondary">Talk about your numbers</a>
+                </div>
+            </div>
+            <aside class="hero-card">
+                <h3>Our philosophy on money and building.</h3>
+                <p>
+                    We build Studios, Suites, and Residences that feel like they belong on your property for decades.
+                    That means being honest about cost, timelines, and what your yard and city will actually support.
+                </p>
+                <ul>
+                    <li>• No teaser pricing that ignores real site conditions.</li>
+                    <li>• No pressure to “stretch” into something that doesn’t feel right.</li>
+                    <li>• Clear alignment between your financing choice and your long-term plan.</li>
+                </ul>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section class="overview-section">
+        <div class="overview-grid">
+            <div class="overview-main">
+                <div class="section-eyebrow">First things first</div>
+                <h2 class="section-title">Start with the whole picture, not just a monthly payment.</h2>
+                <p>
+                    Before you talk to a lender, it helps to be clear on <strong>what</strong> you’re building
+                    (Studio, Suite, or Residence), <strong>where</strong> you’re building (San Antonio, Austin, or
+                    nearby), and what kind of ballpark you’re comfortable with.
+                </p>
+                <p>
+                    Once we understand your goals and site conditions, we’ll help you frame a realistic total investment
+                    range. From there, you and your lender can decide how best to structure the money.
+                </p>
+                <ul class="overview-list">
+                    <li>• Studios usually sit at the lighter end of our project spectrum.</li>
+                    <li>• Suites add bathroom complexity and tend to land in the middle band.</li>
+                    <li>• Residences (full ADUs) behave more like a small custom home in your yard.</li>
+                </ul>
+                <p>
+                    No matter which path you use to fund it, our goal is the same: a Studio, Suite, or Residence that
+                    feels worth what it cost every time you walk into the backyard.
+                </p>
+            </div>
+            <aside class="overview-aside">
+                <div class="overview-aside-card">
+                    <h3>We are not a lender.</h3>
+                    <p>
+                        We don’t sell in-house financing or steer you toward a specific bank. Instead, we:
+                    </p>
+                    <ul class="overview-list">
+                        <li>• Help clarify a realistic project range for your yard and city.</li>
+                        <li>• Coordinate with your lender when they need construction details.</li>
+                        <li>• Keep you in the driver’s seat with financial decisions.</li>
+                    </ul>
+                </div>
+                <div class="overview-aside-card">
+                    <h3>Good next step:</h3>
+                    <p>
+                        Bring us your address, a rough comfort range (even just “low / mid / high”), and whether
+                        Studio, Suite, or Residence feels closest.
+                    </p>
+                    <p>
+                        From there, we can help you talk with your lender in concrete terms instead of guesses.
+                    </p>
+                    <p>
+                        <a href="contact.html">Start with the contact form →</a>
+                    </p>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Funding lanes -->
+    <section class="lanes-section" id="lanes">
+        <div class="lanes-container">
+            <div class="section-eyebrow">Common funding paths</div>
+            <h2 class="section-title">Three ways people typically pay for their project.</h2>
+            <p class="section-subtitle">
+                Every household is different. These lanes are not recommendations or financial advice—just a clear way
+                to name the options many Studio, Suite, and Residence clients talk about with their lenders.
+            </p>
+
+            <div class="lanes-grid">
+                <article class="lane-card">
+                    <h3>Cash or savings</h3>
+                    <small>Simple · Fastest to move</small>
+                    <p class="lane-subtitle">
+                        Paying directly from cash or savings can keep things straightforward, especially for lighter
+                        Studio builds or smaller Suites.
+                    </p>
+                    <div class="lane-heading">Good fit when:</div>
+                    <ul>
+                        <li>• You’ve already earmarked funds for home or yard upgrades.</li>
+                        <li>• You prefer not to add another monthly obligation.</li>
+                        <li>• You want maximum flexibility and speed on decisions.</li>
+                    </ul>
+                    <div class="lane-heading">Things to consider:</div>
+                    <ul>
+                        <li>• How this project fits into your other near-term priorities.</li>
+                        <li>• Whether you want to reserve cash for future phases or furnishings.</li>
+                        <li>• If a hybrid approach (cash + another product) feels more balanced.</li>
+                    </ul>
+                </article>
+
+                <article class="lane-card">
+                    <h3>Home equity</h3>
+                    <small>HELOC · Home equity loan</small>
+                    <p class="lane-subtitle">
+                        Many clients talk with their bank about using current equity to invest in a Studio, Suite, or
+                        Residence that upgrades both daily life and long-term property value.
+                    </p>
+                    <div class="lane-heading">Good fit when:</div>
+                    <ul>
+                        <li>• You have available equity in your home.</li>
+                        <li>• You like the idea of tying this project to your primary property asset.</li>
+                        <li>• You want flexibility in how quickly you draw funds during construction.</li>
+                    </ul>
+                    <div class="lane-heading">Questions to ask your lender:</div>
+                    <ul>
+                        <li>• “How would a Studio, Suite, or Residence affect my borrowing capacity?”</li>
+                        <li>• “What would my payment look like across different project sizes?”</li>
+                        <li>• “Are there draw schedules or inspection requirements I should know about?”</li>
+                    </ul>
+                </article>
+
+                <article class="lane-card">
+                    <h3>Renovation / construction products</h3>
+                    <small>Project-specific financing</small>
+                    <p class="lane-subtitle">
+                        Some lenders offer renovation or construction-focused products that can be a fit for larger
+                        projects, especially full Residences (ADUs).
+                    </p>
+                    <div class="lane-heading">Good fit when:</div>
+                    <ul>
+                        <li>• You’re building a Residence ADU with kitchen + bath.</li>
+                        <li>• Your lender offers products designed for major improvements.</li>
+                        <li>• You plan to hold the property long term or use it for rental income.</li>
+                    </ul>
+                    <div class="lane-heading">Questions to ask your lender:</div>
+                    <ul>
+                        <li>• “Do you have renovation or construction loan options for ADUs?”</li>
+                        <li>• “What does your draw schedule look like, and how do you work with builders?”</li>
+                        <li>• “How are interest, fees, and timelines structured for this type of project?”</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Budget alignment -->
+    <section class="budget-section">
+        <div class="budget-container">
+            <div class="section-eyebrow">Budget & structure types</div>
+            <h2 class="section-title">How Studio, Suite, and Residence relate to investment.</h2>
+            <p class="section-subtitle">
+                We’ll talk actual numbers once we know your address and site conditions, but it can help to think in
+                terms of “where your project likely lives” on the spectrum. These aren’t quotes—just a way to orient.
+            </p>
+
+            <div class="budget-grid">
+                <article class="budget-card">
+                    <h3>Studio</h3>
+                    <small>Accessory Structure · No plumbing</small>
+                    <ul>
+                        <li>• Typically at the lighter end of our project range.</li>
+                        <li>• Best for focused work, creative space, or a gym.</li>
+                        <li>• Often a good fit for cash, savings, or smaller equity draws.</li>
+                        <li>• Reduced complexity since there’s no bathroom or kitchen.</li>
+                    </ul>
+                </article>
+                <article class="budget-card">
+                    <h3>Suite</h3>
+                    <small>Accessory Structure · With bath</small>
+                    <ul>
+                        <li>• Sits in the middle band of our project spectrum.</li>
+                        <li>• Adds plumbing, fixtures, and finishes for a real guest experience.</li>
+                        <li>• Commonly funded through a mix of equity and savings.</li>
+                        <li>• Great for multi-use: guests, in-laws, pool house, or teens.</li>
+                    </ul>
+                </article>
+                <article class="budget-card">
+                    <h3>Residence</h3>
+                    <small>ADU · Full small home</small>
+                    <ul>
+                        <li>• Behaves more like a small custom home investment.</li>
+                        <li>• Includes kitchen, bath, utilities, and full mechanical planning.</li>
+                        <li>• Often aligned with equity-based or construction-focused products.</li>
+                        <li>• Best for long-term flexibility and potential rental income.</li>
+                    </ul>
+                </article>
+            </div>
+
+            <p class="budget-note">
+                Once we’ve walked your goals and lot conditions, we’ll frame a specific range for <strong>your</strong>
+                Studio, Suite, or Residence. From there, you and your lender can decide whether cash, home equity, a
+                project-specific product—or a combination—makes the most sense.
+            </p>
+        </div>
+    </section>
+
+    <!-- What we do / don't do -->
+    <section class="scope-section">
+        <div class="scope-container">
+            <div class="scope-main">
+                <div class="section-eyebrow">Our role in your financial picture</div>
+                <h2 class="section-title">We handle the build. You choose how to fund it.</h2>
+                <p>
+                    We take our responsibility seriously: every dollar you put into a Studio, Suite, or Residence
+                    should feel respected—from the first permitting conversation to the last punch-list item.
+                </p>
+                <p>
+                    That means being clear about what we do and don’t do around financing, and making sure the people
+                    who advise you financially have what they need from us.
+                </p>
+
+                <ul class="scope-list">
+                    <li>• We <strong>do</strong> help you understand the full scope of work and realistic investment range.</li>
+                    <li>• We <strong>do</strong> coordinate documentation and communication with your lender as needed.</li>
+                    <li>• We <strong>do</strong> keep your project plan grounded in what your yard and city will support.</li>
+                    <li>• We <strong>don’t</strong> provide financial or tax advice.</li>
+                    <li>• We <strong>don’t</strong> steer you into a specific lender or product.</li>
+                    <li>• We <strong>don’t</strong> pressure you into a project size that doesn’t feel aligned.</li>
+                </ul>
+            </div>
+
+            <aside class="scope-aside">
+                <div class="scope-aside-card">
+                    <h3>Helpful questions to bring to a lender.</h3>
+                    <p>Once we’ve talked, you might ask:</p>
+                    <ul class="scope-list">
+                        <li>• “If we invest in a Studio / Suite / Residence, how does that interact with our current mortgage?”</li>
+                        <li>• “Which product would you use for a backyard structure at this scale?”</li>
+                        <li>• “What would our payment look like at different project sizes?”</li>
+                    </ul>
+                    <p style="margin-top: 8px;">
+                        When your lender needs specifics—from project scope to draw schedules—we’re happy to be in that
+                        conversation with you.
+                    </p>
+                    <p style="margin-top: 6px;">
+                        <a href="process.html">See our process →</a>
+                    </p>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-band">
+        <div class="cta-inner">
+            <div>
+                <div class="cta-eyebrow">Next Step</div>
+                <h2 class="cta-title">Let’s align your numbers with your backyard.</h2>
+                <p class="cta-subtitle">
+                    You don’t need everything figured out to start. Bring us your address, your rough comfort range,
+                    and whether Studio, Suite, or Residence feels closest. We’ll help you see what’s realistic—before
+                    you commit to anything.
+                </p>
+                <div class="cta-actions">
+                    <a href="contact.html" class="btn-cta-primary">Talk about your project</a>
+                    <a href="models.html" class="btn-cta-secondary">Review Studio · Suite · Residence</a>
+                </div>
+            </div>
+            <aside class="cta-side">
+                <p><strong>We’ll help you clarify:</strong></p>
+                <ul>
+                    <li>• Which structure type makes the most sense for your goals.</li>
+                    <li>• How your city’s rules interact with your budget.</li>
+                    <li>• What to ask a lender so they can do their best work for you.</li>
+                </ul>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Elbow Room</h3>
+                    <p>
+                        Woman-owned luxury builder serving Central Texas with transparent pricing,
+                        complete permitting services, and white-glove construction management for
+                        accessory structures and ADUs.
+                    </p>
+                    <div class="footer-contact">
+                        <a href="tel:2108544023">(210) 854-4023</a>
+                        <a href="mailto:sales@elbowroom.com">sales@elbowroom.com</a>
+                        <a href="#">19302 Highway 281 North<br>San Antonio, TX 78258</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="models.html">Models</a></li>
+                        <li><a href="design-center.html">Design Center</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="process.html">Process</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="financing.html">Financing</a></li>
+                        <li><a href="service-area.html">Service Area</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Local Pages</h4>
+                    <ul>
+                        <li><a href="san-antonio-adus.html">San Antonio ADUs</a></li>
+                        <li><a href="austin-adus.html">Austin ADUs</a></li>
+                        <li><a href="central-texas-cities.html">Central Texas ADUs</a></li>
+                        <li><a href="contact.html">Work with us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Elbow Room. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
