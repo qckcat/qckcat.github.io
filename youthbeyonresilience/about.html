@@ -1,0 +1,1620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youth Beyond Resilience | About</title>
+    <meta name="description" content="Learn how Youth Beyond Resilience prevents gang recruitment by empowering at-risk Haitian youth through trauma-informed programs in mental health, arts, civic engagement, and sports.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ============================================
+           GLOBAL STYLES & CSS VARIABLES
+           (mirrors homepage theme)
+           ============================================ */
+        :root {
+            /* Haitian Flag Colors - Primary Palette */
+            --haitian-blue: #00209F;
+            --haitian-blue-dark: #001870;
+            --haitian-blue-light: #1a3eb8;
+            --haitian-red: #D21034;
+            --haitian-red-dark: #B10C2C;
+            --haitian-red-light: #E62950;
+            
+            /* Secondary Accent Colors */
+            --ocean-teal: #008B8B;
+            --ocean-teal-light: #20B2AA;
+            --sunrise-gold: #F4A521;
+            
+            /* Neutrals */
+            --charcoal: #2C2C2C;
+            --warm-gray: #666666;
+            --light-gray: #E5E5E5;
+            --off-white: #F8F9FA;
+            --white: #FFFFFF;
+            
+            /* Typography */
+            --font-primary: 'Montserrat', sans-serif;
+            
+            /* Spacing */
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 48px;
+            --spacing-xl: 80px;
+            --spacing-xxl: 120px;
+            
+            /* Effects */
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --box-shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
+            --transition: 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-primary);
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--charcoal);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        .container-wide {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        .section {
+            padding: var(--spacing-xl) 0;
+        }
+        
+        .section-lg {
+            padding: var(--spacing-xxl) 0;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -1px;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        h3 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        p {
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .eyebrow {
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: var(--spacing-sm);
+            display: block;
+        }
+        
+        .lead-text {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            font-weight: 400;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 16px 40px;
+            font-family: var(--font-primary);
+            font-weight: 700;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: var(--border-radius);
+            transition: all var(--transition);
+            cursor: pointer;
+            border: none;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background-color: var(--haitian-red);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(210, 16, 52, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--haitian-red-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(210, 16, 52, 0.4);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--white);
+            color: var(--haitian-blue);
+        }
+        
+        .btn-outline-blue {
+            background-color: transparent;
+            color: var(--haitian-blue);
+            border: 2px solid var(--haitian-blue);
+        }
+        
+        .btn-outline-blue:hover {
+            background-color: var(--haitian-blue);
+            color: var(--white);
+        }
+        
+        .btn-teal {
+            background-color: var(--ocean-teal);
+            color: var(--white);
+        }
+        
+        .btn-teal:hover {
+            background-color: var(--ocean-teal-light);
+        }
+        
+        /* ============================================
+           HEADER & NAVIGATION
+           ============================================ */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all var(--transition);
+            background-color: transparent;
+        }
+        
+        .site-header.scrolled {
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .navbar {
+            padding: var(--spacing-sm) 0;
+        }
+        
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .site-header.scrolled .logo {
+            color: var(--haitian-blue);
+        }
+        
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--haitian-blue) 50%, var(--haitian-red) 50%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.25rem;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: var(--spacing-md);
+            align-items: center;
+        }
+        
+        .nav-menu a {
+            color: var(--white);
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            position: relative;
+        }
+        
+        .site-header.scrolled .nav-menu a {
+            color: var(--charcoal);
+        }
+        
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--haitian-red);
+            transition: var(--transition);
+        }
+        
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+        
+        /* Active nav item */
+        .nav-menu a.active {
+            color: var(--sunrise-gold);
+        }
+        
+        .site-header.scrolled .nav-menu a.active {
+            color: var(--haitian-red);
+        }
+        
+        .nav-donate-btn {
+            margin-left: var(--spacing-sm);
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--white);
+            transition: var(--transition);
+        }
+        
+        .site-header.scrolled .mobile-menu-toggle span {
+            background-color: var(--haitian-blue);
+        }
+        
+        /* ============================================
+           SUBPAGE HERO (ABOUT)
+           ============================================ */
+        .subpage-hero {
+            position: relative;
+            min-height: 420px;
+            padding-top: 140px;
+            padding-bottom: 80px;
+            display: flex;
+            align-items: flex-end;
+            background: linear-gradient(135deg, var(--haitian-blue) 0%, var(--haitian-blue-dark) 100%);
+            overflow: hidden;
+        }
+        
+        .subpage-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1542810634-71277d95dcbb?w=1600&q=80') center/cover no-repeat;
+            opacity: 0.18;
+            z-index: 1;
+        }
+        
+        .subpage-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg,
+                rgba(0, 32, 159, 0.9) 0%,
+                rgba(0, 139, 139, 0.7) 45%,
+                rgba(244, 165, 33, 0.75) 100%);
+            z-index: 2;
+            mix-blend-mode: multiply;
+        }
+        
+        .subpage-hero-content {
+            position: relative;
+            z-index: 3;
+            color: var(--white);
+            max-width: 760px;
+        }
+        
+        .subpage-hero .eyebrow {
+            color: var(--sunrise-gold);
+        }
+        
+        .subpage-hero h1 {
+            color: var(--white);
+            font-size: 3rem;
+            margin-bottom: var(--spacing-sm);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+        }
+        
+        .subpage-hero .lead-text {
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 640px;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .breadcrumb {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .breadcrumb span {
+            font-size: 0.75rem;
+        }
+        
+        /* ============================================
+           ABOUT: OUR STORY
+           ============================================ */
+        .about-story {
+            background-color: var(--white);
+        }
+        
+        .about-story-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+            gap: var(--spacing-xl);
+            align-items: center;
+        }
+        
+        .about-story-image {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .about-story-image img {
+            width: 100%;
+            height: 460px;
+            object-fit: cover;
+        }
+        
+        .about-story-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg,
+                rgba(0, 32, 159, 0.15),
+                rgba(210, 16, 52, 0.15));
+        }
+        
+        .image-badge {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0, 32, 159, 0.95);
+            color: var(--white);
+            padding: 10px 16px;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .image-badge i {
+            color: var(--sunrise-gold);
+        }
+        
+        .about-story-content .eyebrow {
+            color: var(--haitian-red);
+        }
+        
+        .about-story-content h2 {
+            color: var(--haitian-blue);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .about-story-content .lead-text {
+            color: var(--charcoal);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .about-story-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+        
+        .about-story-columns p {
+            font-size: 0.95rem;
+            color: var(--warm-gray);
+        }
+        
+        /* ============================================
+           MISSION, VISION, VALUES
+           ============================================ */
+        .mvv-section {
+            background-color: var(--off-white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mvv-section::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 260px;
+            height: 260px;
+            background: var(--sunrise-gold);
+            opacity: 0.15;
+            border-radius: 50%;
+        }
+        
+        .mvv-header {
+            max-width: 780px;
+            margin: 0 auto var(--spacing-xl);
+            text-align: center;
+        }
+        
+        .mvv-header .eyebrow {
+            color: var(--ocean-teal);
+        }
+        
+        .mvv-header h2 {
+            color: var(--haitian-blue);
+        }
+        
+        .mvv-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: var(--spacing-lg);
+        }
+        
+        .mvv-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-lg);
+            box-shadow: var(--box-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mvv-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, var(--ocean-teal), var(--ocean-teal-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .mvv-card h3 {
+            color: var(--haitian-blue);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .mvv-card p {
+            color: var(--warm-gray);
+            font-size: 0.95rem;
+        }
+        
+        .mvv-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--sunrise-gold);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        /* ============================================
+           LEADERSHIP TEAM
+           ============================================ */
+        .leadership-section {
+            background-color: var(--white);
+        }
+        
+        .section-header {
+            max-width: 800px;
+            margin: 0 auto var(--spacing-xl);
+        }
+        
+        .section-header .eyebrow {
+            color: var(--haitian-red);
+        }
+        
+        .section-header h2 {
+            color: var(--haitian-blue);
+        }
+        
+        .section-header p {
+            color: var(--warm-gray);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: var(--spacing-lg);
+        }
+        
+        .team-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: var(--spacing-lg);
+            position: relative;
+            overflow: hidden;
+            border-top: 5px solid var(--ocean-teal);
+        }
+        
+        .team-avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--sunrise-gold);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .team-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .team-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--haitian-blue);
+            margin-bottom: 4px;
+        }
+        
+        .team-title {
+            font-size: 0.9rem;
+            color: var(--ocean-teal);
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .team-meta {
+            font-size: 0.8rem;
+            color: var(--sunrise-gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .team-bio {
+            font-size: 0.9rem;
+            color: var(--warm-gray);
+            max-height: 96px;
+            overflow: hidden;
+            transition: max-height var(--transition);
+        }
+        
+        .team-card.expanded .team-bio {
+            max-height: 300px;
+        }
+        
+        .team-toggle {
+            margin-top: var(--spacing-sm);
+            font-size: 0.85rem;
+            color: var(--haitian-blue);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        
+        .team-toggle i {
+            font-size: 0.75rem;
+            transition: transform var(--transition);
+        }
+        
+        .team-card.expanded .team-toggle i {
+            transform: rotate(180deg);
+        }
+        
+        /* ============================================
+           FINANCIAL TRANSPARENCY
+           ============================================ */
+        .financial-section {
+            background-color: var(--off-white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .financial-section::before {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 260px;
+            height: 260px;
+            background: var(--ocean-teal);
+            opacity: 0.12;
+            border-radius: 50%;
+        }
+        
+        .financial-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+            gap: var(--spacing-xl);
+            align-items: center;
+        }
+        
+        .financial-highlight {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-lg);
+            box-shadow: var(--box-shadow);
+            border-left: 4px solid var(--haitian-blue);
+        }
+        
+        .financial-highlight h3 {
+            color: var(--haitian-blue);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .financial-highlight p {
+            color: var(--warm-gray);
+            font-size: 0.95rem;
+        }
+        
+        .budget-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: var(--spacing-sm);
+            font-size: 0.9rem;
+            color: var(--ocean-teal);
+            font-weight: 600;
+        }
+        
+        .budget-badge i {
+            color: var(--sunrise-gold);
+        }
+        
+        .allocation-bars {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+        
+        .bar-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: var(--warm-gray);
+        }
+        
+        .bar-track {
+            width: 100%;
+            height: 10px;
+            border-radius: 999px;
+            background: var(--light-gray);
+            overflow: hidden;
+            margin-top: 4px;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .bar-fill {
+            height: 100%;
+            border-radius: 999px;
+        }
+        
+        .bar-fill.programs {
+            width: 78%;
+            background: linear-gradient(90deg, var(--haitian-blue), var(--ocean-teal));
+        }
+        
+        .bar-fill.admin {
+            width: 12%;
+            background: linear-gradient(90deg, var(--sunrise-gold), var(--haitian-red));
+        }
+        
+        .bar-fill.fundraising {
+            width: 10%;
+            background: linear-gradient(90deg, var(--haitian-red), var(--haitian-red-light));
+        }
+        
+        .financial-links {
+            margin-top: var(--spacing-md);
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+        }
+        
+        .financial-links a {
+            font-size: 0.9rem;
+            color: var(--haitian-blue);
+            text-decoration: underline;
+        }
+        
+        .financial-note {
+            font-size: 0.9rem;
+            color: var(--warm-gray);
+            margin-top: var(--spacing-sm);
+        }
+        
+        /* ============================================
+           IMPACT METRICS DASHBOARD
+           ============================================ */
+        .metrics-section {
+            background-color: var(--white);
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: var(--spacing-lg);
+        }
+        
+        .metric-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-lg);
+            box-shadow: var(--box-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .metric-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 999px;
+            background: var(--off-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--ocean-teal);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--haitian-blue);
+            margin-bottom: 4px;
+        }
+        
+        .metric-label {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--warm-gray);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .metric-caption {
+            font-size: 0.85rem;
+            color: var(--warm-gray);
+        }
+        
+        .metrics-footnote {
+            margin-top: var(--spacing-lg);
+            font-size: 0.9rem;
+            color: var(--warm-gray);
+        }
+        
+        /* ============================================
+           EMAIL SIGNUP (same as homepage)
+           ============================================ */
+        .email-signup {
+            background: linear-gradient(135deg, var(--haitian-red) 0%, var(--haitian-red-dark) 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .email-signup::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: var(--haitian-blue);
+            opacity: 0.2;
+            border-radius: 50%;
+        }
+        
+        .email-content {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .email-content h2 {
+            color: var(--white);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .email-content p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .email-form {
+            display: flex;
+            gap: var(--spacing-sm);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .email-form input {
+            flex: 1;
+            padding: 16px 20px;
+            border: none;
+            border-radius: var(--border-radius);
+            font-family: var(--font-primary);
+            font-size: 1rem;
+        }
+        
+        .email-form button {
+            padding: 16px 32px;
+            background: var(--white);
+            color: var(--haitian-red);
+            border: none;
+            border-radius: var(--border-radius);
+            font-family: var(--font-primary);
+            font-weight: 700;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .email-form button:hover {
+            background: var(--haitian-blue);
+            color: var(--white);
+        }
+        
+        .privacy-note {
+            text-align: center;
+            margin-top: var(--spacing-sm);
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+        
+        /* ============================================
+           FOOTER (same as homepage)
+           ============================================ */
+        .site-footer {
+            background-color: var(--charcoal);
+            color: var(--white);
+            padding: var(--spacing-xl) 0 var(--spacing-md);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .footer-column h4 {
+            color: var(--white);
+            margin-bottom: var(--spacing-md);
+            font-size: 1.1rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .footer-tagline {
+            font-style: italic;
+            color: var(--haitian-red);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .footer-column p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: var(--spacing-sm);
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background: var(--haitian-red);
+            transform: translateY(-3px);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: var(--spacing-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+        }
+        
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+        
+        .footer-bottom-links {
+            display: flex;
+            gap: var(--spacing-md);
+        }
+        
+        .footer-bottom-links a {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        
+        .footer-bottom-links a:hover {
+            color: var(--white);
+        }
+        
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            h1 {
+                font-size: 2.1rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .subpage-hero {
+                min-height: 360px;
+                padding-bottom: 60px;
+            }
+            
+            .about-story-grid,
+            .financial-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-story-image {
+                order: -1;
+            }
+            
+            .email-form {
+                flex-direction: column;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ============================================
+         HEADER & NAVIGATION
+         ============================================ -->
+    <header class="site-header">
+        <nav class="navbar">
+            <div class="container">
+                <a href="/" class="logo">
+                    <div class="logo-icon">YBR</div>
+                    <span>Youth Beyond Resilience</span>
+                </a>
+                
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about" class="active">About</a></li>
+                    <li><a href="/programs">Programs</a></li>
+                    <li><a href="/impact">Impact</a></li>
+                    <li><a href="/get-involved">Get Involved</a></li>
+                    <li><a href="/news">News</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li class="nav-donate-btn"><a href="/donate" class="btn btn-primary">Donate</a></li>
+                </ul>
+                
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ============================================
+         ABOUT HERO
+         ============================================ -->
+    <section class="subpage-hero">
+        <div class="container">
+            <div class="subpage-hero-content">
+                <span class="eyebrow">About Youth Beyond Resilience</span>
+                <h1>Who We Are</h1>
+                <p class="lead-text">
+                    Youth Beyond Resilience prevents gang recruitment by empowering at-risk Haitian adolescents with trauma-informed programs in mental health, arts, civic engagement, personal development, and sports.
+                </p>
+                <div class="breadcrumb">
+                    <a href="/">Home</a>
+                    <span>›</span>
+                    <span>About</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         OUR STORY
+         ============================================ -->
+    <section id="story" class="about-story section-lg">
+        <div class="container">
+            <div class="about-story-grid">
+                <div class="about-story-content">
+                    <span class="eyebrow">Our Story</span>
+                    <h2>Rooted in Haiti. Built on Resilience.</h2>
+                    <p class="lead-text">
+                        Youth Beyond Resilience was born from a simple conviction: no child should have to choose between joining a gang or living in fear. Local leaders, Haitian psychologists, and global partners came together to imagine a third path—a path defined by safety, creativity, and opportunity.
+                    </p>
+                    <div class="about-story-columns">
+                        <p>
+                            Starting with a single program center in Port-au-Prince, YBR began offering structured music, sports, and mental health support to adolescents living under daily threat of violence. What began as a pilot quickly grew into a lifeline for hundreds of youth and their families.
+                        </p>
+                        <p>
+                            Today, our programs operate across three centers in gang-controlled neighborhoods, providing holistic support through our CAMPS framework. Every rehearsal, counseling session, and community project pushes back against despair and builds a culture of peace from the inside out.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="about-story-image">
+                    <img src="https://images.unsplash.com/photo-1536196602226-1af80c389ed2?w=1200&q=80" alt="View of Haitian neighborhood and community streets">
+                    <div class="image-badge">
+                        <i class="fas fa-location-dot"></i>
+                        Serving youth across Port-au-Prince, Haiti
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         MISSION, VISION, VALUES
+         ============================================ -->
+    <section id="mission" class="mvv-section section">
+        <div class="container">
+            <div class="mvv-header">
+                <span class="eyebrow">Mission, Vision & Values</span>
+                <h2>The Principles Guiding Our Work</h2>
+                <p class="lead-text">
+                    Everything we do is grounded in trauma-informed practice, Haitian leadership, and an unwavering belief in the potential of youth—even in the most difficult circumstances.
+                </p>
+            </div>
+            
+            <div class="mvv-grid">
+                <div class="mvv-card">
+                    <div class="mvv-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <span class="mvv-pill"><i class="fas fa-circle"></i>Mission</span>
+                    <h3>Prevent Gang Recruitment</h3>
+                    <p>
+                        Our mission is to prevent gang recruitment by empowering at-risk Haitian adolescents with trauma-informed programs in mental health, arts, civic engagement, personal development, and sports—so they can choose hope, safety, and leadership.
+                    </p>
+                </div>
+                
+                <div class="mvv-card">
+                    <div class="mvv-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <span class="mvv-pill"><i class="fas fa-circle"></i>Vision</span>
+                    <h3>A Haiti Where Youth Lead Peace</h3>
+                    <p>
+                        We envision a Haiti where young people are not defined by violence or poverty, but by their creativity, resilience, and capacity to transform their communities into places of safety, dignity, and opportunity.
+                    </p>
+                </div>
+                
+                <div class="mvv-card">
+                    <div class="mvv-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <span class="mvv-pill"><i class="fas fa-circle"></i>Values</span>
+                    <h3>Dignity, Partnership, Courage</h3>
+                    <p>
+                        We honor the dignity of every young person, center Haitian leadership and local partnerships, practice financial and programmatic transparency, and choose courage over fear in the face of complex realities.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         LEADERSHIP TEAM
+         ============================================ -->
+    <section id="leadership" class="leadership-section section-lg">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="eyebrow">Leadership</span>
+                <h2>Guided by Local Expertise & Global Partnership</h2>
+                <p>
+                    YBR is led by Haitian professionals, community leaders, and an engaged board committed to financial transparency, safeguarding, and long-term impact for youth and families.
+                </p>
+            </div>
+            
+            <div class="team-grid">
+                <!-- Leader 1 -->
+                <article class="team-card">
+                    <div class="team-avatar">
+                        <img src="https://images.unsplash.com/photo-1525134479668-1bee5c7c6845?w=400&q=80" alt="Executive Director portrait">
+                    </div>
+                    <div class="team-meta">Executive Leadership</div>
+                    <div class="team-name">Dr. Nadège Laurent</div>
+                    <div class="team-title">Executive Director, Port-au-Prince</div>
+                    <p class="team-bio">
+                        A Haitian psychologist with over 15 years of experience in trauma and youth development, Dr. Laurent co-founded Youth Beyond Resilience to create safe, structured programs for adolescents living in gang-controlled neighborhoods. She oversees strategy, program quality, and local partnerships, ensuring that youth and families remain at the center of every decision.
+                    </p>
+                    <div class="team-toggle">
+                        Read full bio <i class="fas fa-chevron-down"></i>
+                    </div>
+                </article>
+                
+                <!-- Leader 2 -->
+                <article class="team-card">
+                    <div class="team-avatar">
+                        <img src="https://images.unsplash.com/photo-1524390775676-894ff2a4c3a5?w=400&q=80" alt="Program Director portrait">
+                    </div>
+                    <div class="team-meta">Program Leadership</div>
+                    <div class="team-name">Jean-Michel Pierre</div>
+                    <div class="team-title">Director of Programs (CAMPS)</div>
+                    <p class="team-bio">
+                        Jean-Michel coordinates the CAMPS framework across all three program centers, integrating mental health support with arts, sports, and civic engagement. With a background in education and community organizing, he works closely with staff, families, and youth to adapt programming to rapidly changing conditions on the ground.
+                    </p>
+                    <div class="team-toggle">
+                        Read full bio <i class="fas fa-chevron-down"></i>
+                    </div>
+                </article>
+                
+                <!-- Leader 3 -->
+                <article class="team-card">
+                    <div class="team-avatar">
+                        <img src="https://images.unsplash.com/photo-1558203728-00f45181dd84?w=400&q=80" alt="Mental Health Director portrait">
+                    </div>
+                    <div class="team-meta">Clinical Oversight</div>
+                    <div class="team-name">Frantz Joseph, M.S.</div>
+                    <div class="team-title">Director of Mental Health & Wellness</div>
+                    <p class="team-bio">
+                        Frantz leads YBR’s trauma-informed mental health approach, supervising a team of Haitian psychologists and social workers. He designs group counseling curricula, ensures adherence to international safeguarding standards, and partners with schools and families to extend support beyond our program walls.
+                    </p>
+                    <div class="team-toggle">
+                        Read full bio <i class="fas fa-chevron-down"></i>
+                    </div>
+                </article>
+                
+                <!-- Leader 4 -->
+                <article class="team-card">
+                    <div class="team-avatar">
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=400&q=80" alt="Board Chair portrait">
+                    </div>
+                    <div class="team-meta">Board of Directors</div>
+                    <div class="team-name">Angela Roberts</div>
+                    <div class="team-title">Board Chair (U.S.)</div>
+                    <p class="team-bio">
+                        Based in the United States, Angela brings two decades of experience in philanthropy and nonprofit governance. She works alongside Haitian leadership to steward donor resources responsibly, strengthen financial transparency, and expand the network of partners committed to long-term stability for Haitian youth.
+                    </p>
+                    <div class="team-toggle">
+                        Read full bio <i class="fas fa-chevron-down"></i>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FINANCIAL TRANSPARENCY
+         ============================================ -->
+    <section id="financials" class="financial-section section-lg">
+        <div class="container">
+            <div class="financial-grid">
+                <div class="financial-highlight">
+                    <div class="budget-badge">
+                        <i class="fas fa-chart-pie"></i>
+                        $4,810,800 Five-Year Operating Budget
+                    </div>
+                    <h3>Financial Transparency You Can Trust</h3>
+                    <p>
+                        YBR is committed to responsible stewardship of every gift. Our five-year operating budget is designed to prioritize direct program delivery while maintaining lean administration and sustainable infrastructure in Haiti.
+                    </p>
+                    <p>
+                        Independent audits, board oversight, and clear reporting ensure that donors, partners, and families can see exactly how resources are used to protect and empower youth.
+                    </p>
+                    
+                    <div class="allocation-bars">
+                        <div>
+                            <div class="bar-row">
+                                <span>Programs & Direct Services</span>
+                                <span>78%</span>
+                            </div>
+                            <div class="bar-track">
+                                <div class="bar-fill programs"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="bar-row">
+                                <span>Administration & Operations</span>
+                                <span>12%</span>
+                            </div>
+                            <div class="bar-track">
+                                <div class="bar-fill admin"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="bar-row">
+                                <span>Fundraising & Donor Engagement</span>
+                                <span>10%</span>
+                            </div>
+                            <div class="bar-track">
+                                <div class="bar-fill fundraising"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="financial-links">
+                        <a href="/financials">View Annual Reports →</a>
+                        <a href="/financials#990">IRS Form 990 →</a>
+                        <a href="/financials#audits">Audited Financials →</a>
+                    </div>
+                    <p class="financial-note">
+                        YBR is a registered 501(c)(3) nonprofit organization. All donations are tax-deductible to the extent allowed by law.
+                    </p>
+                </div>
+                
+                <div>
+                    <span class="eyebrow">Accountability</span>
+                    <h3>Safeguarding Youth & Donor Resources</h3>
+                    <p>
+                        We believe that protecting young people and earning donor trust are non-negotiable. Our leadership team upholds strict safeguarding protocols, partner vetting, and financial controls across all program sites.
+                    </p>
+                    <p>
+                        YBR tracks outcomes through pre- and post-surveys, teacher observations, and family feedback to ensure that funding is tied to real, measurable impact—not just activity.
+                    </p>
+                    <p>
+                        Donors receive regular impact updates and have clear channels to ask questions, request information, or explore deeper partnership.
+                    </p>
+                    <a href="/contact" class="btn btn-outline-blue" style="margin-top: var(--spacing-md);">
+                        Talk with our team
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         IMPACT METRICS DASHBOARD
+         ============================================ -->
+    <section id="metrics" class="metrics-section section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="eyebrow">Impact at a Glance</span>
+                <h2>Evidence That Change Is Happening</h2>
+                <p>
+                    Behind every number is a young person who chose hope over violence. We measure what matters so donors and families can see the difference their support makes.
+                </p>
+            </div>
+            
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-children"></i>
+                    </div>
+                    <div class="metric-value">800+</div>
+                    <div class="metric-label">Youth Served</div>
+                    <p class="metric-caption">
+                        Adolescents ages 10–18 participating in CAMPS programs across three centers in Port-au-Prince.
+                    </p>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="metric-value">20k+</div>
+                    <div class="metric-label">Program Hours Delivered</div>
+                    <p class="metric-caption">
+                        Consistent weekly sessions in music, counseling, sports, and civic engagement designed for long-term growth.
+                    </p>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <div class="metric-value">3</div>
+                    <div class="metric-label">Program Centers</div>
+                    <p class="metric-caption">
+                        Serving youth at Foundation Ste. Cecile, Communal School of Delmas, and Holy Trinity Music School in high-risk areas.
+                    </p>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-shield-heart"></i>
+                    </div>
+                    <div class="metric-value">80%</div>
+                    <div class="metric-label">Youth Reporting Greater Emotional Stability</div>
+                    <p class="metric-caption">
+                        Participants self-report improved emotional regulation, hopefulness, and connection to supportive adults.
+                    </p>
+                </div>
+            </div>
+            
+            <p class="metrics-footnote">
+                These metrics are based on internal monitoring and evaluation using pre- and post-surveys, educator feedback, and family interviews. Detailed reports are available upon request.
+            </p>
+        </div>
+    </section>
+
+    <!-- ============================================
+         EMAIL SIGNUP
+         ============================================ -->
+    <section class="email-signup section-lg">
+        <div class="container">
+            <div class="email-content text-center">
+                <h2>Stay Connected to the Work</h2>
+                <p>Receive stories, impact updates, and opportunities to stand with Haiti’s youth.</p>
+                
+                <form class="email-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+                
+                <p class="privacy-note">We respect your privacy. Unsubscribe at any time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Column 1: About -->
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <div class="logo-icon">YBR</div>
+                        <span>Youth Beyond Resilience</span>
+                    </div>
+                    <p class="footer-tagline">From Struggle to Strength</p>
+                    <p>
+                        Empowering at-risk Haitian adolescents to choose peace over violence through trauma-informed programs in arts, mental health, civic engagement, and sports.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Column 2: Quick Links -->
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/programs">Our Programs</a></li>
+                        <li><a href="/impact">Impact Stories</a></li>
+                        <li><a href="/financials">Annual Reports</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3: Get Involved -->
+                <div class="footer-column">
+                    <h4>Get Involved</h4>
+                    <ul class="footer-links">
+                        <li><a href="/donate">Donate</a></li>
+                        <li><a href="/monthly-giving">Monthly Giving</a></li>
+                        <li><a href="/volunteer">Volunteer</a></li>
+                        <li><a href="/board">Join Our Board</a></li>
+                        <li><a href="/corporate">Corporate Partners</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4: Contact -->
+                <div class="footer-column">
+                    <h4>Contact & Newsletter</h4>
+                    <p>
+                        <strong>Email:</strong><br>
+                        contact@youthbeyondresilience.org
+                    </p>
+                    <p>
+                        <strong>Phone:</strong><br>
+                        (210) 555-0100
+                    </p>
+                    <p>
+                        <strong>Tax ID:</strong> 12-3456789<br>
+                        501(c)(3) nonprofit organization
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Youth Beyond Resilience. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="/privacy">Privacy Policy</a>
+                    <a href="/terms">Terms of Use</a>
+                    <a href="/financials">Financials</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+         JAVASCRIPT
+         ============================================ -->
+    <script>
+        // Sticky header on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.site-header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Mobile menu toggle (placeholder for Wix implementation)
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            alert('Mobile menu functionality will be implemented in Wix Studio.');
+        });
+        
+        // Email form submission mock
+        document.querySelector('.email-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            alert('Thank you for subscribing! We\'ll send updates to: ' + email);
+            this.reset();
+        });
+        
+        // Leadership card expand / collapse
+        document.querySelectorAll('.team-card').forEach(function(card) {
+            const toggle = card.querySelector('.team-toggle');
+            if (!toggle) return;
+            
+            toggle.addEventListener('click', function() {
+                card.classList.toggle('expanded');
+            });
+        });
+    </script>
+</body>
+</html>
