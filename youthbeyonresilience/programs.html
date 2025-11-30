@@ -4,47 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programs | Youth Beyond Resilience</title>
-    <meta name="description" content="Explore Youth Beyond Resilience's CAMPS framework: mental health, arts, civic engagement, personal development, and sports programs for Haitian youth.">
+    <meta name="description" content="Explore the CAMPS framework of Youth Beyond Resilience: trauma-informed programs in mental health, arts, civic engagement, personal development, and sports serving Haitian youth.">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome (icons) -->
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
+            /* Brand Colors */
             --haitian-blue: #00209F;
-            --haitian-blue-soft: #1A3BB8;
+            --haitian-blue-dark: #001870;
+            --haitian-blue-soft: #1a3eb8;
             --haitian-red: #D21034;
             --haitian-red-dark: #B10C2C;
+            --haitian-red-light: #e63f58;
             --sunrise-gold: #F4A521;
             --sunrise-gold-soft: #F8B545;
             --ocean-teal: #008B8B;
             --ocean-teal-light: #20B2AA;
 
+            /* Neutrals */
             --charcoal: #2C2C2C;
             --warm-gray: #666666;
             --light-gray: #E5E5E5;
             --off-white: #F8F9FA;
             --white: #FFFFFF;
 
-            --border-radius: 10px;
-            --shadow-soft: 0 14px 40px rgba(0, 0, 0, 0.08);
-            --shadow-subtle: 0 6px 20px rgba(0,0,0,0.06);
+            /* Layout */
+            --container-width: 1200px;
+            --radius-card: 14px;
+            --radius-pill: 999px;
+            --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.08);
+            --shadow-subtle: 0 10px 30px rgba(0, 0, 0, 0.06);
 
-            --spacing-xs: 8px;
-            --spacing-sm: 16px;
-            --spacing-md: 24px;
-            --spacing-lg: 40px;
-            --spacing-xl: 72px;
+            /* Spacing */
+            --space-xs: 8px;
+            --space-sm: 16px;
+            --space-md: 24px;
+            --space-lg: 40px;
+            --space-xl: 72px;
+            --space-xxl: 96px;
 
-            --transition-fast: 0.2s ease;
-            --transition-med: 0.3s ease;
-
-            --container-width: 1180px;
+            /* Transitions */
+            --transition-fast: 0.18s ease;
+            --transition-med: 0.28s ease;
         }
 
         * {
@@ -55,10 +63,9 @@
             margin: 0;
             padding: 0;
             font-family: 'Montserrat', sans-serif;
-            font-size: 16px;
-            line-height: 1.6;
             color: var(--charcoal);
             background-color: var(--white);
+            scroll-behavior: smooth;
         }
 
         img {
@@ -67,47 +74,54 @@
         }
 
         a {
-            color: var(--haitian-blue);
+            color: inherit;
             text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
         }
 
         .container {
             max-width: var(--container-width);
             margin: 0 auto;
-            padding: 0 var(--spacing-md);
+            padding: 0 var(--space-md);
         }
 
-        /* HEADER / NAV */
+        /* HEADER / NAV (same as about.html) */
+
         .site-header {
-            position: sticky;
+            position: fixed;
             top: 0;
-            z-index: 50;
-            background: rgba(255,255,255,0.98);
-            backdrop-filter: blur(14px);
-            border-bottom: 1px solid rgba(0,0,0,0.04);
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all var(--transition-med);
+            background: transparent;
+        }
+
+        .site-header.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
         }
 
         .navbar {
+            padding: var(--space-sm) 0;
+        }
+
+        .navbar-inner {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: var(--spacing-sm) 0;
+            gap: var(--space-md);
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
-        .logo-icon {
+        .logo-mark {
             width: 40px;
             height: 40px;
-            border-radius: 12px;
+            border-radius: 14px;
             background: linear-gradient(135deg, var(--haitian-blue), var(--haitian-red));
             display: flex;
             align-items: center;
@@ -115,22 +129,27 @@
             color: var(--white);
             font-weight: 800;
             font-size: 0.9rem;
+            letter-spacing: 0.06em;
         }
 
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .logo-text span:first-child {
+        .logo-text-main {
             font-weight: 700;
             font-size: 0.95rem;
-            letter-spacing: 0.04em;
+            letter-spacing: 0.07em;
             text-transform: uppercase;
+            color: var(--white);
         }
 
-        .logo-text span:last-child {
+        .logo-text-sub {
             font-size: 0.8rem;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .site-header.scrolled .logo-text-main {
+            color: var(--charcoal);
+        }
+
+        .site-header.scrolled .logo-text-sub {
             color: var(--warm-gray);
         }
 
@@ -138,7 +157,7 @@
             list-style: none;
             display: flex;
             align-items: center;
-            gap: 22px;
+            gap: 20px;
             margin: 0;
             padding: 0;
         }
@@ -146,7 +165,9 @@
         .nav-menu a {
             font-size: 0.9rem;
             font-weight: 500;
-            color: var(--warm-gray);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.9);
             position: relative;
             padding-bottom: 4px;
         }
@@ -159,1708 +180,1431 @@
             width: 0;
             height: 2px;
             background: linear-gradient(90deg, var(--sunrise-gold), var(--ocean-teal));
-            transition: width var(--transition-med);
+            transition: width var(--transition-fast);
         }
 
-        .nav-menu a:hover::after,
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .site-header.scrolled .nav-menu a {
+            color: var(--charcoal);
+        }
+
+        .nav-menu a.active {
+            color: var(--sunrise-gold);
+        }
+
         .nav-menu a.active::after {
             width: 100%;
         }
 
-        .nav-menu a.active {
-            color: var(--charcoal);
-            font-weight: 600;
-        }
-
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-
-        .btn {
+        .btn-donate {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             padding: 10px 22px;
             border-radius: 999px;
+            background: linear-gradient(135deg, var(--haitian-red), var(--haitian-red-dark));
+            color: var(--white);
             font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 0.06em;
+            font-weight: 700;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
             border: none;
             cursor: pointer;
-            text-decoration: none;
-            transition: all var(--transition-med);
+            box-shadow: 0 12px 30px rgba(209, 16, 52, 0.35);
+            transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
             white-space: nowrap;
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, var(--haitian-red), var(--haitian-red-dark));
-            color: var(--white);
-            box-shadow: 0 10px 25px rgba(209,16,52,0.35);
+        .btn-donate i {
+            margin-left: 8px;
+            font-size: 0.8rem;
         }
 
-        .btn-primary:hover {
+        .btn-donate:hover {
             transform: translateY(-1px);
-            box-shadow: 0 14px 32px rgba(209,16,52,0.45);
+            box-shadow: 0 16px 40px rgba(209,16,52,0.45);
+            background: linear-gradient(135deg, var(--haitian-red-light), var(--haitian-red));
         }
 
-        .btn-outline {
-            background: transparent;
-            border: 1px solid rgba(0,0,0,0.1);
-            color: var(--charcoal);
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
         }
 
-        .btn-outline:hover {
-            border-color: var(--haitian-blue);
-            color: var(--haitian-blue);
-        }
-
-        .mobile-menu-toggle {
+        .mobile-toggle {
             display: none;
+            flex-direction: column;
+            gap: 4px;
+            background: transparent;
             border: none;
-            background: none;
-            font-size: 1.3rem;
+            cursor: pointer;
         }
 
-        /* HERO - PROGRAMS */
-        .hero-inner {
+        .mobile-toggle span {
+            width: 20px;
+            height: 2px;
+            background: var(--white);
+            border-radius: 999px;
+            transition: all var(--transition-fast);
+        }
+
+        .site-header.scrolled .mobile-toggle span {
+            background: var(--charcoal);
+        }
+
+        /* PAGE HERO */
+        .page-hero {
             position: relative;
-            padding: 80px 0 70px;
+            padding-top: 92px;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
             background:
-                linear-gradient(135deg, rgba(0,32,159,0.88), rgba(0,139,139,0.82)),
-                url('https://source.unsplash.com/1600x900/?haiti,children') center/cover no-repeat;
+                linear-gradient(135deg, rgba(0,32,159,0.96), rgba(0,139,139,0.92)),
+                url("/assets/images/haiti-city-hero-programs.jpg") center/cover no-repeat;
             color: var(--white);
-            overflow: hidden;
         }
 
-        .hero-inner::after {
+        .page-hero::before {
             content: "";
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at 20% 20%, rgba(244,165,33,0.28), transparent 60%);
-            mix-blend-mode: screen;
-            opacity: 0.9;
+            background: radial-gradient(circle at 0 0, rgba(244,165,33,0.5) 0, transparent 45%),
+                        radial-gradient(circle at 100% 100%, rgba(0,139,139,0.4) 0, transparent 50%);
+            mix-blend-mode: soft-light;
         }
 
-        .hero-inner .container {
+        .page-hero-inner {
             position: relative;
             z-index: 1;
+            width: 100%;
         }
 
-        .hero-layout {
+        .page-hero-grid {
             display: grid;
-            grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
-            gap: 40px;
+            grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.3fr);
+            gap: var(--space-lg);
             align-items: center;
-        }
-
-        .hero-breadcrumb {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.16em;
-            margin-bottom: var(--spacing-sm);
-            color: rgba(255,255,255,0.8);
-        }
-
-        .hero-breadcrumb a {
-            color: rgba(255,255,255,0.85);
-        }
-
-        .hero-kicker {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 4px 10px;
-            border-radius: 999px;
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.3);
-            font-size: 0.75rem;
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .hero-kicker span.icon-pill {
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--sunrise-gold), var(--ocean-teal-light));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.65rem;
-        }
-
-        .hero-title {
-            font-size: 2.6rem;
-            line-height: 1.15;
-            letter-spacing: -0.04em;
-            margin: 0 0 var(--spacing-sm);
-        }
-
-        .hero-title span.accent {
-            color: var(--sunrise-gold-soft);
-        }
-
-        .hero-subtitle {
-            font-size: 1rem;
-            max-width: 32rem;
-            color: rgba(255,255,255,0.88);
-            margin-bottom: var(--spacing-md);
-        }
-
-        .hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: var(--spacing-md);
-        }
-
-        .btn-hero-secondary {
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.5);
-            color: var(--white);
-        }
-
-        .btn-hero-secondary:hover {
-            background: rgba(255,255,255,0.16);
-        }
-
-        .hero-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.8);
-        }
-
-        .hero-meta strong {
-            font-size: 1rem;
-            display: block;
-            color: var(--white);
-        }
-
-        .hero-card {
-            background: rgba(255,255,255,0.96);
-            color: var(--charcoal);
-            border-radius: 22px;
-            padding: 22px 22px 20px;
-            box-shadow: var(--shadow-soft);
-            backdrop-filter: blur(12px);
-        }
-
-        .hero-card-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .hero-card-title {
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 0.16em;
-            color: var(--warm-gray);
-        }
-
-        .cam-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.8rem;
-            padding: 4px 10px;
-            border-radius: 999px;
-            background: rgba(0,32,159,0.06);
-            color: var(--haitian-blue);
-        }
-
-        .cam-pill span.badge {
-            width: 20px;
-            height: 20px;
-            border-radius: 999px;
-            background: linear-gradient(135deg, var(--haitian-blue), var(--ocean-teal));
-            color: var(--white);
-            font-size: 0.7rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .camps-grid {
-            display: grid;
-            grid-template-columns: repeat(5, minmax(0, 1fr));
-            gap: 10px;
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .camps-pill {
-            border-radius: 14px;
-            padding: 10px 8px;
-            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(248,249,250,0.95));
-            border: 1px solid rgba(0,0,0,0.04);
-            text-align: center;
-            box-shadow: var(--shadow-subtle);
-        }
-
-        .camps-letter {
-            font-weight: 800;
-            font-size: 1rem;
-            color: var(--haitian-blue);
-            margin-bottom: 3px;
-        }
-
-        .camps-label {
-            font-size: 0.7rem;
-            color: var(--warm-gray);
-        }
-
-        .hero-card-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 12px;
-            border-top: 1px dashed rgba(0,0,0,0.08);
-            padding-top: var(--spacing-sm);
-            margin-top: var(--spacing-sm);
-        }
-
-        .hero-stats-mini {
-            display: flex;
-            gap: 18px;
-        }
-
-        .hero-stats-mini span {
-            font-size: 0.8rem;
-            color: var(--warm-gray);
-        }
-
-        .hero-stats-mini span strong {
-            display: block;
-            font-size: 0.95rem;
-            color: var(--charcoal);
-        }
-
-        .hero-card-footer a {
-            font-size: 0.8rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            color: var(--haitian-blue);
-            font-weight: 600;
-        }
-
-        /* SECTIONS GENERIC */
-        section.section {
-            padding: var(--spacing-xl) 0;
-        }
-
-        .section-heading {
-            text-align: center;
-            margin-bottom: var(--spacing-lg);
         }
 
         .eyebrow {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.18em;
-            color: var(--sunrise-gold);
-            margin-bottom: 10px;
-        }
-
-        .section-heading h2 {
-            font-size: 2.1rem;
-            margin: 0 0 6px;
-            letter-spacing: -0.04em;
-        }
-
-        .section-heading p {
-            margin: 0;
-            color: var(--warm-gray);
-            max-width: 32rem;
-            margin-inline: auto;
-            font-size: 0.95rem;
-        }
-
-        /* PROGRAM OVERVIEW / TABS FEEL */
-        .programs-overview {
-            background: radial-gradient(circle at top left, rgba(244,165,33,0.14), transparent 55%),
-                        radial-gradient(circle at bottom right, rgba(0,139,139,0.12), transparent 55%);
-        }
-
-        .program-layout {
-            display: grid;
-            grid-template-columns: minmax(0, 1.5fr) minmax(0, 2.2fr);
-            gap: 38px;
-            align-items: flex-start;
-        }
-
-        .program-intro {
-            background: var(--white);
-            border-radius: 18px;
-            padding: var(--spacing-lg);
-            box-shadow: var(--shadow-soft);
-            border: 1px solid rgba(0,0,0,0.04);
-        }
-
-        .program-intro h3 {
-            font-size: 1.4rem;
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-
-        .pill-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .pill-row span {
-            font-size: 0.75rem;
-            padding: 4px 10px;
-            border-radius: 999px;
-            border: 1px solid rgba(0,0,0,0.06);
-            background: rgba(0,0,0,0.01);
-        }
-
-        .pill-row span.primary-pill {
-            border-color: rgba(0,139,139,0.3);
-            background: rgba(0,139,139,0.05);
-            color: var(--ocean-teal);
-        }
-
-        .program-intro p {
-            font-size: 0.95rem;
-            color: var(--warm-gray);
-        }
-
-        .program-intro ul {
-            padding-left: 18px;
-            margin: 10px 0 16px;
-            color: var(--charcoal);
-            font-size: 0.9rem;
-        }
-
-        .program-intro li + li {
-            margin-top: 3px;
-        }
-
-        .program-intro .mini-meta {
-            font-size: 0.85rem;
-            color: var(--warm-gray);
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px;
-            margin-top: 10px;
-        }
-
-        .program-intro .mini-meta strong {
-            color: var(--charcoal);
-        }
-
-        .program-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0,1fr));
-            gap: 18px;
-        }
-
-        .program-card {
-            border-radius: 16px;
-            background: var(--white);
-            border: 1px solid rgba(0,0,0,0.04);
-            box-shadow: var(--shadow-subtle);
-            padding: 16px 16px 14px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .program-card::before {
-            content: "";
-            position: absolute;
-            inset-inline: 0;
-            bottom: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--sunrise-gold), var(--ocean-teal));
-            opacity: 0;
-            transform: translateY(3px);
-            transition: all var(--transition-med);
-        }
-
-        .program-card:hover::before {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .program-card-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .program-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 12px;
-            background: radial-gradient(circle at 30% 0, var(--sunrise-gold-soft), var(--haitian-blue-soft));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-        }
-
-        .program-letter {
-            font-weight: 800;
-            font-size: 1.2rem;
-        }
-
-        .program-title-group span.label {
-            display: block;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.16em;
-            color: var(--warm-gray);
-        }
-
-        .program-title-group h3 {
-            font-size: 1rem;
-            margin: 2px 0 0;
-        }
-
-        .program-body {
-            font-size: 0.88rem;
-            color: var(--warm-gray);
-        }
-
-        .program-meta-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            font-size: 0.75rem;
-            color: var(--warm-gray);
-        }
-
-        .program-meta-pill {
-            padding: 4px 8px;
-            border-radius: 999px;
-            background: rgba(0,139,139,0.06);
-            color: var(--ocean-teal);
-        }
-
-        .program-cta-row {
-            margin-top: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.8rem;
-        }
-
-        .program-cta-row a.btn-inline {
-            font-weight: 600;
-            color: var(--haitian-blue);
             display: inline-flex;
             align-items: center;
-            gap: 4px;
+            gap: 8px;
+            padding: 4px 12px;
+            border-radius: var(--radius-pill);
+            background: rgba(244,165,33,0.18);
+            color: var(--sunrise-gold-soft);
+            font-size: 0.75rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            font-weight: 600;
         }
 
-        .program-cta-row span.subcopy {
-            color: var(--warm-gray);
+        .eyebrow-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 999px;
+            background: var(--sunrise-gold);
         }
 
-        /* WHERE WE WORK */
-        .where-we-work {
+        .page-hero h1 {
+            font-size: 2.6rem;
+            line-height: 1.15;
+            margin: var(--space-sm) 0 var(--space-xs);
+            letter-spacing: -0.02em;
+        }
+
+        .page-hero-lead {
+            max-width: 34rem;
+            font-size: 1rem;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .page-hero-cta {
+            margin-top: var(--space-md);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .btn-outline-light {
+            border-radius: var(--radius-pill);
+            padding: 10px 20px;
+            border: 1px solid rgba(255,255,255,0.7);
+            color: var(--white);
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            font-weight: 600;
+            background: transparent;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-outline-light i {
+            font-size: 0.8rem;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: var(--space-md);
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .breadcrumb a {
+            color: inherit;
+        }
+
+        .breadcrumb span.current {
+            color: var(--sunrise-gold-soft);
+            font-weight: 600;
+        }
+
+        .hero-camps-card {
+            background: rgba(0,0,0,0.2);
+            border-radius: 22px;
+            padding: var(--space-md);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+            backdrop-filter: blur(16px);
+        }
+
+        .hero-camps-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            margin-bottom: 6px;
+            color: rgba(255,255,255,0.85);
+        }
+
+        .hero-camps-pillars {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 8px 0 10px;
+        }
+
+        .camps-chip {
+            padding: 6px 12px;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.08);
+            font-size: 0.78rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .camps-chip span.letter {
+            width: 20px;
+            height: 20px;
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            background: var(--ocean-teal);
+        }
+
+        /* SECTIONS */
+        .section {
+            padding: var(--space-xl) 0;
+        }
+
+        .section.alt {
             background: var(--off-white);
         }
 
-        .locations-layout {
+        .section-header {
+            text-align: center;
+            max-width: 40rem;
+            margin: 0 auto var(--space-lg);
+        }
+
+        .section-header .eyebrow {
+            background: rgba(244,165,33,0.12);
+            color: var(--sunrise-gold);
+        }
+
+        .section-header h2 {
+            margin: var(--space-sm) 0 var(--space-xs);
+            font-size: 2rem;
+            color: var(--charcoal);
+        }
+
+        .section-header p {
+            color: var(--warm-gray);
+            font-size: 0.98rem;
+        }
+
+        /* CAMPS GRID (5 pillars) */
+        .camps-grid {
             display: grid;
-            grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
-            gap: 34px;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: var(--space-md);
+        }
+
+        .camps-card {
+            background: var(--white);
+            border-radius: 18px;
+            padding: var(--space-md);
+            box-shadow: var(--shadow-subtle);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xs);
+            border-top: 4px solid var(--ocean-teal-light);
+        }
+
+        .camps-card:nth-child(2) { border-top-color: var(--sunrise-gold-soft); }
+        .camps-card:nth-child(3) { border-top-color: var(--haitian-red-light); }
+        .camps-card:nth-child(4) { border-top-color: var(--haitian-blue-soft); }
+        .camps-card:nth-child(5) { border-top-color: var(--ocean-teal); }
+
+        .camps-letter-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 999px;
+            background: rgba(0,32,159,0.06);
+            color: var(--haitian-blue-soft);
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .camps-card h3 {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .camps-card p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--warm-gray);
+        }
+
+        .camps-link {
+            margin-top: 6px;
+            font-size: 0.85rem;
+            color: var(--ocean-teal);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .camps-link i {
+            font-size: 0.8rem;
+        }
+
+        /* Program Tabs (detail) */
+        .program-tabs-wrapper {
+            margin-top: var(--space-lg);
+            background: var(--white);
+            border-radius: 24px;
+            box-shadow: var(--shadow-soft);
+            padding: var(--space-md);
+        }
+
+        .program-tab-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: var(--space-md);
+        }
+
+        .program-tab-button {
+            padding: 8px 16px;
+            border-radius: var(--radius-pill);
+            border: 1px solid rgba(0,32,159,0.18);
+            background: transparent;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--warm-gray);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .program-tab-button span.letter {
+            width: 20px;
+            height: 20px;
+            border-radius: 999px;
+            background: rgba(0,139,139,0.1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--ocean-teal);
+        }
+
+        .program-tab-button.active {
+            background: linear-gradient(135deg, rgba(0,139,139,0.1), rgba(244,165,33,0.15));
+            color: var(--haitian-blue-dark);
+            border-color: rgba(0,139,139,0.4);
+        }
+
+        .program-tab-panel {
+            display: none;
+        }
+
+        .program-tab-panel.active {
+            display: grid;
+        }
+
+        .program-tab-panel-inner {
+            display: grid;
+            grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.2fr);
+            gap: var(--space-lg);
             align-items: start;
         }
 
-        .locations-grid {
+        .program-tab-panel h3 {
+            margin-top: 0;
+            font-size: 1.3rem;
+        }
+
+        .program-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: var(--space-sm);
+            font-size: 0.8rem;
+            color: var(--warm-gray);
+        }
+
+        .program-meta span {
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: rgba(0,32,159,0.04);
+        }
+
+        .program-list {
+            margin: 0 0 var(--space-sm);
+            padding-left: 1.1rem;
+            font-size: 0.93rem;
+            color: var(--warm-gray);
+        }
+
+        .program-outcomes {
+            font-size: 0.9rem;
+            color: var(--warm-gray);
+        }
+
+        .program-support-cta {
+            margin-top: var(--space-md);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--haitian-blue);
+        }
+
+        .program-image-card {
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: var(--shadow-subtle);
+            position: relative;
+        }
+
+        .program-image-card img {
+            width: 100%;
+            height: 100%;
+            min-height: 260px;
+            object-fit: cover;
+        }
+
+        .program-label-pill {
+            position: absolute;
+            bottom: 14px;
+            left: 14px;
+            padding: 6px 12px;
+            border-radius: 999px;
+            background: rgba(0,0,0,0.55);
+            color: var(--white);
+            font-size: 0.78rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .program-label-pill span {
+            font-weight: 600;
+        }
+
+        /* WHERE WE WORK */
+        .where-grid {
             display: grid;
-            grid-template-columns: repeat(3, minmax(0,1fr));
-            gap: 16px;
+            grid-template-columns: minmax(0,1.4fr) minmax(0,1.4fr);
+            gap: var(--space-lg);
+            align-items: center;
+        }
+
+        .map-card {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            background: var(--white);
+        }
+
+        .map-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            min-height: 260px;
+        }
+
+        .location-list {
+            display: grid;
+            gap: var(--space-md);
         }
 
         .location-card {
             background: var(--white);
-            border-radius: 14px;
-            overflow: hidden;
+            border-radius: 18px;
+            padding: var(--space-md);
             box-shadow: var(--shadow-subtle);
-            border: 1px solid rgba(0,0,0,0.04);
-            display: flex;
-            flex-direction: column;
         }
 
-        .location-image {
-            position: relative;
-            height: 130px;
-            overflow: hidden;
+        .location-name {
+            font-weight: 600;
         }
 
-        .location-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .location-tag {
-            position: absolute;
-            left: 10px;
-            bottom: 10px;
-            background: rgba(0,0,0,0.55);
-            color: var(--white);
-            font-size: 0.7rem;
-            padding: 4px 9px;
-            border-radius: 999px;
-        }
-
-        .location-body {
-            padding: 12px 14px 13px;
-        }
-
-        .location-body h3 {
-            margin: 0 0 3px;
-            font-size: 0.95rem;
+        .location-context {
+            font-size: 0.87rem;
+            color: var(--warm-gray);
         }
 
         .location-meta {
-            font-size: 0.8rem;
+            margin-top: 6px;
+            font-size: 0.83rem;
+            color: var(--warm-gray);
+        }
+
+        /* DAY IN THE LIFE */
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0,1fr));
+            gap: var(--space-md);
+        }
+
+        .timeline-card {
+            background: var(--white);
+            border-radius: 18px;
+            padding: var(--space-md);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .timeline-time {
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
             color: var(--warm-gray);
             margin-bottom: 6px;
         }
 
-        .location-meta span {
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .location-meta span + span::before {
-            content: "•";
-            margin: 0 6px;
-            color: var(--light-gray);
-        }
-
-        .location-stats {
-            font-size: 0.78rem;
-            color: var(--warm-gray);
-        }
-
-        .location-stats strong {
-            color: var(--charcoal);
-        }
-
-        .map-card {
-            background: linear-gradient(145deg, var(--haitian-blue), var(--ocean-teal));
-            border-radius: 18px;
-            padding: 20px 20px 18px;
-            color: var(--white);
-            box-shadow: var(--shadow-soft);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .map-card h3 {
-            margin: 0 0 4px;
-            font-size: 1.1rem;
-        }
-
-        .map-card p {
-            font-size: 0.9rem;
-            margin: 0 0 10px;
-            color: rgba(255,255,255,0.88);
-        }
-
-        .map-stat-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            font-size: 0.78rem;
-        }
-
-        .map-stat-pill {
-            background: rgba(0,0,0,0.14);
-            border-radius: 999px;
-            padding: 4px 10px;
-        }
-
-        .map-illustration {
-            position: absolute;
-            right: -18px;
-            bottom: -18px;
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            border: 1px dashed rgba(255,255,255,0.4);
-            opacity: 0.65;
-        }
-
-        /* DAY IN THE LIFE */
-        .day-in-life {
-            background: var(--white);
-        }
-
-        .timeline-layout {
-            display: grid;
-            grid-template-columns: minmax(0, 3fr) minmax(0, 2.1fr);
-            gap: 34px;
-        }
-
-        .timeline {
-            position: relative;
-            padding-left: 16px;
-            border-left: 2px dashed rgba(0,0,0,0.08);
-        }
-
-        .timeline-item {
-            position: relative;
-            padding-bottom: 18px;
-            margin-bottom: 8px;
-        }
-
-        .timeline-item:last-child {
-            padding-bottom: 0;
-        }
-
-        .timeline-dot {
-            position: absolute;
-            left: -10px;
-            top: 4px;
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            background: var(--white);
-            border: 3px solid var(--ocean-teal);
-            box-shadow: 0 0 0 3px rgba(0,139,139,0.16);
-        }
-
-        .timeline-time {
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--ocean-teal);
-            margin-bottom: 2px;
-        }
-
         .timeline-title {
-            font-size: 0.95rem;
             font-weight: 600;
-            margin-bottom: 2px;
+            margin-bottom: 4px;
         }
 
         .timeline-text {
-            font-size: 0.85rem;
-            color: var(--warm-gray);
-        }
-
-        .timeline-quote-card {
-            background: var(--off-white);
-            border-radius: 18px;
-            padding: 20px 20px 18px;
-            border: 1px solid rgba(0,0,0,0.04);
-        }
-
-        .timeline-quote-card p {
-            margin: 0 0 8px;
             font-size: 0.9rem;
-        }
-
-        .timeline-quote-card p.attribution {
-            margin: 0;
-            font-size: 0.8rem;
             color: var(--warm-gray);
         }
 
-        .timeline-photo {
-            margin-top: 18px;
-            border-radius: 14px;
-            overflow: hidden;
-            box-shadow: var(--shadow-subtle);
+        /* FOOTER (same style as about.html) */
+        .site-footer {
+            background: #050818;
+            color: rgba(255,255,255,0.88);
+            padding: var(--space-xl) 0 var(--space-lg);
+            margin-top: var(--space-xl);
         }
 
-        /* CHECKLIST SECTION */
-        .checklist-section {
-            background: #0F172A;
+        .footer-top {
+            display: grid;
+            grid-template-columns: 2.1fr 1.4fr 1.4fr 1.7fr;
+            gap: var(--space-lg);
+            margin-bottom: var(--space-lg);
+        }
+
+        .footer-logo-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: var(--space-sm);
+        }
+
+        .footer-logo-mark {
+            width: 32px;
+            height: 32px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--haitian-blue), var(--haitian-red));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 800;
             color: var(--white);
         }
 
-        .checklist-wrapper {
-            max-width: 780px;
-            margin: 0 auto;
-            background: rgba(15,23,42,0.93);
-            border-radius: 18px;
-            padding: 22px 20px 18px;
-            border: 1px solid rgba(148,163,184,0.4);
-        }
-
-        .checklist-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 14px;
-        }
-
-        .checklist-header h3 {
-            margin: 0;
-            font-size: 1rem;
+        .footer-logo-text {
+            font-size: 0.95rem;
+            font-weight: 600;
             letter-spacing: 0.08em;
             text-transform: uppercase;
         }
 
-        .checklist-badge {
-            font-size: 0.75rem;
-            color: #E5E7EB;
-        }
-
-        .checklist-badge span {
-            color: var(--sunrise-gold);
-        }
-
-        .checklist-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0,1fr));
-            gap: 8px 22px;
-            font-size: 0.85rem;
-        }
-
-        .checklist-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: #E5E7EB;
-        }
-
-        .checklist-item span.status-box {
-            width: 16px;
-            height: 16px;
-            border-radius: 4px;
-            border: 1px solid rgba(148,163,184,0.7);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
-        }
-
-        .checklist-item.completed span.status-box {
-            border-color: var(--ocean-teal-light);
-            background: rgba(34,197,94,0.18);
-            color: #22C55E;
-        }
-
-        .checklist-hint {
-            margin-top: 10px;
-            font-size: 0.78rem;
-            color: #9CA3AF;
-        }
-
-        /* FOOTER */
-        .site-footer {
-            background: #050816;
-            color: #E5E7EB;
-            padding: var(--spacing-xl) 0 var(--spacing-lg);
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: minmax(0, 2.4fr) repeat(3, minmax(0,1.3fr));
-            gap: 30px;
-            margin-bottom: 24px;
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-
-        .footer-logo .logo-icon {
-            background: linear-gradient(135deg, var(--haitian-blue), var(--haitian-red));
-        }
-
-        .footer-logo span {
-            font-weight: 700;
-            font-size: 0.98rem;
-        }
-
         .footer-tagline {
-            margin: 0 0 8px;
             font-size: 0.9rem;
-            color: #CBD5F5;
+            color: rgba(255,255,255,0.75);
+            margin-bottom: 6px;
         }
 
-        .footer-column p {
-            font-size: 0.82rem;
-            color: #9CA3AF;
-            margin: 3px 0;
+        .footer-copy {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.65);
         }
 
         .footer-column h4 {
             font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 0.16em;
-            margin: 0 0 10px;
-            color: #E5E7EB;
+            margin-bottom: var(--space-sm);
+            color: rgba(255,255,255,0.84);
         }
 
         .footer-links {
             list-style: none;
             padding: 0;
             margin: 0;
-        }
-
-        .footer-links li + li {
-            margin-top: 6px;
+            display: grid;
+            gap: 6px;
+            font-size: 0.85rem;
         }
 
         .footer-links a {
-            font-size: 0.8rem;
-            color: #9CA3AF;
+            color: rgba(255,255,255,0.7);
         }
 
         .footer-links a:hover {
-            color: var(--sunrise-gold);
-            text-decoration: none;
+            color: var(--sunrise-gold-soft);
+        }
+
+        .footer-contact p {
+            font-size: 0.85rem;
+            margin: 0 0 6px;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .footer-contact strong {
+            color: rgba(255,255,255,0.9);
+        }
+
+        .footer-newsletter-input {
+            margin-top: 8px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .footer-newsletter-input input {
+            flex: 1;
+            padding: 8px 10px;
+            border-radius: 999px;
+            border: none;
+            font-size: 0.85rem;
+            outline: none;
+        }
+
+        .footer-newsletter-input button {
+            padding: 8px 14px;
+            border-radius: 999px;
+            border: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            background: linear-gradient(135deg, var(--sunrise-gold), var(--ocean-teal));
+            color: var(--white);
+            cursor: pointer;
+        }
+
+        .footer-newsletter-note {
+            margin-top: 6px;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.6);
         }
 
         .social-links {
             display: flex;
             gap: 10px;
-            margin-top: 8px;
+            margin-top: var(--space-sm);
         }
 
-        .social-link {
+        .social-links a {
             width: 28px;
             height: 28px;
             border-radius: 999px;
-            border: 1px solid rgba(148,163,184,0.7);
-            display: flex;
+            border: 1px solid rgba(255,255,255,0.18);
+            display: inline-flex;
             align-items: center;
             justify-content: center;
+            color: rgba(255,255,255,0.8);
             font-size: 0.8rem;
-            color: #E5E7EB;
+            transition: all var(--transition-fast);
         }
 
-        .social-link:hover {
+        .social-links a:hover {
             border-color: var(--sunrise-gold);
             color: var(--sunrise-gold);
-        }
-
-        .newsletter-form {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-top: 8px;
-        }
-
-        .newsletter-form input[type="email"] {
-            padding: 8px 10px;
-            border-radius: 999px;
-            border: 1px solid rgba(148,163,184,0.8);
-            background: transparent;
-            color: #E5E7EB;
-            font-size: 0.8rem;
-        }
-
-        .newsletter-form input::placeholder {
-            color: #6B7280;
-        }
-
-        .newsletter-form button {
-            align-self: flex-start;
-            padding: 7px 16px;
-            border-radius: 999px;
-            border: none;
-            font-size: 0.78rem;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            background: linear-gradient(135deg, var(--sunrise-gold), var(--ocean-teal-light));
-            color: #111827;
-            cursor: pointer;
-        }
-
-        .newsletter-form button:hover {
-            filter: brightness(1.05);
+            transform: translateY(-1px);
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(31,41,55,1);
-            padding-top: 14px;
+            border-top: 1px solid rgba(255,255,255,0.16);
+            padding-top: var(--space-sm);
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-between;
-            gap: 12px;
+            gap: 6px;
             font-size: 0.78rem;
-            color: #6B7280;
-        }
-
-        .footer-bottom-center {
-            text-align: center;
-            flex: 1 1 180px;
-        }
-
-        .footer-bottom-center a {
-            color: #E5E7EB;
-            font-weight: 500;
-        }
-
-        .footer-bottom-center a:hover {
-            color: var(--sunrise-gold);
-            text-decoration: none;
+            color: rgba(255,255,255,0.6);
         }
 
         .footer-bottom-links {
             display: flex;
-            gap: 10px;
+            gap: 12px;
             flex-wrap: wrap;
+            justify-content: center;
         }
 
         .footer-bottom-links a {
-            color: #6B7280;
+            color: rgba(255,255,255,0.7);
         }
 
         .footer-bottom-links a:hover {
-            color: var(--sunrise-gold);
+            color: var(--sunrise-gold-soft);
+        }
+
+        .footer-designed {
+            margin-top: 4px;
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.75);
+            text-align: center;
+        }
+
+        .footer-designed a {
+            color: var(--sunrise-gold-soft);
+            font-weight: 600;
         }
 
         /* RESPONSIVE */
-        @media (max-width: 1024px) {
-            .hero-layout,
-            .program-layout,
-            .locations-layout,
-            .timeline-layout {
+        @media (max-width: 1080px) {
+            .camps-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 960px) {
+            .page-hero-grid {
                 grid-template-columns: minmax(0,1fr);
             }
 
-            .hero-inner {
-                padding-top: 70px;
+            .hero-camps-card {
+                margin-top: var(--space-md);
             }
 
-            .locations-grid {
-                grid-template-columns: repeat(2,minmax(0,1fr));
+            .program-tab-panel-inner {
+                grid-template-columns: minmax(0,1fr);
             }
 
-            .footer-content {
+            .where-grid {
+                grid-template-columns: minmax(0,1fr);
+            }
+
+            .timeline {
+                grid-template-columns: repeat(2, minmax(0,1fr));
+            }
+
+            .footer-top {
                 grid-template-columns: repeat(2, minmax(0,1fr));
             }
         }
 
         @media (max-width: 768px) {
-            .navbar {
-                align-items: center;
-            }
-
             .nav-menu {
-                display: none;
-            }
-
-            .mobile-menu-toggle {
-                display: inline-flex;
-                color: var(--charcoal);
-            }
-
-            .hero-layout {
-                gap: 28px;
-            }
-
-            .hero-title {
-                font-size: 2.1rem;
-            }
-
-            .hero-card {
-                margin-top: 10px;
-            }
-
-            .program-grid {
-                grid-template-columns: minmax(0,1fr);
-            }
-
-            .locations-grid {
-                grid-template-columns: minmax(0,1fr);
-            }
-
-            .footer-content {
-                grid-template-columns: minmax(0,1fr);
-            }
-
-            .footer-bottom {
+                position: fixed;
+                top: 70px;
+                right: 0;
+                width: 100%;
+                max-width: 260px;
+                background: rgba(5, 8, 24, 0.96);
                 flex-direction: column;
                 align-items: flex-start;
+                padding: var(--space-md);
+                transform: translateX(100%);
+                transition: transform var(--transition-med);
+                height: calc(100vh - 70px);
             }
 
-            .footer-bottom-center {
-                text-align: left;
+            .nav-menu.open {
+                transform: translateX(0);
             }
 
-            .checklist-grid {
+            .nav-menu a {
+                color: rgba(255,255,255,0.9);
+                font-size: 0.95rem;
+            }
+
+            .nav-right {
+                gap: 8px;
+            }
+
+            .btn-donate {
+                padding: 8px 16px;
+                font-size: 0.75rem;
+            }
+
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .page-hero {
+                min-height: 72vh;
+            }
+
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 56px 0;
+            }
+
+            .camps-grid {
+                grid-template-columns: repeat(2, minmax(0,1fr));
+            }
+
+            .timeline {
+                grid-template-columns: minmax(0,1fr);
+            }
+
+            .footer-top {
+                grid-template-columns: minmax(0,1fr);
+            }
+
+            .site-footer {
+                padding-top: 56px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .camps-grid {
                 grid-template-columns: minmax(0,1fr);
             }
         }
     </style>
 </head>
 <body>
-
-<header class="site-header">
-    <div class="container">
-        <nav class="navbar">
-            <a href="index.html" class="logo">
-                <div class="logo-icon">YBR</div>
-                <div class="logo-text">
-                    <span>Youth Beyond Resilience</span>
-                    <span>Haiti • CAMPS Programs</span>
-                </div>
-            </a>
-
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="programs.html" class="active">Programs</a></li>
-                <li><a href="impact.html">Impact</a></li>
-                <li><a href="get-involved.html">Get Involved</a></li>
-                <li><a href="news.html">News</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-
-            <div class="nav-actions">
-                <a href="donate.html" class="btn btn-primary">
-                    <i class="fa-solid fa-heart" aria-hidden="true"></i>&nbsp; Donate
+    <header class="site-header">
+        <div class="container navbar">
+            <div class="navbar-inner">
+                <a href="/" class="logo">
+                    <div class="logo-mark">YBR</div>
+                    <div>
+                        <div class="logo-text-main">Youth Beyond Resilience</div>
+                        <div class="logo-text-sub">Haiti • From Struggle to Strength</div>
+                    </div>
                 </a>
-                <button class="mobile-menu-toggle" aria-label="Open navigation menu">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-            </div>
-        </nav>
-    </div>
-</header>
 
-<main>
-    <!-- HERO: CAMPS FRAMEWORK -->
-    <section class="hero-inner">
-        <div class="container">
-            <div class="hero-breadcrumb">
-                <a href="index.html">Home</a> &nbsp; / &nbsp; <span>Programs</span>
-            </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="/" >Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/programs" class="active">Programs</a></li>
+                    <li><a href="/impact">Impact</a></li>
+                    <li><a href="/get-involved">Get Involved</a></li>
+                    <li><a href="/news">News</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
 
-            <div class="hero-layout">
-                <div>
-                    <div class="hero-kicker">
-                        <span class="icon-pill"><i class="fa-solid fa-sun" aria-hidden="true"></i></span>
-                        <span>Holistic Care for Haiti's Youth</span>
-                    </div>
-                    <h1 class="hero-title">
-                        Transforming Lives Through<br><span class="accent">the CAMPS Framework</span>
-                    </h1>
-                    <p class="hero-subtitle">
-                        Youth Beyond Resilience prevents gang recruitment by surrounding Haitian adolescents
-                        with trauma-informed programs in <strong>mental health</strong>, <strong>arts</strong>,
-                        <strong>civic engagement</strong>, <strong>personal development</strong>, and
-                        <strong>sports</strong>.
-                    </p>
-                    <div class="hero-actions">
-                        <a href="donate.html" class="btn btn-primary">Support This Work</a>
-                        <a href="impact.html" class="btn btn-hero-secondary">
-                            See the Impact
-                        </a>
-                    </div>
-                    <div class="hero-meta">
-                        <div>
-                            <strong>800+</strong>
-                            youth choosing hope over violence
-                        </div>
-                        <div>
-                            <strong>3 program hubs</strong>
-                            in high-risk neighborhoods of Port-au-Prince
-                        </div>
-                    </div>
+                <div class="nav-right">
+                    <a href="/donate" class="btn-donate">
+                        Donate
+                        <i class="fa-solid fa-heart"></i>
+                    </a>
+                    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
-
-                <aside class="hero-card" aria-label="CAMPS overview">
-                    <div class="hero-card-header">
-                        <div>
-                            <div class="hero-card-title">CAMPS at a Glance</div>
-                            <p style="margin: 4px 0 0; font-size:0.8rem; color:var(--warm-gray);">
-                                Five pillars that keep youth safe, seen, and supported.
-                            </p>
-                        </div>
-                        <div class="cam-pill">
-                            <span class="badge">5</span>
-                            <span>Pillars</span>
-                        </div>
-                    </div>
-
-                    <div class="camps-grid">
-                        <div class="camps-pill">
-                            <div class="camps-letter">C</div>
-                            <div class="camps-label">Civic Engagement</div>
-                        </div>
-                        <div class="camps-pill">
-                            <div class="camps-letter">A</div>
-                            <div class="camps-label">Arts & Culture</div>
-                        </div>
-                        <div class="camps-pill">
-                            <div class="camps-letter">M</div>
-                            <div class="camps-label">Mental Health</div>
-                        </div>
-                        <div class="camps-pill">
-                            <div class="camps-letter">P</div>
-                            <div class="camps-label">Personal Growth</div>
-                        </div>
-                        <div class="camps-pill">
-                            <div class="camps-letter">S</div>
-                            <div class="camps-label">Sports</div>
-                        </div>
-                    </div>
-
-                    <div class="hero-card-footer">
-                        <div class="hero-stats-mini">
-                            <span>
-                                <strong>3x / week</strong>
-                                counseling & safe-space programming
-                            </span>
-                            <span>
-                                <strong>Whole-child</strong>
-                                support across mind, body & community
-                            </span>
-                        </div>
-                        <a href="get-involved.html">
-                            Get involved <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                </aside>
             </div>
         </div>
-    </section>
+    </header>
 
-    <!-- PROGRAM OVERVIEW CARDS -->
-    <section class="section programs-overview">
-        <div class="container">
-            <div class="section-heading">
-                <div class="eyebrow">Our Programs</div>
-                <h2>Five Pillars of Transformation for Haiti's Youth</h2>
-                <p>
-                    Each CAMPS pillar offers a different doorway into healing and hope. Together, they create
-                    a full ecosystem that keeps youth away from gangs and anchored in community.
-                </p>
-            </div>
-
-            <div class="program-layout">
-                <article class="program-intro">
-                    <h3>Trauma-Informed, Youth-Led, Community-Rooted</h3>
-                    <div class="pill-row">
-                        <span class="primary-pill">Holistic support</span>
-                        <span>Evidence-informed</span>
-                        <span>Local staff & partners</span>
-                        <span>Safe spaces in gang-controlled areas</span>
+    <main>
+        <!-- HERO -->
+        <section class="page-hero">
+            <div class="container page-hero-inner">
+                <div class="page-hero-grid">
+                    <div>
+                        <div class="eyebrow">
+                            <span class="eyebrow-dot"></span>
+                            CAMPS FRAMEWORK
+                        </div>
+                        <h1>Transforming Lives Through CAMPS</h1>
+                        <p class="page-hero-lead">
+                            Our CAMPS framework — Civic Engagement, Arts & Cultural Expression, Mental Health & Wellness,
+                            Personal Development, and Sports & Recreation — offers a holistic alternative to gang recruitment
+                            for Haitian youth.
+                        </p>
+                        <div class="page-hero-cta">
+                            <a href="#camps" class="btn-outline-light">
+                                Explore Programs <i class="fa-solid fa-arrow-down"></i>
+                            </a>
+                            <a href="/donate" class="btn-outline-light">
+                                Support this Work <i class="fa-solid fa-heart"></i>
+                            </a>
+                        </div>
+                        <div class="breadcrumb">
+                            <a href="/">Home</a>
+                            <span>/</span>
+                            <span class="current">Programs</span>
+                        </div>
                     </div>
+
+                    <aside class="hero-camps-card">
+                        <div class="hero-camps-title">CAMPS at a Glance</div>
+                        <div class="hero-camps-pillars">
+                            <div class="camps-chip"><span class="letter">C</span>Civic Engagement</div>
+                            <div class="camps-chip"><span class="letter">A</span>Arts & Culture</div>
+                            <div class="camps-chip"><span class="letter">M</span>Mental Health</div>
+                            <div class="camps-chip"><span class="letter">P</span>Personal Development</div>
+                            <div class="camps-chip"><span class="letter">S</span>Sports & Recreation</div>
+                        </div>
+                        <p style="font-size:0.86rem;color:rgba(255,255,255,0.86);margin-top:6px;">
+                            Every pillar is trauma-informed, Haitian-led, and grounded in community partnership.
+                        </p>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- CAMPS OVERVIEW GRID -->
+        <section class="section alt" id="camps">
+            <div class="container">
+                <div class="section-header">
+                    <div class="eyebrow">
+                        <span class="eyebrow-dot"></span>
+                        PROGRAM OVERVIEW
+                    </div>
+                    <h2>The Five Pillars of CAMPS</h2>
                     <p>
-                        CAMPS is more than a set of activities—it’s a framework that reaches the whole person.
-                        Every rehearsal, match, counseling circle, and community project is designed to help
-                        youth build emotional resilience, leadership, and alternatives to gang recruitment.
+                        Each pillar offers a different “doorway” into transformation. Together, they form a safe, structured ecosystem
+                        where Haitian youth can heal, grow, and lead.
                     </p>
-                    <ul>
-                        <li><strong>Consistent rhythm:</strong> weekly programming youth can rely on.</li>
-                        <li><strong>Trusted adults:</strong> Haitian staff, counselors, and mentors.</li>
-                        <li><strong>Skill-building:</strong> from conflict resolution to creative expression.</li>
-                    </ul>
-                    <div class="mini-meta">
-                        <span><strong>Age focus:</strong> 10–18 years old</span>
-                        <span><strong>Model:</strong> group-based, trauma-informed, family-aware</span>
-                    </div>
-                </article>
-
-                <div class="program-grid" aria-label="Program pillars">
-                    <!-- Mental Health -->
-                    <article class="program-card">
-                        <div class="program-card-header">
-                            <div class="program-icon">
-                                <i class="fa-solid fa-brain" aria-hidden="true"></i>
-                            </div>
-                            <div class="program-title-group">
-                                <span class="label">M</span>
-                                <h3>Mental Health & Wellness</h3>
-                            </div>
-                        </div>
-                        <div class="program-body">
-                            Group counseling three times a week, individual sessions, and psycho-education
-                            help youth name their pain, build coping skills, and feel less alone.
-                        </div>
-                        <div class="program-meta-row">
-                            <span class="program-meta-pill">Trauma-informed</span>
-                            <span>Care circles for youth & caregivers</span>
-                        </div>
-                        <div class="program-cta-row">
-                            <a href="donate.html" class="btn-inline">
-                                Support mental health <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-                            </a>
-                            <span class="subcopy">~$50 funds one counseling session</span>
-                        </div>
-                    </article>
-
-                    <!-- Arts & Cultural Expression -->
-                    <article class="program-card">
-                        <div class="program-card-header">
-                            <div class="program-icon">
-                                <i class="fa-solid fa-music" aria-hidden="true"></i>
-                            </div>
-                            <div class="program-title-group">
-                                <span class="label">A</span>
-                                <h3>Arts & Cultural Expression</h3>
-                            </div>
-                        </div>
-                        <div class="program-body">
-                            Through orchestra, choir, visual arts, and Haitian drumming, youth discover
-                            their voice and see themselves as creators—not just survivors of crisis.
-                        </div>
-                        <div class="program-meta-row">
-                            <span class="program-meta-pill">Music for Inclusion</span>
-                            <span>Community performances</span>
-                        </div>
-                        <div class="program-cta-row">
-                            <a href="donate.html" class="btn-inline">
-                                Fund arts programs <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-                            </a>
-                            <span class="subcopy">Art supplies & instruments for ensembles</span>
-                        </div>
-                    </article>
-
-                    <!-- Civic Engagement -->
-                    <article class="program-card">
-                        <div class="program-card-header">
-                            <div class="program-icon">
-                                <i class="fa-solid fa-people-group" aria-hidden="true"></i>
-                            </div>
-                            <div class="program-title-group">
-                                <span class="label">C</span>
-                                <h3>Civic Engagement & Community Service</h3>
-                            </div>
-                        </div>
-                        <div class="program-body">
-                            Youth learn leadership, financial literacy, and advocacy, then apply those skills
-                            through service projects that strengthen their neighborhoods.
-                        </div>
-                        <div class="program-meta-row">
-                            <span class="program-meta-pill">Leadership labs</span>
-                            <span>Partners: Groupe Croissance, Central Bank</span>
-                        </div>
-                        <div class="program-cta-row">
-                            <a href="donate.html" class="btn-inline">
-                                Back young leaders <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-                            </a>
-                            <span class="subcopy">Equip youth to shape Haiti’s future</span>
-                        </div>
-                    </article>
-
-                    <!-- Personal Development -->
-                    <article class="program-card">
-                        <div class="program-card-header">
-                            <div class="program-icon">
-                                <i class="fa-solid fa-seedling" aria-hidden="true"></i>
-                            </div>
-                            <div class="program-title-group">
-                                <span class="label">P</span>
-                                <h3>Personal Development & Empowerment</h3>
-                            </div>
-                        </div>
-                        <div class="program-body">
-                            Life skills workshops, personal development workbooks, and mentoring help youth
-                            make wise decisions, plan for the future, and believe in their capacity.
-                        </div>
-                        <div class="program-meta-row">
-                            <span class="program-meta-pill">Life skills</span>
-                            <span>Decision-making & budgeting</span>
-                        </div>
-                        <div class="program-cta-row">
-                            <a href="donate.html" class="btn-inline">
-                                Invest in potential <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-                            </a>
-                            <span class="subcopy">Support long-term stability</span>
-                        </div>
-                    </article>
-
-                    <!-- Sports & Recreation -->
-                    <article class="program-card">
-                        <div class="program-card-header">
-                            <div class="program-icon">
-                                <i class="fa-solid fa-futbol" aria-hidden="true"></i>
-                            </div>
-                            <div class="program-title-group">
-                                <span class="label">S</span>
-                                <h3>Sports & Recreation</h3>
-                            </div>
-                        </div>
-                        <div class="program-body">
-                            Football for Peace and other sports turn fields into classrooms where youth practice
-                            teamwork, conflict resolution, and non-violent problem-solving.
-                        </div>
-                        <div class="program-meta-row">
-                            <span class="program-meta-pill">Football for Peace</span>
-                            <span>Tournaments & tournaments prep</span>
-                        </div>
-                        <div class="program-cta-row">
-                            <a href="donate.html" class="btn-inline">
-                                Sponsor a team <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-                            </a>
-                            <span class="subcopy">Uniforms, balls & safe play spaces</span>
-                        </div>
-                    </article>
-
-                    <!-- Whole Family & Ecosystem -->
-                    <article class="program-card">
-                        <div class="program-card-header">
-                            <div class="program-icon">
-                                <i class="fa-solid fa-house-chimney-heart" aria-hidden="true"></i>
-                            </div>
-                            <div class="program-title-group">
-                                <span class="label">+</span>
-                                <h3>Family & Community Support</h3>
-                            </div>
-                        </div>
-                        <div class="program-body">
-                            Caregivers receive tools to support youth at home, and community leaders are engaged
-                            as allies—because resilience grows in relationship, not in isolation.
-                        </div>
-                        <div class="program-meta-row">
-                            <span class="program-meta-pill">Caregiver workshops</span>
-                            <span>Community peace-building</span>
-                        </div>
-                        <div class="program-cta-row">
-                            <a href="impact.html" class="btn-inline">
-                                See community impact <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-                            </a>
-                            <span class="subcopy">Learn how neighborhoods are shifting</span>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- WHERE WE WORK -->
-    <section class="section where-we-work">
-        <div class="container">
-            <div class="section-heading">
-                <div class="eyebrow">Where We Work</div>
-                <h2>Anchored in High-Risk Communities, Rooted in Hope</h2>
-                <p>
-                    Our three program centers are located in neighborhoods heavily impacted by gang activity.
-                    Each one is a safe, creative, and stabilizing presence for youth and families.
-                </p>
-            </div>
-
-            <div class="locations-layout">
-                <div class="locations-grid">
-                    <!-- Center 1 -->
-                    <article class="location-card">
-                        <div class="location-image">
-                            <img src="https://source.unsplash.com/800x600/?haiti,city" alt="Street and homes in Croix-des-Bouquets, Haiti" loading="lazy">
-                            <div class="location-tag"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Croix-des-Bouquets</div>
-                        </div>
-                        <div class="location-body">
-                            <h3>Foundation Ste. Cécile</h3>
-                            <div class="location-meta">
-                                <span><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> High-risk area</span>
-                                <span><i class="fa-solid fa-children" aria-hidden="true"></i> ~280 youth</span>
-                            </div>
-                            <div class="location-stats">
-                                <strong>Programs:</strong> Mental health, Music for Inclusion, Football for Peace,
-                                arts intensives, community service.
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Center 2 -->
-                    <article class="location-card">
-                        <div class="location-image">
-                            <img src="https://source.unsplash.com/800x600/?haiti,port-au-prince" alt="Urban neighborhood in Delmas, Port-au-Prince" loading="lazy">
-                            <div class="location-tag"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Delmas 33</div>
-                        </div>
-                        <div class="location-body">
-                            <h3>Communal School of Delmas</h3>
-                            <div class="location-meta">
-                                <span><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Gang-controlled zones nearby</span>
-                                <span><i class="fa-solid fa-children" aria-hidden="true"></i> ~260 youth</span>
-                            </div>
-                            <div class="location-stats">
-                                <strong>Programs:</strong> Counseling, civic engagement, personal development,
-                                leadership training & cultural events.
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Center 3 -->
-                    <article class="location-card">
-                        <div class="location-image">
-                            <img src="https://source.unsplash.com/800x600/?haiti,landscape" alt="Hillside and cityscape near Pétion-Ville, Haiti" loading="lazy">
-                            <div class="location-tag"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Pétion-Ville</div>
-                        </div>
-                        <div class="location-body">
-                            <h3>Holy Trinity Music School</h3>
-                            <div class="location-meta">
-                                <span><i class="fa-solid fa-music" aria-hidden="true"></i> Music hub</span>
-                                <span><i class="fa-solid fa-children" aria-hidden="true"></i> ~260 youth</span>
-                            </div>
-                            <div class="location-stats">
-                                <strong>Programs:</strong> Orchestra & choir, drum ensembles, arts intensives,
-                                performance-based community outreach.
-                            </div>
-                        </div>
-                    </article>
                 </div>
 
-                <aside class="map-card">
-                    <h3>Port-au-Prince: 85% Under Gang Influence</h3>
-                    <p>
-                        In a city where most neighborhoods live with the daily pressure of gang control,
-                        these three centers function as circles of safety—places where youth can breathe,
-                        learn, and imagine a different future.
-                    </p>
-                    <div class="map-stat-row">
-                        <span class="map-stat-pill"><strong>800+</strong> youth actively enrolled</span>
-                        <span class="map-stat-pill"><strong>3</strong> strategic hubs in the city</span>
-                        <span class="map-stat-pill"><strong>Families & schools</strong> engaged as partners</span>
-                    </div>
-                    <div style="margin-top:14px; font-size:0.82rem;">
-                        <a href="impact.html" style="color:#F9FAFB; font-weight:600;">
-                            Explore impact by location <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                    <div class="map-illustration"></div>
-                </aside>
-            </div>
-        </div>
-    </section>
-
-    <!-- DAY IN THE LIFE -->
-    <section class="section day-in-life">
-        <div class="container">
-            <div class="section-heading">
-                <div class="eyebrow">A Day in the Life</div>
-                <h2>What Safe, Structured Support Feels Like</h2>
-                <p>
-                    CAMPS programming gives Haitian youth a steady rhythm: predictable, safe spaces where
-                    they can build friendships, practice skills, and be deeply known by caring adults.
-                </p>
-            </div>
-
-            <div class="timeline-layout">
-                <div>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-time">2:30 PM</div>
-                            <div class="timeline-title">Arrive & Exhale</div>
-                            <div class="timeline-text">
-                                Youth arrive from school or home and check in with staff. A simple question—
-                                “How are you arriving today?”—opens space for honest sharing.
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-time">3:00 PM</div>
-                            <div class="timeline-title">Care Circle or Counseling Session</div>
-                            <div class="timeline-text">
-                                Small group circles or 1:1 counseling address stress, grief, and fear.
-                                Youth learn grounding tools and language for what they’re feeling.
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-time">4:00 PM</div>
-                            <div class="timeline-title">Arts, Music, or Sports Track</div>
-                            <div class="timeline-text">
-                                One youth tunes a violin; another laces up cleats. Whether on the field or in
-                                rehearsal, every activity is anchored in relationship and skill-building.
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-time">5:30 PM</div>
-                            <div class="timeline-title">Reflection & Commitments</div>
-                            <div class="timeline-text">
-                                The day closes with gratitude, reflection questions, and practical commitments
-                                youth can carry back home—to siblings, neighbors, and friends.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <aside>
-                    <div class="timeline-quote-card">
+                <div class="camps-grid">
+                    <article class="camps-card">
+                        <div class="camps-letter-icon">C</div>
+                        <h3>Civic Engagement & Community Service</h3>
                         <p>
-                            “When the shooting starts near our house, I remember what we practiced here—how to
-                            breathe, how to talk to my little brother so he doesn’t get as scared. This place
-                            gave me tools I didn’t know I needed.”
+                            Youth explore leadership, community service, and advocacy, learning how to shape a more just and peaceful Haiti.
                         </p>
-                        <p class="attribution">
-                            — 15-year-old participant, Mental Health & Music for Inclusion
+                        <a href="#tab-c" class="camps-link">
+                            Learn more <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </article>
+                    <article class="camps-card">
+                        <div class="camps-letter-icon">A</div>
+                        <h3>Arts & Cultural Expression</h3>
+                        <p>
+                            Music, visual arts, and Haitian cultural traditions become tools for healing, identity, and joy.
                         </p>
-                        <div class="timeline-photo">
-                            <img src="https://source.unsplash.com/800x600/?haiti,youth" alt="Haitian youth participating in community program" loading="lazy">
+                        <a href="#tab-a" class="camps-link">
+                            Learn more <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </article>
+                    <article class="camps-card">
+                        <div class="camps-letter-icon">M</div>
+                        <h3>Mental Health & Wellness</h3>
+                        <p>
+                            Trauma-informed counseling and psychosocial support help youth and families process grief, fear, and stress.
+                        </p>
+                        <a href="#tab-m" class="camps-link">
+                            Learn more <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </article>
+                    <article class="camps-card">
+                        <div class="camps-letter-icon">P</div>
+                        <h3>Personal Development & Empowerment</h3>
+                        <p>
+                            Life skills, financial literacy, and mentorship equip youth to make strong choices about their futures.
+                        </p>
+                        <a href="#tab-p" class="camps-link">
+                            Learn more <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </article>
+                    <article class="camps-card">
+                        <div class="camps-letter-icon">S</div>
+                        <h3>Sports & Recreation</h3>
+                        <p>
+                            Football for Peace and other sports teach teamwork, conflict resolution, and healthy outlets for energy.
+                        </p>
+                        <a href="#tab-s" class="camps-link">
+                            Learn more <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </article>
+                </div>
+
+                <!-- Program Tabs -->
+                <div class="program-tabs-wrapper">
+                    <div class="program-tab-buttons">
+                        <button class="program-tab-button active" data-tab="c" id="tab-c">
+                            <span class="letter">C</span> Civic Engagement
+                        </button>
+                        <button class="program-tab-button" data-tab="a" id="tab-a">
+                            <span class="letter">A</span> Arts & Culture
+                        </button>
+                        <button class="program-tab-button" data-tab="m" id="tab-m">
+                            <span class="letter">M</span> Mental Health
+                        </button>
+                        <button class="program-tab-button" data-tab="p" id="tab-p">
+                            <span class="letter">P</span> Personal Development
+                        </button>
+                        <button class="program-tab-button" data-tab="s" id="tab-s">
+                            <span class="letter">S</span> Sports & Recreation
+                        </button>
+                    </div>
+
+                    <!-- C -->
+                    <div class="program-tab-panel active" data-panel="c">
+                        <div class="program-tab-panel-inner">
+                            <div>
+                                <h3>Civic Engagement & Community Service</h3>
+                                <div class="program-meta">
+                                    <span>Leadership Development</span>
+                                    <span>Community Projects</span>
+                                    <span>Economic Literacy</span>
+                                </div>
+                                <ul class="program-list">
+                                    <li>Workshops on leadership, citizenship, and non-violent conflict resolution.</li>
+                                    <li>Community service projects co-designed with youth and local partners.</li>
+                                    <li>Partnerships with organizations like Groupe Croissance and local institutions.</li>
+                                </ul>
+                                <p class="program-outcomes">
+                                    <strong>Target outcomes:</strong> Youth see themselves as solution-makers, understand their rights,
+                                    and gain tools to influence their neighborhoods without turning to violence.
+                                </p>
+                                <a href="/donate?designation=civic-engagement" class="program-support-cta">
+                                    <i class="fa-solid fa-circle-arrow-right"></i>
+                                    Support Civic Engagement programs
+                                </a>
+                            </div>
+                            <div class="program-image-card">
+                                <img src="/assets/images/haiti-youth-discussion.jpg" alt="Haitian youth participating in a civic engagement workshop">
+                                <div class="program-label-pill">
+                                    <i class="fa-solid fa-users"></i>
+                                    <span>Civic engagement session in Delmas</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div style="margin-top:18px; font-size:0.85rem;">
-                        <strong>Every day, youth are choosing a third path.</strong><br>
-                        Not gangs. Not hiding in fear. But healing, creativity, community, and leadership.
-                        Your support makes this daily rhythm possible.
-                        <div style="margin-top:10px;">
-                            <a href="donate.html" class="btn btn-primary" style="font-size:0.8rem; padding:8px 18px;">
-                                Fund a day of CAMPS programming
-                            </a>
+                    <!-- A -->
+                    <div class="program-tab-panel" data-panel="a">
+                        <div class="program-tab-panel-inner">
+                            <div>
+                                <h3>Arts & Cultural Expression</h3>
+                                <div class="program-meta">
+                                    <span>Music for Inclusion</span>
+                                    <span>Visual Arts</span>
+                                    <span>Haitian Drum & Dance</span>
+                                </div>
+                                <ul class="program-list">
+                                    <li>Orchestra and choir rehearsals through Music for Inclusion.</li>
+                                    <li>“Drawing the Hope” visual arts workshops and exhibitions.</li>
+                                    <li>Haitian drum circles and cultural performances for community events.</li>
+                                </ul>
+                                <p class="program-outcomes">
+                                    <strong>Target outcomes:</strong> Youth experience beauty, belonging, and pride in Haitian culture,
+                                    while building discipline, teamwork, and emotional resilience.
+                                </p>
+                                <a href="/donate?designation=arts" class="program-support-cta">
+                                    <i class="fa-solid fa-music"></i>
+                                    Fund Arts & Cultural Expression
+                                </a>
+                            </div>
+                            <div class="program-image-card">
+                                <img src="/assets/images/haiti-music-program.jpg" alt="Haitian youth rehearsing music together">
+                                <div class="program-label-pill">
+                                    <i class="fa-solid fa-music"></i>
+                                    <span>Music for Inclusion ensemble</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </aside>
+
+                    <!-- M -->
+                    <div class="program-tab-panel" data-panel="m">
+                        <div class="program-tab-panel-inner">
+                            <div>
+                                <h3>Mental Health & Wellness</h3>
+                                <div class="program-meta">
+                                    <span>Group Counseling</span>
+                                    <span>Individual Sessions</span>
+                                    <span>Family Support</span>
+                                </div>
+                                <ul class="program-list">
+                                    <li>Group counseling three times per week for youth in high-risk areas.</li>
+                                    <li>Individual sessions with trained psychologists and social workers.</li>
+                                    <li>Tools and workshops for caregivers navigating trauma and instability.</li>
+                                </ul>
+                                <p class="program-outcomes">
+                                    <strong>Target outcomes:</strong> Youth gain coping strategies, emotional literacy, and a sense of
+                                    safety that allows them to focus on learning, creativity, and relationships.
+                                </p>
+                                <a href="/donate?designation=mental-health" class="program-support-cta">
+                                    <i class="fa-solid fa-brain"></i>
+                                    Sustain Mental Health & Wellness
+                                </a>
+                            </div>
+                            <div class="program-image-card">
+                                <img src="/assets/images/haiti-counseling-circle.jpg" alt="Counseling circle with Haitian youth">
+                                <div class="program-label-pill">
+                                    <i class="fa-solid fa-heart-pulse"></i>
+                                    <span>Group counseling at a YBR center</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- P -->
+                    <div class="program-tab-panel" data-panel="p">
+                        <div class="program-tab-panel-inner">
+                            <div>
+                                <h3>Personal Development & Empowerment</h3>
+                                <div class="program-meta">
+                                    <span>Life Skills</span>
+                                    <span>Workbooks</span>
+                                    <span>Mentorship</span>
+                                </div>
+                                <ul class="program-list">
+                                    <li>Life skills workshops on decision-making, boundaries, and healthy relationships.</li>
+                                    <li>Personal development workbooks tailored for Haitian adolescents.</li>
+                                    <li>Mentorship and coaching focused on education, vocation, and long-term goals.</li>
+                                </ul>
+                                <p class="program-outcomes">
+                                    <strong>Target outcomes:</strong> Youth develop a sense of agency, practical skills, and vision
+                                    for who they want to become — and how to get there.
+                                </p>
+                                <a href="/donate?designation=personal-development" class="program-support-cta">
+                                    <i class="fa-solid fa-person-arrow-up-from-line"></i>
+                                    Invest in Personal Development
+                                </a>
+                            </div>
+                            <div class="program-image-card">
+                                <img src="/assets/images/haiti-classroom-session.jpg" alt="Personal development workshop with Haitian youth">
+                                <div class="program-label-pill">
+                                    <i class="fa-solid fa-book-open"></i>
+                                    <span>Life skills workshop in Croix-des-Bouquets</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- S -->
+                    <div class="program-tab-panel" data-panel="s">
+                        <div class="program-tab-panel-inner">
+                            <div>
+                                <h3>Sports & Recreation</h3>
+                                <div class="program-meta">
+                                    <span>Football for Peace</span>
+                                    <span>Team Building</span>
+                                    <span>Conflict Resolution</span>
+                                </div>
+                                <ul class="program-list">
+                                    <li>Football for Peace leagues that mix youth from rival neighborhoods.</li>
+                                    <li>Sports-based workshops on teamwork, respect, and emotional regulation.</li>
+                                    <li>Tournaments and events that showcase positive role models and community pride.</li>
+                                </ul>
+                                <p class="program-outcomes">
+                                    <strong>Target outcomes:</strong> Youth channel energy into healthy competition, build cross-neighborhood
+                                    friendships, and practice nonviolent problem-solving.
+                                </p>
+                                <a href="/donate?designation=sports" class="program-support-cta">
+                                    <i class="fa-solid fa-futbol"></i>
+                                    Equip Sports & Recreation
+                                </a>
+                            </div>
+                            <div class="program-image-card">
+                                <img src="/assets/images/haiti-football-field.jpg" alt="Haitian youth playing football at a YBR program">
+                                <div class="program-label-pill">
+                                    <i class="fa-solid fa-futbol"></i>
+                                    <span>Football for Peace match</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- /program-tabs-wrapper -->
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- INTERNAL CHECKLIST (DEV ONLY – REMOVE BEFORE LAUNCH) -->
-    <section class="section checklist-section">
+        <!-- WHERE WE WORK -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="eyebrow">
+                        <span class="eyebrow-dot"></span>
+                        WHERE WE WORK
+                    </div>
+                    <h2>Three Centers in the Heart of Port-au-Prince</h2>
+                    <p>
+                        YBR programs are based in communities where gang recruitment is most aggressive — offering safe, predictable spaces
+                        where youth can gather, learn, and grow.
+                    </p>
+                </div>
+
+                <div class="where-grid">
+                    <div class="map-card">
+                        <img src="/assets/images/haiti-map-programs.jpg" alt="Map of Haiti highlighting Port-au-Prince program centers">
+                    </div>
+                    <div class="location-list">
+                        <article class="location-card">
+                            <div class="location-name">Foundation Ste. Cecile • Croix-des-Bouquets</div>
+                            <div class="location-context">
+                                Serving youth living on the edge of gang-controlled territories, with daily arts, counseling, and sports.
+                            </div>
+                            <div class="location-meta">
+                                <strong>Youth reached:</strong> 250+ per year • <strong>Programs:</strong> CAMPS, family support, community events
+                            </div>
+                        </article>
+
+                        <article class="location-card">
+                            <div class="location-name">Communal School of Delmas • Delmas 33</div>
+                            <div class="location-context">
+                                A hub for civic engagement and mental health programming in a densely populated, high-stress neighborhood.
+                            </div>
+                            <div class="location-meta">
+                                <strong>Youth reached:</strong> 300+ per year • <strong>Programs:</strong> After-school CAMPS, leadership labs
+                            </div>
+                        </article>
+
+                        <article class="location-card">
+                            <div class="location-name">Holy Trinity Music School • Pétion-Ville</div>
+                            <div class="location-context">
+                                Home of Music for Inclusion, where orchestras and choirs bring together youth from across the city.
+                            </div>
+                            <div class="location-meta">
+                                <strong>Youth reached:</strong> 250+ per year • <strong>Programs:</strong> Arts & culture, performances, mentorship
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- A DAY IN THE LIFE -->
+        <section class="section alt">
+            <div class="container">
+                <div class="section-header">
+                    <div class="eyebrow">
+                        <span class="eyebrow-dot"></span>
+                        A DAY IN THE LIFE
+                    </div>
+                    <h2>What Hope Looks Like on a Tuesday</h2>
+                    <p>
+                        A typical day in YBR programs weaves together safety, routine, creativity, and community — giving youth a structured
+                        alternative to the chaos outside.
+                    </p>
+                </div>
+
+                <div class="timeline">
+                    <article class="timeline-card">
+                        <div class="timeline-time">2:00 PM</div>
+                        <div class="timeline-title">Arrival & Check-In</div>
+                        <p class="timeline-text">
+                            Youth arrive from school, share a snack, and check in emotionally with staff using simple, trauma-informed tools.
+                        </p>
+                    </article>
+                    <article class="timeline-card">
+                        <div class="timeline-time">3:00 PM</div>
+                        <div class="timeline-title">CAMPS Sessions</div>
+                        <p class="timeline-text">
+                            Some youth head to music rehearsal, others to counseling circles, civic workshops, or football practice.
+                        </p>
+                    </article>
+                    <article class="timeline-card">
+                        <div class="timeline-time">4:30 PM</div>
+                        <div class="timeline-title">Reflection & Skill-Building</div>
+                        <p class="timeline-text">
+                            Groups gather to reflect on what they learned, practice conflict resolution, and set personal goals.
+                        </p>
+                    </article>
+                    <article class="timeline-card">
+                        <div class="timeline-time">5:30 PM</div>
+                        <div class="timeline-title">Heading Home with Hope</div>
+                        <p class="timeline-text">
+                            Youth leave in small groups, supported by peers and staff, carrying new tools, friendships, and possibilities.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
         <div class="container">
-            <div class="checklist-wrapper" aria-label="Project implementation checklist">
-                <div class="checklist-header">
-                    <h3>YBR Website Build Checklist</h3>
-                    <div class="checklist-badge">
-                        Status: <span>In Progress</span>
+            <div class="footer-top">
+                <div>
+                    <div class="footer-logo-wrap">
+                        <div class="footer-logo-mark">YBR</div>
+                        <div class="footer-logo-text">Youth Beyond Resilience</div>
+                    </div>
+                    <p class="footer-tagline">From Struggle to Strength</p>
+                    <p class="footer-copy">
+                        Empowering at-risk Haitian adolescents to choose hope over violence through trauma-informed programs in arts,
+                        mental health, civic engagement, and sports.
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                     </div>
                 </div>
-                <div class="checklist-grid">
-                    <div class="checklist-item completed">
-                        <span class="status-box">&#10003;</span>
-                        <span>Homepage (index.html) – created</span>
+
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/programs">Our Programs</a></li>
+                        <li><a href="/impact">Impact Stories</a></li>
+                        <li><a href="/financials">Annual Reports</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Get Involved</h4>
+                    <ul class="footer-links">
+                        <li><a href="/donate">Donate</a></li>
+                        <li><a href="/get-involved#monthly">Monthly Giving</a></li>
+                        <li><a href="/get-involved#volunteer">Volunteer</a></li>
+                        <li><a href="/get-involved#board">Join Our Board</a></li>
+                        <li><a href="/get-involved#corporate">Corporate Partners</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column footer-contact">
+                    <h4>Contact & Newsletter</h4>
+                    <p><strong>Email:</strong><br>contact@youthbeyondresilience.org</p>
+                    <p><strong>Phone:</strong><br>(210) 555-0100</p>
+                    <p><strong>Tax ID:</strong> 12-3456789<br>501(c)(3) nonprofit organization</p>
+
+                    <div class="footer-newsletter-input">
+                        <input type="email" placeholder="Your email address">
+                        <button type="button">Sign Up</button>
                     </div>
-                    <div class="checklist-item completed">
-                        <span class="status-box">&#10003;</span>
-                        <span>About page (about.html) – created</span>
-                    </div>
-                    <div class="checklist-item completed">
-                        <span class="status-box">&#10003;</span>
-                        <span>Programs page (programs.html) – created</span>
-                    </div>
-                    <div class="checklist-item">
-                        <span class="status-box"></span>
-                        <span>Impact page (impact.html) – pending</span>
-                    </div>
-                    <div class="checklist-item">
-                        <span class="status-box"></span>
-                        <span>Get Involved page (get-involved.html) – pending</span>
-                    </div>
-                    <div class="checklist-item">
-                        <span class="status-box"></span>
-                        <span>News & Updates (news.html) – pending</span>
-                    </div>
-                    <div class="checklist-item">
-                        <span class="status-box"></span>
-                        <span>Contact page (contact.html) – pending</span>
-                    </div>
-                    <div class="checklist-item">
-                        <span class="status-box"></span>
-                        <span>Donation form & confirmation (donate.html) – pending</span>
+                    <div class="footer-newsletter-note">
+                        We’ll send occasional updates on our work in Haiti. No spam, ever.
                     </div>
                 </div>
-                <div class="checklist-hint">
-                    Note: This section is for AlamoSites internal use. Hide or remove before client launch.
+            </div>
+
+            <div class="footer-bottom">
+                <div>© 2025 Youth Beyond Resilience. All rights reserved.</div>
+                <div class="footer-bottom-links">
+                    <a href="/privacy">Privacy Policy</a>
+                    <span>•</span>
+                    <a href="/terms">Terms of Use</a>
+                    <span>•</span>
+                    <a href="/financials">Financials</a>
+                </div>
+                <div class="footer-designed">
+                    Designed by <a href="https://alamosites.com" target="_blank" rel="noopener">AlamoSites.Com</a>
                 </div>
             </div>
         </div>
-    </section>
-</main>
+    </footer>
 
-<footer class="site-footer">
-    <div class="container">
-        <div class="footer-content">
-            <!-- Column 1 -->
-            <div class="footer-column">
-                <div class="footer-logo">
-                    <div class="logo-icon">YBR</div>
-                    <span>Youth Beyond Resilience</span>
-                </div>
-                <p class="footer-tagline">From Struggle to Strength</p>
-                <p>
-                    Youth Beyond Resilience prevents gang recruitment by empowering Haitian adolescents
-                    through CAMPS programs in mental health, arts, civic engagement, personal development,
-                    and sports.
-                </p>
-                <div class="social-links">
-                    <a href="#" class="social-link" aria-label="YBR on Facebook">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#" class="social-link" aria-label="YBR on Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="#" class="social-link" aria-label="YBR on Twitter">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="social-link" aria-label="YBR on LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                </div>
-            </div>
+    <script>
+        // Sticky header
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('.site-header');
+            if (window.scrollY > 80) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
 
-            <!-- Column 2 -->
-            <div class="footer-column">
-                <h4>Quick Links</h4>
-                <ul class="footer-links">
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="programs.html">Our Programs</a></li>
-                    <li><a href="impact.html">Impact Stories</a></li>
-                    <li><a href="financials.html">Annual Reports</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-            </div>
+        // Mobile nav toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
 
-            <!-- Column 3 -->
-            <div class="footer-column">
-                <h4>Get Involved</h4>
-                <ul class="footer-links">
-                    <li><a href="donate.html">Donate</a></li>
-                    <li><a href="monthly-giving.html">Monthly Giving</a></li>
-                    <li><a href="volunteer.html">Volunteer</a></li>
-                    <li><a href="board.html">Join Our Board</a></li>
-                    <li><a href="corporate.html">Corporate Partners</a></li>
-                </ul>
-            </div>
+        if (mobileToggle && navMenu) {
+            mobileToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('open');
+            });
 
-            <!-- Column 4 -->
-            <div class="footer-column">
-                <h4>Contact & Newsletter</h4>
-                <p><strong>Email</strong><br>contact@youthbeyondresilience.org</p>
-                <p><strong>Phone</strong><br>(XXX) XXX-XXXX</p>
-                <p><strong>Haiti</strong><br>Port-au-Prince & surrounding areas</p>
+            navMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('open');
+                });
+            });
+        }
 
-                <form class="newsletter-form">
-                    <input type="email" name="email" placeholder="Your email address" aria-label="Email address">
-                    <button type="submit">Stay Connected</button>
-                </form>
-                <p style="font-size:0.72rem; margin-top:6px;">
-                    We’ll send occasional impact updates and stories. No spam.
-                </p>
-            </div>
-        </div>
+        // Program tabs
+        const tabButtons = document.querySelectorAll('.program-tab-button');
+        const tabPanels = document.querySelectorAll('.program-tab-panel');
 
-        <div class="footer-bottom">
-            <div>
-                &copy; 2025 Youth Beyond Resilience. 501(c)(3) nonprofit organization. All rights reserved.
-            </div>
-            <div class="footer-bottom-center">
-                Designed by <a href="https://alamosites.com" target="_blank" rel="noopener noreferrer">AlamoSites.com</a>
-            </div>
-            <div class="footer-bottom-links">
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Use</a>
-                <a href="financials.html">Financials</a>
-            </div>
-        </div>
-    </div>
-</footer>
+        function activateTab(tabKey) {
+            tabButtons.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.tab === tabKey);
+            });
+            tabPanels.forEach(panel => {
+                panel.classList.toggle('active', panel.dataset.panel === tabKey);
+            });
+        }
 
+        tabButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const key = btn.dataset.tab;
+                activateTab(key);
+            });
+        });
+
+        // Enable “Learn more” anchor links to switch tabs
+        document.querySelectorAll('.camps-link').forEach(link => {
+            link.addEventListener('click', e => {
+                const href = link.getAttribute('href');
+                if (href && href.startsWith('#tab-')) {
+                    e.preventDefault();
+                    const key = href.replace('#tab-', '');
+                    activateTab(key);
+                    const tabsWrapper = document.querySelector('.program-tabs-wrapper');
+                    if (tabsWrapper) {
+                        tabsWrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>
